@@ -6,6 +6,6 @@ ScalingGraphicsView::ScalingGraphicsView(QGraphicsScene *scene, QWidget *parent)
 {
 }
 
-void ScalingGraphicsView::resizeEvent(QResizeEvent *event) {
+void ScalingGraphicsView::resizeEvent(QResizeEvent*) {
     fitInView(sceneRect(), Qt::KeepAspectRatio);
 }

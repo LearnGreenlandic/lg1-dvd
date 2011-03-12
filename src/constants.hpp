@@ -1,7 +1,9 @@
 #ifndef CONSTANTS_HPP
 #define CONSTANTS_HPP
 
-#ifndef Q_WS_MAC
+#include <QtGlobal>
+
+#ifdef Q_WS_WIN
     #define LECTURE_FILE "lecture.wmv"
 #else
     #define LECTURE_FILE "lecture.mov"

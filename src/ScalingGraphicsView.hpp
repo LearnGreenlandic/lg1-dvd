@@ -8,7 +8,7 @@ class ScalingGraphicsView : public QGraphicsView {
     Q_OBJECT
 public:
     explicit ScalingGraphicsView(QGraphicsScene *scene, QWidget *parent = 0);
-    void resizeEvent(QResizeEvent *event);
+    void resizeEvent(QResizeEvent*);
 
 signals:
 

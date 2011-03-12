@@ -20,3 +20,8 @@ HEADERS  += \
     src/Lecture1Danish.hpp \
     src/constants.hpp \
     src/ScalingGraphicsView.hpp
+
+CONFIG -= warn_off
+CONFIG -= warn_on
+QMAKE_CFLAGS   += -Wall -Wextra
+QMAKE_CXXFLAGS += -Wall -Wextra

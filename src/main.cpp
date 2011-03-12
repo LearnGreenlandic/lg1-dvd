@@ -10,7 +10,8 @@ int main(int argc, char *argv[]) {
     app.setQuitOnLastWindowClosed(true);
 
     QDir tDir(app.applicationDirPath());
-    while (!tDir.exists("./lessons/1/danish/0.png") && tDir.cdUp());
+    while (!tDir.exists("./lessons/1/danish/0.png") && tDir.cdUp()) {
+    }
 
     QDir dataDir(tDir.absolutePath() + "/lessons/1/danish/");
     if (!dataDir.exists() || !dataDir.exists(LECTURE_FILE) || !dataDir.exists("0.png")) {
