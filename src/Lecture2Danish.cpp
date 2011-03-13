@@ -1,17 +1,17 @@
 #include "constants.hpp"
-#include "Lecture1Danish.hpp"
+#include "Lecture2Danish.hpp"
 
 #include <QGLShaderProgram>
 
-Lecture1Danish::Lecture1Danish(QDir dataDir) :
+Lecture2Danish::Lecture2Danish(QDir dataDir) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 dataDir(dataDir)
 {
-    setWindowTitle("Forelæsning 1: Introduktion");
+    setWindowTitle("Forelæsning 2: Typiske Danskerfejl");
     setMinimumSize(minimumSizeHint());
 
-    if (!dataDir.cd("./1/danish/")) {
-        QMessageBox::critical(0, "Missing Data!", "Could not change working folder to lessons/1/danish/!");
+    if (!dataDir.cd("./2/danish/")) {
+        QMessageBox::critical(0, "Missing Data!", "Could not change working folder to lessons/2/danish/!");
         throw(-1);
     }
 
@@ -91,18 +91,18 @@ dataDir(dataDir)
     setContentsMargins(0, 0, 0, 0);
 }
 
-void Lecture1Danish::closeEvent(QCloseEvent *event) {
+void Lecture2Danish::closeEvent(QCloseEvent *event) {
     media->stop();
     media->clear();
     event->accept();
 }
 
-void Lecture1Danish::show() {
+void Lecture2Danish::show() {
     QWidget::show();
     media->play();
 }
 
-void Lecture1Danish::tick(qint64 time) {
+void Lecture2Danish::tick(qint64 time) {
     QTime displayTime(0, (time / 60000) % 60, (time / 1000) % 60);
     timeLcd->display(displayTime.toString("mm:ss"));
 
@@ -126,7 +126,7 @@ void Lecture1Danish::tick(qint64 time) {
     }
 }
 
-void Lecture1Danish::togglePlay() {
+void Lecture2Danish::togglePlay() {
     if (media->state() == Phonon::PlayingState) {
         playpause->setIcon(style()->standardIcon(QStyle::SP_MediaPlay));
         playpause->setText("Play");
@@ -139,10 +139,10 @@ void Lecture1Danish::togglePlay() {
     }
 }
 
-QSize Lecture1Danish::sizeHint() const {
+QSize Lecture2Danish::sizeHint() const {
     return QSize(1010, 335);
 }
 
-QSize Lecture1Danish::minimumSizeHint() const {
+QSize Lecture2Danish::minimumSizeHint() const {
     return QSize(1010, 335);
 }

@@ -1,5 +1,5 @@
-#ifndef LECTURE1DANISH_H
-#define LECTURE1DANISH_H
+#ifndef LECTURE2DANISH_H
+#define LECTURE2DANISH_H
 
 #include "ScalingGraphicsView.hpp"
 
@@ -13,11 +13,11 @@
 #include <QtOpenGL/QGLWidget>
 #include <stdint.h>
 
-class Lecture1Danish : public QWidget {
+class Lecture2Danish : public QWidget {
     Q_OBJECT
 
 public:
-    Lecture1Danish(QDir dataDir);
+    Lecture2Danish(QDir dataDir);
 
     void closeEvent(QCloseEvent *event);
 
@@ -48,4 +48,4 @@ private:
     QLCDNumber *timeLcd;
 };
 
-#endif // LECTURE1DANISH_H
+#endif // LECTURE2DANISH_H

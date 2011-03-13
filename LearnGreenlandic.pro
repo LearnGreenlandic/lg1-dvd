@@ -14,12 +14,16 @@ TEMPLATE = app
 SOURCES += \
     src/main.cpp \
     src/Lecture1Danish.cpp \
-    src/ScalingGraphicsView.cpp
+    src/ScalingGraphicsView.cpp \
+    src/TaskChooser.cpp \
+    src/Lecture2Danish.cpp
 
 HEADERS  += \
     src/Lecture1Danish.hpp \
     src/constants.hpp \
-    src/ScalingGraphicsView.hpp
+    src/ScalingGraphicsView.hpp \
+    src/TaskChooser.hpp \
+    src/Lecture2Danish.hpp
 
 CONFIG -= warn_off
 CONFIG -= warn_on
