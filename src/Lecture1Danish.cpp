@@ -4,8 +4,7 @@
 #include <QGLShaderProgram>
 
 Lecture1Danish::Lecture1Danish(QDir dataDir) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
-dataDir(dataDir)
+QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint)
 {
     setWindowTitle("Forelæsning 1: Introduktion");
     setMinimumSize(minimumSizeHint());

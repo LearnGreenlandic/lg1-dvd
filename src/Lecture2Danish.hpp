@@ -30,7 +30,6 @@ public slots:
     void togglePlay();
 
 private:
-    QDir dataDir;
     typedef QMap<uint32_t, QString> slides_t;
     slides_t slides;
     QString curSlide;

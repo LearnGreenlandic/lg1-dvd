@@ -4,8 +4,7 @@
 #include <QGLShaderProgram>
 
 Lecture2Danish::Lecture2Danish(QDir dataDir) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
-dataDir(dataDir)
+QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint)
 {
     setWindowTitle("Forelæsning 2: Typiske Danskerfejl");
     setMinimumSize(minimumSizeHint());

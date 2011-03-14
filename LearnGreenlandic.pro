@@ -17,7 +17,8 @@ SOURCES += \
     src/ScalingGraphicsView.cpp \
     src/TaskChooser.cpp \
     src/Lecture2Danish.cpp \
-    src/UpdownOne.cpp
+    src/UpdownOne.cpp \
+    src/UpdownData.cpp
 
 HEADERS  += \
     src/Lecture1Danish.hpp \
@@ -25,7 +26,8 @@ HEADERS  += \
     src/ScalingGraphicsView.hpp \
     src/TaskChooser.hpp \
     src/Lecture2Danish.hpp \
-    src/UpdownOne.hpp
+    src/UpdownOne.hpp \
+    src/UpdownData.hpp
 
 CONFIG -= warn_off
 CONFIG -= warn_on

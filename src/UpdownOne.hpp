@@ -1,6 +1,7 @@
 #ifndef UPDOWNONE_HPP
 #define UPDOWNONE_HPP
 
+#include "UpdownData.hpp"
 #include <QtGui>
 
 class UpdownOne : public QWidget {
@@ -12,7 +13,7 @@ public:
 public slots:
 
 private:
-    QDir dataDir;
+    UpdownData data;
 };
 
 #endif // UPDOWNONE_HPP

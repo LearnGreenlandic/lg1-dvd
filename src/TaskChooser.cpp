@@ -2,6 +2,7 @@
 #include "Lecture2Danish.hpp"
 
 #include "TaskChooser.hpp"
+#include "UpdownOne.hpp"
 
 TaskChooser::TaskChooser(QDir dataDir) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
@@ -16,7 +17,7 @@ dataDir(dataDir)
     connect(lectureOne, SIGNAL(clicked()), this, SLOT(showLectureOne()));
     connect(lectureTwo, SIGNAL(clicked()), this, SLOT(showLectureTwo()));
 
-    QVBoxLayout *lecVBox = new QVBoxLayout(this);
+    QVBoxLayout *lecVBox = new QVBoxLayout;
     lecVBox->addWidget(lectureOne);
     lecVBox->addWidget(lectureTwo);
 
@@ -31,7 +32,7 @@ dataDir(dataDir)
     connect(updownTwo, SIGNAL(clicked()), this, SLOT(showUpdownTwo()));
     connect(updownThree, SIGNAL(clicked()), this, SLOT(showUpdownThree()));
 
-    QVBoxLayout *udVBox = new QVBoxLayout(this);
+    QVBoxLayout *udVBox = new QVBoxLayout;
     udVBox->addWidget(updownOne);
     udVBox->addWidget(updownTwo);
     udVBox->addWidget(updownThree);
@@ -43,7 +44,7 @@ dataDir(dataDir)
     QLabel *ql = new QLabel("Demo af diverse funktionaliteter som vil være i det færdige produkt.\n");
     ql->setWordWrap(true);
 
-    QVBoxLayout *vbox = new QVBoxLayout(this);
+    QVBoxLayout *vbox = new QVBoxLayout;
     vbox->addWidget(ql);
     vbox->addWidget(lecGBox);
     vbox->addWidget(udGBox);
@@ -66,6 +67,10 @@ void TaskChooser::showLectureTwo() {
 }
 
 void TaskChooser::showUpdownOne() {
+    UpdownOne *updown = new UpdownOne(dataDir);
+    updown->show();
+    updown->raise();
+    updown->activateWindow();
 }
 
 void TaskChooser::showUpdownTwo() {
