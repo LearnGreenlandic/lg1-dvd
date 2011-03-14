@@ -18,7 +18,8 @@ SOURCES += \
     src/TaskChooser.cpp \
     src/Lecture2Danish.cpp \
     src/UpdownOne.cpp \
-    src/UpdownData.cpp
+    src/UpdownData.cpp \
+    src/UpdownTwo.cpp
 
 HEADERS  += \
     src/Lecture1Danish.hpp \
@@ -27,7 +28,8 @@ HEADERS  += \
     src/TaskChooser.hpp \
     src/Lecture2Danish.hpp \
     src/UpdownOne.hpp \
-    src/UpdownData.hpp
+    src/UpdownData.hpp \
+    src/UpdownTwo.hpp
 
 CONFIG -= warn_off
 CONFIG -= warn_on

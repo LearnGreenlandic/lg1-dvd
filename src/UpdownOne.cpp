@@ -7,21 +7,21 @@ curAt(0)
 {
     setWindowTitle("Up/Down: Reception");
 
-    QLabel *ql = new QLabel("Prøv at forstå og at udtale følgende:\n");
+    QLabel *ql = new QLabel("Prøv at forstå og at udtale følgende ord:\n");
 
     QVBoxLayout *qvbl = new QVBoxLayout;
     qvbl->addWidget(ql);
 
     curWord = new QVBoxLayout;
-    up = new QLabel(QString("<center><h2>") + data.updowns.at(curAt).first + "</h2></center>");
-    down = new QLabel(QString("<center><i>") + data.updowns.at(curAt).second + "</i></center>");
+    down = new QLabel(QString("<center><h2>") + data.updowns.at(curAt).first + "</h2></center>");
+    up = new QLabel(QString("<center><i>") + data.updowns.at(curAt).second + "</i></center>");
     help = new QPushButton("Vis hjælp");
     connect(help, SIGNAL(clicked()), this, SLOT(showHelp()));
-    curWord->addWidget(up);
+    curWord->addWidget(down);
     curWord->addSpacing(5);
     curWord->addWidget(help);
-    curWord->addWidget(down);
-    down->hide();
+    curWord->addWidget(up);
+    up->hide();
 
     QPushButton *nb = new QPushButton("Gå til næste ord");
     connect(nb, SIGNAL(clicked()), this, SLOT(showNext()));
@@ -40,16 +40,16 @@ void UpdownOne::showNext() {
         close();
         return;
     }
-    down->hide();
+    up->hide();
     help->show();
-    up->setText(QString("<center><h2>") + data.updowns.at(curAt).first + "</h2></center>");
+    down->setText(QString("<center><h2>") + data.updowns.at(curAt).first + "</h2></center>");
     adjustSize();
 }
 
 void UpdownOne::showHelp() {
     help->hide();
-    down->setText(QString("<center><i>") + data.updowns.at(curAt).second + "</i></center>");
-    down->setToolTip(data.glossUpper(data.updowns.at(curAt).second));
-    down->show();
+    up->setText(QString("<center><i>") + data.updowns.at(curAt).second + "</i></center>");
+    up->setToolTip(data.glossUpper(data.updowns.at(curAt).second));
+    up->show();
     adjustSize();
 }
