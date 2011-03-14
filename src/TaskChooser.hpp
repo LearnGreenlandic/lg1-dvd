@@ -13,12 +13,19 @@ public:
 public slots:
     void showLectureOne();
     void showLectureTwo();
+    void showUpdownOne();
+    void showUpdownTwo();
+    void showUpdownThree();
 
 private:
     QDir dataDir;
 
     QPushButton *lectureOne;
     QPushButton *lectureTwo;
+
+    QPushButton *updownOne;
+    QPushButton *updownTwo;
+    QPushButton *updownThree;
 };
 
 #endif // TASKCHOOSER_HPP

@@ -16,14 +16,16 @@ SOURCES += \
     src/Lecture1Danish.cpp \
     src/ScalingGraphicsView.cpp \
     src/TaskChooser.cpp \
-    src/Lecture2Danish.cpp
+    src/Lecture2Danish.cpp \
+    src/UpdownOne.cpp
 
 HEADERS  += \
     src/Lecture1Danish.hpp \
     src/constants.hpp \
     src/ScalingGraphicsView.hpp \
     src/TaskChooser.hpp \
-    src/Lecture2Danish.hpp
+    src/Lecture2Danish.hpp \
+    src/UpdownOne.hpp
 
 CONFIG -= warn_off
 CONFIG -= warn_on

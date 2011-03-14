@@ -9,17 +9,46 @@ dataDir(dataDir)
 {
     setWindowTitle("Learn Greenlandic Demo");
 
+
     lectureOne = new QPushButton("Forelæsning 1: Introduktion");
+    // lectureOne->setToolTip("Waffles"); // catch enter() event, call QToolTip::showText()
     lectureTwo = new QPushButton("Forelæsning 2: Typiske Danskerfejl");
-
-    QVBoxLayout *qvbl = new QVBoxLayout(this);
-    qvbl->addWidget(lectureOne);
-    qvbl->addWidget(lectureTwo);
-
     connect(lectureOne, SIGNAL(clicked()), this, SLOT(showLectureOne()));
     connect(lectureTwo, SIGNAL(clicked()), this, SLOT(showLectureTwo()));
 
-    setLayout(qvbl);
+    QVBoxLayout *lecVBox = new QVBoxLayout(this);
+    lecVBox->addWidget(lectureOne);
+    lecVBox->addWidget(lectureTwo);
+
+    QGroupBox *lecGBox = new QGroupBox("Forelæsninger");
+    lecGBox->setLayout(lecVBox);
+
+
+    updownOne = new QPushButton("Up/Down: Reception");
+    updownTwo = new QPushButton("Up/Down: Produktion");
+    updownThree = new QPushButton("Up/Down: Oversættelse");
+    connect(updownOne, SIGNAL(clicked()), this, SLOT(showUpdownOne()));
+    connect(updownTwo, SIGNAL(clicked()), this, SLOT(showUpdownTwo()));
+    connect(updownThree, SIGNAL(clicked()), this, SLOT(showUpdownThree()));
+
+    QVBoxLayout *udVBox = new QVBoxLayout(this);
+    udVBox->addWidget(updownOne);
+    udVBox->addWidget(updownTwo);
+    udVBox->addWidget(updownThree);
+
+    QGroupBox *udGBox = new QGroupBox("Up/Down Øvelser");
+    udGBox->setLayout(udVBox);
+
+
+    QLabel *ql = new QLabel("Demo af diverse funktionaliteter som vil være i det færdige produkt.\n");
+    ql->setWordWrap(true);
+
+    QVBoxLayout *vbox = new QVBoxLayout(this);
+    vbox->addWidget(ql);
+    vbox->addWidget(lecGBox);
+    vbox->addWidget(udGBox);
+
+    setLayout(vbox);
 }
 
 void TaskChooser::showLectureOne() {
@@ -34,4 +63,13 @@ void TaskChooser::showLectureTwo() {
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
+}
+
+void TaskChooser::showUpdownOne() {
+}
+
+void TaskChooser::showUpdownTwo() {
+}
+
+void TaskChooser::showUpdownThree() {
 }
