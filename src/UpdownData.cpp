@@ -1,4 +1,6 @@
 #include "UpdownData.hpp"
+#include <algorithm>
+#include <stdint.h>
 
 UpdownData::UpdownData(QDir dataDir)
 {
@@ -51,7 +53,7 @@ UpdownData::UpdownData(QDir dataDir)
             if (ls.size() == 2) {
                 QString a = ls.at(0).trimmed();
                 QString b = ls.at(1).trimmed();
-                updowns[a] = b;
+                updowns.push_back(QPair<QString,QString>(a, b));
             }
         }
     }
@@ -60,4 +62,38 @@ UpdownData::UpdownData(QDir dataDir)
         QMessageBox::critical(0, "Data Error!", "Failed to read data files!");
         throw(-1);
     }
+
+    std::random_shuffle(updowns.begin(), updowns.end());
+}
+
+QString UpdownData::glossUpper(QString upper) {
+    QStringList ql;
+    QRegExp qr("[-+]");
+    int o = 0, n = 0;
+    while ((n = qr.indexIn(upper, o)) != -1) {
+        if (o) {
+            --o;
+        }
+        QString t = upper.mid(o, n-o);
+        if (glosses.find(t) != glosses.end()) {
+            ql.push_back(glosses[t]);
+        }
+        else {
+            ql.push_back(t);
+        }
+        o = n+1;
+    }
+
+    if (o) {
+        --o;
+    }
+    QString t = upper.mid(o);
+    if (glosses.find(t) != glosses.end()) {
+        ql.push_back(glosses[t]);
+    }
+    else {
+        ql.push_back(t);
+    }
+
+    return ql.join(", ");
 }

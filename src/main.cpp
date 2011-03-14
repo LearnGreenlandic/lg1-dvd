@@ -1,6 +1,9 @@
 #include "constants.hpp"
 #include "TaskChooser.hpp"
 #include <QtGui/QApplication>
+#include <ctime>
+#include <cstdlib>
+#include <stdint.h>
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
@@ -8,6 +11,10 @@ int main(int argc, char *argv[]) {
     app.setOrganizationName("The Oxen Road Inn");
     app.setApplicationName("Learn Greenlandic");
     app.setQuitOnLastWindowClosed(true);
+
+    uint32_t seed = static_cast<uint32_t>(time(0)) ^ app.applicationPid();
+    qsrand(seed);
+    srand(seed);
 
     QDir tDir(app.applicationDirPath());
     while (!tDir.exists("./lessons/1/danish/0.png") && tDir.cdUp()) {
