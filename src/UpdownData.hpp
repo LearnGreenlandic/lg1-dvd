@@ -8,7 +8,8 @@ class UpdownData
 public:
     UpdownData(QDir dataDir);
 
-    QString glossUpper(QString upper);
+    QString glossUpperDetailed(QString upper);
+    QString glossUpperShort(QString upper);
 
     QVector< QPair<QString,QString> > updowns;
     QMap<QString,QString> glosses;

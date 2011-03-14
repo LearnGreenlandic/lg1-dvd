@@ -19,7 +19,8 @@ SOURCES += \
     src/Lecture2Danish.cpp \
     src/UpdownOne.cpp \
     src/UpdownData.cpp \
-    src/UpdownTwo.cpp
+    src/UpdownTwo.cpp \
+    src/UpdownThree.cpp
 
 HEADERS  += \
     src/Lecture1Danish.hpp \
@@ -29,7 +30,8 @@ HEADERS  += \
     src/Lecture2Danish.hpp \
     src/UpdownOne.hpp \
     src/UpdownData.hpp \
-    src/UpdownTwo.hpp
+    src/UpdownTwo.hpp \
+    src/UpdownThree.hpp
 
 CONFIG -= warn_off
 CONFIG -= warn_on

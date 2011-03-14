@@ -66,7 +66,39 @@ UpdownData::UpdownData(QDir dataDir)
     std::random_shuffle(updowns.begin(), updowns.end());
 }
 
-QString UpdownData::glossUpper(QString upper) {
+QString UpdownData::glossUpperDetailed(QString upper) {
+    QStringList ql;
+    QRegExp qr("[-+]");
+    int o = 0, n = 0;
+    while ((n = qr.indexIn(upper, o)) != -1) {
+        if (o) {
+            --o;
+        }
+        QString t = upper.mid(o, n-o);
+        if (glosses.find(t) != glosses.end()) {
+            ql.push_back(t + "\t" + glosses[t]);
+        }
+        else {
+            ql.push_back(t + "\t" + t);
+        }
+        o = n+1;
+    }
+
+    if (o) {
+        --o;
+    }
+    QString t = upper.mid(o);
+    if (glosses.find(t) != glosses.end()) {
+        ql.push_back(t + "\t" + glosses[t]);
+    }
+    else {
+        ql.push_back(t + "\t" + t);
+    }
+
+    return ql.join("\n");
+}
+
+QString UpdownData::glossUpperShort(QString upper) {
     QStringList ql;
     QRegExp qr("[-+]");
     int o = 0, n = 0;
@@ -95,5 +127,5 @@ QString UpdownData::glossUpper(QString upper) {
         ql.push_back(t);
     }
 
-    return ql.join(", ");
+    return ql.join(" + ");
 }

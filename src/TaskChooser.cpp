@@ -4,6 +4,7 @@
 #include "TaskChooser.hpp"
 #include "UpdownOne.hpp"
 #include "UpdownTwo.hpp"
+#include "UpdownThree.hpp"
 
 TaskChooser::TaskChooser(QDir dataDir) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
@@ -82,4 +83,8 @@ void TaskChooser::showUpdownTwo() {
 }
 
 void TaskChooser::showUpdownThree() {
+    UpdownThree *updown = new UpdownThree(dataDir);
+    updown->show();
+    updown->raise();
+    updown->activateWindow();
 }

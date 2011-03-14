@@ -1,20 +1,19 @@
-#include "UpdownTwo.hpp"
+#include "UpdownThree.hpp"
 
-UpdownTwo::UpdownTwo(QDir dataDir) :
+UpdownThree::UpdownThree(QDir dataDir) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 data(dataDir),
 curAt(0)
 {
-    setWindowTitle("Up/Down: Produktion");
+    setWindowTitle("Up/Down: Oversættelse");
 
-    QLabel *ql = new QLabel("Skriv følgende ord i færdig form:\n");
+    QLabel *ql = new QLabel("Oversæt følgende glossering til et ord i færdig form:\n");
 
     QVBoxLayout *qvbl = new QVBoxLayout;
     qvbl->addWidget(ql);
 
     curWord = new QVBoxLayout;
-    up = new QLabel(QString("<center><h2>") + data.updowns.at(curAt).second + "</h2></center>");
-    up->setToolTip(data.glossUpperDetailed(data.updowns.at(curAt).second));
+    up = new QLabel(QString("<center><h2>") + data.glossUpperShort(data.updowns.at(curAt).second) + "</h2></center>");
     input = new QLineEdit;
     connect(input, SIGNAL(returnPressed()), this, SLOT(checkInput()));
     check = new QPushButton("Check");
@@ -41,7 +40,7 @@ curAt(0)
     setLayout(qvbl);
 }
 
-void UpdownTwo::showNext() {
+void UpdownThree::showNext() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(data.updowns.size())) {
         QMessageBox::information(0, "Færdig!", "Der er ikke flere ord...vinduet lukker sig selv nu.");
@@ -52,12 +51,11 @@ void UpdownTwo::showNext() {
     yield->hide();
     input->setText("");
     input->setFocus();
-    up->setText(QString("<center><h2>") + data.updowns.at(curAt).second + "</h2></center>");
-    up->setToolTip(data.glossUpperDetailed(data.updowns.at(curAt).second));
+    up->setText(QString("<center><h2>") + data.glossUpperShort(data.updowns.at(curAt).second) + "</h2></center>");
     adjustSize();
 }
 
-void UpdownTwo::checkInput() {
+void UpdownThree::checkInput() {
     if (input->text() == data.updowns.at(curAt).first) {
         result->setText("<center><span style='color: darkgreen;'><b>Korrekt!</b></span></center>");
     }
@@ -74,7 +72,7 @@ void UpdownTwo::checkInput() {
     adjustSize();
 }
 
-void UpdownTwo::yieldWord() {
+void UpdownThree::yieldWord() {
     QMessageBox::information(0, "Hrhm...", QString("Det korrekte færdige ord var:\n") + data.updowns.at(curAt).first);
     showNext();
 }
