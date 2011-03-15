@@ -5,6 +5,7 @@
 #include "UpdownOne.hpp"
 #include "UpdownTwo.hpp"
 #include "UpdownThree.hpp"
+#include "StructureOne.hpp"
 
 TaskChooser::TaskChooser(QDir dataDir) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
@@ -12,44 +13,69 @@ dataDir(dataDir)
 {
     setWindowTitle("Learn Greenlandic Demo");
 
+    QVBoxLayout *vbox = new QVBoxLayout;
 
-    lectureOne = new QPushButton("Forelæsning 1: Introduktion");
+
+    QGroupBox *lecGBox = new QGroupBox("Forelæsninger");
+    QVBoxLayout *lecVBox = new QVBoxLayout;
+
+    QLabel *ql = new QLabel("Demo af diverse funktionaliteter som vil være i det færdige produkt.\n");
+    ql->setWordWrap(true);
+    vbox->addWidget(ql);
+
+    QPushButton *lectureOne = new QPushButton("Forelæsning 1: Introduktion");
     // lectureOne->setToolTip("Waffles"); // catch enter() event, call QToolTip::showText()
-    lectureTwo = new QPushButton("Forelæsning 2: Typiske Danskerfejl");
+    QPushButton *lectureTwo = new QPushButton("Forelæsning 2: Typiske Danskerfejl");
     connect(lectureOne, SIGNAL(clicked()), this, SLOT(showLectureOne()));
     connect(lectureTwo, SIGNAL(clicked()), this, SLOT(showLectureTwo()));
 
-    QVBoxLayout *lecVBox = new QVBoxLayout;
     lecVBox->addWidget(lectureOne);
     lecVBox->addWidget(lectureTwo);
 
-    QGroupBox *lecGBox = new QGroupBox("Forelæsninger");
     lecGBox->setLayout(lecVBox);
+    vbox->addWidget(lecGBox);
 
 
-    updownOne = new QPushButton("Up/Down: Reception");
-    updownTwo = new QPushButton("Up/Down: Produktion");
-    updownThree = new QPushButton("Up/Down: Oversættelse");
+    QGroupBox *udGBox = new QGroupBox("Up/Down Øvelser");
+    QVBoxLayout *udVBox = new QVBoxLayout;
+
+    QPushButton *updownOne = new QPushButton("Up/Down: Reception");
+    QPushButton *updownTwo = new QPushButton("Up/Down: Produktion");
+    QPushButton *updownThree = new QPushButton("Up/Down: Oversættelse");
     connect(updownOne, SIGNAL(clicked()), this, SLOT(showUpdownOne()));
     connect(updownTwo, SIGNAL(clicked()), this, SLOT(showUpdownTwo()));
     connect(updownThree, SIGNAL(clicked()), this, SLOT(showUpdownThree()));
 
-    QVBoxLayout *udVBox = new QVBoxLayout;
     udVBox->addWidget(updownOne);
     udVBox->addWidget(updownTwo);
     udVBox->addWidget(updownThree);
 
-    QGroupBox *udGBox = new QGroupBox("Up/Down Øvelser");
     udGBox->setLayout(udVBox);
-
-
-    QLabel *ql = new QLabel("Demo af diverse funktionaliteter som vil være i det færdige produkt.\n");
-    ql->setWordWrap(true);
-
-    QVBoxLayout *vbox = new QVBoxLayout;
-    vbox->addWidget(ql);
-    vbox->addWidget(lecGBox);
     vbox->addWidget(udGBox);
+
+
+    QGroupBox *stGBox = new QGroupBox("Strukturøvelser");
+    QVBoxLayout *stVBox = new QVBoxLayout;
+
+    QPushButton *structureOne = new QPushButton("Struktur: Lydopfattelse");
+    /*
+    QPushButton *structureTwo = new QPushButton("Struktur: Dan nye ord");
+    QPushButton *structureThree = new QPushButton("Struktur: Lyt, forstå, dan ord");
+    //*/
+    connect(structureOne, SIGNAL(clicked()), this, SLOT(showStructureOne()));
+    /*
+    connect(structureTwo, SIGNAL(clicked()), this, SLOT(showStructureTwo()));
+    connect(structureThree, SIGNAL(clicked()), this, SLOT(showStructureThree()));
+    //*/
+
+    stVBox->addWidget(structureOne);
+    /*
+    stVBox->addWidget(structureTwo);
+    stVBox->addWidget(structureThree);
+    //*/
+
+    stGBox->setLayout(stVBox);
+    vbox->addWidget(stGBox);
 
     setLayout(vbox);
 }
@@ -87,4 +113,17 @@ void TaskChooser::showUpdownThree() {
     updown->show();
     updown->raise();
     updown->activateWindow();
+}
+
+void TaskChooser::showStructureOne() {
+    StructureOne *structure = new StructureOne(dataDir);
+    structure->show();
+    structure->raise();
+    structure->activateWindow();
+}
+
+void TaskChooser::showStructureTwo() {
+}
+
+void TaskChooser::showStructureThree() {
 }

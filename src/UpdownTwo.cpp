@@ -60,15 +60,17 @@ void UpdownTwo::showNext() {
 void UpdownTwo::checkInput() {
     if (input->text() == data.updowns.at(curAt).first) {
         result->setText("<center><span style='color: darkgreen;'><b>Korrekt!</b></span></center>");
+        yield->hide();
     }
     else if (input->text().compare(data.updowns.at(curAt).first, Qt::CaseInsensitive) == 0) {
         result->setText("<center><span style='color: darkyellow;'><b>Næsten korrekt.\nStore og små bogstaver gælder...</b></span></center>");
+        yield->show();
     }
     else {
         result->setText("<center><span style='color: darkred;'><b>Ikke korrekt.\nPrøv igen...</b></span></center>");
+        yield->show();
     }
     result->show();
-    yield->show();
     input->setFocus();
     input->selectAll();
     adjustSize();

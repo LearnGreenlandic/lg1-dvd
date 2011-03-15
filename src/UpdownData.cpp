@@ -5,12 +5,12 @@
 UpdownData::UpdownData(QDir dataDir)
 {
     if (!dataDir.cd("./updown/")) {
-        QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/updown/!");
+        QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/updown/");
         throw(-1);
     }
 
     if (!dataDir.exists("gloss.txt") || !dataDir.exists("updown.txt")) {
-        QMessageBox::critical(0, "Missing Data!", "Data files missing from lessons/updown/!");
+        QMessageBox::critical(0, "Missing Data!", "Data files missing from lessons/updown/");
         throw(-1);
     }
 
