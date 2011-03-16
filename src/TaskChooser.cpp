@@ -6,6 +6,8 @@
 #include "UpdownTwo.hpp"
 #include "UpdownThree.hpp"
 #include "StructureOne.hpp"
+#include "StructureTwo.hpp"
+#include "StructureThree.hpp"
 
 TaskChooser::TaskChooser(QDir dataDir) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
@@ -24,7 +26,6 @@ dataDir(dataDir)
     vbox->addWidget(ql);
 
     QPushButton *lectureOne = new QPushButton("Forelæsning 1: Introduktion");
-    // lectureOne->setToolTip("Waffles"); // catch enter() event, call QToolTip::showText()
     QPushButton *lectureTwo = new QPushButton("Forelæsning 2: Typiske Danskerfejl");
     connect(lectureOne, SIGNAL(clicked()), this, SLOT(showLectureOne()));
     connect(lectureTwo, SIGNAL(clicked()), this, SLOT(showLectureTwo()));
@@ -58,21 +59,15 @@ dataDir(dataDir)
     QVBoxLayout *stVBox = new QVBoxLayout;
 
     QPushButton *structureOne = new QPushButton("Struktur: Lydopfattelse");
-    /*
     QPushButton *structureTwo = new QPushButton("Struktur: Dan nye ord");
     QPushButton *structureThree = new QPushButton("Struktur: Lyt, forstå, dan ord");
-    //*/
     connect(structureOne, SIGNAL(clicked()), this, SLOT(showStructureOne()));
-    /*
     connect(structureTwo, SIGNAL(clicked()), this, SLOT(showStructureTwo()));
     connect(structureThree, SIGNAL(clicked()), this, SLOT(showStructureThree()));
-    //*/
 
     stVBox->addWidget(structureOne);
-    /*
     stVBox->addWidget(structureTwo);
     stVBox->addWidget(structureThree);
-    //*/
 
     stGBox->setLayout(stVBox);
     vbox->addWidget(stGBox);
@@ -123,7 +118,15 @@ void TaskChooser::showStructureOne() {
 }
 
 void TaskChooser::showStructureTwo() {
+    StructureTwo *structure = new StructureTwo(dataDir);
+    structure->show();
+    structure->raise();
+    structure->activateWindow();
 }
 
 void TaskChooser::showStructureThree() {
+    StructureThree *structure = new StructureThree(dataDir);
+    structure->show();
+    structure->raise();
+    structure->activateWindow();
 }

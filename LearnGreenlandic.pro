@@ -21,10 +21,10 @@ SOURCES += \
     src/UpdownOne.cpp \
     src/UpdownTwo.cpp \
     src/UpdownThree.cpp \
+    src/StructureData.cpp \
     src/StructureOne.cpp \
     src/StructureTwo.cpp \
-    src/StructureThree.cpp \
-    src/StructureData.cpp
+    src/StructureThree.cpp
 
 HEADERS  += \
     src/constants.hpp \
