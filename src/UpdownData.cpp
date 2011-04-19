@@ -76,10 +76,10 @@ QString UpdownData::glossUpperDetailed(QString upper) {
         }
         QString t = upper.mid(o, n-o);
         if (glosses.find(t) != glosses.end()) {
-            ql.push_back(t + "\t" + glosses[t]);
+            ql.push_back(QString("<tr><td>") + t + "</td><td width='20'>&nbsp;</td><td>" + glosses[t] + "</td></tr>");
         }
         else {
-            ql.push_back(t + "\t" + t);
+            ql.push_back(QString("<tr><td>") + t + "</td><td width='20'>&nbsp;</td><td>" + t + "</td></tr>");
         }
         o = n+1;
     }
@@ -89,13 +89,13 @@ QString UpdownData::glossUpperDetailed(QString upper) {
     }
     QString t = upper.mid(o);
     if (glosses.find(t) != glosses.end()) {
-        ql.push_back(t + "\t" + glosses[t]);
+        ql.push_back(QString("<tr><td>") + t + "</td><td width='20'>&nbsp;</td><td>" + glosses[t] + "</td></tr>");
     }
     else {
-        ql.push_back(t + "\t" + t);
+        ql.push_back(QString("<tr><td>") + t + "</td><td width='20'>&nbsp;</td><td>" + t + "</td></tr>");
     }
 
-    return ql.join("\n");
+    return QString("<font size='+2'><table>") + ql.join("\n") + "</table></font>";
 }
 
 QString UpdownData::glossUpperShort(QString upper) {
@@ -127,5 +127,5 @@ QString UpdownData::glossUpperShort(QString upper) {
         ql.push_back(t);
     }
 
-    return ql.join(" + ");
+    return QString("<font size='+2'>") + ql.join(" + ") + "</font>";
 }

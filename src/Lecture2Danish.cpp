@@ -14,6 +14,11 @@ QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::
         throw(-1);
     }
 
+    if (!dataDir.exists(LECTURE_FILE)) {
+        QMessageBox::critical(0, "Missing Lecture Data!", "Could not locate " LECTURE_FILE "!");
+        throw(-1);
+    }
+
     QFileInfoList slideFiles = dataDir.entryInfoList(QStringList() << "*.png");
     foreach (QFileInfo slideFile, slideFiles) {
         uint32_t key = slideFile.baseName().toULong();
