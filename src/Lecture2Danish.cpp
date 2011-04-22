@@ -1,4 +1,4 @@
-#include "constants.hpp"
+#include "Constants.hpp"
 #include "Lecture2Danish.hpp"
 
 #include <QGLShaderProgram>

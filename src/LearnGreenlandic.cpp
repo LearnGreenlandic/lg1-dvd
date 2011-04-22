@@ -1,4 +1,4 @@
-#include "constants.hpp"
+#include "Constants.hpp"
 #include "TaskChooser.hpp"
 #include <QtGui/QApplication>
 #include <ctime>
@@ -8,7 +8,7 @@
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     app.setOrganizationDomain("learngreenlandic.com");
-    app.setOrganizationName("The Oxen Road Inn");
+    app.setOrganizationName("LearnGreenlandic");
     app.setApplicationName("Learn Greenlandic");
     app.setQuitOnLastWindowClosed(true);
 

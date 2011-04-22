@@ -2,7 +2,6 @@
 #define CRYPTFILE_HPP
 
 #include <QFile>
-#include <stdint.h>
 
 class CryptFile : public QFile {
     Q_OBJECT

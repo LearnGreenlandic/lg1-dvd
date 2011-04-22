@@ -28,9 +28,10 @@ qint64 CryptFile::readData(char *data, qint64 maxSize) {
     return r;
 }
 
+const size_t bz = 16384;
+char buf[bz];
+
 qint64 CryptFile::writeData(const char *data, qint64 maxSize) {
-    const size_t bz = 4096;
-    char buf[bz];
     qint64 r = 0;
 
     qint64 i = 0;

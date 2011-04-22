@@ -2,6 +2,7 @@
 #define LECTURE1DANISH_H
 
 #include "ScalingGraphicsView.hpp"
+#include "CryptFile.hpp"
 
 #include <phonon/mediaobject.h>
 #include <phonon/audiooutput.h>
@@ -38,6 +39,7 @@ private:
     ScalingGraphicsView *view;
     QGraphicsPixmapItem *slide;
 
+    CryptFile *mediafile;
     Phonon::MediaObject *media;
     Phonon::VideoWidget *video;
     Phonon::AudioOutput *audio;

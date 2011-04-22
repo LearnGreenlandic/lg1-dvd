@@ -1,4 +1,4 @@
-#include "constants.hpp"
+#include "Constants.hpp"
 #include "Lecture1Danish.hpp"
 
 #include <QGLShaderProgram>
@@ -32,7 +32,8 @@ QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::
     audio = new Phonon::AudioOutput(Phonon::VideoCategory);
     Phonon::createPath(media, audio);
 
-    media->setCurrentSource(dataDir.absoluteFilePath(LECTURE_FILE));
+    mediafile = new CryptFile(dataDir.absoluteFilePath(LECTURE_FILE));
+    media->setCurrentSource(mediafile);
     media->setTickInterval(1000);
     connect(media, SIGNAL(tick(qint64)), this, SLOT(tick(qint64)));
 
