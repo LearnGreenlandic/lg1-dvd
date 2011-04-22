@@ -2,7 +2,7 @@
 #include <QResizeEvent>
 
 ScalingGraphicsView::ScalingGraphicsView(QGraphicsScene *scene, QWidget *parent) :
-    QGraphicsView(scene, parent)
+QGraphicsView(scene, parent)
 {
 }
 

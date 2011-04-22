@@ -24,7 +24,8 @@ SOURCES += \
     src/StructureData.cpp \
     src/StructureOne.cpp \
     src/StructureTwo.cpp \
-    src/StructureThree.cpp
+    src/StructureThree.cpp \
+    src/CryptFile.cpp
 
 HEADERS  += \
     src/constants.hpp \
@@ -39,7 +40,8 @@ HEADERS  += \
     src/StructureData.hpp \
     src/StructureOne.hpp \
     src/StructureTwo.hpp \
-    src/StructureThree.hpp
+    src/StructureThree.hpp \
+    src/CryptFile.hpp
 
 CONFIG -= warn_off
 CONFIG -= warn_on
