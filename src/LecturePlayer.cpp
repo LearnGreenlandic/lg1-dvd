@@ -1,21 +1,20 @@
-#include "Constants.hpp"
-#include "Lecture1Danish.hpp"
+#include "LecturePlayer.hpp"
 
 #include <QGLShaderProgram>
 
-Lecture1Danish::Lecture1Danish(QDir dataDir) :
+LecturePlayer::LecturePlayer(QString title, QDir dataDir, QString lecDir) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint)
 {
-    setWindowTitle("Forelæsning 1: Introduktion");
+    setWindowTitle(title);
     setMinimumSize(minimumSizeHint());
 
-    if (!dataDir.cd("./1/danish/")) {
-        QMessageBox::critical(0, "Missing Data!", "Could not change working folder to lessons/1/danish/!");
+    if (!dataDir.cd(lecDir)) {
+        QMessageBox::critical(0, "Missing Data!", QString("Could not change working folder to ") + dataDir.absoluteFilePath(lecDir) + "!");
         throw(-1);
     }
 
-    if (!dataDir.exists(LECTURE_FILE)) {
-        QMessageBox::critical(0, "Missing Lecture Data!", "Could not locate " LECTURE_FILE "!");
+    if (!dataDir.exists("lecture.dat")) {
+        QMessageBox::critical(0, "Missing Lecture Data!", "Could not locate lecture.dat!");
         throw(-1);
     }
 
@@ -32,7 +31,7 @@ QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::
     audio = new Phonon::AudioOutput(Phonon::VideoCategory);
     Phonon::createPath(media, audio);
 
-    mediafile = new CryptFile(dataDir.absoluteFilePath(LECTURE_FILE));
+    mediafile = new CryptFile(dataDir.absoluteFilePath("lecture.dat"));
     media->setCurrentSource(mediafile);
     media->setTickInterval(1000);
     connect(media, SIGNAL(tick(qint64)), this, SLOT(tick(qint64)));
@@ -96,18 +95,18 @@ QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::
     setContentsMargins(0, 0, 0, 0);
 }
 
-void Lecture1Danish::closeEvent(QCloseEvent *event) {
+void LecturePlayer::closeEvent(QCloseEvent *event) {
     media->stop();
     media->clear();
     event->accept();
 }
 
-void Lecture1Danish::show() {
+void LecturePlayer::show() {
     QWidget::show();
     media->play();
 }
 
-void Lecture1Danish::tick(qint64 time) {
+void LecturePlayer::tick(qint64 time) {
     QTime displayTime(0, (time / 60000) % 60, (time / 1000) % 60);
     timeLcd->display(displayTime.toString("mm:ss"));
 
@@ -131,7 +130,7 @@ void Lecture1Danish::tick(qint64 time) {
     }
 }
 
-void Lecture1Danish::togglePlay() {
+void LecturePlayer::togglePlay() {
     if (media->state() == Phonon::PlayingState) {
         playpause->setIcon(style()->standardIcon(QStyle::SP_MediaPlay));
         playpause->setText("Play");
@@ -144,10 +143,10 @@ void Lecture1Danish::togglePlay() {
     }
 }
 
-QSize Lecture1Danish::sizeHint() const {
+QSize LecturePlayer::sizeHint() const {
     return QSize(1010, 335);
 }
 
-QSize Lecture1Danish::minimumSizeHint() const {
+QSize LecturePlayer::minimumSizeHint() const {
     return QSize(1010, 335);
 }

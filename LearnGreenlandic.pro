@@ -9,8 +9,6 @@ SOURCES += \
     src/LearnGreenlandic.cpp \
     src/TaskChooser.cpp \
     src/ScalingGraphicsView.cpp \
-    src/Lecture1Danish.cpp \
-    src/Lecture2Danish.cpp \
     src/UpdownData.cpp \
     src/UpdownOne.cpp \
     src/UpdownTwo.cpp \
@@ -19,14 +17,12 @@ SOURCES += \
     src/StructureOne.cpp \
     src/StructureTwo.cpp \
     src/StructureThree.cpp \
-    src/CryptFile.cpp
+    src/CryptFile.cpp \
+    src/LecturePlayer.cpp
 
 HEADERS  += \
-    src/Constants.hpp \
     src/TaskChooser.hpp \
     src/ScalingGraphicsView.hpp \
-    src/Lecture1Danish.hpp \
-    src/Lecture2Danish.hpp \
     src/UpdownData.hpp \
     src/UpdownOne.hpp \
     src/UpdownTwo.hpp \
@@ -35,7 +31,8 @@ HEADERS  += \
     src/StructureOne.hpp \
     src/StructureTwo.hpp \
     src/StructureThree.hpp \
-    src/CryptFile.hpp
+    src/CryptFile.hpp \
+    src/LecturePlayer.hpp
 
 CONFIG -= warn_off
 CONFIG += warn_on

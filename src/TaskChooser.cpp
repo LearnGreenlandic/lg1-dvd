@@ -1,13 +1,11 @@
-#include "Lecture1Danish.hpp"
-#include "Lecture2Danish.hpp"
-
-#include "TaskChooser.hpp"
+#include "LecturePlayer.hpp"
 #include "UpdownOne.hpp"
 #include "UpdownTwo.hpp"
 #include "UpdownThree.hpp"
 #include "StructureOne.hpp"
 #include "StructureTwo.hpp"
 #include "StructureThree.hpp"
+#include "TaskChooser.hpp"
 
 TaskChooser::TaskChooser(QDir dataDir) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
@@ -76,14 +74,14 @@ dataDir(dataDir)
 }
 
 void TaskChooser::showLectureOne() {
-    Lecture1Danish *lecture = new Lecture1Danish(dataDir);
+    LecturePlayer *lecture = new LecturePlayer("Forelæsning 1: Introduktion", dataDir, "./1/danish/");
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureTwo() {
-    Lecture2Danish *lecture = new Lecture2Danish(dataDir);
+    LecturePlayer *lecture = new LecturePlayer("Forelæsning 2: Typiske Danskerfejl", dataDir, "./2/danish/");
     lecture->show();
     lecture->raise();
     lecture->activateWindow();

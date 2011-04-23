@@ -1,4 +1,3 @@
-#include "Constants.hpp"
 #include "TaskChooser.hpp"
 #include <QtGui/QApplication>
 #include <ctime>
@@ -21,7 +20,7 @@ int main(int argc, char *argv[]) {
     }
 
     QDir dataDir(tDir.absolutePath() + "/lessons");
-    if (!dataDir.exists() || !dataDir.exists("./1/danish/" LECTURE_FILE) || !dataDir.exists("./1/danish/0.png")) {
+    if (!dataDir.exists() || !dataDir.exists("./1/danish/lecture.dat") || !dataDir.exists("./1/danish/0.png")) {
         QMessageBox::critical(0, "Missing Data!", "Could not find required files in lessons/1/danish/");
         app.exit(-1);
         return -1;

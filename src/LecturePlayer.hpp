@@ -1,5 +1,5 @@
-#ifndef LECTURE1DANISH_H
-#define LECTURE1DANISH_H
+#ifndef LECTUREPLAYER_H
+#define LECTUREPLAYER_H
 
 #include "ScalingGraphicsView.hpp"
 #include "CryptFile.hpp"
@@ -14,11 +14,11 @@
 #include <QtOpenGL/QGLWidget>
 #include <stdint.h>
 
-class Lecture1Danish : public QWidget {
+class LecturePlayer : public QWidget {
     Q_OBJECT
 
 public:
-    Lecture1Danish(QDir dataDir);
+    LecturePlayer(QString title, QDir dataDir, QString lecDir);
 
     void closeEvent(QCloseEvent *event);
 
@@ -49,4 +49,4 @@ private:
     QLCDNumber *timeLcd;
 };
 
-#endif // LECTURE1DANISH_H
+#endif // LECTUREPLAYER_H
