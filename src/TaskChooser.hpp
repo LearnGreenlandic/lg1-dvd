@@ -13,6 +13,9 @@ public:
 public slots:
     void showLectureOne();
     void showLectureTwo();
+    void showLectureThree();
+    void showLectureFour();
+    void showLectureFiveOne();
 
     void showUpdownOne();
     void showUpdownTwo();
