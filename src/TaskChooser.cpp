@@ -15,13 +15,14 @@ dataDir(dataDir)
 
     QVBoxLayout *vbox = new QVBoxLayout;
 
-
-    QGroupBox *lecGBox = new QGroupBox("Forelæsninger");
-    QVBoxLayout *lecVBox = new QVBoxLayout;
-
     QLabel *ql = new QLabel("Demo af diverse funktionaliteter som vil være i det færdige produkt.\n");
     ql->setWordWrap(true);
     vbox->addWidget(ql);
+
+    QHBoxLayout *lecHBox = new QHBoxLayout;
+
+    QGroupBox *lecGBox = new QGroupBox("Forelæsninger");
+    QVBoxLayout *lecVBox = new QVBoxLayout;
 
     QPushButton *lectureOne = new QPushButton("Forelæsning 1: De \"sære\" lyd");
     QPushButton *lectureTwo = new QPushButton("Forelæsning 2: Typiske danskerfejl");
@@ -41,9 +42,39 @@ dataDir(dataDir)
     lecVBox->addWidget(lectureThree);
     lecVBox->addWidget(lectureFour);
     lecVBox->addWidget(lectureFiveOne);
+    lecVBox->addWidget(lectureFiveTwo);
 
     lecGBox->setLayout(lecVBox);
-    vbox->addWidget(lecGBox);
+    lecHBox->addWidget(lecGBox);
+
+
+    lecGBox = new QGroupBox("Lectures");
+    lecVBox = new QVBoxLayout;
+
+    lectureOne = new QPushButton("Lecture 1: The New Sounds");
+    lectureTwo = new QPushButton("Lecture 2: Typical mistakes");
+    lectureThree = new QPushButton("Lecture 3: Tones and long words");
+    lectureFour = new QPushButton("Lecture 4: Practice and repetition");
+    lectureFiveOne = new QPushButton("Lecture 5.1: Words and lexicons in lesson one");
+    lectureFiveTwo = new QPushButton("Lecture 5.2: Introduction to grammar");
+    connect(lectureOne, SIGNAL(clicked()), this, SLOT(showLectureOne_Eng()));
+    connect(lectureTwo, SIGNAL(clicked()), this, SLOT(showLectureTwo_Eng()));
+    connect(lectureThree, SIGNAL(clicked()), this, SLOT(showLectureThree_Eng()));
+    connect(lectureFour, SIGNAL(clicked()), this, SLOT(showLectureFour_Eng()));
+    connect(lectureFiveOne, SIGNAL(clicked()), this, SLOT(showLectureFiveOne_Eng()));
+    connect(lectureFiveTwo, SIGNAL(clicked()), this, SLOT(showLectureFiveTwo_Eng()));
+
+    lecVBox->addWidget(lectureOne);
+    lecVBox->addWidget(lectureTwo);
+    lecVBox->addWidget(lectureThree);
+    lecVBox->addWidget(lectureFour);
+    lecVBox->addWidget(lectureFiveOne);
+    lecVBox->addWidget(lectureFiveTwo);
+
+    lecGBox->setLayout(lecVBox);
+    lecHBox->addWidget(lecGBox);
+
+    vbox->addLayout(lecHBox);
 
 
     QGroupBox *udGBox = new QGroupBox("Up/Down Øvelser");
@@ -121,6 +152,48 @@ void TaskChooser::showLectureFiveOne() {
 
 void TaskChooser::showLectureFiveTwo() {
     LecturePlayer *lecture = new LecturePlayer("Forelæsning 5.2: Grammatikken i lektion 1", dataDir, "./5_2/danish/");
+    lecture->show();
+    lecture->raise();
+    lecture->activateWindow();
+}
+
+void TaskChooser::showLectureOne_Eng() {
+    LecturePlayer *lecture = new LecturePlayer("Lecture 1: The New Sounds", dataDir, "./1/english/");
+    lecture->show();
+    lecture->raise();
+    lecture->activateWindow();
+}
+
+void TaskChooser::showLectureTwo_Eng() {
+    LecturePlayer *lecture = new LecturePlayer("Lecture 2: Typical mistakes", dataDir, "./2/english/");
+    lecture->show();
+    lecture->raise();
+    lecture->activateWindow();
+}
+
+void TaskChooser::showLectureThree_Eng() {
+    LecturePlayer *lecture = new LecturePlayer("Lecture 3: Tones and long words", dataDir, "./3/english/");
+    lecture->show();
+    lecture->raise();
+    lecture->activateWindow();
+}
+
+void TaskChooser::showLectureFour_Eng() {
+    LecturePlayer *lecture = new LecturePlayer("Lecture 4: Practice and repetition", dataDir, "./4/english/");
+    lecture->show();
+    lecture->raise();
+    lecture->activateWindow();
+}
+
+void TaskChooser::showLectureFiveOne_Eng() {
+    LecturePlayer *lecture = new LecturePlayer("Lecture 5.1: Words and lexicons in lesson one", dataDir, "./5_1/english/");
+    lecture->show();
+    lecture->raise();
+    lecture->activateWindow();
+}
+
+void TaskChooser::showLectureFiveTwo_Eng() {
+    LecturePlayer *lecture = new LecturePlayer("Lecture 5.2: Introduction to grammar", dataDir, "./5_2/english/");
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
