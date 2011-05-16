@@ -18,7 +18,10 @@ SOURCES += \
     src/StructureTwo.cpp \
     src/StructureThree.cpp \
     src/CryptFile.cpp \
-    src/LecturePlayer.cpp
+    src/LecturePlayer.cpp \
+    src/PronounceData.cpp \
+    src/PronounceOne.cpp \
+    src/PronounceTwo.cpp
 
 HEADERS  += \
     src/TaskChooser.hpp \
@@ -32,7 +35,10 @@ HEADERS  += \
     src/StructureTwo.hpp \
     src/StructureThree.hpp \
     src/CryptFile.hpp \
-    src/LecturePlayer.hpp
+    src/LecturePlayer.hpp \
+    src/PronounceData.hpp \
+    src/PronounceOne.hpp \
+    src/PronounceTwo.hpp
 
 CONFIG -= warn_off
 CONFIG += warn_on

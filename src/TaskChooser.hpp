@@ -25,6 +25,9 @@ public slots:
     void showLectureFiveOne_Eng();
     void showLectureFiveTwo_Eng();
 
+    void showPronounceOne();
+    void showPronounceTwo();
+
     void showUpdownOne();
     void showUpdownTwo();
     void showUpdownThree();

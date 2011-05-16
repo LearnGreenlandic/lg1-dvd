@@ -14,7 +14,7 @@ curAt(0)
         "Sæt tilhænget N+MIU på bynavnene, så du danner ord med betydningen 'indbygger i BYNAVN'."
         " Udtal det nye ord højt og lyt derefter til Tikas indtaling af det samme ord."
         " Klik 'næste' når du er tilfreds med din egen udtale.<br/>"
-        "Hvis du slet ikke kan få ordet dannet inde i hovedet, må du som en sidste udvej vende tilbage til lektion 1-2 for at forstå, hvad det er der foregår netop her.<br/>"
+        "Hvis du slet ikke kan få ordet dannet inde i hovedet, må du som en sidste udvej vende tilbage til øvelse 1-2 for at forstå, hvad det er der foregår netop her.<br/>"
         );
     ql->setWordWrap(true);
     qvbl->addWidget(ql);
@@ -43,7 +43,7 @@ curAt(0)
     result = new QLabel;
     cagain = new QPushButton("Hør den korrekte udtale");
     connect(cagain, SIGNAL(clicked()), this, SLOT(playCorrectAgain()));
-    qvbl->addWidget(new QLabel("Skriv 'inbygger i bynavn' formen:"));
+    qvbl->addWidget(new QLabel("Skriv 'indbygger i bynavn' formen:"));
     qvbl->addWidget(input);
     qvbl->addWidget(check);
     qvbl->addWidget(result);

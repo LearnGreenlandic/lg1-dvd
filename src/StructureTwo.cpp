@@ -12,7 +12,7 @@ curAt(0)
     QLabel *ql = new QLabel(
         "Sæt tilhænget N+MIU på bynavnene, så du danner ord med betydningen 'indbygger i BYNAVN'.\n"
         "Lad være med at lade dig snyde af den retskrivningsdetalje, at et q sidst i ordet STAVES som -r-, når der kommer en anden konsonant bagefter."
-        " Som du allerede ved det fra forelæsning X (ToDo), udtales -r- i denne stilling alligevel ikke som -r-, men som en fordobling af den konsonant, der kommer efter."
+        " Som du allerede ved det fra forelæsning 2, udtales -r- i denne stilling alligevel ikke som -r-, men som en fordobling af den konsonant, der kommer efter."
         " Tilhæng sæt­tes altid til entalsfor­men, så for de 7 byer, hvis navne er født med en fler­tals­en­delse, skal du bruge den en­talsform, du får serveret.\n"
         );
     ql->setWordWrap(true);

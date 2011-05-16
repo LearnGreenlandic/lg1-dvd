@@ -1,4 +1,6 @@
 #include "LecturePlayer.hpp"
+#include "PronounceOne.hpp"
+#include "PronounceTwo.hpp"
 #include "UpdownOne.hpp"
 #include "UpdownTwo.hpp"
 #include "UpdownThree.hpp"
@@ -75,6 +77,21 @@ dataDir(dataDir)
     lecHBox->addWidget(lecGBox);
 
     vbox->addLayout(lecHBox);
+
+
+    QGroupBox *pnGBox = new QGroupBox("Udtaleøvelser");
+    QVBoxLayout *pnVBox = new QVBoxLayout;
+
+    QPushButton *pronounceOne = new QPushButton("Udtale: Gentag");
+    QPushButton *pronounceTwo = new QPushButton("Udtale: Afskriv");
+    connect(pronounceOne, SIGNAL(clicked()), this, SLOT(showPronounceOne()));
+    connect(pronounceTwo, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+
+    pnVBox->addWidget(pronounceOne);
+    pnVBox->addWidget(pronounceTwo);
+
+    pnGBox->setLayout(pnVBox);
+    vbox->addWidget(pnGBox);
 
 
     QGroupBox *udGBox = new QGroupBox("Up/Down Øvelser");
@@ -197,6 +214,20 @@ void TaskChooser::showLectureFiveTwo_Eng() {
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
+}
+
+void TaskChooser::showPronounceOne() {
+    PronounceOne *pronounce = new PronounceOne(dataDir);
+    pronounce->show();
+    pronounce->raise();
+    pronounce->activateWindow();
+}
+
+void TaskChooser::showPronounceTwo() {
+    PronounceTwo *pronounce = new PronounceTwo(dataDir);
+    pronounce->show();
+    pronounce->raise();
+    pronounce->activateWindow();
 }
 
 void TaskChooser::showUpdownOne() {
