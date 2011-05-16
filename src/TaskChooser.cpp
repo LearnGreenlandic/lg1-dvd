@@ -23,16 +23,18 @@ dataDir(dataDir)
     ql->setWordWrap(true);
     vbox->addWidget(ql);
 
-    QPushButton *lectureOne = new QPushButton("Forelæsning 1: Introduktion");
-    QPushButton *lectureTwo = new QPushButton("Forelæsning 2: Typiske Danskerfejl");
-    QPushButton *lectureThree = new QPushButton("Forelæsning 3: Title?");
-    QPushButton *lectureFour = new QPushButton("Forelæsning 4: Title?");
-    QPushButton *lectureFiveOne = new QPushButton("Forelæsning 5.1: Title?");
+    QPushButton *lectureOne = new QPushButton("Forelæsning 1: De \"sære\" lyd");
+    QPushButton *lectureTwo = new QPushButton("Forelæsning 2: Typiske danskerfejl");
+    QPushButton *lectureThree = new QPushButton("Forelæsning 3: Tonerne og de lange ord");
+    QPushButton *lectureFour = new QPushButton("Forelæsning 4: Træning og opsamling");
+    QPushButton *lectureFiveOne = new QPushButton("Forelæsning 5.1: Gloserne i lektion 1");
+    QPushButton *lectureFiveTwo = new QPushButton("Forelæsning 5.2: Grammatikken i lektion 1");
     connect(lectureOne, SIGNAL(clicked()), this, SLOT(showLectureOne()));
     connect(lectureTwo, SIGNAL(clicked()), this, SLOT(showLectureTwo()));
     connect(lectureThree, SIGNAL(clicked()), this, SLOT(showLectureThree()));
     connect(lectureFour, SIGNAL(clicked()), this, SLOT(showLectureFour()));
     connect(lectureFiveOne, SIGNAL(clicked()), this, SLOT(showLectureFiveOne()));
+    connect(lectureFiveTwo, SIGNAL(clicked()), this, SLOT(showLectureFiveTwo()));
 
     lecVBox->addWidget(lectureOne);
     lecVBox->addWidget(lectureTwo);
@@ -83,35 +85,42 @@ dataDir(dataDir)
 }
 
 void TaskChooser::showLectureOne() {
-    LecturePlayer *lecture = new LecturePlayer("Forelæsning 1: Introduktion", dataDir, "./1/danish/");
+    LecturePlayer *lecture = new LecturePlayer("Forelæsning 1: De \"sære\" lyd", dataDir, "./1/danish/");
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureTwo() {
-    LecturePlayer *lecture = new LecturePlayer("Forelæsning 2: Typiske Danskerfejl", dataDir, "./2/danish/");
+    LecturePlayer *lecture = new LecturePlayer("Forelæsning 2: Typiske danskerfejl", dataDir, "./2/danish/");
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureThree() {
-    LecturePlayer *lecture = new LecturePlayer("Forelæsning 3: Title?", dataDir, "./3/danish/");
+    LecturePlayer *lecture = new LecturePlayer("Forelæsning 3: Tonerne og de lange ord", dataDir, "./3/danish/");
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureFour() {
-    LecturePlayer *lecture = new LecturePlayer("Forelæsning 4: Title?", dataDir, "./4/danish/");
+    LecturePlayer *lecture = new LecturePlayer("Forelæsning 4: Træning og opsamling", dataDir, "./4/danish/");
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureFiveOne() {
-    LecturePlayer *lecture = new LecturePlayer("Forelæsning 5.1: Title?", dataDir, "./5_1/danish/");
+    LecturePlayer *lecture = new LecturePlayer("Forelæsning 5.1: Gloserne i lektion 1", dataDir, "./5_1/danish/");
+    lecture->show();
+    lecture->raise();
+    lecture->activateWindow();
+}
+
+void TaskChooser::showLectureFiveTwo() {
+    LecturePlayer *lecture = new LecturePlayer("Forelæsning 5.2: Grammatikken i lektion 1", dataDir, "./5_2/danish/");
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
