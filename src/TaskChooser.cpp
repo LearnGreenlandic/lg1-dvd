@@ -1,4 +1,6 @@
 #include "LecturePlayer.hpp"
+#include "WelcomeOne.hpp"
+#include "WelcomeTwo.hpp"
 #include "PronounceOne.hpp"
 #include "PronounceTwo.hpp"
 #include "UpdownOne.hpp"
@@ -77,6 +79,21 @@ dataDir(dataDir)
     lecHBox->addWidget(lecGBox);
 
     vbox->addLayout(lecHBox);
+
+
+    QGroupBox *wcGBox = new QGroupBox("Velkomstøvelser");
+    QVBoxLayout *wcVBox = new QVBoxLayout;
+
+    QPushButton *welcomeOne = new QPushButton("Velkomst: Stavelsesdeling");
+    QPushButton *welcomeTwo = new QPushButton("Velkomst: Udtale");
+    connect(welcomeOne, SIGNAL(clicked()), this, SLOT(showWelcomeOne()));
+    connect(welcomeTwo, SIGNAL(clicked()), this, SLOT(showWelcomeTwo()));
+
+    wcVBox->addWidget(welcomeOne);
+    wcVBox->addWidget(welcomeTwo);
+
+    wcGBox->setLayout(wcVBox);
+    vbox->addWidget(wcGBox);
 
 
     QGroupBox *pnGBox = new QGroupBox("Udtaleøvelser");
@@ -214,6 +231,20 @@ void TaskChooser::showLectureFiveTwo_Eng() {
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
+}
+
+void TaskChooser::showWelcomeOne() {
+    WelcomeOne *welcome = new WelcomeOne(dataDir);
+    welcome->show();
+    welcome->raise();
+    welcome->activateWindow();
+}
+
+void TaskChooser::showWelcomeTwo() {
+    WelcomeTwo *welcome = new WelcomeTwo(dataDir);
+    welcome->show();
+    welcome->raise();
+    welcome->activateWindow();
 }
 
 void TaskChooser::showPronounceOne() {

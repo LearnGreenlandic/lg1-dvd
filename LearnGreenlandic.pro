@@ -21,7 +21,9 @@ SOURCES += \
     src/LecturePlayer.cpp \
     src/PronounceData.cpp \
     src/PronounceOne.cpp \
-    src/PronounceTwo.cpp
+    src/PronounceTwo.cpp \
+    src/WelcomeOne.cpp \
+    src/WelcomeTwo.cpp
 
 HEADERS  += \
     src/TaskChooser.hpp \
@@ -38,7 +40,9 @@ HEADERS  += \
     src/LecturePlayer.hpp \
     src/PronounceData.hpp \
     src/PronounceOne.hpp \
-    src/PronounceTwo.hpp
+    src/PronounceTwo.hpp \
+    src/WelcomeOne.hpp \
+    src/WelcomeTwo.hpp
 
 CONFIG -= warn_off
 CONFIG += warn_on

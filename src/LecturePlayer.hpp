@@ -11,7 +11,6 @@
 #include <phonon/seekslider.h>
 #include <phonon/effect.h>
 #include <QtGui>
-#include <QtOpenGL/QGLWidget>
 #include <stdint.h>
 
 class LecturePlayer : public QWidget {

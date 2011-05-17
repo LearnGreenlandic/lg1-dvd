@@ -1,6 +1,6 @@
 #include "LecturePlayer.hpp"
 
-#include <QGLShaderProgram>
+#include <QtOpenGL/QGLWidget>
 
 LecturePlayer::LecturePlayer(QString title, QDir dataDir, QString lecDir) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint)

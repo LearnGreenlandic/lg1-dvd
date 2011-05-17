@@ -18,13 +18,12 @@ curAt(0)
     ql->setWordWrap(true);
     qvbl->addWidget(ql);
 
-    QString x, t = data.pairs.at(curAt).at(0);
+    QString x;
     if (data.pairs.at(curAt).size() == 3) {
-        t = data.pairs.at(curAt).at(2);
         x = QString(" (") + data.pairs.at(curAt).at(2) + ")";
     }
     query = new QLabel(QString("<font size='+3'>Bynavn: <b>") + data.pairs.at(curAt).at(0) + "</b>" + x + "</font><br>"
-        "Skriv 'indbygger i " + t + "' formen:<br>");
+        "Skriv 'indbygger i " + data.pairs.at(curAt).at(0) + "' formen:<br>");
 
     qvbl->addWidget(query);
     qvbl->addSpacing(5);
@@ -60,13 +59,12 @@ void StructureTwo::showNext() {
         return;
     }
 
-    QString x, t = data.pairs.at(curAt).at(0);
+    QString x;
     if (data.pairs.at(curAt).size() == 3) {
-        t = data.pairs.at(curAt).at(2);
         x = QString(" (") + data.pairs.at(curAt).at(2) + ")";
     }
     query->setText(QString("<font size='+3'>Bynavn: <b>") + data.pairs.at(curAt).at(0) + "</b>" + x + "</font><br>"
-        "Skriv 'indbygger i " + t + "' formen:<br>");
+        "Skriv 'indbygger i " + data.pairs.at(curAt).at(0) + "' formen:<br>");
 
     result->hide();
     yield->hide();
