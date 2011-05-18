@@ -15,7 +15,9 @@ curAt(-1)
         QMessageBox::critical(0, "Read Error!", "Could not open input.txt from data folder!");
         throw(-1);
     }
-    text = input_f.readAll();
+    QTextStream input_t(&input_f);
+    input_t.setCodec("UTF-8");
+    text = input_t.readAll();
 
     QFileInfoList wordFiles = dataDir.entryInfoList(QStringList() << "*.png");
     foreach (QFileInfo wordFile, wordFiles) {

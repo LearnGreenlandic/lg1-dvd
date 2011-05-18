@@ -9,19 +9,23 @@ curAt(0)
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 
-    QLabel *ql = new QLabel(
-        "Nu hører du først Tika udtale navnene på de 18 gamle grønlandske kommuner. Lyt og prøv at skrive det navn, du hører."
-        " Lad være med at forsøge at springe over hvor gærdet er lavest ved at skrive af efter en liste eller et atlas; det lærer du ikke noget af!"
-        " Husk at navne skrives med stort begyndelsesbogstav.\n");
+#if 0
+    tr("structure 1 ./1/");
+    tr("structure 1 ./2/");
+    tr("structure 1 ./3/");
+#endif
+
+    QLabel *ql = new QLabel(tr(QString(QString("structure 1 ") + which).toStdString().c_str()));
     ql->setWordWrap(true);
     qvbl->addWidget(ql);
+    qvbl->addSpacing(5);
 
     media = new Phonon::MediaObject;
     audio = new Phonon::AudioOutput;
     Phonon::createPath(media, audio);
 
     media->setCurrentSource(data.dataDir.absoluteFilePath(data.pairs.at(curAt).at(0)) + ".wav");
-    QPushButton *again = new QPushButton("Lyt igen");
+    QPushButton *again = new QPushButton(tr("Lyt igen"));
     connect(again, SIGNAL(clicked()), this, SLOT(playAgain()));
     qvbl->addWidget(again);
 
@@ -29,12 +33,12 @@ curAt(0)
 
     input = new QLineEdit;
     connect(input, SIGNAL(returnPressed()), this, SLOT(checkInput()));
-    check = new QPushButton("Check");
+    check = new QPushButton(tr("Check"));
     connect(check, SIGNAL(clicked()), this, SLOT(checkInput()));
-    yield = new QPushButton("Giv op...");
+    yield = new QPushButton(tr("Giv op..."));
     connect(yield, SIGNAL(clicked()), this, SLOT(yieldWord()));
     result = new QLabel;
-    qvbl->addWidget(new QLabel("Skriv hvad du hørte:"));
+    qvbl->addWidget(new QLabel(tr("Skriv hvad du hørte:")));
     qvbl->addWidget(input);
     qvbl->addWidget(check);
     qvbl->addWidget(result);
@@ -44,7 +48,7 @@ curAt(0)
 
     qvbl->addSpacing(15);
 
-    QPushButton *nb = new QPushButton("Gå til næste ord");
+    QPushButton *nb = new QPushButton(tr("Gå til næste ord"));
     connect(nb, SIGNAL(clicked()), this, SLOT(showNext()));
     qvbl->addWidget(nb);
 
@@ -65,7 +69,7 @@ void StructureOne::playAgain() {
 void StructureOne::showNext() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(data.pairs.size())) {
-        QMessageBox::information(0, "Færdig!", "Der er ikke flere ord...vinduet lukker sig selv nu.");
+        QMessageBox::information(0, tr("Færdig!"), tr("Der er ikke flere ord...vinduet lukker sig selv nu."));
         close();
         return;
     }
@@ -80,15 +84,15 @@ void StructureOne::showNext() {
 
 void StructureOne::checkInput() {
     if (input->text() == data.pairs.at(curAt).at(0)) {
-        result->setText("<center><span style='color: darkgreen;'><b>Korrekt!</b></span></center>");
+        result->setText(QString("<center><span style='color: darkgreen;'><b>") + tr("Korrekt!") + "</b></span></center>");
         yield->hide();
     }
     else if (input->text().compare(data.pairs.at(curAt).at(0), Qt::CaseInsensitive) == 0) {
-        result->setText("<center><span style='color: darkyellow;'><b>Næsten korrekt.\nStore og små bogstaver gælder...</b></span></center>");
+        result->setText(QString("<center><span style='color: darkyellow;'><b>") + tr("Næsten korrekt.\nStore og små bogstaver gælder...") + "</b></span></center>");
         yield->show();
     }
     else {
-        result->setText("<center><span style='color: darkred;'><b>Ikke korrekt.\nPrøv igen...</b></span></center>");
+        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrøv igen...") + "</b></span></center>");
         yield->show();
     }
     result->show();
@@ -98,6 +102,6 @@ void StructureOne::checkInput() {
 }
 
 void StructureOne::yieldWord() {
-    QMessageBox::information(0, "Hrhm...", QString("Det korrekte ord var:\n") + data.pairs.at(curAt).at(0));
+    QMessageBox::information(0, tr("Hrhm..."), QString("<h1>") + tr("Det korrekte ord var:") + QString("</h1><br>") + data.pairs.at(curAt).at(0));
     showNext();
 }

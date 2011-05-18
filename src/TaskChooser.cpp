@@ -19,21 +19,22 @@ dataDir(dataDir)
 
     QVBoxLayout *vbox = new QVBoxLayout;
 
-    QLabel *ql = new QLabel("Demo af diverse funktionaliteter som vil være i det færdige produkt.\n");
+    QLabel *ql = new QLabel(tr("Demo af diverse funktionaliteter som vil være i det færdige produkt."));
     ql->setWordWrap(true);
     vbox->addWidget(ql);
+    vbox->addSpacing(5);
 
     QHBoxLayout *lecHBox = new QHBoxLayout;
 
-    QGroupBox *lecGBox = new QGroupBox("Forelæsninger");
+    QGroupBox *lecGBox = new QGroupBox(tr("Forelæsninger"));
     QVBoxLayout *lecVBox = new QVBoxLayout;
 
-    QPushButton *lectureOne = new QPushButton("Forelæsning 1: De \"sære\" lyd");
-    QPushButton *lectureTwo = new QPushButton("Forelæsning 2: Typiske danskerfejl");
-    QPushButton *lectureThree = new QPushButton("Forelæsning 3: Tonerne og de lange ord");
-    QPushButton *lectureFour = new QPushButton("Forelæsning 4: Træning og opsamling");
-    QPushButton *lectureFiveOne = new QPushButton("Forelæsning 5.1: Gloserne i lektion 1");
-    QPushButton *lectureFiveTwo = new QPushButton("Forelæsning 5.2: Grammatikken i lektion 1");
+    QPushButton *lectureOne = new QPushButton(tr("Forelæsning 1: De \"sære\" lyd"));
+    QPushButton *lectureTwo = new QPushButton(tr("Forelæsning 2: Typiske danskerfejl"));
+    QPushButton *lectureThree = new QPushButton(tr("Forelæsning 3: Tonerne og de lange ord"));
+    QPushButton *lectureFour = new QPushButton(tr("Forelæsning 4: Træning og opsamling"));
+    QPushButton *lectureFiveOne = new QPushButton(tr("Forelæsning 5.1: Gloserne i lektion 1"));
+    QPushButton *lectureFiveTwo = new QPushButton(tr("Forelæsning 5.2: Grammatikken i lektion 1"));
     connect(lectureOne, SIGNAL(clicked()), this, SLOT(showLectureOne()));
     connect(lectureTwo, SIGNAL(clicked()), this, SLOT(showLectureTwo()));
     connect(lectureThree, SIGNAL(clicked()), this, SLOT(showLectureThree()));
@@ -52,16 +53,16 @@ dataDir(dataDir)
     lecHBox->addWidget(lecGBox);
 
 
-    QGroupBox *stGBox = new QGroupBox("Strukturøvelser");
+    QGroupBox *stGBox = new QGroupBox(tr("Strukturøvelser"));
     QVBoxLayout *stVBox = new QVBoxLayout;
 
-    QPushButton *structureOne = new QPushButton("Struktur 1.1: Lydopfattelse");
-    QPushButton *structureTwo = new QPushButton("Struktur 1.2: Dan nye ord");
-    QPushButton *structureThree = new QPushButton("Struktur 1.3: Lyt, forstå, dan ord");
-    QPushButton *structureFour = new QPushButton("Struktur 2.1: Dan nye ord");
-    QPushButton *structureFive = new QPushButton("Struktur 2.2: Lyt, forstå, dan ord");
-    QPushButton *structureSix = new QPushButton("Struktur 3.1: Dan nye ord");
-    QPushButton *structureSeven = new QPushButton("Struktur 3.2: Lyt, forstå, dan ord");
+    QPushButton *structureOne = new QPushButton(tr("Struktur 1.1: Lydopfattelse"));
+    QPushButton *structureTwo = new QPushButton(tr("Struktur 1.2: Dan nye ord"));
+    QPushButton *structureThree = new QPushButton(tr("Struktur 1.3: Lyt, forstå, dan ord"));
+    QPushButton *structureFour = new QPushButton(tr("Struktur 2.1: Dan nye ord"));
+    QPushButton *structureFive = new QPushButton(tr("Struktur 2.2: Lyt, forstå, dan ord"));
+    QPushButton *structureSix = new QPushButton(tr("Struktur 3.1: Dan nye ord"));
+    QPushButton *structureSeven = new QPushButton(tr("Struktur 3.2: Lyt, forstå, dan ord"));
     connect(structureOne, SIGNAL(clicked()), this, SLOT(showStructureOne()));
     connect(structureTwo, SIGNAL(clicked()), this, SLOT(showStructureTwo()));
     connect(structureThree, SIGNAL(clicked()), this, SLOT(showStructureThree()));
@@ -81,41 +82,14 @@ dataDir(dataDir)
     stGBox->setLayout(stVBox);
     lecHBox->addWidget(stGBox);
 
-
-    lecGBox = new QGroupBox("Lectures");
-    lecVBox = new QVBoxLayout;
-
-    lectureOne = new QPushButton("Lecture 1: The New Sounds");
-    lectureTwo = new QPushButton("Lecture 2: Typical mistakes");
-    lectureThree = new QPushButton("Lecture 3: Tones and long words");
-    lectureFour = new QPushButton("Lecture 4: Practice and repetition");
-    lectureFiveOne = new QPushButton("Lecture 5.1: Words and lexicons in lesson one");
-    lectureFiveTwo = new QPushButton("Lecture 5.2: Introduction to grammar");
-    connect(lectureOne, SIGNAL(clicked()), this, SLOT(showLectureOne_Eng()));
-    connect(lectureTwo, SIGNAL(clicked()), this, SLOT(showLectureTwo_Eng()));
-    connect(lectureThree, SIGNAL(clicked()), this, SLOT(showLectureThree_Eng()));
-    connect(lectureFour, SIGNAL(clicked()), this, SLOT(showLectureFour_Eng()));
-    connect(lectureFiveOne, SIGNAL(clicked()), this, SLOT(showLectureFiveOne_Eng()));
-    connect(lectureFiveTwo, SIGNAL(clicked()), this, SLOT(showLectureFiveTwo_Eng()));
-
-    lecVBox->addWidget(lectureOne);
-    lecVBox->addWidget(lectureTwo);
-    lecVBox->addWidget(lectureThree);
-    lecVBox->addWidget(lectureFour);
-    lecVBox->addWidget(lectureFiveOne);
-    lecVBox->addWidget(lectureFiveTwo);
-
-    lecGBox->setLayout(lecVBox);
-    lecHBox->addWidget(lecGBox);
-
     vbox->addLayout(lecHBox);
 
 
-    QGroupBox *wcGBox = new QGroupBox("Velkomstøvelser");
+    QGroupBox *wcGBox = new QGroupBox(tr("Velkomstøvelser"));
     QVBoxLayout *wcVBox = new QVBoxLayout;
 
-    QPushButton *welcomeOne = new QPushButton("Velkomst: Stavelsesdeling");
-    QPushButton *welcomeTwo = new QPushButton("Velkomst: Udtale");
+    QPushButton *welcomeOne = new QPushButton(tr("Velkomst: Stavelsesdeling"));
+    QPushButton *welcomeTwo = new QPushButton(tr("Velkomst: Udtale"));
     connect(welcomeOne, SIGNAL(clicked()), this, SLOT(showWelcomeOne()));
     connect(welcomeTwo, SIGNAL(clicked()), this, SLOT(showWelcomeTwo()));
 
@@ -126,11 +100,11 @@ dataDir(dataDir)
     vbox->addWidget(wcGBox);
 
 
-    QGroupBox *pnGBox = new QGroupBox("Udtaleøvelser");
+    QGroupBox *pnGBox = new QGroupBox(tr("Udtaleøvelser"));
     QVBoxLayout *pnVBox = new QVBoxLayout;
 
-    QPushButton *pronounceOne = new QPushButton("Udtale: Gentag");
-    QPushButton *pronounceTwo = new QPushButton("Udtale: Afskriv");
+    QPushButton *pronounceOne = new QPushButton(tr("Udtale: Gentag"));
+    QPushButton *pronounceTwo = new QPushButton(tr("Udtale: Afskriv"));
     connect(pronounceOne, SIGNAL(clicked()), this, SLOT(showPronounceOne()));
     connect(pronounceTwo, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
 
@@ -141,12 +115,12 @@ dataDir(dataDir)
     vbox->addWidget(pnGBox);
 
 
-    QGroupBox *udGBox = new QGroupBox("Up/Down Øvelser");
+    QGroupBox *udGBox = new QGroupBox(tr("Up/Down Øvelser"));
     QVBoxLayout *udVBox = new QVBoxLayout;
 
-    QPushButton *updownOne = new QPushButton("Up/Down: Reception");
-    QPushButton *updownTwo = new QPushButton("Up/Down: Produktion");
-    QPushButton *updownThree = new QPushButton("Up/Down: Oversættelse");
+    QPushButton *updownOne = new QPushButton(tr("Up/Down: Reception"));
+    QPushButton *updownTwo = new QPushButton(tr("Up/Down: Produktion"));
+    QPushButton *updownThree = new QPushButton(tr("Up/Down: Oversættelse"));
     connect(updownOne, SIGNAL(clicked()), this, SLOT(showUpdownOne()));
     connect(updownTwo, SIGNAL(clicked()), this, SLOT(showUpdownTwo()));
     connect(updownThree, SIGNAL(clicked()), this, SLOT(showUpdownThree()));
@@ -163,42 +137,42 @@ dataDir(dataDir)
 }
 
 void TaskChooser::showLectureOne() {
-    LecturePlayer *lecture = new LecturePlayer("Forelæsning 1: De \"sære\" lyd", dataDir, "./1/danish/");
+    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 1: De \"sære\" lyd"), dataDir, tr("./1/danish/"));
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureTwo() {
-    LecturePlayer *lecture = new LecturePlayer("Forelæsning 2: Typiske danskerfejl", dataDir, "./2/danish/");
+    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 2: Typiske danskerfejl"), dataDir, tr("./2/danish/"));
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureThree() {
-    LecturePlayer *lecture = new LecturePlayer("Forelæsning 3: Tonerne og de lange ord", dataDir, "./3/danish/");
+    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 3: Tonerne og de lange ord"), dataDir, tr("./3/danish/"));
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureFour() {
-    LecturePlayer *lecture = new LecturePlayer("Forelæsning 4: Træning og opsamling", dataDir, "./4/danish/");
+    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 4: Træning og opsamling"), dataDir, tr("./4/danish/"));
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureFiveOne() {
-    LecturePlayer *lecture = new LecturePlayer("Forelæsning 5.1: Gloserne i lektion 1", dataDir, "./5_1/danish/");
+    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 5.1: Gloserne i lektion 1"), dataDir, tr("./5_1/danish/"));
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureFiveTwo() {
-    LecturePlayer *lecture = new LecturePlayer("Forelæsning 5.2: Grammatikken i lektion 1", dataDir, "./5_2/danish/");
+    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 5.2: Grammatikken i lektion 1"), dataDir, tr("./5_2/danish/"));
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
@@ -296,49 +270,49 @@ void TaskChooser::showUpdownThree() {
 }
 
 void TaskChooser::showStructureOne() {
-    StructureOne *structure = new StructureOne(dataDir, "./1/", "Struktur 1.1: Lydopfattelse");
+    StructureOne *structure = new StructureOne(dataDir, "./1/", tr("Struktur 1.1: Lydopfattelse"));
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureTwo() {
-    StructureTwo *structure = new StructureTwo(dataDir, "./1/", "Struktur 1.2: Dan nye ord");
+    StructureTwo *structure = new StructureTwo(dataDir, "./1/", tr("Struktur 1.2: Dan nye ord"));
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureThree() {
-    StructureThree *structure = new StructureThree(dataDir, "./1/", "Struktur 1.3: Lyt, forstå, dan ord");
+    StructureThree *structure = new StructureThree(dataDir, "./1/", tr("Struktur 1.3: Lyt, forstå, dan ord"));
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureFour() {
-    StructureTwo *structure = new StructureTwo(dataDir, "./2/", "Struktur 2.1: Dan nye ord");
+    StructureTwo *structure = new StructureTwo(dataDir, "./2/", tr("Struktur 2.1: Dan nye ord"));
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureFive() {
-    StructureThree *structure = new StructureThree(dataDir, "./2/", "Struktur 2.2: Lyt, forstå, dan ord");
+    StructureThree *structure = new StructureThree(dataDir, "./2/", tr("Struktur 2.2: Lyt, forstå, dan ord"));
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureSix() {
-    StructureTwo *structure = new StructureTwo(dataDir, "./3/", "Struktur 3.1: Dan nye ord");
+    StructureTwo *structure = new StructureTwo(dataDir, "./3/", tr("Struktur 3.1: Dan nye ord"));
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureSeven() {
-    StructureThree *structure = new StructureThree(dataDir, "./3/", "Struktur 3.2: Lyt, forstå, dan ord");
+    StructureThree *structure = new StructureThree(dataDir, "./3/", tr("Struktur 3.2: Lyt, forstå, dan ord"));
     structure->show();
     structure->raise();
     structure->activateWindow();

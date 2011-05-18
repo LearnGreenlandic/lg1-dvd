@@ -9,23 +9,16 @@ curAt(-1)
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 
-    QString t =
-        "Sæt tilhænget N+MIU på bynavnene, så du danner ord med betydningen 'indbygger i BYNAVN'.\n"
-        "Lad være med at lade dig snyde af den retskrivningsdetalje, at et q sidst i ordet STAVES som -r-, når der kommer en anden konsonant bagefter."
-        " Som du allerede ved det fra forelæsning 2, udtales -r- i denne stilling alligevel ikke som -r-, men som en fordobling af den konsonant, der kommer efter."
-        " Tilhæng sæt­tes altid til entalsfor­men, så for de 7 byer, hvis navne er født med en fler­tals­en­delse, skal du bruge den en­talsform, du får serveret.\n"
-        ;
+#if 0
+    tr("structure 2 ./1/");
+    tr("structure 2 ./2/");
+    tr("structure 2 ./3/");
+#endif
 
-    if (which == "./2/") {
-        t = "Brug N+MIU-U{+vu\u014Ba} for at vænne dig til lydændrin­ger­ne og for at træne brugen af me­get lange ord.\n";
-    }
-    else if (which == "./3/") {
-        t = "Brug N{-mi} for at vænne dig til lydændrin­ger­ne.\n";
-    }
-
-    QLabel *ql = new QLabel(t);
+    QLabel *ql = new QLabel(tr(QString(QString("structure 2 ") + which).toStdString().c_str()));
     ql->setWordWrap(true);
     qvbl->addWidget(ql);
+    qvbl->addSpacing(5);
 
     query = new QLabel;
 
@@ -34,9 +27,9 @@ curAt(-1)
 
     input = new QLineEdit;
     connect(input, SIGNAL(returnPressed()), this, SLOT(checkInput()));
-    check = new QPushButton("Check");
+    check = new QPushButton(tr("Check"));
     connect(check, SIGNAL(clicked()), this, SLOT(checkInput()));
-    yield = new QPushButton("Giv op...");
+    yield = new QPushButton(tr("Giv op..."));
     connect(yield, SIGNAL(clicked()), this, SLOT(yieldWord()));
     result = new QLabel;
     qvbl->addWidget(input);
@@ -48,7 +41,7 @@ curAt(-1)
 
     qvbl->addSpacing(15);
 
-    QPushButton *nb = new QPushButton("Gå til næste ord");
+    QPushButton *nb = new QPushButton(tr("Gå til næste ord"));
     connect(nb, SIGNAL(clicked()), this, SLOT(showNext()));
     qvbl->addWidget(nb);
 
@@ -60,7 +53,7 @@ curAt(-1)
 void StructureTwo::showNext() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(data.pairs.size())) {
-        QMessageBox::information(0, "Færdig!", "Der er ikke flere ord...vinduet lukker sig selv nu.");
+        QMessageBox::information(0, tr("Færdig!"), tr("Der er ikke flere ord...vinduet lukker sig selv nu."));
         close();
         return;
     }
@@ -69,8 +62,15 @@ void StructureTwo::showNext() {
     if (data.pairs.at(curAt).size() == 3) {
         x = QString(" (") + data.pairs.at(curAt).at(2) + ")";
     }
-    query->setText(QString("<font size='+3'>Bynavn: <b>") + data.pairs.at(curAt).at(0) + "</b>" + x + "</font><br>"
-        "Skriv 'indbygger i " + data.pairs.at(curAt).at(0) + "' formen:<br>");
+
+#if 0
+    tr("structure 2.form ./1/");
+    tr("structure 2.form ./2/");
+    tr("structure 2.form ./3/");
+#endif
+
+    query->setText(QString("<font size='+3'>") + tr("Bynavn:") + " <b>" + data.pairs.at(curAt).at(0) + "</b>" + x + "</font><br>"
+        + tr(QString(QString("structure 2.form ") + data.which).toStdString().c_str()).arg(data.pairs.at(curAt).at(0)) + "<br>");
 
     result->hide();
     yield->hide();
@@ -81,15 +81,15 @@ void StructureTwo::showNext() {
 
 void StructureTwo::checkInput() {
     if (input->text() == data.pairs.at(curAt).at(1)) {
-        result->setText("<center><span style='color: darkgreen;'><b>Korrekt!</b></span></center>");
+        result->setText(QString("<center><span style='color: darkgreen;'><b>") + tr("Korrekt!") + "</b></span></center>");
         yield->hide();
     }
     else if (input->text().compare(data.pairs.at(curAt).at(1), Qt::CaseInsensitive) == 0) {
-        result->setText("<center><span style='color: darkyellow;'><b>Næsten korrekt.\nStore og små bogstaver gælder...</b></span></center>");
+        result->setText(QString("<center><span style='color: darkyellow;'><b>") + tr("Næsten korrekt.\nStore og små bogstaver gælder...") + "</b></span></center>");
         yield->show();
     }
     else {
-        result->setText("<center><span style='color: darkred;'><b>Ikke korrekt.\nPrøv igen...</b></span></center>");
+        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrøv igen...") + "</b></span></center>");
         yield->show();
     }
     result->show();
@@ -99,6 +99,6 @@ void StructureTwo::checkInput() {
 }
 
 void StructureTwo::yieldWord() {
-    QMessageBox::information(0, "Hrhm...", QString("Det korrekte ord var:\n") + data.pairs.at(curAt).at(1));
+    QMessageBox::information(0, tr("Hrhm..."), QString("<h1>") + tr("Det korrekte ord var:") + QString("</h1><br>") + data.pairs.at(curAt).at(1));
     showNext();
 }

@@ -2,8 +2,9 @@
 #include <algorithm>
 #include <stdint.h>
 
-StructureData::StructureData(QDir _dataDir, QString which):
-dataDir(_dataDir)
+StructureData::StructureData(QDir _dataDir, QString _which):
+dataDir(_dataDir),
+which(_which)
 {
     if (!dataDir.cd("./structure/")) {
         QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/structure/");

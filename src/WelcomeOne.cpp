@@ -11,14 +11,18 @@ WelcomeOne::WelcomeOne(QDir dataDir) {
         QMessageBox::critical(0, "Read Error!", "Could not open input.txt from data folder!");
         throw(-1);
     }
-    state = text = input_f.readAll();
+    QTextStream input_t(&input_f);
+    input_t.setCodec("UTF-8");
+    state = text = input_t.readAll();
 
     QFile hyphen_f(dataDir.absoluteFilePath("hyphenated.txt"));
     if (!hyphen_f.open(QIODevice::ReadOnly)) {
         QMessageBox::critical(0, "Read Error!", "Could not open hyphenated.txt from data folder!");
         throw(-1);
     }
-    hyphenated = hyphen_f.readAll();
+    QTextStream hyphen_t(&hyphen_f);
+    hyphen_t.setCodec("UTF-8");
+    hyphenated = hyphen_t.readAll();
 
     setWindowTitle("Velkomstøvelse: Stavelsesdeling");
 

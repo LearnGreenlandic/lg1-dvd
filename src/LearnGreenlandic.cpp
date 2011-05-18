@@ -26,6 +26,15 @@ int main(int argc, char *argv[]) {
         return -1;
     }
 
+    QTranslator translator;
+    if (QMessageBox::question(0, "English?", "Would you like this in English?", QMessageBox::Yes, QMessageBox::No) == QMessageBox::Yes) {
+        translator.load("texts_en", dataDir.absoluteFilePath("./i18n/"));
+    }
+    else {
+        translator.load("texts_da", dataDir.absoluteFilePath("./i18n/"));
+    }
+    app.installTranslator(&translator);
+
     TaskChooser tc(dataDir);
     tc.show();
 

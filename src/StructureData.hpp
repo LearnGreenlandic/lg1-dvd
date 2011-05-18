@@ -8,6 +8,7 @@ public:
     StructureData(QDir dataDir, QString which);
 
     QDir dataDir;
+    QString which;
     QVector<QStringList> pairs;
 };
 

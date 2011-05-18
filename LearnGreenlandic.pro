@@ -5,6 +5,8 @@ QT += core gui phonon opengl
 TARGET = LearnGreenlandic
 TEMPLATE = app
 
+TRANSLATIONS = texts_da.ts texts_en.ts
+
 SOURCES += \
     src/LearnGreenlandic.cpp \
     src/TaskChooser.cpp \
