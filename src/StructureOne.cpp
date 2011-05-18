@@ -1,11 +1,11 @@
 #include "StructureOne.hpp"
 
-StructureOne::StructureOne(QDir dataDir) :
+StructureOne::StructureOne(QDir dataDir, QString which, QString title) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
-data(dataDir),
+data(dataDir, which),
 curAt(0)
 {
-    setWindowTitle("Struktur: Lydopfattelse");
+    setWindowTitle(title);
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 

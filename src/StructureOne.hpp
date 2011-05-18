@@ -11,7 +11,7 @@ class StructureOne : public QWidget {
     Q_OBJECT
 
 public:
-    StructureOne(QDir dataDir);
+    StructureOne(QDir dataDir, QString which, QString title);
 
 public slots:
     void show();

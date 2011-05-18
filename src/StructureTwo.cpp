@@ -1,29 +1,33 @@
 #include "StructureTwo.hpp"
 
-StructureTwo::StructureTwo(QDir dataDir) :
+StructureTwo::StructureTwo(QDir dataDir, QString which, QString title) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
-data(dataDir),
-curAt(0)
+data(dataDir, which),
+curAt(-1)
 {
-    setWindowTitle("Struktur: Dan nye ord");
+    setWindowTitle(title);
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 
-    QLabel *ql = new QLabel(
+    QString t =
         "Sæt tilhænget N+MIU på bynavnene, så du danner ord med betydningen 'indbygger i BYNAVN'.\n"
         "Lad være med at lade dig snyde af den retskrivningsdetalje, at et q sidst i ordet STAVES som -r-, når der kommer en anden konsonant bagefter."
         " Som du allerede ved det fra forelæsning 2, udtales -r- i denne stilling alligevel ikke som -r-, men som en fordobling af den konsonant, der kommer efter."
         " Tilhæng sæt­tes altid til entalsfor­men, så for de 7 byer, hvis navne er født med en fler­tals­en­delse, skal du bruge den en­talsform, du får serveret.\n"
-        );
+        ;
+
+    if (which == "./2/") {
+        t = "Brug N+MIU-U{+vu\u014Ba} for at vænne dig til lydændrin­ger­ne og for at træne brugen af me­get lange ord.\n";
+    }
+    else if (which == "./3/") {
+        t = "Brug N{-mi} for at vænne dig til lydændrin­ger­ne.\n";
+    }
+
+    QLabel *ql = new QLabel(t);
     ql->setWordWrap(true);
     qvbl->addWidget(ql);
 
-    QString x;
-    if (data.pairs.at(curAt).size() == 3) {
-        x = QString(" (") + data.pairs.at(curAt).at(2) + ")";
-    }
-    query = new QLabel(QString("<font size='+3'>Bynavn: <b>") + data.pairs.at(curAt).at(0) + "</b>" + x + "</font><br>"
-        "Skriv 'indbygger i " + data.pairs.at(curAt).at(0) + "' formen:<br>");
+    query = new QLabel;
 
     qvbl->addWidget(query);
     qvbl->addSpacing(5);
@@ -49,6 +53,8 @@ curAt(0)
     qvbl->addWidget(nb);
 
     setLayout(qvbl);
+
+    showNext();
 }
 
 void StructureTwo::showNext() {

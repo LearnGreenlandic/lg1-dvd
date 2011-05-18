@@ -9,7 +9,7 @@ class StructureTwo : public QWidget {
     Q_OBJECT
 
 public:
-    StructureTwo(QDir dataDir);
+    StructureTwo(QDir dataDir, QString which, QString title);
 
 public slots:
     void showNext();

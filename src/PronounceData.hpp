@@ -7,7 +7,6 @@ class PronounceData {
 public:
     PronounceData(QDir dataDir);
 
-    QDir dataDir;
     QMap<QString,QString> sounds;
     QVector<QString> words;
 };

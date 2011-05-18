@@ -1,9 +1,7 @@
 #include "PronounceData.hpp"
 #include <algorithm>
 
-PronounceData::PronounceData(QDir dataDir) :
-dataDir(dataDir)
-{
+PronounceData::PronounceData(QDir dataDir) {
     if (!dataDir.cd("./pronounce/")) {
         QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/pronounce/");
         throw(-1);

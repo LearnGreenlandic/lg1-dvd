@@ -38,6 +38,10 @@ public slots:
     void showStructureOne();
     void showStructureTwo();
     void showStructureThree();
+    void showStructureFour();
+    void showStructureFive();
+    void showStructureSix();
+    void showStructureSeven();
 
 private:
     QDir dataDir;

@@ -5,7 +5,7 @@
 
 class StructureData {
 public:
-    StructureData(QDir dataDir);
+    StructureData(QDir dataDir, QString which);
 
     QDir dataDir;
     QVector<QStringList> pairs;

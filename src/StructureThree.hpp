@@ -11,7 +11,7 @@ class StructureThree : public QWidget {
     Q_OBJECT
 
 public:
-    StructureThree(QDir dataDir);
+    StructureThree(QDir dataDir, QString which, QString title);
 
 public slots:
     void show();

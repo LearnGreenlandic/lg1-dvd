@@ -52,6 +52,36 @@ dataDir(dataDir)
     lecHBox->addWidget(lecGBox);
 
 
+    QGroupBox *stGBox = new QGroupBox("Strukturøvelser");
+    QVBoxLayout *stVBox = new QVBoxLayout;
+
+    QPushButton *structureOne = new QPushButton("Struktur 1.1: Lydopfattelse");
+    QPushButton *structureTwo = new QPushButton("Struktur 1.2: Dan nye ord");
+    QPushButton *structureThree = new QPushButton("Struktur 1.3: Lyt, forstå, dan ord");
+    QPushButton *structureFour = new QPushButton("Struktur 2.1: Dan nye ord");
+    QPushButton *structureFive = new QPushButton("Struktur 2.2: Lyt, forstå, dan ord");
+    QPushButton *structureSix = new QPushButton("Struktur 3.1: Dan nye ord");
+    QPushButton *structureSeven = new QPushButton("Struktur 3.2: Lyt, forstå, dan ord");
+    connect(structureOne, SIGNAL(clicked()), this, SLOT(showStructureOne()));
+    connect(structureTwo, SIGNAL(clicked()), this, SLOT(showStructureTwo()));
+    connect(structureThree, SIGNAL(clicked()), this, SLOT(showStructureThree()));
+    connect(structureFour, SIGNAL(clicked()), this, SLOT(showStructureFour()));
+    connect(structureFive, SIGNAL(clicked()), this, SLOT(showStructureFive()));
+    connect(structureSix, SIGNAL(clicked()), this, SLOT(showStructureSix()));
+    connect(structureSeven, SIGNAL(clicked()), this, SLOT(showStructureSeven()));
+
+    stVBox->addWidget(structureOne);
+    stVBox->addWidget(structureTwo);
+    stVBox->addWidget(structureThree);
+    stVBox->addWidget(structureFour);
+    stVBox->addWidget(structureFive);
+    stVBox->addWidget(structureSix);
+    stVBox->addWidget(structureSeven);
+
+    stGBox->setLayout(stVBox);
+    lecHBox->addWidget(stGBox);
+
+
     lecGBox = new QGroupBox("Lectures");
     lecVBox = new QVBoxLayout;
 
@@ -128,23 +158,6 @@ dataDir(dataDir)
     udGBox->setLayout(udVBox);
     vbox->addWidget(udGBox);
 
-
-    QGroupBox *stGBox = new QGroupBox("Strukturøvelser");
-    QVBoxLayout *stVBox = new QVBoxLayout;
-
-    QPushButton *structureOne = new QPushButton("Struktur: Lydopfattelse");
-    QPushButton *structureTwo = new QPushButton("Struktur: Dan nye ord");
-    QPushButton *structureThree = new QPushButton("Struktur: Lyt, forstå, dan ord");
-    connect(structureOne, SIGNAL(clicked()), this, SLOT(showStructureOne()));
-    connect(structureTwo, SIGNAL(clicked()), this, SLOT(showStructureTwo()));
-    connect(structureThree, SIGNAL(clicked()), this, SLOT(showStructureThree()));
-
-    stVBox->addWidget(structureOne);
-    stVBox->addWidget(structureTwo);
-    stVBox->addWidget(structureThree);
-
-    stGBox->setLayout(stVBox);
-    vbox->addWidget(stGBox);
 
     setLayout(vbox);
 }
@@ -283,21 +296,49 @@ void TaskChooser::showUpdownThree() {
 }
 
 void TaskChooser::showStructureOne() {
-    StructureOne *structure = new StructureOne(dataDir);
+    StructureOne *structure = new StructureOne(dataDir, "./1/", "Struktur 1.1: Lydopfattelse");
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureTwo() {
-    StructureTwo *structure = new StructureTwo(dataDir);
+    StructureTwo *structure = new StructureTwo(dataDir, "./1/", "Struktur 1.2: Dan nye ord");
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureThree() {
-    StructureThree *structure = new StructureThree(dataDir);
+    StructureThree *structure = new StructureThree(dataDir, "./1/", "Struktur 1.3: Lyt, forstå, dan ord");
+    structure->show();
+    structure->raise();
+    structure->activateWindow();
+}
+
+void TaskChooser::showStructureFour() {
+    StructureTwo *structure = new StructureTwo(dataDir, "./2/", "Struktur 2.1: Dan nye ord");
+    structure->show();
+    structure->raise();
+    structure->activateWindow();
+}
+
+void TaskChooser::showStructureFive() {
+    StructureThree *structure = new StructureThree(dataDir, "./2/", "Struktur 2.2: Lyt, forstå, dan ord");
+    structure->show();
+    structure->raise();
+    structure->activateWindow();
+}
+
+void TaskChooser::showStructureSix() {
+    StructureTwo *structure = new StructureTwo(dataDir, "./3/", "Struktur 3.1: Dan nye ord");
+    structure->show();
+    structure->raise();
+    structure->activateWindow();
+}
+
+void TaskChooser::showStructureSeven() {
+    StructureThree *structure = new StructureThree(dataDir, "./3/", "Struktur 3.2: Lyt, forstå, dan ord");
     structure->show();
     structure->raise();
     structure->activateWindow();
