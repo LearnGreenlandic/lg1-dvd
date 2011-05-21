@@ -26,7 +26,10 @@ SOURCES += \
     src/PronounceTwo.cpp \
     src/WelcomeOne.cpp \
     src/WelcomeTwo.cpp \
-    src/HyphenOne.cpp
+    src/HyphenOne.cpp \
+    src/ListenOne.cpp \
+    src/ListenTwo.cpp \
+    src/ListenThree.cpp
 
 HEADERS  += \
     src/TaskChooser.hpp \
@@ -46,7 +49,10 @@ HEADERS  += \
     src/PronounceTwo.hpp \
     src/WelcomeOne.hpp \
     src/WelcomeTwo.hpp \
-    src/HyphenOne.hpp
+    src/HyphenOne.hpp \
+    src/ListenOne.hpp \
+    src/ListenTwo.hpp \
+    src/ListenThree.hpp
 
 CONFIG -= warn_off
 CONFIG += warn_on

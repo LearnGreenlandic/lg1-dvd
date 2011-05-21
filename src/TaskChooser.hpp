@@ -20,6 +20,10 @@ public slots:
 
     void showHyphenOne();
 
+    void showListenOne();
+    void showListenTwo();
+    void showListenThree();
+
     void showWelcomeOne();
     void showWelcomeTwo();
 

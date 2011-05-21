@@ -20,7 +20,6 @@ private:
     StructureData data;
     uint32_t curAt;
 
-    QVBoxLayout *curWord;
     QLabel *query;
     QLabel *result;
     QLineEdit *input;

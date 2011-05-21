@@ -20,7 +20,6 @@ private:
     UpdownData data;
     uint32_t curAt;
 
-    QVBoxLayout *curWord;
     QLabel *up;
     QLabel *result;
     QLineEdit *input;

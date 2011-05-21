@@ -2,6 +2,152 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="en_US">
 <context>
+    <name>ListenOne</name>
+    <message>
+        <source>Lyt og svar om der er to konsonanter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lyt igen</source>
+        <translation type="unfinished">Listen again</translation>
+    </message>
+    <message>
+        <source>Ikke to konsonanter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To konsonanter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gå til næste ord</source>
+        <translation type="unfinished">Go to next word</translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished">Done!</translation>
+    </message>
+    <message>
+        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
+        <translation type="unfinished">No words remain...the window will now close.</translation>
+    </message>
+    <message>
+        <source>Korrekt!</source>
+        <translation type="obsolete">Correct!</translation>
+    </message>
+    <message>
+        <source>Ikke korrekt.
+Prøv igen...</source>
+        <translation type="unfinished">Incorrect.
+Try again...</translation>
+    </message>
+    <message>
+        <source>Lytteøvelse 1.1: En eller to konsonanter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Korrekt!
+Ordet var: </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ListenThree</name>
+    <message>
+        <source>Lytteøvelse 1.3: tt eller ts eller t</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lyt og svar om ordet indeholder &apos;tt&apos; eller &apos;ts&apos; eller kun &apos;t&apos;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lyt igen</source>
+        <translation type="unfinished">Listen again</translation>
+    </message>
+    <message>
+        <source>Har tt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Har ts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Har kun t</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gå til næste ord</source>
+        <translation type="unfinished">Go to next word</translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished">Done!</translation>
+    </message>
+    <message>
+        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
+        <translation type="unfinished">No words remain...the window will now close.</translation>
+    </message>
+    <message>
+        <source>Korrekt!
+Ordet var: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ikke korrekt.
+Prøv igen...</source>
+        <translation type="unfinished">Incorrect.
+Try again...</translation>
+    </message>
+</context>
+<context>
+    <name>ListenTwo</name>
+    <message>
+        <source>Lytteøvelse 1.2: r eller ikke r</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lyt og svar om ordet indeholder &apos;r&apos; eller ej.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lyt igen</source>
+        <translation type="unfinished">Listen again</translation>
+    </message>
+    <message>
+        <source>Har ikke r</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Har r</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gå til næste ord</source>
+        <translation type="unfinished">Go to next word</translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished">Done!</translation>
+    </message>
+    <message>
+        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
+        <translation type="unfinished">No words remain...the window will now close.</translation>
+    </message>
+    <message>
+        <source>Korrekt!
+Ordet var: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ikke korrekt.
+Prøv igen...</source>
+        <translation type="unfinished">Incorrect.
+Try again...</translation>
+    </message>
+</context>
+<context>
     <name>StructureOne</name>
     <message>
         <source>structure 1 ./1/</source>
@@ -355,6 +501,30 @@ Try again...</translation>
     <message>
         <source>./5_2/danish/</source>
         <translation>./5_2/english/</translation>
+    </message>
+    <message>
+        <source>Orddelingsøvelser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Orddeling: Bynavne</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lytteøvelser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lytteøvelse 1.1: En eller to konsonanter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lytteøvelse 1.2: r eller ikke r</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lytteøvelse 1.3: tt eller ts eller t</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

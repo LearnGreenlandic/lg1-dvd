@@ -12,7 +12,7 @@ curAt(0)
     QVBoxLayout *qvbl = new QVBoxLayout;
     qvbl->addWidget(ql);
 
-    curWord = new QVBoxLayout;
+    QVBoxLayout *curWord = new QVBoxLayout;
     up = new QLabel(QString("<center><h2>") + data.updowns.at(curAt).second + "</h2></center>");
     up->setToolTip(data.glossUpperDetailed(data.updowns.at(curAt).second));
     input = new QLineEdit;

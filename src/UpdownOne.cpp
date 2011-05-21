@@ -12,7 +12,7 @@ curAt(0)
     QVBoxLayout *qvbl = new QVBoxLayout;
     qvbl->addWidget(ql);
 
-    curWord = new QVBoxLayout;
+    QVBoxLayout *curWord = new QVBoxLayout;
     down = new QLabel(QString("<center><h2>") + data.updowns.at(curAt).first + "</h2></center>");
     up = new QLabel(QString("<center><i>") + data.updowns.at(curAt).second + "</i></center>");
     help = new QPushButton("Vis hjælp");

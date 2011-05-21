@@ -1,30 +1,32 @@
-#ifndef PRONOUNCEONE_HPP
-#define PRONOUNCEONE_HPP
+#ifndef LISTENTWO_HPP
+#define LISTENTWO_HPP
 
-#include "PronounceData.hpp"
 #include <phonon/mediaobject.h>
 #include <phonon/audiooutput.h>
 #include <QtGui>
 #include <stdint.h>
 
-class PronounceOne : public QWidget{
+class ListenTwo : public QWidget {
     Q_OBJECT
 
 public:
-    PronounceOne(QDir dataDir);
+    ListenTwo(QDir dataDir);
 
 public slots:
-    void show();
     void showNext();
     void playAgain();
+    void checkNoR();
+    void checkYesR();
 
 private:
-    PronounceData data;
+    QVector<QString> words;
     uint32_t curAt;
 
     Phonon::MediaObject *media;
     Phonon::AudioOutput *audio;
-    QLabel *text;
+    QLabel *result;
+    QPushButton *noR;
+    QPushButton *yesR;
 };
 
-#endif // PRONOUNCEONE_HPP
+#endif // LISTENTWO_HPP

@@ -1,5 +1,8 @@
 #include "LecturePlayer.hpp"
 #include "HyphenOne.hpp"
+#include "ListenOne.hpp"
+#include "ListenTwo.hpp"
+#include "ListenThree.hpp"
 #include "WelcomeOne.hpp"
 #include "WelcomeTwo.hpp"
 #include "PronounceOne.hpp"
@@ -131,6 +134,8 @@ dataDir(dataDir)
     vbox->addLayout(hbox);
 
 
+    hbox = new QHBoxLayout;
+
     gbox = new QGroupBox(tr("Up/Down Øvelser"));
     innerVBox = new QVBoxLayout;
 
@@ -146,7 +151,27 @@ dataDir(dataDir)
     innerVBox->addWidget(updownThree);
 
     gbox->setLayout(innerVBox);
-    vbox->addWidget(gbox);
+    hbox->addWidget(gbox);
+
+
+    gbox = new QGroupBox(tr("Lytteøvelser"));
+    innerVBox = new QVBoxLayout;
+
+    QPushButton *listenOne = new QPushButton(tr("Lytteøvelse 1.1: En eller to konsonanter"));
+    QPushButton *listenTwo = new QPushButton(tr("Lytteøvelse 1.2: r eller ikke r"));
+    QPushButton *listenThree = new QPushButton(tr("Lytteøvelse 1.3: tt eller ts eller t"));
+    connect(listenOne, SIGNAL(clicked()), this, SLOT(showListenOne()));
+    connect(listenTwo, SIGNAL(clicked()), this, SLOT(showListenTwo()));
+    connect(listenThree, SIGNAL(clicked()), this, SLOT(showListenThree()));
+
+    innerVBox->addWidget(listenOne);
+    innerVBox->addWidget(listenTwo);
+    innerVBox->addWidget(listenThree);
+
+    gbox->setLayout(innerVBox);
+    hbox->addWidget(gbox);
+
+    vbox->addLayout(hbox);
 
 
     setLayout(vbox);
@@ -199,6 +224,27 @@ void TaskChooser::showHyphenOne() {
     hyphen->show();
     hyphen->raise();
     hyphen->activateWindow();
+}
+
+void TaskChooser::showListenOne() {
+    ListenOne *listen = new ListenOne(dataDir);
+    listen->show();
+    listen->raise();
+    listen->activateWindow();
+}
+
+void TaskChooser::showListenTwo() {
+    ListenTwo *listen = new ListenTwo(dataDir);
+    listen->show();
+    listen->raise();
+    listen->activateWindow();
+}
+
+void TaskChooser::showListenThree() {
+    ListenThree *listen = new ListenThree(dataDir);
+    listen->show();
+    listen->raise();
+    listen->activateWindow();
 }
 
 void TaskChooser::showWelcomeOne() {

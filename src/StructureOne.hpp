@@ -24,7 +24,6 @@ private:
     StructureData data;
     uint32_t curAt;
 
-    QVBoxLayout *curWord;
     Phonon::MediaObject *media;
     Phonon::AudioOutput *audio;
     QLabel *result;

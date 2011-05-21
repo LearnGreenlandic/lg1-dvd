@@ -12,7 +12,7 @@ curAt(0)
     QVBoxLayout *qvbl = new QVBoxLayout;
     qvbl->addWidget(ql);
 
-    curWord = new QVBoxLayout;
+    QVBoxLayout *curWord = new QVBoxLayout;
     up = new QLabel(QString("<center><h2>") + data.glossUpperShort(data.updowns.at(curAt).second) + "</h2></center>");
     input = new QLineEdit;
     connect(input, SIGNAL(returnPressed()), this, SLOT(checkInput()));
