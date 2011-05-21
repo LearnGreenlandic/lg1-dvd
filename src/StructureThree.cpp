@@ -33,6 +33,7 @@ curAt(0)
     Phonon::createPath(cmedia, caudio);
     cmedia->setCurrentSource(data.dataDir.absoluteFilePath(data.pairs.at(curAt).at(1)) + ".wav");
 
+    qvbl->addWidget(again);
     qvbl->addSpacing(5);
 
     input = new QLineEdit;
