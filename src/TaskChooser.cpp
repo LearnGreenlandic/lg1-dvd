@@ -1,4 +1,5 @@
 #include "LecturePlayer.hpp"
+#include "HyphenOne.hpp"
 #include "WelcomeOne.hpp"
 #include "WelcomeTwo.hpp"
 #include "PronounceOne.hpp"
@@ -18,16 +19,15 @@ dataDir(dataDir)
     setWindowTitle("Learn Greenlandic Demo");
 
     QVBoxLayout *vbox = new QVBoxLayout;
+    QHBoxLayout *hbox = new QHBoxLayout;
 
     QLabel *ql = new QLabel(tr("Demo af diverse funktionaliteter som vil være i det færdige produkt."));
     ql->setWordWrap(true);
     vbox->addWidget(ql);
     vbox->addSpacing(5);
 
-    QHBoxLayout *lecHBox = new QHBoxLayout;
-
-    QGroupBox *lecGBox = new QGroupBox(tr("Forelæsninger"));
-    QVBoxLayout *lecVBox = new QVBoxLayout;
+    QGroupBox *gbox = new QGroupBox(tr("Forelæsninger"));
+    QVBoxLayout *innerVBox = new QVBoxLayout;
 
     QPushButton *lectureOne = new QPushButton(tr("Forelæsning 1: De \"sære\" lyd"));
     QPushButton *lectureTwo = new QPushButton(tr("Forelæsning 2: Typiske danskerfejl"));
@@ -42,19 +42,19 @@ dataDir(dataDir)
     connect(lectureFiveOne, SIGNAL(clicked()), this, SLOT(showLectureFiveOne()));
     connect(lectureFiveTwo, SIGNAL(clicked()), this, SLOT(showLectureFiveTwo()));
 
-    lecVBox->addWidget(lectureOne);
-    lecVBox->addWidget(lectureTwo);
-    lecVBox->addWidget(lectureThree);
-    lecVBox->addWidget(lectureFour);
-    lecVBox->addWidget(lectureFiveOne);
-    lecVBox->addWidget(lectureFiveTwo);
+    innerVBox->addWidget(lectureOne);
+    innerVBox->addWidget(lectureTwo);
+    innerVBox->addWidget(lectureThree);
+    innerVBox->addWidget(lectureFour);
+    innerVBox->addWidget(lectureFiveOne);
+    innerVBox->addWidget(lectureFiveTwo);
 
-    lecGBox->setLayout(lecVBox);
-    lecHBox->addWidget(lecGBox);
+    gbox->setLayout(innerVBox);
+    hbox->addWidget(gbox);
 
 
-    QGroupBox *stGBox = new QGroupBox(tr("Strukturøvelser"));
-    QVBoxLayout *stVBox = new QVBoxLayout;
+    gbox = new QGroupBox(tr("Strukturøvelser"));
+    innerVBox = new QVBoxLayout;
 
     QPushButton *structureOne = new QPushButton(tr("Struktur 1.1: Lydopfattelse"));
     QPushButton *structureTwo = new QPushButton(tr("Struktur 1.2: Dan nye ord"));
@@ -71,52 +71,68 @@ dataDir(dataDir)
     connect(structureSix, SIGNAL(clicked()), this, SLOT(showStructureSix()));
     connect(structureSeven, SIGNAL(clicked()), this, SLOT(showStructureSeven()));
 
-    stVBox->addWidget(structureOne);
-    stVBox->addWidget(structureTwo);
-    stVBox->addWidget(structureThree);
-    stVBox->addWidget(structureFour);
-    stVBox->addWidget(structureFive);
-    stVBox->addWidget(structureSix);
-    stVBox->addWidget(structureSeven);
+    innerVBox->addWidget(structureOne);
+    innerVBox->addWidget(structureTwo);
+    innerVBox->addWidget(structureThree);
+    innerVBox->addWidget(structureFour);
+    innerVBox->addWidget(structureFive);
+    innerVBox->addWidget(structureSix);
+    innerVBox->addWidget(structureSeven);
 
-    stGBox->setLayout(stVBox);
-    lecHBox->addWidget(stGBox);
+    gbox->setLayout(innerVBox);
+    hbox->addWidget(gbox);
 
-    vbox->addLayout(lecHBox);
+    vbox->addLayout(hbox);
 
 
-    QGroupBox *wcGBox = new QGroupBox(tr("Velkomstøvelser"));
-    QVBoxLayout *wcVBox = new QVBoxLayout;
+    hbox = new QHBoxLayout;
+
+    gbox = new QGroupBox(tr("Velkomstøvelser"));
+    innerVBox = new QVBoxLayout;
 
     QPushButton *welcomeOne = new QPushButton(tr("Velkomst: Stavelsesdeling"));
     QPushButton *welcomeTwo = new QPushButton(tr("Velkomst: Udtale"));
     connect(welcomeOne, SIGNAL(clicked()), this, SLOT(showWelcomeOne()));
     connect(welcomeTwo, SIGNAL(clicked()), this, SLOT(showWelcomeTwo()));
 
-    wcVBox->addWidget(welcomeOne);
-    wcVBox->addWidget(welcomeTwo);
+    innerVBox->addWidget(welcomeOne);
+    innerVBox->addWidget(welcomeTwo);
 
-    wcGBox->setLayout(wcVBox);
-    vbox->addWidget(wcGBox);
+    gbox->setLayout(innerVBox);
+    hbox->addWidget(gbox);
 
 
-    QGroupBox *pnGBox = new QGroupBox(tr("Udtaleøvelser"));
-    QVBoxLayout *pnVBox = new QVBoxLayout;
+    gbox = new QGroupBox(tr("Udtaleøvelser"));
+    innerVBox = new QVBoxLayout;
 
     QPushButton *pronounceOne = new QPushButton(tr("Udtale: Gentag"));
     QPushButton *pronounceTwo = new QPushButton(tr("Udtale: Afskriv"));
     connect(pronounceOne, SIGNAL(clicked()), this, SLOT(showPronounceOne()));
     connect(pronounceTwo, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
 
-    pnVBox->addWidget(pronounceOne);
-    pnVBox->addWidget(pronounceTwo);
+    innerVBox->addWidget(pronounceOne);
+    innerVBox->addWidget(pronounceTwo);
 
-    pnGBox->setLayout(pnVBox);
-    vbox->addWidget(pnGBox);
+    gbox->setLayout(innerVBox);
+    hbox->addWidget(gbox);
 
 
-    QGroupBox *udGBox = new QGroupBox(tr("Up/Down Øvelser"));
-    QVBoxLayout *udVBox = new QVBoxLayout;
+    gbox = new QGroupBox(tr("Orddelingsøvelser"));
+    innerVBox = new QVBoxLayout;
+
+    QPushButton *hyphenOne = new QPushButton(tr("Orddeling: Bynavne"));
+    connect(hyphenOne, SIGNAL(clicked()), this, SLOT(showHyphenOne()));
+
+    innerVBox->addWidget(hyphenOne);
+
+    gbox->setLayout(innerVBox);
+    hbox->addWidget(gbox);
+
+    vbox->addLayout(hbox);
+
+
+    gbox = new QGroupBox(tr("Up/Down Øvelser"));
+    innerVBox = new QVBoxLayout;
 
     QPushButton *updownOne = new QPushButton(tr("Up/Down: Reception"));
     QPushButton *updownTwo = new QPushButton(tr("Up/Down: Produktion"));
@@ -125,12 +141,12 @@ dataDir(dataDir)
     connect(updownTwo, SIGNAL(clicked()), this, SLOT(showUpdownTwo()));
     connect(updownThree, SIGNAL(clicked()), this, SLOT(showUpdownThree()));
 
-    udVBox->addWidget(updownOne);
-    udVBox->addWidget(updownTwo);
-    udVBox->addWidget(updownThree);
+    innerVBox->addWidget(updownOne);
+    innerVBox->addWidget(updownTwo);
+    innerVBox->addWidget(updownThree);
 
-    udGBox->setLayout(udVBox);
-    vbox->addWidget(udGBox);
+    gbox->setLayout(innerVBox);
+    vbox->addWidget(gbox);
 
 
     setLayout(vbox);
@@ -178,46 +194,11 @@ void TaskChooser::showLectureFiveTwo() {
     lecture->activateWindow();
 }
 
-void TaskChooser::showLectureOne_Eng() {
-    LecturePlayer *lecture = new LecturePlayer("Lecture 1: The New Sounds", dataDir, "./1/english/");
-    lecture->show();
-    lecture->raise();
-    lecture->activateWindow();
-}
-
-void TaskChooser::showLectureTwo_Eng() {
-    LecturePlayer *lecture = new LecturePlayer("Lecture 2: Typical mistakes", dataDir, "./2/english/");
-    lecture->show();
-    lecture->raise();
-    lecture->activateWindow();
-}
-
-void TaskChooser::showLectureThree_Eng() {
-    LecturePlayer *lecture = new LecturePlayer("Lecture 3: Tones and long words", dataDir, "./3/english/");
-    lecture->show();
-    lecture->raise();
-    lecture->activateWindow();
-}
-
-void TaskChooser::showLectureFour_Eng() {
-    LecturePlayer *lecture = new LecturePlayer("Lecture 4: Practice and repetition", dataDir, "./4/english/");
-    lecture->show();
-    lecture->raise();
-    lecture->activateWindow();
-}
-
-void TaskChooser::showLectureFiveOne_Eng() {
-    LecturePlayer *lecture = new LecturePlayer("Lecture 5.1: Words and lexicons in lesson one", dataDir, "./5_1/english/");
-    lecture->show();
-    lecture->raise();
-    lecture->activateWindow();
-}
-
-void TaskChooser::showLectureFiveTwo_Eng() {
-    LecturePlayer *lecture = new LecturePlayer("Lecture 5.2: Introduction to grammar", dataDir, "./5_2/english/");
-    lecture->show();
-    lecture->raise();
-    lecture->activateWindow();
+void TaskChooser::showHyphenOne() {
+    HyphenOne *hyphen = new HyphenOne(dataDir);
+    hyphen->show();
+    hyphen->raise();
+    hyphen->activateWindow();
 }
 
 void TaskChooser::showWelcomeOne() {

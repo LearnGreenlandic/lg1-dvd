@@ -25,7 +25,8 @@ SOURCES += \
     src/PronounceOne.cpp \
     src/PronounceTwo.cpp \
     src/WelcomeOne.cpp \
-    src/WelcomeTwo.cpp
+    src/WelcomeTwo.cpp \
+    src/HyphenOne.cpp
 
 HEADERS  += \
     src/TaskChooser.hpp \
@@ -44,7 +45,8 @@ HEADERS  += \
     src/PronounceOne.hpp \
     src/PronounceTwo.hpp \
     src/WelcomeOne.hpp \
-    src/WelcomeTwo.hpp
+    src/WelcomeTwo.hpp \
+    src/HyphenOne.hpp
 
 CONFIG -= warn_off
 CONFIG += warn_on
