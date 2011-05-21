@@ -29,7 +29,8 @@ SOURCES += \
     src/HyphenOne.cpp \
     src/ListenOne.cpp \
     src/ListenTwo.cpp \
-    src/ListenThree.cpp
+    src/ListenThree.cpp \
+    src/ListenFour.cpp
 
 HEADERS  += \
     src/TaskChooser.hpp \
@@ -52,7 +53,8 @@ HEADERS  += \
     src/HyphenOne.hpp \
     src/ListenOne.hpp \
     src/ListenTwo.hpp \
-    src/ListenThree.hpp
+    src/ListenThree.hpp \
+    src/ListenFour.hpp
 
 CONFIG -= warn_off
 CONFIG += warn_on

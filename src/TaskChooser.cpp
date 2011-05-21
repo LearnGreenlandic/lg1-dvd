@@ -3,6 +3,7 @@
 #include "ListenOne.hpp"
 #include "ListenTwo.hpp"
 #include "ListenThree.hpp"
+#include "ListenFour.hpp"
 #include "WelcomeOne.hpp"
 #include "WelcomeTwo.hpp"
 #include "PronounceOne.hpp"
@@ -160,13 +161,16 @@ dataDir(dataDir)
     QPushButton *listenOne = new QPushButton(tr("Lytteøvelse 1.1: En eller to konsonanter"));
     QPushButton *listenTwo = new QPushButton(tr("Lytteøvelse 1.2: r eller ikke r"));
     QPushButton *listenThree = new QPushButton(tr("Lytteøvelse 1.3: tt eller ts eller t"));
+    QPushButton *listenFour = new QPushButton(tr("Lytteøvelse 1.4: Skriv hvad du hørte"));
     connect(listenOne, SIGNAL(clicked()), this, SLOT(showListenOne()));
     connect(listenTwo, SIGNAL(clicked()), this, SLOT(showListenTwo()));
     connect(listenThree, SIGNAL(clicked()), this, SLOT(showListenThree()));
+    connect(listenFour, SIGNAL(clicked()), this, SLOT(showListenFour()));
 
     innerVBox->addWidget(listenOne);
     innerVBox->addWidget(listenTwo);
     innerVBox->addWidget(listenThree);
+    innerVBox->addWidget(listenFour);
 
     gbox->setLayout(innerVBox);
     hbox->addWidget(gbox);
@@ -242,6 +246,13 @@ void TaskChooser::showListenTwo() {
 
 void TaskChooser::showListenThree() {
     ListenThree *listen = new ListenThree(dataDir);
+    listen->show();
+    listen->raise();
+    listen->activateWindow();
+}
+
+void TaskChooser::showListenFour() {
+    ListenFour *listen = new ListenFour(dataDir);
     listen->show();
     listen->raise();
     listen->activateWindow();
