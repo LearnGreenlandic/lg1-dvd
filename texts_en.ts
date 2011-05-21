@@ -2,6 +2,59 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="en_US">
 <context>
+    <name>ListenFour</name>
+    <message>
+        <source>Lytteøvelse 1.4: Skriv hvad du hørte</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skriv hvad du hører.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lyt igen</source>
+        <translation>Listen again</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Giv op...</source>
+        <translation>Give up...</translation>
+    </message>
+    <message>
+        <source>Gå til næste ord</source>
+        <translation>Go to next word</translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation>Done!</translation>
+    </message>
+    <message>
+        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
+        <translation>No words remain...the window will now close.</translation>
+    </message>
+    <message>
+        <source>Korrekt!</source>
+        <translation>Correct!</translation>
+    </message>
+    <message>
+        <source>Ikke korrekt.
+Prøv igen...</source>
+        <translation>Incorrect.
+Try again...</translation>
+    </message>
+    <message>
+        <source>Hrhm...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Det korrekte ord var:</source>
+        <translation>The correct word was:</translation>
+    </message>
+</context>
+<context>
     <name>ListenOne</name>
     <message>
         <source>Lyt og svar om der er to konsonanter.</source>
@@ -9,7 +62,7 @@
     </message>
     <message>
         <source>Lyt igen</source>
-        <translation type="unfinished">Listen again</translation>
+        <translation>Listen again</translation>
     </message>
     <message>
         <source>Ikke to konsonanter</source>
@@ -21,15 +74,15 @@
     </message>
     <message>
         <source>Gå til næste ord</source>
-        <translation type="unfinished">Go to next word</translation>
+        <translation>Go to next word</translation>
     </message>
     <message>
         <source>Færdig!</source>
-        <translation type="unfinished">Done!</translation>
+        <translation>Done!</translation>
     </message>
     <message>
         <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
-        <translation type="unfinished">No words remain...the window will now close.</translation>
+        <translation>No words remain...the window will now close.</translation>
     </message>
     <message>
         <source>Korrekt!</source>
@@ -38,7 +91,7 @@
     <message>
         <source>Ikke korrekt.
 Prøv igen...</source>
-        <translation type="unfinished">Incorrect.
+        <translation>Incorrect.
 Try again...</translation>
     </message>
     <message>
@@ -63,7 +116,7 @@ Ordet var: </source>
     </message>
     <message>
         <source>Lyt igen</source>
-        <translation type="unfinished">Listen again</translation>
+        <translation>Listen again</translation>
     </message>
     <message>
         <source>Har tt</source>
@@ -79,15 +132,15 @@ Ordet var: </source>
     </message>
     <message>
         <source>Gå til næste ord</source>
-        <translation type="unfinished">Go to next word</translation>
+        <translation>Go to next word</translation>
     </message>
     <message>
         <source>Færdig!</source>
-        <translation type="unfinished">Done!</translation>
+        <translation>Done!</translation>
     </message>
     <message>
         <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
-        <translation type="unfinished">No words remain...the window will now close.</translation>
+        <translation>No words remain...the window will now close.</translation>
     </message>
     <message>
         <source>Korrekt!
@@ -97,7 +150,7 @@ Ordet var: </source>
     <message>
         <source>Ikke korrekt.
 Prøv igen...</source>
-        <translation type="unfinished">Incorrect.
+        <translation>Incorrect.
 Try again...</translation>
     </message>
 </context>
@@ -113,7 +166,7 @@ Try again...</translation>
     </message>
     <message>
         <source>Lyt igen</source>
-        <translation type="unfinished">Listen again</translation>
+        <translation>Listen again</translation>
     </message>
     <message>
         <source>Har ikke r</source>
@@ -125,15 +178,15 @@ Try again...</translation>
     </message>
     <message>
         <source>Gå til næste ord</source>
-        <translation type="unfinished">Go to next word</translation>
+        <translation>Go to next word</translation>
     </message>
     <message>
         <source>Færdig!</source>
-        <translation type="unfinished">Done!</translation>
+        <translation>Done!</translation>
     </message>
     <message>
         <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
-        <translation type="unfinished">No words remain...the window will now close.</translation>
+        <translation>No words remain...the window will now close.</translation>
     </message>
     <message>
         <source>Korrekt!
@@ -143,7 +196,7 @@ Ordet var: </source>
     <message>
         <source>Ikke korrekt.
 Prøv igen...</source>
-        <translation type="unfinished">Incorrect.
+        <translation>Incorrect.
 Try again...</translation>
     </message>
 </context>
@@ -524,6 +577,10 @@ Try again...</translation>
     </message>
     <message>
         <source>Lytteøvelse 1.3: tt eller ts eller t</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lytteøvelse 1.4: Skriv hvad du hørte</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

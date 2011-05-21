@@ -2,6 +2,58 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="da_DK">
 <context>
+    <name>ListenFour</name>
+    <message>
+        <source>Lytteøvelse 1.4: Skriv hvad du hørte</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skriv hvad du hører.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lyt igen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Giv op...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gå til næste ord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Korrekt!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ikke korrekt.
+Prøv igen...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hrhm...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Det korrekte ord var:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ListenOne</name>
     <message>
         <source>Lyt og svar om der er to konsonanter.</source>
@@ -514,6 +566,10 @@ Prøv igen...</source>
     </message>
     <message>
         <source>Lytteøvelse 1.3: tt eller ts eller t</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lytteøvelse 1.4: Skriv hvad du hørte</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
