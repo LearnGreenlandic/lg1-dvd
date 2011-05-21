@@ -1,6 +1,8 @@
 #include "WelcomeOne.hpp"
 
-WelcomeOne::WelcomeOne(QDir dataDir) {
+WelcomeOne::WelcomeOne(QDir dataDir) :
+QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint)
+{
     if (!dataDir.cd("./welcome/") || !dataDir.exists("input.txt")) {
         QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/welcome/");
         throw(-1);

@@ -2,6 +2,7 @@
 #include <algorithm>
 
 ListenThree::ListenThree(QDir dataDir) :
+QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 curAt(-1)
 {
     if (!dataDir.cd("./listening/3/")) {
