@@ -1,3 +1,4 @@
+#include "RichTextPushButton.hpp"
 #include "LecturePlayer.hpp"
 #include "HyphenOne.hpp"
 #include "DialogOne.hpp"
@@ -25,199 +26,358 @@ TaskChooser::TaskChooser(QDir dataDir) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 dataDir(dataDir)
 {
-    setWindowTitle("Learn Greenlandic Demo");
+    setWindowTitle(tr("Grønlandsk for voksne"));
+    setContentsMargins(0,0,0,0);
+    //setStyleSheet("background-color: white;");
+    setStyleSheet("margin: 0; padding: 0;");
 
-    QVBoxLayout *vbox = new QVBoxLayout;
-    QHBoxLayout *hbox = new QHBoxLayout;
+    QVBoxLayout *topVBox = new QVBoxLayout;
+    topVBox->setContentsMargins(0,0,0,0);
 
-    QLabel *ql = new QLabel(tr("Demo af diverse funktionaliteter som vil være i det færdige produkt."));
-    ql->setWordWrap(true);
-    vbox->addWidget(ql);
-    vbox->addSpacing(5);
+    QPixmap qpx;
+    qpx.load(dataDir.absoluteFilePath(tr("./images/header_danish.png")));
 
-    QGroupBox *gbox = new QGroupBox(tr("Forelæsninger"));
-    QVBoxLayout *innerVBox = new QVBoxLayout;
+    QLabel *ql = new QLabel;
+    ql->setPixmap(qpx);
+    topVBox->addWidget(ql, Qt::AlignCenter|Qt::AlignTop);
+
+    topVBox->addSpacing(10);
+
+    QGridLayout *outerGrid = new QGridLayout;
+    outerGrid->setContentsMargins(0,0,0,0);
+
+
+    QHBoxLayout *itemHBox = new QHBoxLayout;
+    itemHBox->setContentsMargins(0,0,0,0);
+
+    QVBoxLayout *itemVBox = new QVBoxLayout;
+    itemVBox->setContentsMargins(0,0,0,0);
+
+    ql = new QLabel;
+    qpx.load(dataDir.absoluteFilePath("./images/welcome.png"));
+    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    ql->setPixmap(qpx);
+    itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *welcomePlayer = new QPushButton(tr("Velkomst ved Tikaajaat Kristiansen"));
+    welcomePlayer->setFlat(true);
+    welcomePlayer->setStyleSheet("font-weight: bold;");
+    connect(welcomePlayer, SIGNAL(clicked()), this, SLOT(showWelcomePlayer()));
+    itemVBox->addWidget(welcomePlayer, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    itemHBox->addLayout(itemVBox);
+    outerGrid->addLayout(itemHBox, 1, 0, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+
+
+    itemHBox = new QHBoxLayout;
+    itemHBox->setContentsMargins(0,0,0,0);
+
+    itemVBox = new QVBoxLayout;
+    itemVBox->setContentsMargins(0,0,0,0);
+
+    ql = new QLabel;
+    qpx.load(dataDir.absoluteFilePath(tr("./1/danish/0.png")));
+    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    ql->setPixmap(qpx);
+    itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
     QPushButton *lectureOne = new QPushButton(tr("Forelæsning 1: De \"sære\" lyd"));
-    QPushButton *lectureTwo = new QPushButton(tr("Forelæsning 2: Typiske danskerfejl"));
-    QPushButton *lectureThree = new QPushButton(tr("Forelæsning 3: Tonerne og de lange ord"));
-    QPushButton *lectureFour = new QPushButton(tr("Forelæsning 4: Træning og opsamling"));
-    QPushButton *lectureFiveOne = new QPushButton(tr("Forelæsning 5.1: Gloserne i lektion 1"));
-    QPushButton *lectureFiveTwo = new QPushButton(tr("Forelæsning 5.2: Grammatikken i lektion 1"));
+    //lectureOne->setHtml(QString("<h3>") + tr("Forelæsning 1: De \"sære\" lyd") + "</h3>");
+    lectureOne->setFlat(true);
+    lectureOne->setStyleSheet("font-weight: bold;");
     connect(lectureOne, SIGNAL(clicked()), this, SLOT(showLectureOne()));
-    connect(lectureTwo, SIGNAL(clicked()), this, SLOT(showLectureTwo()));
-    connect(lectureThree, SIGNAL(clicked()), this, SLOT(showLectureThree()));
-    connect(lectureFour, SIGNAL(clicked()), this, SLOT(showLectureFour()));
-    connect(lectureFiveOne, SIGNAL(clicked()), this, SLOT(showLectureFiveOne()));
-    connect(lectureFiveTwo, SIGNAL(clicked()), this, SLOT(showLectureFiveTwo()));
+    itemVBox->addWidget(lectureOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    innerVBox->addWidget(lectureOne);
-    innerVBox->addWidget(lectureTwo);
-    innerVBox->addWidget(lectureThree);
-    innerVBox->addWidget(lectureFour);
-    innerVBox->addWidget(lectureFiveOne);
-    innerVBox->addWidget(lectureFiveTwo);
-
-    gbox->setLayout(innerVBox);
-    hbox->addWidget(gbox);
-
-
-    gbox = new QGroupBox(tr("Strukturøvelser"));
-    innerVBox = new QVBoxLayout;
-
-    QPushButton *structureOne = new QPushButton(tr("Struktur 1.1: Lydopfattelse"));
-    QPushButton *structureTwo = new QPushButton(tr("Struktur 1.2: Dan nye ord"));
-    QPushButton *structureThree = new QPushButton(tr("Struktur 1.3: Lyt, forstå, dan ord"));
-    QPushButton *structureFour = new QPushButton(tr("Struktur 2.1: Dan nye ord"));
-    QPushButton *structureFive = new QPushButton(tr("Struktur 2.2: Lyt, forstå, dan ord"));
-    QPushButton *structureSix = new QPushButton(tr("Struktur 3.1: Dan nye ord"));
-    QPushButton *structureSeven = new QPushButton(tr("Struktur 3.2: Lyt, forstå, dan ord"));
-    connect(structureOne, SIGNAL(clicked()), this, SLOT(showStructureOne()));
-    connect(structureTwo, SIGNAL(clicked()), this, SLOT(showStructureTwo()));
-    connect(structureThree, SIGNAL(clicked()), this, SLOT(showStructureThree()));
-    connect(structureFour, SIGNAL(clicked()), this, SLOT(showStructureFour()));
-    connect(structureFive, SIGNAL(clicked()), this, SLOT(showStructureFive()));
-    connect(structureSix, SIGNAL(clicked()), this, SLOT(showStructureSix()));
-    connect(structureSeven, SIGNAL(clicked()), this, SLOT(showStructureSeven()));
-
-    innerVBox->addWidget(structureOne);
-    innerVBox->addWidget(structureTwo);
-    innerVBox->addWidget(structureThree);
-    innerVBox->addWidget(structureFour);
-    innerVBox->addWidget(structureFive);
-    innerVBox->addWidget(structureSix);
-    innerVBox->addWidget(structureSeven);
-
-    gbox->setLayout(innerVBox);
-    hbox->addWidget(gbox);
-
-    vbox->addLayout(hbox);
-
-
-    hbox = new QHBoxLayout;
-
-    gbox = new QGroupBox(tr("Velkomst og Øvelser"));
-    innerVBox = new QVBoxLayout;
-
-    QPushButton *welcomePlayer = new QPushButton(tr("Velkomstfilm"));
-    QPushButton *welcomeOne = new QPushButton(tr("Velkomst: Stavelsesdeling"));
-    QPushButton *welcomeTwo = new QPushButton(tr("Velkomst: Udtale"));
-    connect(welcomePlayer, SIGNAL(clicked()), this, SLOT(showWelcomePlayer()));
-    connect(welcomeOne, SIGNAL(clicked()), this, SLOT(showWelcomeOne()));
-    connect(welcomeTwo, SIGNAL(clicked()), this, SLOT(showWelcomeTwo()));
-
-    innerVBox->addWidget(welcomePlayer);
-    innerVBox->addWidget(welcomeOne);
-    innerVBox->addWidget(welcomeTwo);
-
-    gbox->setLayout(innerVBox);
-    hbox->addWidget(gbox);
-
-
-    gbox = new QGroupBox(tr("Udtaleøvelser"));
-    innerVBox = new QVBoxLayout;
-
-    QPushButton *pronounceOne = new QPushButton(tr("Udtale: Gentag"));
-    QPushButton *pronounceTwo = new QPushButton(tr("Udtale: Afskriv"));
+    QPushButton *pronounceOne = new QPushButton(QString("   - ") + tr("Udtaleøvelse 1.1: Gentag"));
+    pronounceOne->setFlat(true);
     connect(pronounceOne, SIGNAL(clicked()), this, SLOT(showPronounceOne()));
+    itemVBox->addWidget(pronounceOne, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *pronounceTwo = new QPushButton(QString("   - ") + tr("Udtaleøvelse 1.2: Afskriv"));
+    pronounceTwo->setFlat(true);
     connect(pronounceTwo, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+    itemVBox->addWidget(pronounceTwo, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    innerVBox->addWidget(pronounceOne);
-    innerVBox->addWidget(pronounceTwo);
+    QPushButton *lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 1 som PDF"));
+    lecturePDF->setFlat(true);
+    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+    itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    gbox->setLayout(innerVBox);
-    hbox->addWidget(gbox);
+    itemHBox->addLayout(itemVBox);
+    outerGrid->addLayout(itemHBox, 2, 0, 1, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
-    gbox = new QGroupBox(tr("Orddelingsøvelser"));
-    innerVBox = new QVBoxLayout;
+    itemHBox = new QHBoxLayout;
+    itemHBox->setContentsMargins(0,0,0,0);
 
-    QPushButton *hyphenOne = new QPushButton(tr("Orddeling: Bynavne"));
+    itemVBox = new QVBoxLayout;
+    itemVBox->setContentsMargins(0,0,0,0);
+
+    ql = new QLabel;
+    qpx.load(dataDir.absoluteFilePath(tr("./2/danish/0.png")));
+    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    ql->setPixmap(qpx);
+    itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *lectureTwo = new QPushButton(tr("Forelæsning 2: Typiske danskerfejl"));
+    lectureTwo->setFlat(true);
+    lectureTwo->setStyleSheet("font-weight: bold;");
+    connect(lectureTwo, SIGNAL(clicked()), this, SLOT(showLectureTwo()));
+    itemVBox->addWidget(lectureTwo, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *listenOne = new QPushButton(QString("   - ") + tr("Lytteøvelse 1.1: En eller to konsonanter"));
+    listenOne->setFlat(true);
+    connect(listenOne, SIGNAL(clicked()), this, SLOT(showListenOne()));
+    itemVBox->addWidget(listenOne, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *listenTwo = new QPushButton(QString("   - ") + tr("Lytteøvelse 1.2: r eller ikke r"));
+    listenTwo->setFlat(true);
+    connect(listenTwo, SIGNAL(clicked()), this, SLOT(showListenTwo()));
+    itemVBox->addWidget(listenTwo, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *listenThree = new QPushButton(QString("   - ") + tr("Lytteøvelse 1.3: tt eller ts eller t"));
+    listenThree->setFlat(true);
+    connect(listenThree, SIGNAL(clicked()), this, SLOT(showListenThree()));
+    itemVBox->addWidget(listenThree, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 2 som PDF"));
+    lecturePDF->setFlat(true);
+    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+    itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    itemHBox->addLayout(itemVBox);
+    outerGrid->addLayout(itemHBox, 3, 0, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+
+
+    itemHBox = new QHBoxLayout;
+    itemHBox->setContentsMargins(0,0,0,0);
+
+    itemVBox = new QVBoxLayout;
+    itemVBox->setContentsMargins(0,0,0,0);
+
+    ql = new QLabel;
+    qpx.load(dataDir.absoluteFilePath(tr("./3/danish/0.png")));
+    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    ql->setPixmap(qpx);
+    itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *lectureThree = new QPushButton(tr("Forelæsning 3: Tonerne og de lange ord"));
+    lectureThree->setFlat(true);
+    lectureThree->setStyleSheet("font-weight: bold;");
+    connect(lectureThree, SIGNAL(clicked()), this, SLOT(showLectureThree()));
+    itemVBox->addWidget(lectureThree, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *hyphenOne = new QPushButton(QString("   - ") + tr("Stavelsesdeling af bynavne"));
+    hyphenOne->setFlat(true);
     connect(hyphenOne, SIGNAL(clicked()), this, SLOT(showHyphenOne()));
+    itemVBox->addWidget(hyphenOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    innerVBox->addWidget(hyphenOne);
+    QPushButton *listenFour = new QPushButton(QString("   - ") + tr("Lytteøvelse 1.4: Skriv hvad du hørte"));
+    listenFour->setFlat(true);
+    connect(listenFour, SIGNAL(clicked()), this, SLOT(showListenFour()));
+    itemVBox->addWidget(listenFour, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    gbox->setLayout(innerVBox);
-    hbox->addWidget(gbox);
+    QPushButton *welcomeOne = new QPushButton(QString("   - ") + tr("Skærmtekstsøvelse 1.1: Stavelsesdeling"));
+    welcomeOne->setFlat(true);
+    connect(welcomeOne, SIGNAL(clicked()), this, SLOT(showWelcomeOne()));
+    itemVBox->addWidget(welcomeOne, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *welcomeTwo = new QPushButton(QString("   - ") + tr("Skærmtekstsøvelse 1.2: Udtale"));
+    welcomeTwo->setFlat(true);
+    connect(welcomeTwo, SIGNAL(clicked()), this, SLOT(showWelcomeTwo()));
+    itemVBox->addWidget(welcomeTwo, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 3 som PDF"));
+    lecturePDF->setFlat(true);
+    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+    itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    itemHBox->addLayout(itemVBox);
+    outerGrid->addLayout(itemHBox, 4, 0, 1, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
+    itemHBox = new QHBoxLayout;
+    itemHBox->setContentsMargins(0,0,0,0);
 
-    gbox = new QGroupBox(tr("Lyt, forstå, gentag"));
-    innerVBox = new QVBoxLayout;
+    itemVBox = new QVBoxLayout;
+    itemVBox->setContentsMargins(0,0,0,0);
+
+    ql = new QLabel;
+    qpx.load(dataDir.absoluteFilePath(tr("./4/danish/0.png")));
+    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    ql->setPixmap(qpx);
+    itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *lectureFour = new QPushButton(tr("Forelæsning 4: Træning og opsamling"));
+    lectureFour->setFlat(true);
+    lectureFour->setStyleSheet("font-weight: bold;");
+    connect(lectureFour, SIGNAL(clicked()), this, SLOT(showLectureFour()));
+    itemVBox->addWidget(lectureFour, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *dialogOne = new QPushButton(QString("   - ") + tr("Minidialog 1.1: Gentag"));
+    dialogOne->setFlat(true);
+    connect(dialogOne, SIGNAL(clicked()), this, SLOT(showDialogOne()));
+    itemVBox->addWidget(dialogOne, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *dialogTwo = new QPushButton(QString("   - ") + tr("Minidialog 1.2: Giv respons"));
+    dialogTwo->setFlat(true);
+    connect(dialogTwo, SIGNAL(clicked()), this, SLOT(showDialogTwo()));
+    itemVBox->addWidget(dialogTwo, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *dialogThree = new QPushButton(QString("   - ") + tr("Minidialog 1.3: Stil spørgsmål"));
+    dialogThree->setFlat(true);
+    connect(dialogThree, SIGNAL(clicked()), this, SLOT(showDialogThree()));
+    itemVBox->addWidget(dialogThree, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    lecturePDF = new QPushButton(QString("   - ") + tr("TODO: Diktat af Tika's tale"));
+    lecturePDF->setFlat(true);
+    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+    itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 4 som PDF"));
+    lecturePDF->setFlat(true);
+    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+    itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    itemHBox->addLayout(itemVBox);
+    outerGrid->addLayout(itemHBox, 5, 0, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+
+
+    itemHBox = new QHBoxLayout;
+    itemHBox->setContentsMargins(0,0,0,0);
+
+    itemVBox = new QVBoxLayout;
+    itemVBox->setContentsMargins(0,0,0,0);
+
+    ql = new QLabel;
+    qpx.load(dataDir.absoluteFilePath(tr("./5_1/danish/0.png")));
+    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    ql->setPixmap(qpx);
+    itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *lectureFiveOne = new QPushButton(tr("Forelæsning 5.1: Gloserne i lektion 1"));
+    lectureFiveOne->setFlat(true);
+    lectureFiveOne->setStyleSheet("font-weight: bold;");
+    connect(lectureFiveOne, SIGNAL(clicked()), this, SLOT(showLectureFiveOne()));
+    itemVBox->addWidget(lectureFiveOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
     QPushButton *lrPlayer = new QPushButton(tr("Lyt, forstå, gentag"));
+    lrPlayer->setFlat(true);
     connect(lrPlayer, SIGNAL(clicked()), this, SLOT(showListenRepeatPlayer()));
+    itemVBox->addWidget(lrPlayer, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    innerVBox->addWidget(lrPlayer);
+    lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 5.1 som PDF"));
+    lecturePDF->setFlat(true);
+    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+    itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    gbox->setLayout(innerVBox);
-    hbox->addWidget(gbox);
-
-    vbox->addLayout(hbox);
+    itemHBox->addLayout(itemVBox);
+    outerGrid->addLayout(itemHBox, 1, 1, 1, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
-    hbox = new QHBoxLayout;
+    itemHBox = new QHBoxLayout;
+    itemHBox->setContentsMargins(0,0,0,0);
 
-    gbox = new QGroupBox(tr("Up/Down Øvelser"));
-    innerVBox = new QVBoxLayout;
+    itemVBox = new QVBoxLayout;
+    itemVBox->setContentsMargins(0,0,0,0);
 
-    QPushButton *updownOne = new QPushButton(tr("Up/Down: Reception"));
-    QPushButton *updownTwo = new QPushButton(tr("Up/Down: Produktion"));
-    QPushButton *updownThree = new QPushButton(tr("Up/Down: Oversættelse"));
+    ql = new QLabel;
+    qpx.load(dataDir.absoluteFilePath(tr("./5_2/danish/0.png")));
+    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    ql->setPixmap(qpx);
+    itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *lectureFiveTwo = new QPushButton(tr("Forelæsning 5.2: Grammatikken i lektion 1"));
+    lectureFiveTwo->setFlat(true);
+    lectureFiveTwo->setStyleSheet("font-weight: bold;");
+    connect(lectureFiveTwo, SIGNAL(clicked()), this, SLOT(showLectureFiveTwo()));
+    itemVBox->addWidget(lectureFiveTwo, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *structureOne = new QPushButton(QString("   - ") + tr("Strukturøvelse 1.1: Lydopfattelse"));
+    structureOne->setFlat(true);
+    connect(structureOne, SIGNAL(clicked()), this, SLOT(showStructureOne()));
+    itemVBox->addWidget(structureOne, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *structureTwo = new QPushButton(QString("   - ") + tr("Strukturøvelse 1.2: Dan nye ord"));
+    structureTwo->setFlat(true);
+    connect(structureTwo, SIGNAL(clicked()), this, SLOT(showStructureTwo()));
+    itemVBox->addWidget(structureTwo, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *structureThree = new QPushButton(QString("   - ") + tr("Strukturøvelse 1.3: Lyt, forstå, dan ord"));
+    structureThree->setFlat(true);
+    connect(structureThree, SIGNAL(clicked()), this, SLOT(showStructureThree()));
+    itemVBox->addWidget(structureThree, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *structureFour = new QPushButton(QString("   - ") + tr("Strukturøvelse 2.1: Dan nye ord"));
+    structureFour->setFlat(true);
+    connect(structureFour, SIGNAL(clicked()), this, SLOT(showStructureFour()));
+    itemVBox->addWidget(structureFour, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *structureFive = new QPushButton(QString("   - ") + tr("Strukturøvelse 2.2: Lyt, forstå, dan ord"));
+    structureFive->setFlat(true);
+    connect(structureFive, SIGNAL(clicked()), this, SLOT(showStructureFive()));
+    itemVBox->addWidget(structureFive, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *structureSix = new QPushButton(QString("   - ") + tr("Strukturøvelse 3.1: Dan nye ord"));
+    structureSix->setFlat(true);
+    connect(structureSix, SIGNAL(clicked()), this, SLOT(showStructureSix()));
+    itemVBox->addWidget(structureSix, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *structureSeven = new QPushButton(QString("   - ") + tr("Strukturøvelse 3.2: Lyt, forstå, dan ord"));
+    structureSeven->setFlat(true);
+    connect(structureSeven, SIGNAL(clicked()), this, SLOT(showStructureSeven()));
+    itemVBox->addWidget(structureSeven, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 5.2 som PDF"));
+    lecturePDF->setFlat(true);
+    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+    itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    itemHBox->addLayout(itemVBox);
+    outerGrid->addLayout(itemHBox, 2, 1, 2, 1, Qt::AlignLeft|Qt::AlignTop);
+
+
+    itemHBox = new QHBoxLayout;
+    itemHBox->setContentsMargins(0,0,0,0);
+
+    itemVBox = new QVBoxLayout;
+    itemVBox->setContentsMargins(0,0,0,0);
+
+    ql = new QLabel;
+    qpx.load(dataDir.absoluteFilePath(tr("./5_1/danish/0.png")));
+    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    ql->setPixmap(qpx);
+    itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QLabel *updownHeader = new QLabel(QString("<b>") + tr("Øvelser i ordbygning: Forstå, sammenkæd selv, oversæt") + "</b>");
+    itemVBox->addWidget(updownHeader, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *updownOne = new QPushButton(QString("   - ") + tr("Ordbygning: Reception"));
+    updownOne->setFlat(true);
     connect(updownOne, SIGNAL(clicked()), this, SLOT(showUpdownOne()));
+    itemVBox->addWidget(updownOne, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *updownTwo = new QPushButton(QString("   - ") + tr("Ordbygning: Produktion"));
+    updownTwo->setFlat(true);
     connect(updownTwo, SIGNAL(clicked()), this, SLOT(showUpdownTwo()));
+    itemVBox->addWidget(updownTwo, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *updownThree = new QPushButton(QString("   - ") + tr("Ordbygning: Oversættelse"));
+    updownThree->setFlat(true);
     connect(updownThree, SIGNAL(clicked()), this, SLOT(showUpdownThree()));
+    itemVBox->addWidget(updownThree, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    innerVBox->addWidget(updownOne);
-    innerVBox->addWidget(updownTwo);
-    innerVBox->addWidget(updownThree);
-
-    gbox->setLayout(innerVBox);
-    hbox->addWidget(gbox);
+    itemHBox->addLayout(itemVBox);
+    outerGrid->addLayout(itemHBox, 4, 1, 1, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
-    gbox = new QGroupBox(tr("Lytteøvelser"));
-    innerVBox = new QVBoxLayout;
+    outerGrid->setAlignment(Qt::AlignCenter|Qt::AlignTop);
+    topVBox->addLayout(outerGrid);
+    topVBox->setAlignment(Qt::AlignCenter|Qt::AlignTop);
 
-    QPushButton *listenOne = new QPushButton(tr("Lytteøvelse 1.1: En eller to konsonanter"));
-    QPushButton *listenTwo = new QPushButton(tr("Lytteøvelse 1.2: r eller ikke r"));
-    QPushButton *listenThree = new QPushButton(tr("Lytteøvelse 1.3: tt eller ts eller t"));
-    QPushButton *listenFour = new QPushButton(tr("Lytteøvelse 1.4: Skriv hvad du hørte"));
-    connect(listenOne, SIGNAL(clicked()), this, SLOT(showListenOne()));
-    connect(listenTwo, SIGNAL(clicked()), this, SLOT(showListenTwo()));
-    connect(listenThree, SIGNAL(clicked()), this, SLOT(showListenThree()));
-    connect(listenFour, SIGNAL(clicked()), this, SLOT(showListenFour()));
+    topVBox->addSpacing(10);
 
-    innerVBox->addWidget(listenOne);
-    innerVBox->addWidget(listenTwo);
-    innerVBox->addWidget(listenThree);
-    innerVBox->addWidget(listenFour);
-
-    gbox->setLayout(innerVBox);
-    hbox->addWidget(gbox);
-
-
-    gbox = new QGroupBox(tr("Minidialoger"));
-    innerVBox = new QVBoxLayout;
-
-    QPushButton *dialogOne = new QPushButton(tr("Minidialog 1.1: Gentag"));
-    QPushButton *dialogTwo = new QPushButton(tr("Minidialog 1.2: Giv respons"));
-    QPushButton *dialogThree = new QPushButton(tr("Minidialog 1.3: Stil spørgsmål"));
-    connect(dialogOne, SIGNAL(clicked()), this, SLOT(showDialogOne()));
-    connect(dialogTwo, SIGNAL(clicked()), this, SLOT(showDialogTwo()));
-    connect(dialogThree, SIGNAL(clicked()), this, SLOT(showDialogThree()));
-
-    innerVBox->addWidget(dialogOne);
-    innerVBox->addWidget(dialogTwo);
-    innerVBox->addWidget(dialogThree);
-
-    gbox->setLayout(innerVBox);
-    hbox->addWidget(gbox);
-
-    vbox->addLayout(hbox);
-
-
-    setLayout(vbox);
+    setLayout(topVBox);
 }
 
 void TaskChooser::showLectureOne() {

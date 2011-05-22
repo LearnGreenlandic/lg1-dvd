@@ -541,10 +541,6 @@ Prøv igen...</source>
 <context>
     <name>TaskChooser</name>
     <message>
-        <source>Demo af diverse funktionaliteter som vil være i det færdige produkt.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Forelæsninger</source>
         <translation type="unfinished"></translation>
     </message>
@@ -718,6 +714,14 @@ Prøv igen...</source>
     </message>
     <message>
         <source>Lyt, forstå, gentag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lær Grønlandsk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>./images/header_danish.png</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

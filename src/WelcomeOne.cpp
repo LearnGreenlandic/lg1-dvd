@@ -41,6 +41,9 @@ QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::
     qvbl->addSpacing(5);
 
     input = new QTextEdit(text);
+    QFont font("Monospace");
+    font.setStyleHint(QFont::TypeWriter);
+    input->setFont(font);
     connect(input, SIGNAL(textChanged()), this, SLOT(preventLoss()));
     QPushButton *check = new QPushButton("Check");
     connect(check, SIGNAL(clicked()), this, SLOT(checkInput()));

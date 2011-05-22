@@ -39,7 +39,8 @@ SOURCES += \
     src/DialogTwo.cpp \
     src/DialogThree.cpp \
     src/WelcomePlayer.cpp \
-    src/ListenRepeatPlayer.cpp
+    src/ListenRepeatPlayer.cpp \
+    src/RichTextPushButton.cpp
 
 HEADERS  += \
     src/TaskChooser.hpp \
@@ -69,7 +70,8 @@ HEADERS  += \
     src/DialogTwo.hpp \
     src/DialogThree.hpp \
     src/WelcomePlayer.hpp \
-    src/ListenRepeatPlayer.hpp
+    src/ListenRepeatPlayer.hpp \
+    src/RichTextPushButton.hpp
 
 CONFIG -= warn_off
 CONFIG += warn_on
