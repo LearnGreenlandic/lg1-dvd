@@ -8,6 +8,7 @@ TEMPLATE = app
 TRANSLATIONS = texts_da.ts texts_en.ts
 
 RC_FILE = lg.rc
+ICON = icon.icns
 
 SOURCES += \
     src/LearnGreenlandic.cpp \
