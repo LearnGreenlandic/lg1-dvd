@@ -27,7 +27,7 @@ QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::
 dataDir(dataDir)
 {
     setWindowTitle(tr("Grønlandsk for voksne"));
-    setContentsMargins(0,0,0,0);
+    setContentsMargins(10,10,10,10);
     //setStyleSheet("background-color: white;");
     setStyleSheet("margin: 0; padding: 0;");
 
@@ -35,14 +35,16 @@ dataDir(dataDir)
     topVBox->setContentsMargins(0,0,0,0);
 
     QPixmap qpx;
+    QLabel *ql = new QLabel;
+    /*
     qpx.load(dataDir.absoluteFilePath("./images/header.png"));
     qpx = qpx.scaled(1100, 100, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
 
-    QLabel *ql = new QLabel;
     ql->setPixmap(qpx);
     topVBox->addWidget(ql, Qt::AlignCenter|Qt::AlignTop);
 
     topVBox->addSpacing(10);
+    //*/
 
     QGridLayout *outerGrid = new QGridLayout;
     outerGrid->setContentsMargins(0,0,0,0);
@@ -262,7 +264,7 @@ dataDir(dataDir)
     connect(lectureFiveOne, SIGNAL(clicked()), this, SLOT(showLectureFiveOne()));
     itemVBox->addWidget(lectureFiveOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lrPlayer = new QPushButton(tr("Lyt, forstå, gentag"));
+    QPushButton *lrPlayer = new QPushButton(QString("   - ") + tr("Lyt, forstå, gentag"));
     lrPlayer->setFlat(true);
     connect(lrPlayer, SIGNAL(clicked()), this, SLOT(showListenRepeatPlayer()));
     itemVBox->addWidget(lrPlayer, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -376,7 +378,7 @@ dataDir(dataDir)
     topVBox->addLayout(outerGrid);
     topVBox->setAlignment(Qt::AlignCenter|Qt::AlignTop);
 
-    topVBox->addSpacing(10);
+    //topVBox->addSpacing(10);
 
     setLayout(topVBox);
 }
