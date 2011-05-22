@@ -11,6 +11,15 @@ int main(int argc, char *argv[]) {
     app.setApplicationName("Learn Greenlandic");
     app.setQuitOnLastWindowClosed(true);
 
+    QSettings::setDefaultFormat(QSettings::IniFormat);
+    QSettings settings;
+
+    if (!settings.isWritable()) {
+        QMessageBox::critical(0, "Settings Not Writable!", "Unable to store user-specific settings. Cannot continue...");
+        app.exit(-1);
+        return -1;
+    }
+
     uint32_t seed = static_cast<uint32_t>(time(0)) ^ app.applicationPid();
     qsrand(seed);
     srand(seed);
@@ -26,8 +35,24 @@ int main(int argc, char *argv[]) {
         return -1;
     }
 
+    QString lang = settings.value("language").toString();
+    if (lang != "english" && lang != "danish") {
+        QMessageBox langq(QMessageBox::Question, "First question / Første spørgsmål...", "Do you prefer English or Danish?\nYou can change language later from the main menu.\n\nForetrækker du engelsk eller dansk?\nDu kan skife sprog senere fra hovedmenuen.");
+        QPushButton *lang_eng = langq.addButton("I prefer English", QMessageBox::YesRole);
+        langq.addButton("Jeg foretrækker dansk", QMessageBox::NoRole);
+
+        langq.exec();
+        if (langq.clickedButton() == lang_eng) {
+            settings.setValue("language", "english");
+        }
+        else {
+            settings.setValue("language", "danish");
+        }
+    }
+
+    lang = settings.value("language").toString();
     QTranslator translator;
-    if (QMessageBox::question(0, "English?", "Would you like this in English?", QMessageBox::Yes, QMessageBox::No) == QMessageBox::Yes) {
+    if (lang == "english") {
         translator.load("texts_en", dataDir.absoluteFilePath("./i18n/"));
     }
     else {

@@ -5,11 +5,11 @@
     <name>DialogOne</name>
     <message>
         <source>danish.txt</source>
-        <translation type="unfinished"></translation>
+        <translation>english.txt</translation>
     </message>
     <message>
         <source>Minidialog 1.1: Gentag</source>
-        <translation type="unfinished"></translation>
+        <translation>Mini dialogue 1.1: Repeat</translation>
     </message>
     <message>
         <source>I denne første øvelse skal du udelukkende koncentrere dig om udtale. Du skal blot gentage Beatrines og Tikas sætninger præcis som de er. Du kan pege på teksterne for at se dem oversat.</source>
@@ -17,34 +17,34 @@
     </message>
     <message>
         <source>Hør spørgsmålet</source>
-        <translation type="unfinished"></translation>
+        <translation>Listen to the question</translation>
     </message>
     <message>
         <source>Hør svaret</source>
-        <translation type="unfinished"></translation>
+        <translation>Listen to the answer</translation>
     </message>
     <message>
         <source>Næste dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Next dialogue</translation>
     </message>
     <message>
         <source>Færdig!</source>
-        <translation type="unfinished">Done!</translation>
+        <translation>Done!</translation>
     </message>
     <message>
         <source>Der er ikke flere fraser...vinduet lukker sig selv nu.</source>
-        <translation type="unfinished"></translation>
+        <translation>No phrases remain...window will now close.</translation>
     </message>
 </context>
 <context>
     <name>DialogThree</name>
     <message>
         <source>danish.txt</source>
-        <translation type="unfinished"></translation>
+        <translation>english.txt</translation>
     </message>
     <message>
         <source>Minidialog 1.3: Stil spørgsmål</source>
-        <translation type="unfinished"></translation>
+        <translation>Mini dialogue 1.3: Ask questions</translation>
     </message>
     <message>
         <source>Den sidste øvelse i denne omgang er en simpel husk/oversæt-øvelse. Koncentrer dig om at huske Beatrines sætninger. Formuler dem selv højt, lyt til Beatrine igen og gentag til sidst hendes sætning. Du får Tikas responser serveret som lidt memoteknisk hjælp.</source>
@@ -52,34 +52,34 @@
     </message>
     <message>
         <source>Hør spørgsmålet</source>
-        <translation type="unfinished"></translation>
+        <translation>Listen to the question</translation>
     </message>
     <message>
         <source>Hør svaret</source>
-        <translation type="unfinished"></translation>
+        <translation>Listen to the answer</translation>
     </message>
     <message>
         <source>Næste dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Next dialogue</translation>
     </message>
     <message>
         <source>Færdig!</source>
-        <translation type="unfinished">Done!</translation>
+        <translation>Done!</translation>
     </message>
     <message>
         <source>Der er ikke flere fraser...vinduet lukker sig selv nu.</source>
-        <translation type="unfinished"></translation>
+        <translation>No phrases remain...window will now close.</translation>
     </message>
 </context>
 <context>
     <name>DialogTwo</name>
     <message>
         <source>danish.txt</source>
-        <translation type="unfinished"></translation>
+        <translation>english.txt</translation>
     </message>
     <message>
         <source>Minidialog 1.2: Giv respons</source>
-        <translation type="unfinished"></translation>
+        <translation>Mini dialogue 1.2: Respond</translation>
     </message>
     <message>
         <source>Anden øvelse er lidt vanskeligere, for nu er der også lidt indhold med i spillet. Du får først Beatrines sætninger som du så skal give et fornuftigt respons på!</source>
@@ -87,23 +87,23 @@
     </message>
     <message>
         <source>Hør spørgsmålet</source>
-        <translation type="unfinished"></translation>
+        <translation>Listen to the question</translation>
     </message>
     <message>
         <source>Hør svaret</source>
-        <translation type="unfinished"></translation>
+        <translation>Listen to the answer</translation>
     </message>
     <message>
         <source>Næste dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Next dialogue</translation>
     </message>
     <message>
         <source>Færdig!</source>
-        <translation type="unfinished">Done!</translation>
+        <translation>Done!</translation>
     </message>
     <message>
         <source>Der er ikke flere fraser...vinduet lukker sig selv nu.</source>
-        <translation type="unfinished"></translation>
+        <translation>No phrases remain...window will now close.</translation>
     </message>
 </context>
 <context>
@@ -190,10 +190,6 @@ Try again...</translation>
         <translation>No words remain...the window will now close.</translation>
     </message>
     <message>
-        <source>Korrekt!</source>
-        <translation type="obsolete">Correct!</translation>
-    </message>
-    <message>
         <source>Ikke korrekt.
 Prøv igen...</source>
         <translation>Incorrect.
@@ -206,22 +202,23 @@ Try again...</translation>
     <message>
         <source>Korrekt!
 Ordet var: </source>
-        <translation type="unfinished"></translation>
+        <translation>Correct!
+The word was: </translation>
     </message>
 </context>
 <context>
     <name>ListenRepeatPlayer</name>
     <message>
         <source>Lyt, forstå, gentag</source>
-        <translation type="unfinished"></translation>
+        <translation>Listen, understand, repeat</translation>
     </message>
     <message>
         <source>Se Per igen</source>
-        <translation type="unfinished"></translation>
+        <translation>See Per again</translation>
     </message>
     <message>
         <source>Se Tikaajaat igen</source>
-        <translation type="unfinished"></translation>
+        <translation>See Tikaajaat again</translation>
     </message>
     <message>
         <source>&lt;b&gt;Bemærk&lt;/b&gt;: Tikaajaat bruger en form du ikke har lært endnu. I sidste ord siger hun &lt;i&gt;najugaqarlunga&lt;/i&gt; i stedet for &lt;i&gt;najugaqarpunga&lt;/i&gt;. På dette sted betyder de to ord præcis det samme, så lad være med at tænke for meget over det.</source>
@@ -244,15 +241,15 @@ Ordet var: </source>
     </message>
     <message>
         <source>Har tt</source>
-        <translation type="unfinished"></translation>
+        <translation>Has tt</translation>
     </message>
     <message>
         <source>Har ts</source>
-        <translation type="unfinished"></translation>
+        <translation>Has ts</translation>
     </message>
     <message>
         <source>Har kun t</source>
-        <translation type="unfinished"></translation>
+        <translation>Has only t</translation>
     </message>
     <message>
         <source>Gå til næste ord</source>
@@ -269,7 +266,8 @@ Ordet var: </source>
     <message>
         <source>Korrekt!
 Ordet var: </source>
-        <translation type="unfinished"></translation>
+        <translation>Correct!
+The word was: </translation>
     </message>
     <message>
         <source>Ikke korrekt.
@@ -294,11 +292,11 @@ Try again...</translation>
     </message>
     <message>
         <source>Har ikke r</source>
-        <translation type="unfinished"></translation>
+        <translation>Has no r</translation>
     </message>
     <message>
         <source>Har r</source>
-        <translation type="unfinished"></translation>
+        <translation>Has an r</translation>
     </message>
     <message>
         <source>Gå til næste ord</source>
@@ -315,7 +313,8 @@ Try again...</translation>
     <message>
         <source>Korrekt!
 Ordet var: </source>
-        <translation type="unfinished"></translation>
+        <translation>Correct!
+The word was: </translation>
     </message>
     <message>
         <source>Ikke korrekt.
@@ -552,10 +551,6 @@ Try again...</translation>
 <context>
     <name>TaskChooser</name>
     <message>
-        <source>Forelæsninger</source>
-        <translation>Lectures</translation>
-    </message>
-    <message>
         <source>Forelæsning 1: De &quot;sære&quot; lyd</source>
         <translation>Lecture 1: The New Sounds</translation>
     </message>
@@ -578,74 +573,6 @@ Try again...</translation>
     <message>
         <source>Forelæsning 5.2: Grammatikken i lektion 1</source>
         <translation>Lecture 5.2: Introduction to grammar</translation>
-    </message>
-    <message>
-        <source>Strukturøvelser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Struktur 1.1: Lydopfattelse</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Struktur 1.2: Dan nye ord</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Struktur 1.3: Lyt, forstå, dan ord</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Struktur 2.1: Dan nye ord</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Struktur 2.2: Lyt, forstå, dan ord</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Struktur 3.1: Dan nye ord</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Struktur 3.2: Lyt, forstå, dan ord</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Velkomst: Stavelsesdeling</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Velkomst: Udtale</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Udtaleøvelser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Udtale: Gentag</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Udtale: Afskriv</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Up/Down Øvelser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Up/Down: Reception</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Up/Down: Produktion</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Up/Down: Oversættelse</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>./1/danish/</source>
@@ -672,18 +599,6 @@ Try again...</translation>
         <translation>./5_2/english/</translation>
     </message>
     <message>
-        <source>Orddelingsøvelser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Orddeling: Bynavne</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lytteøvelser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Lytteøvelse 1.1: En eller to konsonanter</source>
         <translation type="unfinished"></translation>
     </message>
@@ -700,39 +615,187 @@ Try again...</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Minidialoger</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Minidialog 1.1: Gentag</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mini dialogue 1.1: Repeat</translation>
     </message>
     <message>
         <source>Minidialog 1.2: Giv respons</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mini dialogue 1.2: Respond</translation>
     </message>
     <message>
         <source>Minidialog 1.3: Stil spørgsmål</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Velkomst og Øvelser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Velkomstfilm</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mini dialogue 1.3: Ask questions</translation>
     </message>
     <message>
         <source>Lyt, forstå, gentag</source>
+        <translation>Listen, understand, repeat</translation>
+    </message>
+    <message>
+        <source>Grønlandsk for voksne</source>
+        <translation>Greenlandic for foreigners</translation>
+    </message>
+    <message>
+        <source>Velkomst ved Tikaajaat Kristiansen</source>
+        <translation>Welcome with Tikaajaat Kristiansen</translation>
+    </message>
+    <message>
+        <source>./1/danish/0.png</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Lær Grønlandsk</source>
+        <source>Forelæsning 1:
+De &quot;sære&quot; lyd</source>
+        <translation>Lecture 1:
+The New Sounds</translation>
+    </message>
+    <message>
+        <source>Udtaleøvelse 1.1: Gentag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>./images/header_danish.png</source>
+        <source>Udtaleøvelse 1.2: Afskriv</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forelæsning 1 som PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>./2/danish/0.png</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forelæsning 2:
+Typiske danskerfejl</source>
+        <translation>Lecture 2:
+Typical mistakes</translation>
+    </message>
+    <message>
+        <source>Forelæsning 2 som PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>./3/danish/0.png</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forelæsning 3:
+Tonerne og de lange ord</source>
+        <translation>Lecture 3:
+Tones and long words</translation>
+    </message>
+    <message>
+        <source>Stavelsesdeling af bynavne</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skærmtekstsøvelse 1.1: Stavelsesdeling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skærmtekstsøvelse 1.2: Udtale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forelæsning 3 som PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>./4/danish/0.png</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forelæsning 4:
+Træning og opsamling</source>
+        <translation>Lecture 4:
+Practice and repetition</translation>
+    </message>
+    <message>
+        <source>TODO: Diktat af Tika&apos;s tale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forelæsning 4 som PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>./5_1/danish/0.png</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forelæsning 5.1:
+Gloserne i lektion 1</source>
+        <translation>Lecture 5.1:
+Words and lexicons in lesson one</translation>
+    </message>
+    <message>
+        <source>Forelæsning 5.1 som PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>./5_2/danish/0.png</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forelæsning 5.2:
+Grammatikken i lektion 1</source>
+        <translation>Lecture 5.2:
+Introduction to grammar</translation>
+    </message>
+    <message>
+        <source>Strukturøvelse 1.1: Lydopfattelse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Strukturøvelse 1.2: Dan nye ord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Strukturøvelse 1.3: Lyt, forstå, dan ord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Strukturøvelse 2.1: Dan nye ord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Strukturøvelse 2.2: Lyt, forstå, dan ord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Strukturøvelse 3.1: Dan nye ord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Strukturøvelse 3.2: Lyt, forstå, dan ord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forelæsning 5.2 som PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Øvelser i ordbygning:
+Forstå, sammenkæd selv, oversæt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ordbygning: Reception</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ordbygning: Produktion</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ordbygning: Oversættelse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Appendix:
+Kapitel 3 (manuskriptudgave) af
+&apos;Forsøg til en forbedret
+grønlandsk pædagogisk grammatica&apos;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -740,7 +803,7 @@ Try again...</translation>
     <name>WelcomePlayer</name>
     <message>
         <source>Velkommen til Grønlandsk for Voksne!</source>
-        <translation type="unfinished"></translation>
+        <translation>Welcome to Greenlandic for Foreigners!</translation>
     </message>
 </context>
 </TS>

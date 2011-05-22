@@ -38,7 +38,7 @@ dataDir(dataDir)
     QLabel *ql = new QLabel;
     /*
     qpx.load(dataDir.absoluteFilePath("./images/header.png"));
-    qpx = qpx.scaled(1100, 100, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    qpx = qpx.scaled(185, 85, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
 
     ql->setPixmap(qpx);
     topVBox->addWidget(ql, Qt::AlignCenter|Qt::AlignTop);
@@ -58,13 +58,13 @@ dataDir(dataDir)
 
     ql = new QLabel;
     qpx.load(dataDir.absoluteFilePath("./images/welcome.png"));
-    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
     QPushButton *welcomePlayer = new QPushButton(tr("Velkomst ved Tikaajaat Kristiansen"));
     welcomePlayer->setFlat(true);
-    welcomePlayer->setStyleSheet("font-weight: bold;");
+    welcomePlayer->setStyleSheet("font-weight: bold; text-align: left;");
     connect(welcomePlayer, SIGNAL(clicked()), this, SLOT(showWelcomePlayer()));
     itemVBox->addWidget(welcomePlayer, 0, Qt::AlignLeft|Qt::AlignTop);
 
@@ -80,14 +80,14 @@ dataDir(dataDir)
 
     ql = new QLabel;
     qpx.load(dataDir.absoluteFilePath(tr("./1/danish/0.png")));
-    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureOne = new QPushButton(tr("Forelæsning 1: De \"sære\" lyd"));
+    QPushButton *lectureOne = new QPushButton(tr("Forelæsning 1:\nDe \"sære\" lyd"));
     //lectureOne->setHtml(QString("<h3>") + tr("Forelæsning 1: De \"sære\" lyd") + "</h3>");
     lectureOne->setFlat(true);
-    lectureOne->setStyleSheet("font-weight: bold;");
+    lectureOne->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureOne, SIGNAL(clicked()), this, SLOT(showLectureOne()));
     itemVBox->addWidget(lectureOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
@@ -103,7 +103,7 @@ dataDir(dataDir)
 
     QPushButton *lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 1 som PDF"));
     lecturePDF->setFlat(true);
-    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo())); // TODO
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
@@ -118,13 +118,13 @@ dataDir(dataDir)
 
     ql = new QLabel;
     qpx.load(dataDir.absoluteFilePath(tr("./2/danish/0.png")));
-    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureTwo = new QPushButton(tr("Forelæsning 2: Typiske danskerfejl"));
+    QPushButton *lectureTwo = new QPushButton(tr("Forelæsning 2:\nTypiske danskerfejl"));
     lectureTwo->setFlat(true);
-    lectureTwo->setStyleSheet("font-weight: bold;");
+    lectureTwo->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureTwo, SIGNAL(clicked()), this, SLOT(showLectureTwo()));
     itemVBox->addWidget(lectureTwo, 0, Qt::AlignLeft|Qt::AlignTop);
 
@@ -145,7 +145,7 @@ dataDir(dataDir)
 
     lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 2 som PDF"));
     lecturePDF->setFlat(true);
-    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo())); // TODO
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
@@ -160,13 +160,13 @@ dataDir(dataDir)
 
     ql = new QLabel;
     qpx.load(dataDir.absoluteFilePath(tr("./3/danish/0.png")));
-    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureThree = new QPushButton(tr("Forelæsning 3: Tonerne og de lange ord"));
+    QPushButton *lectureThree = new QPushButton(tr("Forelæsning 3:\nTonerne og de lange ord"));
     lectureThree->setFlat(true);
-    lectureThree->setStyleSheet("font-weight: bold;");
+    lectureThree->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureThree, SIGNAL(clicked()), this, SLOT(showLectureThree()));
     itemVBox->addWidget(lectureThree, 0, Qt::AlignLeft|Qt::AlignTop);
 
@@ -192,7 +192,7 @@ dataDir(dataDir)
 
     lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 3 som PDF"));
     lecturePDF->setFlat(true);
-    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo())); // TODO
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
@@ -207,13 +207,13 @@ dataDir(dataDir)
 
     ql = new QLabel;
     qpx.load(dataDir.absoluteFilePath(tr("./4/danish/0.png")));
-    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureFour = new QPushButton(tr("Forelæsning 4: Træning og opsamling"));
+    QPushButton *lectureFour = new QPushButton(tr("Forelæsning 4:\nTræning og opsamling"));
     lectureFour->setFlat(true);
-    lectureFour->setStyleSheet("font-weight: bold;");
+    lectureFour->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureFour, SIGNAL(clicked()), this, SLOT(showLectureFour()));
     itemVBox->addWidget(lectureFour, 0, Qt::AlignLeft|Qt::AlignTop);
 
@@ -234,12 +234,12 @@ dataDir(dataDir)
 
     lecturePDF = new QPushButton(QString("   - ") + tr("TODO: Diktat af Tika's tale"));
     lecturePDF->setFlat(true);
-    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo())); // TODO
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 4 som PDF"));
     lecturePDF->setFlat(true);
-    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo())); // TODO
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
@@ -254,13 +254,13 @@ dataDir(dataDir)
 
     ql = new QLabel;
     qpx.load(dataDir.absoluteFilePath(tr("./5_1/danish/0.png")));
-    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureFiveOne = new QPushButton(tr("Forelæsning 5.1: Gloserne i lektion 1"));
+    QPushButton *lectureFiveOne = new QPushButton(tr("Forelæsning 5.1:\nGloserne i lektion 1"));
     lectureFiveOne->setFlat(true);
-    lectureFiveOne->setStyleSheet("font-weight: bold;");
+    lectureFiveOne->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureFiveOne, SIGNAL(clicked()), this, SLOT(showLectureFiveOne()));
     itemVBox->addWidget(lectureFiveOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
@@ -271,7 +271,7 @@ dataDir(dataDir)
 
     lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 5.1 som PDF"));
     lecturePDF->setFlat(true);
-    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo())); // TODO
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
@@ -286,13 +286,13 @@ dataDir(dataDir)
 
     ql = new QLabel;
     qpx.load(dataDir.absoluteFilePath(tr("./5_2/danish/0.png")));
-    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureFiveTwo = new QPushButton(tr("Forelæsning 5.2: Grammatikken i lektion 1"));
+    QPushButton *lectureFiveTwo = new QPushButton(tr("Forelæsning 5.2:\nGrammatikken i lektion 1"));
     lectureFiveTwo->setFlat(true);
-    lectureFiveTwo->setStyleSheet("font-weight: bold;");
+    lectureFiveTwo->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureFiveTwo, SIGNAL(clicked()), this, SLOT(showLectureFiveTwo()));
     itemVBox->addWidget(lectureFiveTwo, 0, Qt::AlignLeft|Qt::AlignTop);
 
@@ -333,7 +333,7 @@ dataDir(dataDir)
 
     lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 5.2 som PDF"));
     lecturePDF->setFlat(true);
-    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
+    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo())); // TODO
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
@@ -347,12 +347,13 @@ dataDir(dataDir)
     itemVBox->setContentsMargins(0,0,0,0);
 
     ql = new QLabel;
-    qpx.load(dataDir.absoluteFilePath(tr("./5_1/danish/0.png")));
-    qpx = qpx.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    qpx.load(dataDir.absoluteFilePath(tr("./5_1/danish/0.png"))); // TODO
+    qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QLabel *updownHeader = new QLabel(QString("<b>") + tr("Øvelser i ordbygning:<br>Forstå, sammenkæd selv, oversæt") + "</b>");
+    QLabel *updownHeader = new QLabel(tr("Øvelser i ordbygning:\nForstå, sammenkæd selv, oversæt"));
+    updownHeader->setStyleSheet("font-weight: bold; text-align: left;");
     itemVBox->addWidget(updownHeader, 0, Qt::AlignLeft|Qt::AlignTop);
 
     QPushButton *updownOne = new QPushButton(QString("   - ") + tr("Ordbygning: Reception"));
@@ -372,6 +373,28 @@ dataDir(dataDir)
 
     itemHBox->addLayout(itemVBox);
     outerGrid->addLayout(itemHBox, 1, 2, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+
+
+    itemHBox = new QHBoxLayout;
+    itemHBox->setContentsMargins(0,0,0,0);
+
+    itemVBox = new QVBoxLayout;
+    itemVBox->setContentsMargins(0,0,0,0);
+
+    ql = new QLabel;
+    qpx.load(dataDir.absoluteFilePath(tr("./5_2/danish/0.png"))); // TODO
+    qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    ql->setPixmap(qpx);
+    itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *appendix = new QPushButton(tr("Appendix:\nKapitel 3 (manuskriptudgave) af\n'Forsøg til en forbedret\ngrønlandsk pædagogisk grammatica'"));
+    appendix->setFlat(true);
+    appendix->setStyleSheet("font-weight: bold; text-align: left;");
+    //connect(appendix, SIGNAL(clicked()), this, SLOT(showLectureFiveTwo())); // TODO
+    itemVBox->addWidget(appendix, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    itemHBox->addLayout(itemVBox);
+    outerGrid->addLayout(itemHBox, 2, 2, 1, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
     outerGrid->setAlignment(Qt::AlignCenter|Qt::AlignTop);
@@ -545,49 +568,49 @@ void TaskChooser::showUpdownThree() {
 }
 
 void TaskChooser::showStructureOne() {
-    StructureOne *structure = new StructureOne(dataDir, "./1/", tr("Struktur 1.1: Lydopfattelse"));
+    StructureOne *structure = new StructureOne(dataDir, "./1/", tr("Strukturøvelse 1.1: Lydopfattelse"));
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureTwo() {
-    StructureTwo *structure = new StructureTwo(dataDir, "./1/", tr("Struktur 1.2: Dan nye ord"));
+    StructureTwo *structure = new StructureTwo(dataDir, "./1/", tr("Strukturøvelse 1.2: Dan nye ord"));
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureThree() {
-    StructureThree *structure = new StructureThree(dataDir, "./1/", tr("Struktur 1.3: Lyt, forstå, dan ord"));
+    StructureThree *structure = new StructureThree(dataDir, "./1/", tr("Strukturøvelse 1.3: Lyt, forstå, dan ord"));
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureFour() {
-    StructureTwo *structure = new StructureTwo(dataDir, "./2/", tr("Struktur 2.1: Dan nye ord"));
+    StructureTwo *structure = new StructureTwo(dataDir, "./2/", tr("Strukturøvelse 2.1: Dan nye ord"));
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureFive() {
-    StructureThree *structure = new StructureThree(dataDir, "./2/", tr("Struktur 2.2: Lyt, forstå, dan ord"));
+    StructureThree *structure = new StructureThree(dataDir, "./2/", tr("Strukturøvelse 2.2: Lyt, forstå, dan ord"));
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureSix() {
-    StructureTwo *structure = new StructureTwo(dataDir, "./3/", tr("Struktur 3.1: Dan nye ord"));
+    StructureTwo *structure = new StructureTwo(dataDir, "./3/", tr("Strukturøvelse 3.1: Dan nye ord"));
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureSeven() {
-    StructureThree *structure = new StructureThree(dataDir, "./3/", tr("Struktur 3.2: Lyt, forstå, dan ord"));
+    StructureThree *structure = new StructureThree(dataDir, "./3/", tr("Strukturøvelse 3.2: Lyt, forstå, dan ord"));
     structure->show();
     structure->raise();
     structure->activateWindow();
