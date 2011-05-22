@@ -798,11 +798,15 @@ Kapitel 3 (manuskriptudgave) af
 grønlandsk pædagogisk grammatica&apos;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Change language to English</source>
+        <translation>Skift sprog til dansk</translation>
+    </message>
 </context>
 <context>
     <name>WelcomePlayer</name>
     <message>
-        <source>Velkommen til Grønlandsk for Voksne!</source>
+        <source>Velkommen til Grønlandsk for voksne!</source>
         <translation>Welcome to Greenlandic for Foreigners!</translation>
     </message>
 </context>

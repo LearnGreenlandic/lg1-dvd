@@ -22,9 +22,10 @@
 #include "StructureThree.hpp"
 #include "TaskChooser.hpp"
 
-TaskChooser::TaskChooser(QDir dataDir) :
+TaskChooser::TaskChooser(QDir dataDir, QTranslator *translator) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
-dataDir(dataDir)
+dataDir(dataDir),
+translator(translator)
 {
     setWindowTitle(tr("Grønlandsk for voksne"));
     setContentsMargins(10,10,10,10);
@@ -397,6 +398,28 @@ dataDir(dataDir)
     outerGrid->addLayout(itemHBox, 2, 2, 1, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
+    itemHBox = new QHBoxLayout;
+    itemHBox->setContentsMargins(0,0,0,0);
+
+    itemVBox = new QVBoxLayout;
+    itemVBox->setContentsMargins(0,0,0,0);
+
+    ql = new QLabel;
+    qpx.load(dataDir.absoluteFilePath(tr("./5_2/danish/0.png"))); // TODO
+    qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    ql->setPixmap(qpx);
+    itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *toggleLang = new QPushButton(tr("Change language to English"));
+    toggleLang->setFlat(true);
+    toggleLang->setStyleSheet("font-weight: bold; text-align: left;");
+    connect(toggleLang, SIGNAL(clicked()), this, SLOT(toggleLanguage()));
+    itemVBox->addWidget(toggleLang, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    itemHBox->addLayout(itemVBox);
+    outerGrid->addLayout(itemHBox, 3, 2, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+
+
     outerGrid->setAlignment(Qt::AlignCenter|Qt::AlignTop);
     topVBox->addLayout(outerGrid);
     topVBox->setAlignment(Qt::AlignCenter|Qt::AlignTop);
@@ -614,4 +637,29 @@ void TaskChooser::showStructureSeven() {
     structure->show();
     structure->raise();
     structure->activateWindow();
+}
+
+void TaskChooser::toggleLanguage() {
+    QSettings settings;
+
+    QString lang = settings.value("language").toString();
+    if (lang == "english") {
+        settings.setValue("language", "danish");
+    }
+    else {
+        settings.setValue("language", "english");
+    }
+
+    lang = settings.value("language").toString();
+    if (lang == "english") {
+        translator->load("texts_en", dataDir.absoluteFilePath("./i18n/"));
+    }
+    else {
+        translator->load("texts_da", dataDir.absoluteFilePath("./i18n/"));
+    }
+
+    TaskChooser *tc = new TaskChooser(dataDir, translator);
+    tc->show();
+
+    close();
 }

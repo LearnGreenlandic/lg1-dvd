@@ -7,7 +7,7 @@ class TaskChooser : public QWidget {
     Q_OBJECT
 
 public:
-    TaskChooser(QDir dataDir);
+    TaskChooser(QDir dataDir, QTranslator *translator);
 
 public slots:
     void showLectureOne();
@@ -49,8 +49,11 @@ public slots:
     void showStructureSix();
     void showStructureSeven();
 
+    void toggleLanguage();
+
 private:
     QDir dataDir;
+    QTranslator *translator;
 };
 
 #endif // TASKCHOOSER_HPP

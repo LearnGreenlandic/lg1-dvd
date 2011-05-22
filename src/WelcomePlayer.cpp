@@ -3,7 +3,7 @@
 WelcomePlayer::WelcomePlayer(QDir dataDir) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint)
 {
-    setWindowTitle(tr("Velkommen til Grønlandsk for Voksne!"));
+    setWindowTitle(tr("Velkommen til Grønlandsk for voksne!"));
 
     if (!dataDir.exists("welcome.dat")) {
         QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate welcome.dat!");

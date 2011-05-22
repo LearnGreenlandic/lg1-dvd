@@ -60,7 +60,7 @@ int main(int argc, char *argv[]) {
     }
     app.installTranslator(&translator);
 
-    TaskChooser tc(dataDir);
+    TaskChooser tc(dataDir, &translator);
     tc.show();
 
     return app.exec();
