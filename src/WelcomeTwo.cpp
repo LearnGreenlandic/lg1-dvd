@@ -40,7 +40,8 @@ curAt(-1)
     QLabel *ql = new QLabel(
         "Læs teksten op ord for ord og væn dig til de skiftende tonehøjder."
         " Tryk <Næste ord> efter hvert ord, når du føler, at din udtale er ved at være korrekt."
-        " Så får du ordet i fonetisk skrift i vores lille nodesystem så du har noget at kontrollere din udtale på.\n"
+        " Så får du ordet i fonetisk skrift i vores lille nodesystem, så du har noget at kontrollere din udtale på."
+        " Du finder en oversættelse i indstikshæftet."
         );
     ql->setWordWrap(true);
     qvbl->addWidget(ql);

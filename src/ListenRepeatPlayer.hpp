@@ -1,5 +1,5 @@
-#ifndef WELCOMEPLAYER_H
-#define WELCOMEPLAYER_H
+#ifndef LISTENREPEATPLAYER_HPP
+#define LISTENREPEATPLAYER_HPP
 
 #include "CryptFile.hpp"
 
@@ -11,11 +11,11 @@
 #include <phonon/effect.h>
 #include <QtGui>
 
-class WelcomePlayer : public QWidget {
+class ListenRepeatPlayer : public QWidget {
     Q_OBJECT
 
 public:
-    WelcomePlayer(QDir dataDir);
+    ListenRepeatPlayer(QDir dataDir);
 
     void closeEvent(QCloseEvent *event);
 
@@ -26,9 +26,12 @@ public slots:
     void show();
     void tick(qint64 time);
     void togglePlay();
+    void playPerAgain();
+    void playTikaAgain();
 
 private:
-    CryptFile *mediafile;
+    QDir dataDir;
+
     Phonon::MediaObject *media;
     Phonon::VideoWidget *video;
     Phonon::AudioOutput *audio;
@@ -38,4 +41,4 @@ private:
     QLCDNumber *timeLcd;
 };
 
-#endif // WELCOMEPLAYER_H
+#endif // LISTENREPEATPLAYER_HPP

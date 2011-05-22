@@ -32,6 +32,8 @@ public slots:
     void showWelcomeOne();
     void showWelcomeTwo();
 
+    void showListenRepeatPlayer();
+
     void showPronounceOne();
     void showPronounceTwo();
 

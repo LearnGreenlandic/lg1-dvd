@@ -35,7 +35,8 @@ SOURCES += \
     src/DialogOne.cpp \
     src/DialogTwo.cpp \
     src/DialogThree.cpp \
-    src/WelcomePlayer.cpp
+    src/WelcomePlayer.cpp \
+    src/ListenRepeatPlayer.cpp
 
 HEADERS  += \
     src/TaskChooser.hpp \
@@ -64,7 +65,8 @@ HEADERS  += \
     src/DialogOne.hpp \
     src/DialogTwo.hpp \
     src/DialogThree.hpp \
-    src/WelcomePlayer.hpp
+    src/WelcomePlayer.hpp \
+    src/ListenRepeatPlayer.hpp
 
 CONFIG -= warn_off
 CONFIG += warn_on

@@ -10,6 +10,7 @@
 #include "WelcomePlayer.hpp"
 #include "WelcomeOne.hpp"
 #include "WelcomeTwo.hpp"
+#include "ListenRepeatPlayer.hpp"
 #include "PronounceOne.hpp"
 #include "PronounceTwo.hpp"
 #include "UpdownOne.hpp"
@@ -135,6 +136,19 @@ dataDir(dataDir)
     connect(hyphenOne, SIGNAL(clicked()), this, SLOT(showHyphenOne()));
 
     innerVBox->addWidget(hyphenOne);
+
+    gbox->setLayout(innerVBox);
+    hbox->addWidget(gbox);
+
+
+
+    gbox = new QGroupBox(tr("Lyt, forstå, gentag"));
+    innerVBox = new QVBoxLayout;
+
+    QPushButton *lrPlayer = new QPushButton(tr("Lyt, forstå, gentag"));
+    connect(lrPlayer, SIGNAL(clicked()), this, SLOT(showListenRepeatPlayer()));
+
+    innerVBox->addWidget(lrPlayer);
 
     gbox->setLayout(innerVBox);
     hbox->addWidget(gbox);
@@ -323,6 +337,13 @@ void TaskChooser::showWelcomeTwo() {
     welcome->show();
     welcome->raise();
     welcome->activateWindow();
+}
+
+void TaskChooser::showListenRepeatPlayer() {
+    ListenRepeatPlayer *lrplayer = new ListenRepeatPlayer(dataDir);
+    lrplayer->show();
+    lrplayer->raise();
+    lrplayer->activateWindow();
 }
 
 void TaskChooser::showPronounceOne() {
