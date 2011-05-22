@@ -22,7 +22,7 @@ curAt(-1)
 
     std::random_shuffle(words.begin(), words.end());
 
-    setWindowTitle(tr("Lytteøvelse 1.2: r eller ikke r"));
+    setWindowTitle(tr("Lydøvelse  1.2: r eller ikke r"));
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 

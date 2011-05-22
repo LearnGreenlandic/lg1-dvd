@@ -9,14 +9,17 @@ UpdownData::UpdownData(QDir dataDir)
         throw(-1);
     }
 
-    if (!dataDir.exists("gloss.txt") || !dataDir.exists("updown.txt")) {
+    QSettings settings;
+    QString lang = settings.value("language").toString();
+
+    if (!dataDir.exists(lang + "_gloss.txt") || !dataDir.exists("updown.txt")) {
         QMessageBox::critical(0, "Missing Data!", "Data files missing from lessons/updown/");
         throw(-1);
     }
 
     QString tmp;
 
-    QFile fg(dataDir.absoluteFilePath("gloss.txt"));
+    QFile fg(dataDir.absoluteFilePath(lang + "_gloss.txt"));
     fg.open(QIODevice::ReadOnly);
     QTextStream tg(&fg);
     tg.setCodec("UTF-8");

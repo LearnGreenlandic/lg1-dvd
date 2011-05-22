@@ -5,9 +5,9 @@ QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::
 data(dataDir),
 curAt(0)
 {
-    setWindowTitle("Up/Down: Oversættelse");
+    setWindowTitle(tr("Ordbygning: Oversættelse"));
 
-    QLabel *ql = new QLabel("Oversæt følgende glossering til et ord i færdig form:\n");
+    QLabel *ql = new QLabel(tr("Oversæt følgende glossering til et ord i færdig form:"));
 
     QVBoxLayout *qvbl = new QVBoxLayout;
     qvbl->addWidget(ql);
@@ -16,9 +16,9 @@ curAt(0)
     up = new QLabel(QString("<center><h2>") + data.glossUpperShort(data.updowns.at(curAt).second) + "</h2></center>");
     input = new QLineEdit;
     connect(input, SIGNAL(returnPressed()), this, SLOT(checkInput()));
-    check = new QPushButton("Check");
+    check = new QPushButton(tr("Check"));
     connect(check, SIGNAL(clicked()), this, SLOT(checkInput()));
-    yield = new QPushButton("Giv op...");
+    yield = new QPushButton(tr("Giv op..."));
     connect(yield, SIGNAL(clicked()), this, SLOT(yieldWord()));
     result = new QLabel;
     curWord->addWidget(up);
@@ -30,7 +30,7 @@ curAt(0)
     result->hide();
     yield->hide();
 
-    QPushButton *nb = new QPushButton("Gå til næste ord");
+    QPushButton *nb = new QPushButton(tr("Gå til næste ord"));
     connect(nb, SIGNAL(clicked()), this, SLOT(showNext()));
 
     qvbl->addLayout(curWord);
@@ -43,7 +43,7 @@ curAt(0)
 void UpdownThree::showNext() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(data.updowns.size())) {
-        QMessageBox::information(0, "Færdig!", "Der er ikke flere ord...vinduet lukker sig selv nu.");
+        QMessageBox::information(0, tr("Færdig!"), tr("Der er ikke flere ord...vinduet lukker sig selv nu."));
         close();
         return;
     }
@@ -57,15 +57,15 @@ void UpdownThree::showNext() {
 
 void UpdownThree::checkInput() {
     if (input->text() == data.updowns.at(curAt).first) {
-        result->setText("<center><span style='color: darkgreen;'><b>Korrekt!</b></span></center>");
+        result->setText(QString("<center><span style='color: darkgreen;'><b>") + tr("Korrekt!") + "</b></span></center>");
         yield->hide();
     }
     else if (input->text().compare(data.updowns.at(curAt).first, Qt::CaseInsensitive) == 0) {
-        result->setText("<center><span style='color: darkyellow;'><b>Næsten korrekt.\nStore og små bogstaver gælder...</b></span></center>");
+        result->setText(QString("<center><span style='color: darkyellow;'><b>") + tr("Næsten korrekt.\nStore og små bogstaver gælder...") + "</b></span></center>");
         yield->show();
     }
     else {
-        result->setText("<center><span style='color: darkred;'><b>Ikke korrekt.\nPrøv igen...</b></span></center>");
+        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrøv igen...") + "</b></span></center>");
         yield->show();
     }
     result->show();
@@ -76,6 +76,6 @@ void UpdownThree::checkInput() {
 }
 
 void UpdownThree::yieldWord() {
-    QMessageBox::information(0, "Hrhm...", QString("Det korrekte færdige ord var:\n") + data.updowns.at(curAt).first);
+    QMessageBox::information(0, "Hrhm...", QString("<h1>") + tr("Det korrekte færdige ord var:") + QString("</h1><br>") + data.updowns.at(curAt).first);
     showNext();
 }

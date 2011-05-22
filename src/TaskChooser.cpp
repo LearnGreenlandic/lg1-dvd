@@ -129,17 +129,17 @@ translator(translator)
     connect(lectureTwo, SIGNAL(clicked()), this, SLOT(showLectureTwo()));
     itemVBox->addWidget(lectureTwo, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *listenOne = new QPushButton(QString("   - ") + tr("Lytteøvelse 1.1: En eller to konsonanter"));
+    QPushButton *listenOne = new QPushButton(QString("   - ") + tr("Lydøvelse 1.1: En eller to konsonanter"));
     listenOne->setFlat(true);
     connect(listenOne, SIGNAL(clicked()), this, SLOT(showListenOne()));
     itemVBox->addWidget(listenOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *listenTwo = new QPushButton(QString("   - ") + tr("Lytteøvelse 1.2: r eller ikke r"));
+    QPushButton *listenTwo = new QPushButton(QString("   - ") + tr("Lydøvelse 1.2: r eller ikke r"));
     listenTwo->setFlat(true);
     connect(listenTwo, SIGNAL(clicked()), this, SLOT(showListenTwo()));
     itemVBox->addWidget(listenTwo, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *listenThree = new QPushButton(QString("   - ") + tr("Lytteøvelse 1.3: tt eller ts eller t"));
+    QPushButton *listenThree = new QPushButton(QString("   - ") + tr("Lydøvelse 1.3: tt eller ts eller t"));
     listenThree->setFlat(true);
     connect(listenThree, SIGNAL(clicked()), this, SLOT(showListenThree()));
     itemVBox->addWidget(listenThree, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -176,7 +176,7 @@ translator(translator)
     connect(hyphenOne, SIGNAL(clicked()), this, SLOT(showHyphenOne()));
     itemVBox->addWidget(hyphenOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *listenFour = new QPushButton(QString("   - ") + tr("Lytteøvelse 1.4: Skriv hvad du hørte"));
+    QPushButton *listenFour = new QPushButton(QString("   - ") + tr("Lydøvelse 1.4: Skriv hvad du hørte"));
     listenFour->setFlat(true);
     connect(listenFour, SIGNAL(clicked()), this, SLOT(showListenFour()));
     itemVBox->addWidget(listenFour, 0, Qt::AlignLeft|Qt::AlignTop);

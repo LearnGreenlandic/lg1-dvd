@@ -45,7 +45,7 @@ curAt(-1)
 
     std::random_shuffle(words.begin(), words.end());
 
-    setWindowTitle(tr("Lytteøvelse 1.1: En eller to konsonanter"));
+    setWindowTitle(tr("Lydøvelse  1.1: En eller to konsonanter"));
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 

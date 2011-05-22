@@ -9,11 +9,11 @@
     </message>
     <message>
         <source>Minidialog 1.1: Gentag</source>
-        <translation>Mini dialogue 1.1: Repeat</translation>
+        <translation>Mini-dialogue 1.1: Repeat</translation>
     </message>
     <message>
         <source>I denne første øvelse skal du udelukkende koncentrere dig om udtale. Du skal blot gentage Beatrines og Tikas sætninger præcis som de er. Du kan pege på teksterne for at se dem oversat.</source>
-        <translation type="unfinished"></translation>
+        <translation>In this first exercise you should concentrace exclusively on pronunciation. Simply repeat the sentences exactly as Beatrine and Tika say them. You can point on the texts to see a translation.</translation>
     </message>
     <message>
         <source>Hør spørgsmålet</source>
@@ -44,11 +44,11 @@
     </message>
     <message>
         <source>Minidialog 1.3: Stil spørgsmål</source>
-        <translation>Mini dialogue 1.3: Ask questions</translation>
+        <translation>Mini-dialogue 1.3: Ask questions</translation>
     </message>
     <message>
         <source>Den sidste øvelse i denne omgang er en simpel husk/oversæt-øvelse. Koncentrer dig om at huske Beatrines sætninger. Formuler dem selv højt, lyt til Beatrine igen og gentag til sidst hendes sætning. Du får Tikas responser serveret som lidt memoteknisk hjælp.</source>
-        <translation type="unfinished"></translation>
+        <translation>The last exercise in this round is a simple recall/translate exercise. Concentrate on remembering the sentences from Beatrine. Formulate them out loud, listen to Beatrine again and finally repeat what she says. You get to see Tika&apos;s response as a mnemonic device.</translation>
     </message>
     <message>
         <source>Hør spørgsmålet</source>
@@ -79,11 +79,11 @@
     </message>
     <message>
         <source>Minidialog 1.2: Giv respons</source>
-        <translation>Mini dialogue 1.2: Respond</translation>
+        <translation>Mini-dialogue 1.2: Respond</translation>
     </message>
     <message>
         <source>Anden øvelse er lidt vanskeligere, for nu er der også lidt indhold med i spillet. Du får først Beatrines sætninger som du så skal give et fornuftigt respons på!</source>
-        <translation type="unfinished"></translation>
+        <translation>This second exercise is a bit more difficult as the contents come into play. First you will see Beatrine&apos;s sentence, which you then have to formulate a response to!</translation>
     </message>
     <message>
         <source>Hør spørgsmålet</source>
@@ -108,10 +108,6 @@
 </context>
 <context>
     <name>ListenFour</name>
-    <message>
-        <source>Lytteøvelse 1.4: Skriv hvad du hørte</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Skriv hvad du hører.</source>
         <translation type="unfinished"></translation>
@@ -158,6 +154,10 @@ Try again...</translation>
         <source>Det korrekte ord var:</source>
         <translation>The correct word was:</translation>
     </message>
+    <message>
+        <source>Lydøvelse  1.4: Skriv hvad du hørte</source>
+        <translation>Sound exercise 1.4: Write what you heard</translation>
+    </message>
 </context>
 <context>
     <name>ListenOne</name>
@@ -196,14 +196,14 @@ Prøv igen...</source>
 Try again...</translation>
     </message>
     <message>
-        <source>Lytteøvelse 1.1: En eller to konsonanter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Korrekt!
 Ordet var: </source>
         <translation>Correct!
 The word was: </translation>
+    </message>
+    <message>
+        <source>Lydøvelse  1.1: En eller to konsonanter</source>
+        <translation>Sound exercise 1.1: One or two consonants</translation>
     </message>
 </context>
 <context>
@@ -227,10 +227,6 @@ The word was: </translation>
 </context>
 <context>
     <name>ListenThree</name>
-    <message>
-        <source>Lytteøvelse 1.3: tt eller ts eller t</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Lyt og svar om ordet indeholder &apos;tt&apos; eller &apos;ts&apos; eller kun &apos;t&apos;.</source>
         <translation type="unfinished"></translation>
@@ -275,13 +271,13 @@ Prøv igen...</source>
         <translation>Incorrect.
 Try again...</translation>
     </message>
+    <message>
+        <source>Lydøvelse  1.3: tt eller ts eller t</source>
+        <translation>Sound exercise 1.3: tt or ts or t</translation>
+    </message>
 </context>
 <context>
     <name>ListenTwo</name>
-    <message>
-        <source>Lytteøvelse 1.2: r eller ikke r</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Lyt og svar om ordet indeholder &apos;r&apos; eller ej.</source>
         <translation type="unfinished"></translation>
@@ -321,6 +317,10 @@ The word was: </translation>
 Prøv igen...</source>
         <translation>Incorrect.
 Try again...</translation>
+    </message>
+    <message>
+        <source>Lydøvelse  1.2: r eller ikke r</source>
+        <translation>Sound exercise 1.2: r or no r</translation>
     </message>
 </context>
 <context>
@@ -599,32 +599,16 @@ Try again...</translation>
         <translation>./5_2/english/</translation>
     </message>
     <message>
-        <source>Lytteøvelse 1.1: En eller to konsonanter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lytteøvelse 1.2: r eller ikke r</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lytteøvelse 1.3: tt eller ts eller t</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lytteøvelse 1.4: Skriv hvad du hørte</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Minidialog 1.1: Gentag</source>
-        <translation type="unfinished">Mini dialogue 1.1: Repeat</translation>
+        <translation>Mini-dialogue 1.1: Repeat</translation>
     </message>
     <message>
         <source>Minidialog 1.2: Giv respons</source>
-        <translation type="unfinished">Mini dialogue 1.2: Respond</translation>
+        <translation>Mini-dialogue 1.2: Respond</translation>
     </message>
     <message>
         <source>Minidialog 1.3: Stil spørgsmål</source>
-        <translation type="unfinished">Mini dialogue 1.3: Ask questions</translation>
+        <translation>Mini-dialogue 1.3: Ask questions</translation>
     </message>
     <message>
         <source>Lyt, forstå, gentag</source>
@@ -640,7 +624,7 @@ Try again...</translation>
     </message>
     <message>
         <source>./1/danish/0.png</source>
-        <translation type="unfinished"></translation>
+        <translation>./1/english/0.png</translation>
     </message>
     <message>
         <source>Forelæsning 1:
@@ -662,7 +646,7 @@ The New Sounds</translation>
     </message>
     <message>
         <source>./2/danish/0.png</source>
-        <translation type="unfinished"></translation>
+        <translation>./2/english/0.png</translation>
     </message>
     <message>
         <source>Forelæsning 2:
@@ -676,7 +660,7 @@ Typical mistakes</translation>
     </message>
     <message>
         <source>./3/danish/0.png</source>
-        <translation type="unfinished"></translation>
+        <translation>./3/english/0.png</translation>
     </message>
     <message>
         <source>Forelæsning 3:
@@ -702,7 +686,7 @@ Tones and long words</translation>
     </message>
     <message>
         <source>./4/danish/0.png</source>
-        <translation type="unfinished"></translation>
+        <translation>./4/english/0.png</translation>
     </message>
     <message>
         <source>Forelæsning 4:
@@ -720,7 +704,7 @@ Practice and repetition</translation>
     </message>
     <message>
         <source>./5_1/danish/0.png</source>
-        <translation type="unfinished"></translation>
+        <translation>./5_1/english/0.png</translation>
     </message>
     <message>
         <source>Forelæsning 5.1:
@@ -734,7 +718,7 @@ Words and lexicons in lesson one</translation>
     </message>
     <message>
         <source>./5_2/danish/0.png</source>
-        <translation type="unfinished"></translation>
+        <translation>./5_2/english/0.png</translation>
     </message>
     <message>
         <source>Forelæsning 5.2:
@@ -801,6 +785,151 @@ grønlandsk pædagogisk grammatica&apos;</source>
     <message>
         <source>Change language to English</source>
         <translation>Skift sprog til dansk</translation>
+    </message>
+    <message>
+        <source>Lydøvelse 1.1: En eller to konsonanter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lydøvelse 1.2: r eller ikke r</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lydøvelse 1.3: tt eller ts eller t</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lydøvelse 1.4: Skriv hvad du hørte</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UpdownOne</name>
+    <message>
+        <source>Ordbygning: Reception</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Prøv at forstå og at udtale følgende ord:</source>
+        <translation>Try understanding and pronouncing the following word:</translation>
+    </message>
+    <message>
+        <source>Vis hjælp</source>
+        <translation>Show help</translation>
+    </message>
+    <message>
+        <source>Gå til næste ord</source>
+        <translation>Go to next word</translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation>Done!</translation>
+    </message>
+    <message>
+        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
+        <translation>No words remain...the window will now close.</translation>
+    </message>
+</context>
+<context>
+    <name>UpdownThree</name>
+    <message>
+        <source>Ordbygning: Oversættelse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Oversæt følgende glossering til et ord i færdig form:</source>
+        <translation>Translate the following glossings to a word in final form:</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Giv op...</source>
+        <translation>Give up...</translation>
+    </message>
+    <message>
+        <source>Gå til næste ord</source>
+        <translation>Go to next word</translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation>Done!</translation>
+    </message>
+    <message>
+        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
+        <translation>No words remain...the window will now close.</translation>
+    </message>
+    <message>
+        <source>Korrekt!</source>
+        <translation>Correct!</translation>
+    </message>
+    <message>
+        <source>Næsten korrekt.
+Store og små bogstaver gælder...</source>
+        <translation>Almost correct.
+The check is case-sensitive...</translation>
+    </message>
+    <message>
+        <source>Ikke korrekt.
+Prøv igen...</source>
+        <translation>Incorrect.
+Try again...</translation>
+    </message>
+    <message>
+        <source>Det korrekte færdige ord var:</source>
+        <translation>The correctly constructed word was:</translation>
+    </message>
+</context>
+<context>
+    <name>UpdownTwo</name>
+    <message>
+        <source>Ordbygning: Produktion</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skriv følgende ord i færdig form:</source>
+        <translation>Write the following word in final form:</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Giv op...</source>
+        <translation>Give up...</translation>
+    </message>
+    <message>
+        <source>Gå til næste ord</source>
+        <translation>Go to next word</translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation>Done!</translation>
+    </message>
+    <message>
+        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
+        <translation>No words remain...the window will now close.</translation>
+    </message>
+    <message>
+        <source>Korrekt!</source>
+        <translation>Correct!</translation>
+    </message>
+    <message>
+        <source>Næsten korrekt.
+Store og små bogstaver gælder...</source>
+        <translation>Almost correct.
+The check is case-sensitive...</translation>
+    </message>
+    <message>
+        <source>Ikke korrekt.
+Prøv igen...</source>
+        <translation>Incorrect.
+Try again...</translation>
+    </message>
+    <message>
+        <source>Det korrekte færdige ord var:</source>
+        <translation>The correctly constructed word was:</translation>
     </message>
 </context>
 <context>

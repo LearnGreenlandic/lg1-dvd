@@ -109,10 +109,6 @@
 <context>
     <name>ListenFour</name>
     <message>
-        <source>Lytteøvelse 1.4: Skriv hvad du hørte</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Skriv hvad du hører.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -157,6 +153,10 @@ Prøv igen...</source>
         <source>Det korrekte ord var:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Lydøvelse  1.4: Skriv hvad du hørte</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ListenOne</name>
@@ -194,12 +194,12 @@ Prøv igen...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Lytteøvelse 1.1: En eller to konsonanter</source>
+        <source>Korrekt!
+Ordet var: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Korrekt!
-Ordet var: </source>
+        <source>Lydøvelse  1.1: En eller to konsonanter</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -224,10 +224,6 @@ Ordet var: </source>
 </context>
 <context>
     <name>ListenThree</name>
-    <message>
-        <source>Lytteøvelse 1.3: tt eller ts eller t</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Lyt og svar om ordet indeholder &apos;tt&apos; eller &apos;ts&apos; eller kun &apos;t&apos;.</source>
         <translation type="unfinished"></translation>
@@ -270,13 +266,13 @@ Ordet var: </source>
 Prøv igen...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Lydøvelse  1.3: tt eller ts eller t</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ListenTwo</name>
-    <message>
-        <source>Lytteøvelse 1.2: r eller ikke r</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Lyt og svar om ordet indeholder &apos;r&apos; eller ej.</source>
         <translation type="unfinished"></translation>
@@ -313,6 +309,10 @@ Ordet var: </source>
     <message>
         <source>Ikke korrekt.
 Prøv igen...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lydøvelse  1.2: r eller ikke r</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -589,22 +589,6 @@ Prøv igen...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Lytteøvelse 1.1: En eller to konsonanter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lytteøvelse 1.2: r eller ikke r</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lytteøvelse 1.3: tt eller ts eller t</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lytteøvelse 1.4: Skriv hvad du hørte</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Minidialog 1.1: Gentag</source>
         <translation type="unfinished"></translation>
     </message>
@@ -784,6 +768,147 @@ grønlandsk pædagogisk grammatica&apos;</source>
     </message>
     <message>
         <source>Change language to English</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lydøvelse 1.1: En eller to konsonanter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lydøvelse 1.2: r eller ikke r</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lydøvelse 1.3: tt eller ts eller t</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lydøvelse 1.4: Skriv hvad du hørte</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UpdownOne</name>
+    <message>
+        <source>Ordbygning: Reception</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Prøv at forstå og at udtale følgende ord:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vis hjælp</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gå til næste ord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UpdownThree</name>
+    <message>
+        <source>Ordbygning: Oversættelse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Oversæt følgende glossering til et ord i færdig form:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Giv op...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gå til næste ord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Korrekt!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Næsten korrekt.
+Store og små bogstaver gælder...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ikke korrekt.
+Prøv igen...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Det korrekte færdige ord var:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UpdownTwo</name>
+    <message>
+        <source>Ordbygning: Produktion</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skriv følgende ord i færdig form:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Giv op...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gå til næste ord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Korrekt!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Næsten korrekt.
+Store og små bogstaver gælder...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ikke korrekt.
+Prøv igen...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Det korrekte færdige ord var:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
