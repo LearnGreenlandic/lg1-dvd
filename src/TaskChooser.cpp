@@ -35,7 +35,8 @@ dataDir(dataDir)
     topVBox->setContentsMargins(0,0,0,0);
 
     QPixmap qpx;
-    qpx.load(dataDir.absoluteFilePath(tr("./images/header_danish.png")));
+    qpx.load(dataDir.absoluteFilePath("./images/header.png"));
+    qpx = qpx.scaled(1100, 100, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
 
     QLabel *ql = new QLabel;
     ql->setPixmap(qpx);
@@ -240,7 +241,7 @@ dataDir(dataDir)
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 5, 0, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    outerGrid->addLayout(itemHBox, 1, 1, 1, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
     itemHBox = new QHBoxLayout;
@@ -272,7 +273,7 @@ dataDir(dataDir)
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 1, 1, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    outerGrid->addLayout(itemHBox, 2, 1, 1, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
     itemHBox = new QHBoxLayout;
@@ -334,7 +335,7 @@ dataDir(dataDir)
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 2, 1, 2, 1, Qt::AlignLeft|Qt::AlignTop);
+    outerGrid->addLayout(itemHBox, 3, 1, 2, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
     itemHBox = new QHBoxLayout;
@@ -349,7 +350,7 @@ dataDir(dataDir)
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QLabel *updownHeader = new QLabel(QString("<b>") + tr("Øvelser i ordbygning: Forstå, sammenkæd selv, oversæt") + "</b>");
+    QLabel *updownHeader = new QLabel(QString("<b>") + tr("Øvelser i ordbygning:<br>Forstå, sammenkæd selv, oversæt") + "</b>");
     itemVBox->addWidget(updownHeader, 0, Qt::AlignLeft|Qt::AlignTop);
 
     QPushButton *updownOne = new QPushButton(QString("   - ") + tr("Ordbygning: Reception"));
@@ -368,7 +369,7 @@ dataDir(dataDir)
     itemVBox->addWidget(updownThree, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 4, 1, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    outerGrid->addLayout(itemHBox, 1, 2, 1, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
     outerGrid->setAlignment(Qt::AlignCenter|Qt::AlignTop);
