@@ -70,7 +70,7 @@ translator(translator)
     itemVBox->addWidget(welcomePlayer, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 1, 0, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    outerGrid->addLayout(itemHBox, 1, 0, 1, 3, Qt::AlignLeft|Qt::AlignTop);
 
 
     itemHBox = new QHBoxLayout;
@@ -244,7 +244,7 @@ translator(translator)
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 1, 1, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    outerGrid->addLayout(itemHBox, 2, 1, 1, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
     itemHBox = new QHBoxLayout;
@@ -276,7 +276,7 @@ translator(translator)
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 2, 1, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    outerGrid->addLayout(itemHBox, 3, 1, 1, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
     itemHBox = new QHBoxLayout;
@@ -338,7 +338,7 @@ translator(translator)
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 3, 1, 2, 1, Qt::AlignLeft|Qt::AlignTop);
+    outerGrid->addLayout(itemHBox, 4, 1, 1, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
     itemHBox = new QHBoxLayout;
@@ -373,7 +373,7 @@ translator(translator)
     itemVBox->addWidget(updownThree, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 1, 2, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    outerGrid->addLayout(itemHBox, 2, 2, 1, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
     itemHBox = new QHBoxLayout;
@@ -395,7 +395,7 @@ translator(translator)
     itemVBox->addWidget(appendix, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 2, 2, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    outerGrid->addLayout(itemHBox, 3, 2, 1, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
     itemHBox = new QHBoxLayout;
@@ -417,7 +417,7 @@ translator(translator)
     itemVBox->addWidget(toggleLang, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 3, 2, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    outerGrid->addLayout(itemHBox, 4, 2, 1, 1, Qt::AlignLeft|Qt::AlignTop);
 
 
     outerGrid->setAlignment(Qt::AlignCenter|Qt::AlignTop);
