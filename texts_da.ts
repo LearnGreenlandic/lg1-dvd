@@ -204,6 +204,25 @@ Ordet var: </source>
     </message>
 </context>
 <context>
+    <name>ListenRepeatPlayer</name>
+    <message>
+        <source>Lyt, forstå, gentag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Se Per igen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Se Tikkaajat igen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Bemærk&lt;/b&gt;: Tikkaajat bruger en form du ikke har lært endnu. I sidste ord siger hun &lt;i&gt;najugaqarlunga&lt;/i&gt; i stedet for &lt;i&gt;najugaqarpunga&lt;/i&gt;. På dette sted betyder de to ord præcis det samme, så lad være med at tænk for meget over det.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ListenThree</name>
     <message>
         <source>Lytteøvelse 1.3: tt eller ts eller t</source>
@@ -586,10 +605,6 @@ Prøv igen...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Velkomstøvelser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Velkomst: Stavelsesdeling</source>
         <translation type="unfinished"></translation>
     </message>
@@ -691,6 +706,25 @@ Prøv igen...</source>
     </message>
     <message>
         <source>Minidialog 1.3: Stil spørgsmål</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velkomst og Øvelser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Velkomstfilm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lyt, forstå, gentag</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>WelcomePlayer</name>
+    <message>
+        <source>Velkommen til Grønlandsk for Voksne!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

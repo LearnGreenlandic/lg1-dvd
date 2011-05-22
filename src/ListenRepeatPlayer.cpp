@@ -40,6 +40,7 @@ dataDir(_dataDir)
     qvbl->addWidget(video);
 
     QHBoxLayout *qhbl = new QHBoxLayout;
+
     QPushButton *perAgain = new QPushButton(tr("Se Per igen"));
     connect(perAgain, SIGNAL(clicked()), this, SLOT(playPerAgain()));
     qhbl->addWidget(perAgain);
@@ -47,6 +48,11 @@ dataDir(_dataDir)
     QPushButton *tikaAgain = new QPushButton(tr("Se Tikkaajat igen"));
     connect(tikaAgain, SIGNAL(clicked()), this, SLOT(playTikaAgain()));
     qhbl->addWidget(tikaAgain);
+
+    QLabel *exp = new QLabel(tr("<b>Bemærk</b>: Tikkaajat bruger en form du ikke har lært endnu. I sidste ord siger hun <i>najugaqarlunga</i> i stedet for <i>najugaqarpunga</i>. På dette sted betyder de to ord præcis det samme, så lad være med at tænk for meget over det."));
+    exp->setWordWrap(true);
+    qhbl->addWidget(exp);
+    qhbl->addSpacing(5);
 
     qvbl->addLayout(qhbl);
 
