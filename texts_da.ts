@@ -214,11 +214,11 @@ Ordet var: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Se Tikkaajat igen</source>
+        <source>Se Tikaajaat igen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;b&gt;Bemærk&lt;/b&gt;: Tikkaajat bruger en form du ikke har lært endnu. I sidste ord siger hun &lt;i&gt;najugaqarlunga&lt;/i&gt; i stedet for &lt;i&gt;najugaqarpunga&lt;/i&gt;. På dette sted betyder de to ord præcis det samme, så lad være med at tænk for meget over det.</source>
+        <source>&lt;b&gt;Bemærk&lt;/b&gt;: Tikaajaat bruger en form du ikke har lært endnu. I sidste ord siger hun &lt;i&gt;najugaqarlunga&lt;/i&gt; i stedet for &lt;i&gt;najugaqarpunga&lt;/i&gt;. På dette sted betyder de to ord præcis det samme, så lad være med at tænke for meget over det.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

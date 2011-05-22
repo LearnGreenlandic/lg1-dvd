@@ -9,7 +9,7 @@ dataDir(_dataDir)
         throw(-1);
     }
 
-    if (!dataDir.exists("per.dat") || !dataDir.exists("tikkaajat.dat")) {
+    if (!dataDir.exists("per.dat") || !dataDir.exists("tikaajaat.dat")) {
         QMessageBox::critical(0, "Missing Data!", "Data files missing from lessons/repeat/");
         throw(-1);
     }
@@ -25,7 +25,7 @@ dataDir(_dataDir)
 
     CryptFile *mediafile = new CryptFile(dataDir.absoluteFilePath("per.dat"));
     media->setCurrentSource(mediafile);
-    mediafile = new CryptFile(dataDir.absoluteFilePath("tikkaajat.dat"));
+    mediafile = new CryptFile(dataDir.absoluteFilePath("tikaajaat.dat"));
     media->enqueue(mediafile);
     media->setTickInterval(1000);
     connect(media, SIGNAL(tick(qint64)), this, SLOT(tick(qint64)));
@@ -45,11 +45,11 @@ dataDir(_dataDir)
     connect(perAgain, SIGNAL(clicked()), this, SLOT(playPerAgain()));
     qhbl->addWidget(perAgain);
 
-    QPushButton *tikaAgain = new QPushButton(tr("Se Tikkaajat igen"));
+    QPushButton *tikaAgain = new QPushButton(tr("Se Tikaajaat igen"));
     connect(tikaAgain, SIGNAL(clicked()), this, SLOT(playTikaAgain()));
     qhbl->addWidget(tikaAgain);
 
-    QLabel *exp = new QLabel(tr("<b>Bemærk</b>: Tikkaajat bruger en form du ikke har lært endnu. I sidste ord siger hun <i>najugaqarlunga</i> i stedet for <i>najugaqarpunga</i>. På dette sted betyder de to ord præcis det samme, så lad være med at tænk for meget over det."));
+    QLabel *exp = new QLabel(tr("<b>Bemærk</b>: Tikaajaat bruger en form du ikke har lært endnu. I sidste ord siger hun <i>najugaqarlunga</i> i stedet for <i>najugaqarpunga</i>. På dette sted betyder de to ord præcis det samme, så lad være med at tænke for meget over det."));
     exp->setWordWrap(true);
     qhbl->addWidget(exp);
     qhbl->addSpacing(5);
@@ -121,7 +121,7 @@ void ListenRepeatPlayer::playPerAgain() {
 void ListenRepeatPlayer::playTikaAgain() {
     media->stop();
     media->clear();
-    CryptFile *mediafile = new CryptFile(dataDir.absoluteFilePath("tikkaajat.dat"));
+    CryptFile *mediafile = new CryptFile(dataDir.absoluteFilePath("tikaajaat.dat"));
     media->setCurrentSource(mediafile);
     media->play();
 }
