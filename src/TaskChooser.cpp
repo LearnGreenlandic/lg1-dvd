@@ -7,6 +7,7 @@
 #include "ListenTwo.hpp"
 #include "ListenThree.hpp"
 #include "ListenFour.hpp"
+#include "WelcomePlayer.hpp"
 #include "WelcomeOne.hpp"
 #include "WelcomeTwo.hpp"
 #include "PronounceOne.hpp"
@@ -94,14 +95,17 @@ dataDir(dataDir)
 
     hbox = new QHBoxLayout;
 
-    gbox = new QGroupBox(tr("Velkomstøvelser"));
+    gbox = new QGroupBox(tr("Velkomst og Øvelser"));
     innerVBox = new QVBoxLayout;
 
+    QPushButton *welcomePlayer = new QPushButton(tr("Velkomstfilm"));
     QPushButton *welcomeOne = new QPushButton(tr("Velkomst: Stavelsesdeling"));
     QPushButton *welcomeTwo = new QPushButton(tr("Velkomst: Udtale"));
+    connect(welcomePlayer, SIGNAL(clicked()), this, SLOT(showWelcomePlayer()));
     connect(welcomeOne, SIGNAL(clicked()), this, SLOT(showWelcomeOne()));
     connect(welcomeTwo, SIGNAL(clicked()), this, SLOT(showWelcomeTwo()));
 
+    innerVBox->addWidget(welcomePlayer);
     innerVBox->addWidget(welcomeOne);
     innerVBox->addWidget(welcomeTwo);
 
@@ -298,6 +302,13 @@ void TaskChooser::showListenFour() {
     listen->show();
     listen->raise();
     listen->activateWindow();
+}
+
+void TaskChooser::showWelcomePlayer() {
+    WelcomePlayer *welcome = new WelcomePlayer(dataDir);
+    welcome->show();
+    welcome->raise();
+    welcome->activateWindow();
 }
 
 void TaskChooser::showWelcomeOne() {

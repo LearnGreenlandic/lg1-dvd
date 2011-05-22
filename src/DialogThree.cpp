@@ -69,11 +69,11 @@ void DialogThree::showNext() {
     }
 
     labelQ->setText(QString("<h2>") + data.phrases.at(curAt).at(4) + "</h2>");
-    labelQ->setToolTip(data.phrases.at(curAt).at(2));
+    labelQ->setToolTip(QString("<h2>") + data.phrases.at(curAt).at(2));
     mediaQ->setCurrentSource(data.phrases.at(curAt).at(0));
 
     labelA->setText(QString("<h2>") + data.phrases.at(curAt).at(3) + "</h2>");
-    labelA->setToolTip(data.phrases.at(curAt).at(5));
+    labelA->setToolTip(QString("<h2>") + data.phrases.at(curAt).at(5) + "</h2>");
     mediaA->setCurrentSource(data.phrases.at(curAt).at(1));
 
     adjustSize();
