@@ -2,7 +2,6 @@
 #define TASKCHOOSER_HPP
 
 #include <QtGui>
-#include <QWidget>
 
 class TaskChooser : public QWidget {
     Q_OBJECT
@@ -19,6 +18,10 @@ public slots:
     void showLectureFiveTwo();
 
     void showHyphenOne();
+
+    void showDialogOne();
+    void showDialogTwo();
+    void showDialogThree();
 
     void showListenOne();
     void showListenTwo();

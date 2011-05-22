@@ -22,6 +22,7 @@ curAt(-1)
     }
 
     QTextStream text(&list);
+    text.setCodec("UTF-8");
     while (!text.atEnd()) {
         QString line = text.readLine();
         if (line.length()) {

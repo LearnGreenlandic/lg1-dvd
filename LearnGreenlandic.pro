@@ -30,7 +30,11 @@ SOURCES += \
     src/ListenOne.cpp \
     src/ListenTwo.cpp \
     src/ListenThree.cpp \
-    src/ListenFour.cpp
+    src/ListenFour.cpp \
+    src/DialogData.cpp \
+    src/DialogOne.cpp \
+    src/DialogTwo.cpp \
+    src/DialogThree.cpp
 
 HEADERS  += \
     src/TaskChooser.hpp \
@@ -54,7 +58,11 @@ HEADERS  += \
     src/ListenOne.hpp \
     src/ListenTwo.hpp \
     src/ListenThree.hpp \
-    src/ListenFour.hpp
+    src/ListenFour.hpp \
+    src/DialogData.hpp \
+    src/DialogOne.hpp \
+    src/DialogTwo.hpp \
+    src/DialogThree.hpp
 
 CONFIG -= warn_off
 CONFIG += warn_on

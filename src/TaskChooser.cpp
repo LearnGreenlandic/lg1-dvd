@@ -1,5 +1,8 @@
 #include "LecturePlayer.hpp"
 #include "HyphenOne.hpp"
+#include "DialogOne.hpp"
+#include "DialogTwo.hpp"
+#include "DialogThree.hpp"
 #include "ListenOne.hpp"
 #include "ListenTwo.hpp"
 #include "ListenThree.hpp"
@@ -175,6 +178,24 @@ dataDir(dataDir)
     gbox->setLayout(innerVBox);
     hbox->addWidget(gbox);
 
+
+    gbox = new QGroupBox(tr("Minidialoger"));
+    innerVBox = new QVBoxLayout;
+
+    QPushButton *dialogOne = new QPushButton(tr("Minidialog 1.1: Gentag"));
+    QPushButton *dialogTwo = new QPushButton(tr("Minidialog 1.2: Giv respons"));
+    QPushButton *dialogThree = new QPushButton(tr("Minidialog 1.3: Stil spørgsmål"));
+    connect(dialogOne, SIGNAL(clicked()), this, SLOT(showDialogOne()));
+    connect(dialogTwo, SIGNAL(clicked()), this, SLOT(showDialogTwo()));
+    connect(dialogThree, SIGNAL(clicked()), this, SLOT(showDialogThree()));
+
+    innerVBox->addWidget(dialogOne);
+    innerVBox->addWidget(dialogTwo);
+    innerVBox->addWidget(dialogThree);
+
+    gbox->setLayout(innerVBox);
+    hbox->addWidget(gbox);
+
     vbox->addLayout(hbox);
 
 
@@ -228,6 +249,27 @@ void TaskChooser::showHyphenOne() {
     hyphen->show();
     hyphen->raise();
     hyphen->activateWindow();
+}
+
+void TaskChooser::showDialogOne() {
+    DialogOne *dialog = new DialogOne(dataDir);
+    dialog->show();
+    dialog->raise();
+    dialog->activateWindow();
+}
+
+void TaskChooser::showDialogTwo() {
+    DialogTwo *dialog = new DialogTwo(dataDir);
+    dialog->show();
+    dialog->raise();
+    dialog->activateWindow();
+}
+
+void TaskChooser::showDialogThree() {
+    DialogThree *dialog = new DialogThree(dataDir);
+    dialog->show();
+    dialog->raise();
+    dialog->activateWindow();
 }
 
 void TaskChooser::showListenOne() {

@@ -2,6 +2,111 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="da_DK">
 <context>
+    <name>DialogOne</name>
+    <message>
+        <source>danish.txt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minidialog 1.1: Gentag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I denne første øvelse skal du udelukkende koncentrere dig om udtale. Du skal blot gentage Beatrines og Tikas sætninger præcis som de er. Du kan pege på teksterne for at se dem oversat.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hør spørgsmålet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hør svaret</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Næste dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Der er ikke flere fraser...vinduet lukker sig selv nu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DialogThree</name>
+    <message>
+        <source>danish.txt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minidialog 1.3: Stil spørgsmål</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Den sidste øvelse i denne omgang er en simpel husk/oversæt-øvelse. Koncentrer dig om at huske Beatrines sætninger. Formuler dem selv højt, lyt til Beatrine igen og gentag til sidst hendes sætning. Du får Tikas responser serveret som lidt memoteknisk hjælp.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hør spørgsmålet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hør svaret</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Næste dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Der er ikke flere fraser...vinduet lukker sig selv nu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DialogTwo</name>
+    <message>
+        <source>danish.txt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minidialog 1.2: Giv respons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Anden øvelse er lidt vanskeligere, for nu er der også lidt indhold med i spillet. Du får først Beatrines sætninger som du så skal give et fornuftigt respons på!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hør spørgsmålet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hør svaret</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Næste dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Der er ikke flere fraser...vinduet lukker sig selv nu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ListenFour</name>
     <message>
         <source>Lytteøvelse 1.4: Skriv hvad du hørte</source>
@@ -570,6 +675,22 @@ Prøv igen...</source>
     </message>
     <message>
         <source>Lytteøvelse 1.4: Skriv hvad du hørte</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minidialoger</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minidialog 1.1: Gentag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minidialog 1.2: Giv respons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minidialog 1.3: Stil spørgsmål</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
