@@ -1,10 +1,10 @@
 #include "WelcomeQuestion.hpp"
 
-WelcomeQuestion::WelcomeQuestion(QWidget *parent, TaskChooser& tc) :
-QWidget(parent, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+WelcomeQuestion::WelcomeQuestion(TaskChooser& tc) :
+QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc)
 {
-    setWindowModality(Qt::WindowModal);
+    setWindowModality(Qt::ApplicationModal);
     setWindowTitle(tr("Velkommen til Grønlandsk for voksne!"));
 
     QVBoxLayout *qvbl = new QVBoxLayout;

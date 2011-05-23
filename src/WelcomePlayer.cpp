@@ -91,7 +91,7 @@ void WelcomePlayer::togglePlay() {
 
 void WelcomePlayer::finished() {
     if (QMessageBox::question(0, tr("Forstået?"), tr("Forstod du alt hvad Tikaajaat sagde i velkomstfilmen?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
-        WelcomeQuestion *wc = new WelcomeQuestion(this, tc);
+        WelcomeQuestion *wc = new WelcomeQuestion(tc);
         wc->show();
         close();
         return;

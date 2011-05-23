@@ -8,7 +8,7 @@ class WelcomeQuestion : public QWidget {
     Q_OBJECT
 
 public:
-    WelcomeQuestion(QWidget *parent, TaskChooser& tc);
+    WelcomeQuestion(TaskChooser& tc);
 
 public slots:
     void checkInput(const QString&);

@@ -1055,11 +1055,11 @@ Try again...</translation>
     <name>WelcomeQuestion</name>
     <message>
         <source>Velkommen til Grønlandsk for voksne!</source>
-        <translation type="unfinished">Welcome to Greenlandic for Foreigners!</translation>
+        <translation>Welcome to Greenlandic for Foreigners!</translation>
     </message>
     <message>
         <source>Ups! Hjælp mig ud!</source>
-        <translation type="unfinished"></translation>
+        <translation>Whoops! Help me out!</translation>
     </message>
 </context>
 </TS>
