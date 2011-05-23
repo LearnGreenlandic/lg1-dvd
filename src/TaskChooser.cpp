@@ -75,7 +75,7 @@ translator(translator)
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureOne = new QPushButton(tr("Forelæsning 1:\nDe \"sære\" lyd"));
+    QPushButton *lectureOne = new QPushButton(tr("Forelæsning 1: De \"sære\" lyd"));
     lectureOne->setFlat(true);
     lectureOne->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureOne, SIGNAL(clicked()), this, SLOT(showLectureOne()));
@@ -112,7 +112,7 @@ translator(translator)
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureTwo = new QPushButton(tr("Forelæsning 2:\nTypiske danskerfejl"));
+    QPushButton *lectureTwo = new QPushButton(tr("Forelæsning 2: Typiske danskerfejl"));
     lectureTwo->setFlat(true);
     lectureTwo->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureTwo, SIGNAL(clicked()), this, SLOT(showLectureTwo()));
@@ -154,7 +154,7 @@ translator(translator)
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureThree = new QPushButton(tr("Forelæsning 3:\nTonerne og de lange ord"));
+    QPushButton *lectureThree = new QPushButton(tr("Forelæsning 3: Tonerne og de lange ord"));
     lectureThree->setFlat(true);
     lectureThree->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureThree, SIGNAL(clicked()), this, SLOT(showLectureThree()));
@@ -201,7 +201,7 @@ translator(translator)
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureFour = new QPushButton(tr("Forelæsning 4:\nTræning og opsamling"));
+    QPushButton *lectureFour = new QPushButton(tr("Forelæsning 4: Træning og opsamling"));
     lectureFour->setFlat(true);
     lectureFour->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureFour, SIGNAL(clicked()), this, SLOT(showLectureFour()));
@@ -248,7 +248,7 @@ translator(translator)
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureFiveOne = new QPushButton(tr("Forelæsning 5.1:\nGloserne i lektion 1"));
+    QPushButton *lectureFiveOne = new QPushButton(tr("Forelæsning 5.1: Gloserne i lektion 1"));
     lectureFiveOne->setFlat(true);
     lectureFiveOne->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureFiveOne, SIGNAL(clicked()), this, SLOT(showLectureFiveOne()));
@@ -280,7 +280,7 @@ translator(translator)
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureFiveTwo = new QPushButton(tr("Forelæsning 5.2:\nGrammatikken i lektion 1"));
+    QPushButton *lectureFiveTwo = new QPushButton(tr("Forelæsning 5.2: Grammatikken i lektion 1"));
     lectureFiveTwo->setFlat(true);
     lectureFiveTwo->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureFiveTwo, SIGNAL(clicked()), this, SLOT(showLectureFiveTwo()));

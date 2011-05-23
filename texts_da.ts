@@ -860,11 +860,6 @@ Prøv igen...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Forelæsning 1:
-De &quot;sære&quot; lyd</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Udtaleøvelse 1.1: Gentag</source>
         <translation type="unfinished"></translation>
     </message>
@@ -877,21 +872,11 @@ De &quot;sære&quot; lyd</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Forelæsning 2:
-Typiske danskerfejl</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Forelæsning 2 som PDF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>./3/danish/0.png</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Forelæsning 3:
-Tonerne og de lange ord</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -915,11 +900,6 @@ Tonerne og de lange ord</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Forelæsning 4:
-Træning og opsamling</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Forelæsning 4 som PDF</source>
         <translation type="unfinished"></translation>
     </message>
@@ -928,17 +908,7 @@ Træning og opsamling</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Forelæsning 5.1:
-Gloserne i lektion 1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>./5_2/danish/0.png</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Forelæsning 5.2:
-Grammatikken i lektion 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

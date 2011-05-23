@@ -881,12 +881,6 @@ Try again...</translation>
         <translation>./1/english/0.png</translation>
     </message>
     <message>
-        <source>Forelæsning 1:
-De &quot;sære&quot; lyd</source>
-        <translation>Lecture 1:
-The New Sounds</translation>
-    </message>
-    <message>
         <source>Udtaleøvelse 1.1: Gentag</source>
         <translation>Pronunciation exercise 1.1: Repeat</translation>
     </message>
@@ -899,24 +893,12 @@ The New Sounds</translation>
         <translation>./2/english/0.png</translation>
     </message>
     <message>
-        <source>Forelæsning 2:
-Typiske danskerfejl</source>
-        <translation>Lecture 2:
-Typical mistakes</translation>
-    </message>
-    <message>
         <source>Forelæsning 2 som PDF</source>
         <translation>Lecture 2 as PDF</translation>
     </message>
     <message>
         <source>./3/danish/0.png</source>
         <translation>./3/english/0.png</translation>
-    </message>
-    <message>
-        <source>Forelæsning 3:
-Tonerne og de lange ord</source>
-        <translation>Lecture 3:
-Tones and long words</translation>
     </message>
     <message>
         <source>Stavelsesdeling af bynavne</source>
@@ -939,12 +921,6 @@ Tones and long words</translation>
         <translation>./4/english/0.png</translation>
     </message>
     <message>
-        <source>Forelæsning 4:
-Træning og opsamling</source>
-        <translation>Lecture 4:
-Practice and repetition</translation>
-    </message>
-    <message>
         <source>Forelæsning 4 som PDF</source>
         <translation>Lecture 4 as PDF</translation>
     </message>
@@ -953,20 +929,8 @@ Practice and repetition</translation>
         <translation>./5_1/english/0.png</translation>
     </message>
     <message>
-        <source>Forelæsning 5.1:
-Gloserne i lektion 1</source>
-        <translation>Lecture 5.1:
-Words and lexicons in lesson one</translation>
-    </message>
-    <message>
         <source>./5_2/danish/0.png</source>
         <translation>./5_2/english/0.png</translation>
-    </message>
-    <message>
-        <source>Forelæsning 5.2:
-Grammatikken i lektion 1</source>
-        <translation>Lecture 5.2:
-Introduction to grammar</translation>
     </message>
     <message>
         <source>Strukturøvelse 1.1: Lydopfattelse</source>
