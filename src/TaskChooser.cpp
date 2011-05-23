@@ -1,4 +1,3 @@
-#include "RichTextPushButton.hpp"
 #include "LecturePlayer.hpp"
 #include "HyphenOne.hpp"
 #include "DialogOne.hpp"
@@ -9,6 +8,7 @@
 #include "ListenThree.hpp"
 #include "ListenFour.hpp"
 #include "WelcomePlayer.hpp"
+#include "WelcomeWords.hpp"
 #include "WelcomeOne.hpp"
 #include "WelcomeTwo.hpp"
 #include "ListenRepeatPlayer.hpp"
@@ -31,24 +31,11 @@ dataDir(dataDir),
 translator(translator)
 {
     setWindowTitle(tr("Grønlandsk for voksne"));
-    setContentsMargins(10,10,10,10);
-    //setStyleSheet("background-color: white;");
+    setContentsMargins(5,5,5,5);
     setStyleSheet("margin: 0; padding: 0;");
-
-    QVBoxLayout *topVBox = new QVBoxLayout;
-    topVBox->setContentsMargins(0,0,0,0);
 
     QPixmap qpx;
     QLabel *ql = new QLabel;
-    /*
-    qpx.load(dataDir.absoluteFilePath("./images/header.png"));
-    qpx = qpx.scaled(185, 85, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-
-    ql->setPixmap(qpx);
-    topVBox->addWidget(ql, Qt::AlignCenter|Qt::AlignTop);
-
-    topVBox->addSpacing(10);
-    //*/
 
     QGridLayout *outerGrid = new QGridLayout;
     outerGrid->setContentsMargins(0,0,0,0);
@@ -89,7 +76,6 @@ translator(translator)
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
     QPushButton *lectureOne = new QPushButton(tr("Forelæsning 1:\nDe \"sære\" lyd"));
-    //lectureOne->setHtml(QString("<h3>") + tr("Forelæsning 1: De \"sære\" lyd") + "</h3>");
     lectureOne->setFlat(true);
     lectureOne->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureOne, SIGNAL(clicked()), this, SLOT(showLectureOne()));
@@ -236,10 +222,10 @@ translator(translator)
     connect(dialogThree, SIGNAL(clicked()), this, SLOT(showDialogThree()));
     itemVBox->addWidget(dialogThree, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    lecturePDF = new QPushButton(QString("   - ") + tr("TODO: Diktat af Tika's tale"));
-    lecturePDF->setFlat(true);
-    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo())); // TODO
-    itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
+    QPushButton *welcomeWords = new QPushButton(QString("   - ") + tr("Diktat af Tika's velkomst"));
+    welcomeWords->setFlat(true);
+    connect(welcomeWords, SIGNAL(clicked()), this, SLOT(showWelcomeWords()));
+    itemVBox->addWidget(welcomeWords, 0, Qt::AlignLeft|Qt::AlignTop);
 
     lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 4 som PDF"));
     lecturePDF->setFlat(true);
@@ -424,12 +410,8 @@ translator(translator)
 
 
     outerGrid->setAlignment(Qt::AlignCenter|Qt::AlignTop);
-    topVBox->addLayout(outerGrid);
-    topVBox->setAlignment(Qt::AlignCenter|Qt::AlignTop);
 
-    //topVBox->addSpacing(10);
-
-    setLayout(topVBox);
+    setLayout(outerGrid);
 }
 
 void TaskChooser::showLectureOne() {
@@ -559,6 +541,13 @@ void TaskChooser::showListenFour() {
 
 void TaskChooser::showWelcomePlayer() {
     WelcomePlayer *welcome = new WelcomePlayer(dataDir, *this);
+    welcome->show();
+    welcome->raise();
+    welcome->activateWindow();
+}
+
+void TaskChooser::showWelcomeWords() {
+    WelcomeWords *welcome = new WelcomeWords(dataDir, *this);
     welcome->show();
     welcome->raise();
     welcome->activateWindow();

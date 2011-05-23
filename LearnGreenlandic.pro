@@ -41,7 +41,8 @@ SOURCES += \
     src/WelcomePlayer.cpp \
     src/ListenRepeatPlayer.cpp \
     src/WelcomeQuestion.cpp \
-    src/XvidTest.cpp
+    src/XvidTest.cpp \
+    src/WelcomeWords.cpp
 
 HEADERS  += \
     src/TaskChooser.hpp \
@@ -73,7 +74,8 @@ HEADERS  += \
     src/WelcomePlayer.hpp \
     src/ListenRepeatPlayer.hpp \
     src/WelcomeQuestion.hpp \
-    src/XvidTest.hpp
+    src/XvidTest.hpp \
+    src/WelcomeWords.hpp
 
 CONFIG -= warn_off
 CONFIG += warn_on

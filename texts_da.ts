@@ -148,6 +148,43 @@
         <source>Nej, tilbage til menuen</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Stavelsesdeling af bynavne</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Del ordet med -; brug noderne til hjælp.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Næste ord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Giv op...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Korrekt!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ikke korrekt.
+Prøv igen...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hrhm...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Det korrekte er:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ListenFour</name>
@@ -259,6 +296,14 @@ Ordet var: </source>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, har ikke </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jo, har </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -529,10 +574,6 @@ Prøv igen...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Hrhm...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -552,6 +593,18 @@ Store og små bogstaver gælder...</source>
     <message>
         <source>Ikke korrekt.
 Prøv igen...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -596,10 +649,6 @@ Hvis du slet ikke kan få ordet dannet inde i hovedet, må du som en sidste udve
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Korrekt!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -637,6 +686,18 @@ Prøv igen...</source>
         <source>structure 3.form ./3/</source>
         <translation>Skriv &quot;i bynavn&quot; formen:</translation>
     </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>StructureTwo</name>
@@ -667,10 +728,6 @@ Lad være med at lade dig snyde af den retskrivningsdetalje, at et q sidst i ord
     </message>
     <message>
         <source>Færdig!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -709,6 +766,18 @@ Prøv igen...</source>
     </message>
     <message>
         <source>Bynavn:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -848,10 +917,6 @@ Tonerne og de lange ord</source>
     <message>
         <source>Forelæsning 4:
 Træning og opsamling</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>TODO: Diktat af Tika&apos;s tale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1000,6 +1065,10 @@ grønlandsk pædagogisk grammatica&apos;</source>
         <source>Afspilningen af test filmen fejlede helt. Du bør installere Xvid eller DivX codecs og så prøve igen. Hvis intet virker, så kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjælp.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Diktat af Tika&apos;s velkomst</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UpdownOne</name>
@@ -1024,7 +1093,15 @@ grønlandsk pædagogisk grammatica&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1104,10 +1181,6 @@ Prøv igen...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Korrekt!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1123,6 +1196,18 @@ Prøv igen...</source>
     </message>
     <message>
         <source>Det korrekte færdige ord var:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1236,6 +1321,17 @@ Prøv igen...</source>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>WelcomeWords</name>
+    <message>
+        <source>Diktat af Tika&apos;s velkomst</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aflyt og nedkriv Tika&apos;s velkomst.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

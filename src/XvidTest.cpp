@@ -1,10 +1,5 @@
 #include "XvidTest.hpp"
 
-#include <phonon/mediaobject.h>
-#include <phonon/audiooutput.h>
-#include <phonon/mediasource.h>
-#include <phonon/videowidget.h>
-
 XvidTest::XvidTest(QWidget *parent, QDir dataDir) :
 QDialog(parent, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
 {
@@ -16,11 +11,11 @@ QDialog(parent, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
         throw(-1);
     }
 
-    Phonon::MediaObject *media = new Phonon::MediaObject;
-    Phonon::VideoWidget *video = new Phonon::VideoWidget;
+    media = new Phonon::MediaObject;
+    video = new Phonon::VideoWidget;
     Phonon::createPath(media, video);
 
-    Phonon::AudioOutput *audio = new Phonon::AudioOutput(Phonon::VideoCategory);
+    audio = new Phonon::AudioOutput(Phonon::VideoCategory);
     Phonon::createPath(media, audio);
 
     media->setCurrentSource(dataDir.absoluteFilePath("testxvid.avi"));
@@ -39,6 +34,12 @@ QDialog(parent, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
 
     setContentsMargins(0, 0, 0, 0);
     media->play();
+}
+
+void XvidTest::closeEvent(QCloseEvent *event) {
+    media->stop();
+    media->clear();
+    event->accept();
 }
 
 void XvidTest::finished() {

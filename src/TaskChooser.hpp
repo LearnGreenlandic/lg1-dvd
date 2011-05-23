@@ -37,6 +37,7 @@ public slots:
     void showListenFour();
 
     void showWelcomePlayer();
+    void showWelcomeWords();
     void showWelcomeOne();
     void showWelcomeTwo();
 
