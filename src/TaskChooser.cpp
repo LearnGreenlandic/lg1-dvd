@@ -430,6 +430,9 @@ translator(translator)
 }
 
 void TaskChooser::showLectureOne() {
+    QSettings settings;
+    settings.setValue("done_welcome", true);
+
     LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 1: De \"sære\" lyd"), dataDir, tr("./1/danish/"));
     lecture->show();
     lecture->raise();
@@ -682,4 +685,13 @@ void TaskChooser::toggleLanguage() {
     tc->show();
 
     close();
+}
+
+void TaskChooser::checkFirstRun() {
+    QSettings settings;
+    bool doneWelcome = settings.value("done_welcome", false).toBool();
+
+    if (!doneWelcome) {
+        showWelcomePlayer();
+    }
 }

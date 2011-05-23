@@ -57,6 +57,8 @@ public slots:
 
     void toggleLanguage();
 
+    void checkFirstRun();
+
 private:
     QDir dataDir;
     QTranslator *translator;

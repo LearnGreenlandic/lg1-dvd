@@ -1051,4 +1051,15 @@ Try again...</translation>
         <translation>Did you understand everything Tikaajaat said in the welcome clip?</translation>
     </message>
 </context>
+<context>
+    <name>WelcomeQuestion</name>
+    <message>
+        <source>Velkommen til Grønlandsk for voksne!</source>
+        <translation type="unfinished">Welcome to Greenlandic for Foreigners!</translation>
+    </message>
+    <message>
+        <source>Ups! Hjælp mig ud!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

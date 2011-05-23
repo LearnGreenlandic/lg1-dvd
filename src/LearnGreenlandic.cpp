@@ -63,5 +63,7 @@ int main(int argc, char *argv[]) {
     TaskChooser tc(dataDir, &translator);
     tc.show();
 
+    QTimer::singleShot(1000, &tc, SLOT(checkFirstRun()));
+
     return app.exec();
 }
