@@ -346,10 +346,6 @@ Try again...</translation>
         <translation>Done!</translation>
     </message>
     <message>
-        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
-        <translation type="obsolete">No words remain...the window will now close.</translation>
-    </message>
-    <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
         <translation>No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
     </message>
@@ -395,10 +391,6 @@ Try again...</translation>
     <message>
         <source>Færdig!</source>
         <translation>Done!</translation>
-    </message>
-    <message>
-        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
-        <translation type="obsolete">No words remain...the window will now close.</translation>
     </message>
     <message>
         <source>Korrekt!</source>
@@ -804,7 +796,7 @@ Practice and repetition</translation>
     </message>
     <message>
         <source>Forelæsning 4 som PDF</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lecture 5 as PDF {4 ?}</translation>
     </message>
     <message>
         <source>./5_1/danish/0.png</source>
@@ -909,6 +901,38 @@ grønlandsk pædagogisk grammatica&apos;</source>
     <message>
         <source>./appendix/danish.pdf</source>
         <translation>./appendix/english.pdf</translation>
+    </message>
+    <message>
+        <source>Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid codec?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere DivX codec?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid og MP3 codecs?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ja</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, jeg har Xvid eller DivX</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Xvid og MP3?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Xvid error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Afspilningen af test filmen fejlede helt. Du bør installere Xvid eller DivX codecs og så prøve igen. Hvis intet virker, så kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjælp.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1072,6 +1096,13 @@ Try again...</translation>
     <message>
         <source>Ups! Hjælp mig ud!</source>
         <translation>Whoops! Help me out!</translation>
+    </message>
+</context>
+<context>
+    <name>XvidTest</name>
+    <message>
+        <source>Xvid test</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -1,18 +1,18 @@
-#include "XVidTest.hpp"
+#include "XvidTest.hpp"
 
 #include <phonon/mediaobject.h>
 #include <phonon/audiooutput.h>
 #include <phonon/mediasource.h>
 #include <phonon/videowidget.h>
 
-XVidTest::XVidTest(QWidget *parent, QDir dataDir) :
+XvidTest::XvidTest(QWidget *parent, QDir dataDir) :
 QDialog(parent, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint)
 {
     setWindowModality(Qt::WindowModal);
-    setWindowTitle(tr("XVid test"));
+    setWindowTitle(tr("Xvid test"));
 
-    if (!dataDir.exists("testxvid.avi")) {
-        QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate testxvid.avi!");
+    if (!dataDir.exists("testXvid.avi")) {
+        QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate testXvid.avi!");
         throw(-1);
     }
 
@@ -23,7 +23,7 @@ QDialog(parent, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint |
     Phonon::AudioOutput *audio = new Phonon::AudioOutput(Phonon::VideoCategory);
     Phonon::createPath(media, audio);
 
-    media->setCurrentSource(dataDir.absoluteFilePath("testxvid.avi"));
+    media->setCurrentSource(dataDir.absoluteFilePath("testXvid.avi"));
     connect(media, SIGNAL(finished()), this, SLOT(finished()));
 
     video->setAspectRatio(Phonon::VideoWidget::AspectRatio16_9);
@@ -41,6 +41,6 @@ QDialog(parent, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint |
     media->play();
 }
 
-void XVidTest::finished() {
+void XvidTest::finished() {
 
 }

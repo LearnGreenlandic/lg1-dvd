@@ -42,7 +42,7 @@ SOURCES += \
     src/ListenRepeatPlayer.cpp \
     src/RichTextPushButton.cpp \
     src/WelcomeQuestion.cpp \
-    src/XVidTest.cpp
+    src/XvidTest.cpp
 
 HEADERS  += \
     src/TaskChooser.hpp \
@@ -75,7 +75,7 @@ HEADERS  += \
     src/ListenRepeatPlayer.hpp \
     src/RichTextPushButton.hpp \
     src/WelcomeQuestion.hpp \
-    src/XVidTest.hpp
+    src/XvidTest.hpp
 
 CONFIG -= warn_off
 CONFIG += warn_on

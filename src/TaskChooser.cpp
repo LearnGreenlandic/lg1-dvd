@@ -20,8 +20,10 @@
 #include "StructureOne.hpp"
 #include "StructureTwo.hpp"
 #include "StructureThree.hpp"
-#include "XVidTest.hpp"
+#include "XvidTest.hpp"
 #include "TaskChooser.hpp"
+
+#include <QtGlobal>
 
 TaskChooser::TaskChooser(QDir dataDir, QTranslator *translator) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
@@ -695,13 +697,33 @@ void TaskChooser::toggleLanguage() {
 void TaskChooser::checkFirstRun() {
     QSettings settings;
 
-    bool hasXVid = settings.value("has_xvid", false).toBool();
-    if (!hasXVid) {
+    bool hasXvid = settings.value("has_Xvid", false).toBool();
+    if (!hasXvid) {
+        QMessageBox mbox(QMessageBox::Question, tr("Xvid og MP3?"),
+#ifdef Q_WS_WIN
+             tr("Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid codec?")
+#elif Q_WS_MAC
+             tr("Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere DivX codec?")
+#else
+             tr("Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid og MP3 codecs?")
+#endif
+             );
+        QPushButton *yes = mbox.addButton(tr("Ja"), QMessageBox::YesRole);
+        mbox.addButton(tr("Nej, jeg har Xvid eller DivX"), QMessageBox::NoRole);
+        mbox.exec();
+
+        if (mbox.clickedButton() == yes) {
+            return;
+        }
+
         try {
-            XVidTest *xt = new XVidTest(this, dataDir);
+            XvidTest *xt = new XvidTest(this, dataDir);
             xt->exec();
         }
         catch (...) {
+            QMessageBox::information(0, tr("Xvid error"), tr("Afspilningen af test filmen fejlede helt. Du bør installere Xvid eller DivX codecs og så prøve igen. Hvis intet virker, så kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjælp."));
+            QCoreApplication::quit();
+            return;
         }
     }
 

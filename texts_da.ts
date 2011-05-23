@@ -885,6 +885,38 @@ grønlandsk pædagogisk grammatica&apos;</source>
         <source>./appendix/danish.pdf</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid codec?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere DivX codec?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid og MP3 codecs?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ja</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, jeg har Xvid eller DivX</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Xvid og MP3?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Xvid error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Afspilningen af test filmen fejlede helt. Du bør installere Xvid eller DivX codecs og så prøve igen. Hvis intet virker, så kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjælp.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UpdownOne</name>
@@ -1042,6 +1074,13 @@ Prøv igen...</source>
     </message>
     <message>
         <source>Ups! Hjælp mig ud!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>XvidTest</name>
+    <message>
+        <source>Xvid test</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

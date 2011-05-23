@@ -3,11 +3,11 @@
 
 #include <QtGui>
 
-class XVidTest : public QDialog {
+class XvidTest : public QDialog {
     Q_OBJECT
 
 public:
-    XVidTest(QWidget *parent, QDir dataDir);
+    XvidTest(QWidget *parent, QDir dataDir);
 
 public slots:
     void finished();
