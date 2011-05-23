@@ -1,7 +1,7 @@
 QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.4
 
-QT += core
-QT -= gui opengl phonon
+QT += core gui
+QT -= opengl phonon
 
 TARGET = Cryptor
 TEMPLATE = app

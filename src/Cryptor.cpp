@@ -42,4 +42,6 @@ int main(int argc, char *argv[]) {
 
     output->close();
     input->close();
+
+    return 0;
 }

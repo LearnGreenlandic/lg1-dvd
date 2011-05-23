@@ -1,7 +1,8 @@
 #include "CryptFile.hpp"
 
-const char key[] = "Please do not pirate this. We are a small company that depend on a tiny market. http://learngreenlandic.com/";
-const qint64 kl = sizeof(key);
+std::string skey;
+const char *key = 0;
+qint64 kl = 0;
 
 inline void xor_wrap(char *data, qint64 size, qint64 offset) {
     offset %= kl;
@@ -17,6 +18,11 @@ inline void xor_wrap(char *data, qint64 size, qint64 offset) {
 CryptFile::CryptFile(QString fname, QObject *parent) :
 QFile(fname, parent)
 {
+    QSettings settings;
+
+    skey = settings.value("encryption_key", "You must have a valid program key and login to use this. http://learngreenlandic.com/").toString().toStdString();
+    key = skey.c_str();
+    kl = skey.length()+1;
 }
 
 qint64 CryptFile::readData(char *data, qint64 maxSize) {

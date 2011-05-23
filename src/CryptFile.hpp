@@ -1,7 +1,7 @@
 #ifndef CRYPTFILE_HPP
 #define CRYPTFILE_HPP
 
-#include <QFile>
+#include <QtGui>
 
 class CryptFile : public QFile {
     Q_OBJECT
