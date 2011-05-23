@@ -701,7 +701,7 @@ void TaskChooser::checkFirstRun() {
 
     // TODO
     bool hasXvid = settings.value("has_Xvid", false).toBool();
-    if (false && !hasXvid) {
+    if (!hasXvid) {
         QMessageBox mbox(QMessageBox::Question, tr("Xvid og MP3?"),
 #if defined(Q_WS_WIN)
              tr("Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid codec?")
@@ -723,7 +723,7 @@ void TaskChooser::checkFirstRun() {
 #elif defined(Q_WS_MAC)
                 "../DivXInstaller.dmg"
 #else
-                "../"
+                QString("../runasroot.sh \"") + QCoreApplication::instance()->applicationDirPath() + "/install-prereq-ubuntu.sh\""
 #endif
                     )));
             QCoreApplication::quit();
