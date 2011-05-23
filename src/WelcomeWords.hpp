@@ -11,6 +11,7 @@
 #include <phonon/seekslider.h>
 #include <phonon/effect.h>
 #include <QtGui>
+#include <stdint.h>
 
 class WelcomeWords : public QWidget {
     Q_OBJECT
@@ -31,6 +32,9 @@ public slots:
 private:
     TaskChooser& tc;
 
+    QStringList words;
+    uint32_t curAt;
+
     CryptFile *mediafile;
     Phonon::MediaObject *media;
     Phonon::VideoWidget *video;
@@ -39,6 +43,13 @@ private:
     QPushButton *playpause;
     Phonon::SeekSlider *seeker;
     QLCDNumber *timeLcd;
+
+    QLabel *sum;
+    QLabel *current;
+    QLineEdit *input;
+    QPushButton *check;
+    QLabel *result;
+    QPushButton *yield;
 };
 
 #endif // WELCOMEWORDS_H

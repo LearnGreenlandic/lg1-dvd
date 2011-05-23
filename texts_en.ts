@@ -720,13 +720,13 @@ Try again...</translation>
     <name>StructureTwo</name>
     <message>
         <source>structure 2 ./1/</source>
-        <translation>Add the derivational morpheme N+MIU to the town names to form words meaning &apos;inhabitant of TOWN&apos;.
+        <translation>Add the derivational morpheme N+MIU to the town names to form words meaning &amp;apos;inhabitant of TOWN&amp;apos;.
 Do not get led astray by an orthographical detail that a word final q is written as an -r- whenever followed by another consonant. As you know already from the second lecture -r- in this position is not an -r- after all rather a gemination of the following consonant. Derivational morphemes are always added to the singular so we need to construct a singular form for the seven towns with pluralis tantum names. In this exercise the singulars you need are included for you.</translation>
     </message>
     <message>
         <source>structure 2 ./2/</source>
-        <translation type="unfinished">Add the derivational morpheme N+MIU to the town names to form words meaning &apos;inhabitant of TOWN&apos;.
-Do not get led astray by an orthographical detail that a word final q is written as an -r- whenever followed by another consonant. As you know already from the second lecture -r- in this position is not an -r- after all rather a gemination of the following consonant. Derivational morphemes are always added to the singular so we need to construct a singular form for the seven towns with pluralis tantum names. In this exercise the singulars you need are included for you. {2 ?} {2/?}</translation>
+        <translation>Use N+MIU-U{+vuŋa} to form words meaning &apos;I am an inhabitant of TOWN&apos;. The exercise will also help you to learn to cope with sound changes and the pronunciation of very long words.
+Derivational morphemes are always added to the singular so for the seven pluralis tantum names one must first find the singular. In this exercise this has been taken care of for you (all the forms marked with an asterisk).</translation>
     </message>
     <message>
         <source>structure 2 ./3/</source>
@@ -978,13 +978,6 @@ Forstå, sammenkæd selv, oversæt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Appendix:
-Kapitel 3 (manuskriptudgave) af
-&apos;Forsøg til en forbedret
-grønlandsk pædagogisk grammatica&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Change language to English</source>
         <translation>Skift sprog til dansk</translation>
     </message>
@@ -1011,10 +1004,6 @@ grønlandsk pædagogisk grammatica&apos;</source>
     <message>
         <source>Forelæsning 5 som PDF</source>
         <translation>Lecture 5 as PDF</translation>
-    </message>
-    <message>
-        <source>./appendix/danish.pdf</source>
-        <translation>./appendix/english.pdf</translation>
     </message>
     <message>
         <source>Xvid og MP3?</source>
@@ -1058,6 +1047,32 @@ grønlandsk pædagogisk grammatica&apos;</source>
     </message>
     <message>
         <source>Diktat af Tika&apos;s velkomst</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>./images/pdf.png</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Appendix og andet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kapitel 3 (manuskriptudgave) af
+&apos;Forsøg til en forbedret
+grønlandsk pædagogisk grammatica&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Indstikshæfte som PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>./grammatica/danish.pdf</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>./pamphlet/danish.pdf</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1327,7 +1342,7 @@ Try again...</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Aflyt og nedkriv Tika&apos;s velkomst.</source>
+        <source>Aflyt og nedkriv Tika&apos;s velkomst ord for ord.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

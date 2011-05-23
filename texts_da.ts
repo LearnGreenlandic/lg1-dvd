@@ -703,12 +703,13 @@ Prøv igen...</source>
     <name>StructureTwo</name>
     <message>
         <source>structure 2 ./1/</source>
-        <translation>Sæt tilhænget N+MIU på bynavnene, så du danner ord med betydningen &apos;indbygger i BYNAVN&apos;.
+        <translation>Sæt tilhænget N+MIU på bynavnene, så du danner ord med betydningen &amp;apos;indbygger i BYNAVN&amp;apos;.
 Lad være med at lade dig snyde af den retskrivningsdetalje, at et q sidst i ordet STAVES som -r-, når der kommer en anden konsonant bagefter. Som du allerede ved det fra forelæsning 2, udtales -r- i denne stilling alligevel ikke som -r-, men som en fordobling af den konsonant, der kommer efter. Tilhæng sættes altid til entalsformen, så for de 7 byer, hvis navne er født med en flertalsendelse, skal du bruge den entalsform, du får serveret.</translation>
     </message>
     <message>
         <source>structure 2 ./2/</source>
-        <translation>Brug N+MIU-U{+vuŋa} for at vænne dig til lydændringerne og for at træne brugen af meget lange ord.</translation>
+        <translation>Brug N+MIU-U{+vuŋa} så du danner ord med betydningen &apos;jeg er indbygger i BYNAVN&apos;. Brug øvelsen også til at vænne dig til forandringerne og samtidig til at klare udtalen af meget lange ord.
+Tilhæng sættes altid til entalsformen, så for de 7 byer, hvis navne er født med en flertalsendelse, skal du først konstruere en entalsform. I denne øvelse er det gjort for dig (det er alle *-formerne).</translation>
     </message>
     <message>
         <source>structure 2 ./3/</source>
@@ -957,13 +958,6 @@ Forstå, sammenkæd selv, oversæt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Appendix:
-Kapitel 3 (manuskriptudgave) af
-&apos;Forsøg til en forbedret
-grønlandsk pædagogisk grammatica&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Change language to English</source>
         <translation type="unfinished"></translation>
     </message>
@@ -989,10 +983,6 @@ grønlandsk pædagogisk grammatica&apos;</source>
     </message>
     <message>
         <source>Forelæsning 5 som PDF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>./appendix/danish.pdf</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1037,6 +1027,32 @@ grønlandsk pædagogisk grammatica&apos;</source>
     </message>
     <message>
         <source>Diktat af Tika&apos;s velkomst</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>./images/pdf.png</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Appendix og andet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kapitel 3 (manuskriptudgave) af
+&apos;Forsøg til en forbedret
+grønlandsk pædagogisk grammatica&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Indstikshæfte som PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>./grammatica/danish.pdf</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>./pamphlet/danish.pdf</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1301,7 +1317,7 @@ Prøv igen...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Aflyt og nedkriv Tika&apos;s velkomst.</source>
+        <source>Aflyt og nedkriv Tika&apos;s velkomst ord for ord.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

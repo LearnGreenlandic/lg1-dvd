@@ -3,7 +3,8 @@
 
 WelcomeWords::WelcomeWords(QDir dataDir, TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
-tc(tc)
+tc(tc),
+curAt(-1)
 {
     if (!dataDir.exists("welcome.dat")) {
         QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate welcome.dat!");
@@ -14,6 +15,16 @@ tc(tc)
         QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate welcome.txt!");
         throw(-1);
     }
+
+    QFile input_f(dataDir.absoluteFilePath("input.txt"));
+    if (!input_f.open(QIODevice::ReadOnly)) {
+        QMessageBox::critical(0, "Read Error!", "Could not open input.txt from data folder!");
+        throw(-1);
+    }
+    QTextStream input_t(&input_f);
+    input_t.setCodec("UTF-8");
+    QString input_s = input_t.readAll().trimmed();
+    words = input_s.split(QRegExp("\\s+"), QString::SkipEmptyParts);
 
     setWindowTitle(tr("Diktat af Tika's velkomst"));
 
@@ -64,8 +75,18 @@ tc(tc)
 
     qvbl = new QVBoxLayout;
 
-    QLabel *label = new QLabel(tr("Aflyt og nedkriv Tika's velkomst."));
+    QLabel *label = new QLabel(tr("Aflyt og nedkriv Tika's velkomst ord for ord."));
     label->setWordWrap(true);
+
+    // TODO
+
+    sum = new QLabel;
+    sum->setWordWrap(true);
+    current = new QLabel;
+    input = new QLineEdit;
+    check = new QPushButton;
+    result = new QLabel;
+    yield = new QPushButton;
 
     setLayout(outerHBox);
 

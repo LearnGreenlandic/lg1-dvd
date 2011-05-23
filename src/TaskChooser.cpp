@@ -337,7 +337,7 @@ translator(translator)
     itemVBox->setContentsMargins(0,0,0,0);
 
     ql = new QLabel;
-    qpx.load(dataDir.absoluteFilePath(tr("./5_1/danish/0.png"))); // TODO
+    qpx.load(dataDir.absoluteFilePath(tr("./images/updown.png")));
     qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -372,16 +372,25 @@ translator(translator)
     itemVBox->setContentsMargins(0,0,0,0);
 
     ql = new QLabel;
-    qpx.load(dataDir.absoluteFilePath(tr("./5_2/danish/0.png"))); // TODO
+    qpx.load(dataDir.absoluteFilePath(tr("./images/pdf.png")));
     qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *appendix = new QPushButton(tr("Appendix:\nKapitel 3 (manuskriptudgave) af\n'Forsøg til en forbedret\ngrønlandsk pædagogisk grammatica'"));
-    appendix->setFlat(true);
-    appendix->setStyleSheet("font-weight: bold; text-align: left;");
-    connect(appendix, SIGNAL(clicked()), this, SLOT(showAppendixPDF()));
-    itemVBox->addWidget(appendix, 0, Qt::AlignLeft|Qt::AlignTop);
+    QLabel *appendixHeader = new QLabel(tr("Appendix og andet"));
+    appendixHeader->setStyleSheet("font-weight: bold; text-align: left;");
+    itemVBox->addWidget(appendixHeader, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *grammatica = new QPushButton(QString("   - ") + tr("Kapitel 3 (manuskriptudgave) af\n'Forsøg til en forbedret\ngrønlandsk pædagogisk grammatica'"));
+    grammatica->setFlat(true);
+    grammatica->setStyleSheet("text-align: left;");
+    connect(grammatica, SIGNAL(clicked()), this, SLOT(showGrammaticaPDF()));
+    itemVBox->addWidget(grammatica, 0, Qt::AlignLeft|Qt::AlignTop);
+
+    QPushButton *pamphlet = new QPushButton(QString("   - ") + tr("Indstikshæfte som PDF"));
+    pamphlet->setFlat(true);
+    connect(pamphlet, SIGNAL(clicked()), this, SLOT(showPamphletPDF()));
+    itemVBox->addWidget(pamphlet, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
     outerGrid->addLayout(itemHBox, 3, 2, 1, 1, Qt::AlignLeft|Qt::AlignTop);
@@ -394,7 +403,7 @@ translator(translator)
     itemVBox->setContentsMargins(0,0,0,0);
 
     ql = new QLabel;
-    qpx.load(dataDir.absoluteFilePath(tr("./5_2/danish/0.png"))); // TODO
+    qpx.load(dataDir.absoluteFilePath(tr("./images/english.png")));
     qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -479,8 +488,12 @@ void TaskChooser::showLectureFivePDF() {
     QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./5_1/danish/") + "lecture.pdf")));
 }
 
-void TaskChooser::showAppendixPDF() {
-    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./appendix/danish.pdf"))));
+void TaskChooser::showGrammaticaPDF() {
+    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./grammatica/danish.pdf"))));
+}
+
+void TaskChooser::showPamphletPDF() {
+    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./pamphlet/danish.pdf"))));
 }
 
 void TaskChooser::showHyphenOne() {
@@ -686,6 +699,7 @@ void TaskChooser::toggleLanguage() {
 void TaskChooser::checkFirstRun() {
     QSettings settings;
 
+    // TODO
     bool hasXvid = settings.value("has_Xvid", false).toBool();
     if (false && !hasXvid) {
         QMessageBox mbox(QMessageBox::Question, tr("Xvid og MP3?"),
