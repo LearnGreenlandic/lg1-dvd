@@ -618,11 +618,13 @@ Hvis du slet ikke kan få ordet dannet inde i hovedet, må du som en sidste udve
     </message>
     <message>
         <source>structure 3 ./2/</source>
-        <translation type="unfinished">Brug N{-mi} for at vænne dig til lydændringerne. {3 ?} {2/?}</translation>
+        <translation>Denne øvelse er identisk med øvelse 2-2, men denne gang får du ingen hjælp af teksten. Du må klare dig med dine ører.
+Sæt tilhængene N+MIU-U{+vuŋa} på bynavnene, så du danner ord med betydningen &apos;Jeg er en indbygger i BYNAVN&apos;. Udtal det nye ord højt og lyt derefter til Tikas indtaling af det samme ord. Klik &apos;næste&apos; når du er tilfreds med din egen udtale.
+Hvis du slet ikke kan få ordet dannet inde i hovedet, må du som en sidste udvej vende tilbage til øvelse 2-2 for at forstå, hvad det er der foregår netop her.</translation>
     </message>
     <message>
         <source>structure 3 ./3/</source>
-        <translation type="unfinished">Brug N{-mi} for at vænne dig til lydændringerne. {3 ?} {3/?}</translation>
+        <translation>Øvelsen er identisk med øvelse 3.1, men denne gang får du ingen hjælp af teksten. Sæt endelsen N{-mi} på det bynavn, du hører for at danne ord med betydningen &apos;i BYNAVN&apos;.</translation>
     </message>
     <message>
         <source>Lyt igen</source>
@@ -713,7 +715,7 @@ Tilhæng sættes altid til entalsformen, så for de 7 byer, hvis navne er født 
     </message>
     <message>
         <source>structure 2 ./3/</source>
-        <translation>Brug N{-mi} for at vænne dig til lydændringerne.</translation>
+        <translation>Sæt endelsen N{-mi} på bynavnene for at danne ord med betydningen &apos;i BYNAVN&apos;.</translation>
     </message>
     <message>
         <source>Check</source>
@@ -1053,6 +1055,14 @@ grønlandsk pædagogisk grammatica&apos;</source>
     </message>
     <message>
         <source>./pamphlet/danish.pdf</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>./images/updown.png</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>./images/english.png</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

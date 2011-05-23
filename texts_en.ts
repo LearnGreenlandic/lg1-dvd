@@ -150,7 +150,7 @@
     </message>
     <message>
         <source>Stavelsesdeling af bynavne</source>
-        <translation type="unfinished"></translation>
+        <translation>Hyphenate place names</translation>
     </message>
     <message>
         <source>Del ordet med -; brug noderne til hjælp.</source>
@@ -233,7 +233,7 @@ Try again...</translation>
     </message>
     <message>
         <source>Lydøvelse  1.4: Skriv hvad du hørte</source>
-        <translation>Sound exercise 1.4: Write what you heard</translation>
+        <translation>Dictation - single words</translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
@@ -631,13 +631,13 @@ If you cannot at all make up the word in your head your last resource will be to
     </message>
     <message>
         <source>structure 3 ./2/</source>
-        <translation type="unfinished">Add the derivational morpheme N+MIU to the town names to form words meaning &apos;inhabitant of TOWN&apos;.
-Do not get led astray by an orthographical detail that a word final q is written as an -r- whenever followed by another consonant. As you know already from the second lecture -r- in this position is not an -r- after all rather a gemination of the following consonant. Derivational morphemes are always added to the singular so we need to construct a singular form for the seven towns with pluralis tantum names. In this exercise the singulars you need are included for you. {3 ?} {2/?}</translation>
+        <translation>This exercise i identical to exercise 2-2 only that you this time do not get help from the written text. Your ears will suffice.
+Add the derivational morphemes N+MIU-U{+vuŋa} to the names of towns to form words meaning &apos;I am an inhabitant of TOWN&apos;. Pronounce the newly formed word aloud and check your pronounciation with Tika&apos;s recording of the same word. Click &apos;next&apos; when you are pleased with your own pronounciation of the word.
+If you cannot at all make up the word in your head your last resource will be to return to exercise 2-2 to check up upon what is going on in just this word.</translation>
     </message>
     <message>
         <source>structure 3 ./3/</source>
-        <translation type="unfinished">Add the derivational morpheme N+MIU to the town names to form words meaning &apos;inhabitant of TOWN&apos;.
-Do not get led astray by an orthographical detail that a word final q is written as an -r- whenever followed by another consonant. As you know already from the second lecture -r- in this position is not an -r- after all rather a gemination of the following consonant. Derivational morphemes are always added to the singular so we need to construct a singular form for the seven towns with pluralis tantum names. In this exercise the singulars you need are included for you. {3 ?} {3/?}</translation>
+        <translation>This exercise is identical with exercise 3.1 only that you this time do not get help from the written text. Your ears will suffice. Add the ending N{-mi} to the town name you hear to form words meaning &apos;in TOWN&apos;.</translation>
     </message>
     <message>
         <source>Lyt igen</source>
@@ -705,15 +705,15 @@ Try again...</translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
-        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+        <translation>No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
     </message>
     <message>
         <source>Ja, næste øvelse</source>
-        <translation type="unfinished">Yes, next exercise</translation>
+        <translation>Yes, next exercise</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished">No, back to the menu</translation>
+        <translation>No, back to the menu</translation>
     </message>
 </context>
 <context>
@@ -730,8 +730,7 @@ Derivational morphemes are always added to the singular so for the seven plurali
     </message>
     <message>
         <source>structure 2 ./3/</source>
-        <translation type="unfinished">Add the derivational morpheme N+MIU to the town names to form words meaning &apos;inhabitant of TOWN&apos;.
-Do not get led astray by an orthographical detail that a word final q is written as an -r- whenever followed by another consonant. As you know already from the second lecture -r- in this position is not an -r- after all rather a gemination of the following consonant. Derivational morphemes are always added to the singular so we need to construct a singular form for the seven towns with pluralis tantum names. In this exercise the singulars you need are included for you. {2 ?} {3/?}</translation>
+        <translation>Add the ending N{-mi} to the town names to form words meaning &apos;in TOWN&apos;.</translation>
     </message>
     <message>
         <source>Check</source>
@@ -791,15 +790,15 @@ Try again...</translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
-        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+        <translation>No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
     </message>
     <message>
         <source>Ja, næste øvelse</source>
-        <translation type="unfinished">Yes, next exercise</translation>
+        <translation>Yes, next exercise</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished">No, back to the menu</translation>
+        <translation>No, back to the menu</translation>
     </message>
 </context>
 <context>
@@ -902,15 +901,15 @@ Try again...</translation>
     </message>
     <message>
         <source>Stavelsesdeling af bynavne</source>
-        <translation type="unfinished"></translation>
+        <translation>Hyphenate place names</translation>
     </message>
     <message>
         <source>Skærmtekstsøvelse 1.1: Stavelsesdeling</source>
-        <translation type="unfinished"></translation>
+        <translation>Hyphenate running text</translation>
     </message>
     <message>
         <source>Skærmtekstsøvelse 1.2: Udtale</source>
-        <translation type="unfinished"></translation>
+        <translation>Pronounce running text</translation>
     </message>
     <message>
         <source>Forelæsning 3 som PDF</source>
@@ -934,48 +933,49 @@ Try again...</translation>
     </message>
     <message>
         <source>Strukturøvelse 1.1: Lydopfattelse</source>
-        <translation type="unfinished"></translation>
+        <translation>Pattern practice 1.1: Listen</translation>
     </message>
     <message>
         <source>Strukturøvelse 1.2: Dan nye ord</source>
-        <translation type="unfinished"></translation>
+        <translation>Pattern practice drill 1.2: Write new nouns</translation>
     </message>
     <message>
         <source>Strukturøvelse 1.3: Lyt, forstå, dan ord</source>
-        <translation type="unfinished"></translation>
+        <translation>Pattern practice drill 1.3: Listen and form new nouns</translation>
     </message>
     <message>
         <source>Strukturøvelse 2.1: Dan nye ord</source>
-        <translation type="unfinished"></translation>
+        <translation>Pattern practice drill 2.1: Write new verbs</translation>
     </message>
     <message>
         <source>Strukturøvelse 2.2: Lyt, forstå, dan ord</source>
-        <translation type="unfinished"></translation>
+        <translation>Pattern practice drill 2.2: Listen and form new verbs</translation>
     </message>
     <message>
         <source>Strukturøvelse 3.1: Dan nye ord</source>
-        <translation type="unfinished"></translation>
+        <translation>Pattern practice drill 3.1: Read and add endings</translation>
     </message>
     <message>
         <source>Strukturøvelse 3.2: Lyt, forstå, dan ord</source>
-        <translation type="unfinished"></translation>
+        <translation>Pattern practice drill 3.2: Listen and add endings</translation>
     </message>
     <message>
         <source>Øvelser i ordbygning:
 Forstå, sammenkæd selv, oversæt</source>
-        <translation type="unfinished"></translation>
+        <translation>Analyzing/ generating words:
+Understand, form words, translate</translation>
     </message>
     <message>
         <source>Ordbygning: Reception</source>
-        <translation type="unfinished"></translation>
+        <translation>Understand wordforms</translation>
     </message>
     <message>
         <source>Ordbygning: Produktion</source>
-        <translation type="unfinished"></translation>
+        <translation>Produce wordforms</translation>
     </message>
     <message>
         <source>Ordbygning: Oversættelse</source>
-        <translation type="unfinished"></translation>
+        <translation>Translate wordforms</translation>
     </message>
     <message>
         <source>Change language to English</source>
@@ -983,19 +983,19 @@ Forstå, sammenkæd selv, oversæt</source>
     </message>
     <message>
         <source>Lydøvelse 1.1: En eller to konsonanter</source>
-        <translation type="unfinished"></translation>
+        <translation>Sound perception 1.1: One or two consonants</translation>
     </message>
     <message>
         <source>Lydøvelse 1.2: r eller ikke r</source>
-        <translation type="unfinished"></translation>
+        <translation>Sound perception 1.2: -r- or no -r-</translation>
     </message>
     <message>
         <source>Lydøvelse 1.3: tt eller ts eller t</source>
-        <translation type="unfinished"></translation>
+        <translation>Sound perception 1.3: tt or ts or just t</translation>
     </message>
     <message>
         <source>Lydøvelse 1.4: Skriv hvad du hørte</source>
-        <translation type="unfinished"></translation>
+        <translation>Sound perception 1.4: Dictation - single words</translation>
     </message>
     <message>
         <source>Udtaleøvelse 1.2: Diktat</source>
@@ -1007,35 +1007,35 @@ Forstå, sammenkæd selv, oversæt</source>
     </message>
     <message>
         <source>Xvid og MP3?</source>
-        <translation type="unfinished"></translation>
+        <translation>Xvid and MP3?</translation>
     </message>
     <message>
         <source>Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid codec?</source>
-        <translation type="unfinished"></translation>
+        <translation>This program uses Xvid and mp3 codecs for the videos. Do you want to install Xvid codec?</translation>
     </message>
     <message>
         <source>Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere DivX codec?</source>
-        <translation type="unfinished"></translation>
+        <translation>This program uses Xvid and mp3 codecs for the videos. Do you want to install DivX codec?</translation>
     </message>
     <message>
         <source>Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid og MP3 codecs?</source>
-        <translation type="unfinished"></translation>
+        <translation>This program uses Xvid and mp3 codecs for the videos. Do you want to install Xvid and MP3 codecs?</translation>
     </message>
     <message>
         <source>Ja</source>
-        <translation type="unfinished"></translation>
+        <translation>Yes</translation>
     </message>
     <message>
         <source>Nej, jeg har Xvid eller DivX</source>
-        <translation type="unfinished"></translation>
+        <translation>No, I have Xvid or DivX already</translation>
     </message>
     <message>
         <source>Installer Xvid</source>
-        <translation type="unfinished"></translation>
+        <translation>Install Xvid</translation>
     </message>
     <message>
         <source>Programmet åbner nu installeren i et nyt vindue og lukker så dette. Start Learn Greenlandic igen når du har installeret Xvid eller DivX.</source>
-        <translation type="unfinished"></translation>
+        <translation>The program will now open the installer in a new window and shut down itself. Start Learn Greenlandic again after you have installed Xvid or DivX.</translation>
     </message>
     <message>
         <source>Xvid error</source>
@@ -1043,11 +1043,11 @@ Forstå, sammenkæd selv, oversæt</source>
     </message>
     <message>
         <source>Afspilningen af test filmen fejlede helt. Du bør installere Xvid eller DivX codecs og så prøve igen. Hvis intet virker, så kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjælp.</source>
-        <translation type="unfinished"></translation>
+        <translation>The test film failed. You have to install Xvid or DivX codecs and try again. If nothing works contact install@learngreenlandic.com or consult http://learngreenlandic.com/ for help.</translation>
     </message>
     <message>
         <source>Diktat af Tika&apos;s velkomst</source>
-        <translation type="unfinished"></translation>
+        <translation>Tika&apos;s welcome as dictation</translation>
     </message>
     <message>
         <source>./images/pdf.png</source>
@@ -1055,24 +1055,33 @@ Forstå, sammenkæd selv, oversæt</source>
     </message>
     <message>
         <source>Appendix og andet</source>
-        <translation type="unfinished"></translation>
+        <translation>Appendix and more</translation>
     </message>
     <message>
         <source>Kapitel 3 (manuskriptudgave) af
 &apos;Forsøg til en forbedret
 grønlandsk pædagogisk grammatica&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation>Chapter 3 (manuscript) of
+&apos;A Pedagogical Grammar of Kalaallisut&apos;</translation>
     </message>
     <message>
         <source>Indstikshæfte som PDF</source>
-        <translation type="unfinished"></translation>
+        <translation>Pamphlet as PDF</translation>
     </message>
     <message>
         <source>./grammatica/danish.pdf</source>
-        <translation type="unfinished"></translation>
+        <translation>./grammatica/english.pdf</translation>
     </message>
     <message>
         <source>./pamphlet/danish.pdf</source>
+        <translation>./pamphlet/english.pdf</translation>
+    </message>
+    <message>
+        <source>./images/updown.png</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>./images/english.png</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1080,7 +1089,7 @@ grønlandsk pædagogisk grammatica&apos;</source>
     <name>UpdownOne</name>
     <message>
         <source>Ordbygning: Reception</source>
-        <translation type="unfinished"></translation>
+        <translation>Language tools: Reception exercise</translation>
     </message>
     <message>
         <source>Prøv at forstå og at udtale følgende ord:</source>
@@ -1115,7 +1124,7 @@ grønlandsk pædagogisk grammatica&apos;</source>
     <name>UpdownThree</name>
     <message>
         <source>Ordbygning: Oversættelse</source>
-        <translation type="unfinished"></translation>
+        <translation>Language tools: Translation</translation>
     </message>
     <message>
         <source>Oversæt følgende glossering til et ord i færdig form:</source>
@@ -1166,7 +1175,7 @@ Try again...</translation>
     <name>UpdownTwo</name>
     <message>
         <source>Ordbygning: Produktion</source>
-        <translation type="unfinished"></translation>
+        <translation>Language tools: Word generation</translation>
     </message>
     <message>
         <source>Skriv følgende ord i færdig form:</source>
@@ -1225,11 +1234,11 @@ Try again...</translation>
     <name>WelcomeOne</name>
     <message>
         <source>Skærmtekstsøvelse 1.1: Stavelsesdeling</source>
-        <translation type="unfinished"></translation>
+        <translation>Hyphenate a text</translation>
     </message>
     <message>
         <source>Her er igen den tekst, der stod på skærmen lige efter velkomsten. Stavelsesdel den efter de tre regler, du netop har lært. Du finder facitlisten og en oversættelse i indstikshæftet, men brug den først, når du har prøvet så godt du kan selv.</source>
-        <translation type="unfinished"></translation>
+        <translation>The text that followed the welcome revisited. Hyphenate it using the three rules you just learned. The key and a translation is included in the pamphlet but do not resort to it until you have tried your best on your own.</translation>
     </message>
     <message>
         <source>Check</source>
@@ -1308,11 +1317,11 @@ Try again...</translation>
     <name>WelcomeTwo</name>
     <message>
         <source>Skærmtekstsøvelse 1.2: Udtale</source>
-        <translation type="unfinished"></translation>
+        <translation>Text exercise 1.2: Pronunciation</translation>
     </message>
     <message>
         <source>Læs teksten op ord for ord og væn dig til de skiftende tonehøjder. Tryk &lt;Næste ord&gt; efter hvert ord, når du føler, at din udtale er ved at være korrekt. Så får du ordet i fonetisk skrift i vores lille nodesystem, så du har noget at kontrollere din udtale på. Du finder en oversættelse i indstikshæftet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Read the text aloud word by word to get accustomed to the varying pitches. Press &lt;Next word&gt; whenever you feel your pronunciation to be acceptable. Then a small analysis using our primitive staff will pop up for you to check your intonation pattern.</translation>
     </message>
     <message>
         <source>Næste ord</source>
@@ -1339,11 +1348,11 @@ Try again...</translation>
     <name>WelcomeWords</name>
     <message>
         <source>Diktat af Tika&apos;s velkomst</source>
-        <translation type="unfinished"></translation>
+        <translation>Tika&apos;s welcome as dictation</translation>
     </message>
     <message>
         <source>Aflyt og nedkriv Tika&apos;s velkomst ord for ord.</source>
-        <translation type="unfinished"></translation>
+        <translation>Listen closely and take down Tika&apos;s welcome word by word.</translation>
     </message>
 </context>
 <context>
