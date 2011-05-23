@@ -725,11 +725,11 @@ void TaskChooser::checkFirstRun() {
 #else
                 "../runasroot.sh"
 #endif
-                    ))
+                    )
 #if !defined(Q_WS_WIN) && !defined(Q_WS_MAC)
                 + QString("\"") + QCoreApplication::instance()->applicationDirPath() + "/install-prereq-ubuntu.sh\""
 #endif
-                );
+                ));
             QCoreApplication::quit();
             return;
         }
