@@ -40,7 +40,6 @@ SOURCES += \
     src/DialogThree.cpp \
     src/WelcomePlayer.cpp \
     src/ListenRepeatPlayer.cpp \
-    src/RichTextPushButton.cpp \
     src/WelcomeQuestion.cpp \
     src/XvidTest.cpp
 
@@ -73,7 +72,6 @@ HEADERS  += \
     src/DialogThree.hpp \
     src/WelcomePlayer.hpp \
     src/ListenRepeatPlayer.hpp \
-    src/RichTextPushButton.hpp \
     src/WelcomeQuestion.hpp \
     src/XvidTest.hpp
 

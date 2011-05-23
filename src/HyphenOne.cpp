@@ -28,11 +28,11 @@ curAt(-1)
     QPixmap qpx;
     qpx.load(pngs.front());
 
-    setWindowTitle("Orddelingsøvelse");
+    setWindowTitle(tr("Stavelsesdeling af bynavne"));
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 
-    QLabel *ql = new QLabel("Del ordet med -; brug noderne til hjælp.");
+    QLabel *ql = new QLabel(tr("Del ordet med -; brug noderne til hjælp."));
     ql->setWordWrap(true);
     qvbl->addWidget(ql);
 
@@ -42,7 +42,7 @@ curAt(-1)
     label->setWordWrap(true);
     label->setMinimumWidth(700);
 
-    QPushButton *next = new QPushButton("Næste ord");
+    QPushButton *next = new QPushButton(tr("Næste ord"));
     connect(next, SIGNAL(clicked()), this, SLOT(nextWord()));
 
     scene = new QGraphicsScene;
@@ -71,9 +71,9 @@ curAt(-1)
 
     input = new QLineEdit(text);
     connect(input, SIGNAL(textChanged(const QString&)), this, SLOT(preventLoss(const QString&)));
-    QPushButton *check = new QPushButton("Check");
+    QPushButton *check = new QPushButton(tr("Check"));
     connect(check, SIGNAL(clicked()), this, SLOT(checkInput()));
-    yield = new QPushButton("Giv op...");
+    yield = new QPushButton(tr("Giv op..."));
     connect(yield, SIGNAL(clicked()), this, SLOT(yieldHyphen()));
     result = new QLabel;
 
@@ -141,15 +141,11 @@ void HyphenOne::preventLoss(const QString& current) {
 void HyphenOne::checkInput() {
     QString plain = input->text();
     if (plain == hyphenated) {
-        result->setText("<center><span style='color: darkgreen;'><b>Korrekt!</b></span></center>");
+        result->setText(QString("<center><span style='color: darkgreen;'><b>") + tr("Korrekt!") + "</b></span></center>");
         yield->hide();
     }
-    else if (plain.compare(hyphenated, Qt::CaseInsensitive) == 0) {
-        result->setText("<center><span style='color: darkyellow;'><b>Næsten korrekt.\nStore og små bogstaver gælder...</b></span></center>");
-        yield->show();
-    }
     else {
-        result->setText("<center><span style='color: darkred;'><b>Ikke korrekt.\nPrøv igen...</b></span></center>");
+        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrøv igen...") + "</b></span></center>");
         yield->show();
     }
     result->show();
@@ -158,6 +154,6 @@ void HyphenOne::checkInput() {
 }
 
 void HyphenOne::yieldHyphen() {
-    QMessageBox::information(this, "Hrhm...", QString("<h1>Det korrekte er:</h1>\n\n") + hyphenated);
+    QMessageBox::information(this, tr("Hrhm..."), QString("<h1>") + tr("Det korrekte er:") + QString("</h1><br>") + hyphenated);
     nextWord();
 }

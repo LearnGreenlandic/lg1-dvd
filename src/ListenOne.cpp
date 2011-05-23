@@ -112,10 +112,10 @@ void ListenOne::showNext() {
     media->setCurrentSource(words.at(curAt).first);
     result->hide();
 
-    QString tmp = QString("Nej, har ikke ") + words.at(curAt).second + words.at(curAt).second;
+    QString tmp = QString(tr("Nej, har ikke ")) + words.at(curAt).second + words.at(curAt).second;
     oneC->setText(tr(tmp.toStdString().c_str()));
 
-    tmp = QString("Jo, har ") + words.at(curAt).second + words.at(curAt).second;
+    tmp = QString(tr("Jo, har ")) + words.at(curAt).second + words.at(curAt).second;
     twoC->setText(tr(tmp.toStdString().c_str()));
 
     adjustSize();

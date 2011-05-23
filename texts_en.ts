@@ -32,8 +32,16 @@
         <translation>Done!</translation>
     </message>
     <message>
-        <source>Der er ikke flere fraser...vinduet lukker sig selv nu.</source>
-        <translation>No phrases remain...window will now close.</translation>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished">Yes, next exercise</translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
+        <translation type="unfinished">No, back to the menu</translation>
     </message>
 </context>
 <context>
@@ -67,8 +75,16 @@
         <translation>Done!</translation>
     </message>
     <message>
-        <source>Der er ikke flere fraser...vinduet lukker sig selv nu.</source>
-        <translation>No phrases remain...window will now close.</translation>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished">Yes, next exercise</translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
+        <translation type="unfinished">No, back to the menu</translation>
     </message>
 </context>
 <context>
@@ -102,8 +118,16 @@
         <translation>Done!</translation>
     </message>
     <message>
-        <source>Der er ikke flere fraser...vinduet lukker sig selv nu.</source>
-        <translation>No phrases remain...window will now close.</translation>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished">Yes, next exercise</translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
+        <translation type="unfinished">No, back to the menu</translation>
     </message>
 </context>
 <context>
@@ -1139,28 +1163,28 @@ Try again...</translation>
     </message>
     <message>
         <source>Giv op...</source>
-        <translation type="unfinished">Give up...</translation>
+        <translation>Give up...</translation>
     </message>
     <message>
         <source>Korrekt!</source>
-        <translation type="unfinished">Correct!</translation>
+        <translation>Correct!</translation>
     </message>
     <message>
         <source>Korrekt! Det var alt for denne øvelse. Vil du gå videre til næste øvelse?</source>
-        <translation type="unfinished"></translation>
+        <translation>Correct! That was all for this exercise. Do you want to continue with next exercise?</translation>
     </message>
     <message>
         <source>Ja, næste øvelse</source>
-        <translation type="unfinished">Yes, next exercise</translation>
+        <translation>Yes, next exercise</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished">No, back to the menu</translation>
+        <translation>No, back to the menu</translation>
     </message>
     <message>
         <source>Ikke korrekt.
 Prøv igen...</source>
-        <translation type="unfinished">Incorrect.
+        <translation>Incorrect.
 Try again...</translation>
     </message>
     <message>
@@ -1169,7 +1193,7 @@ Try again...</translation>
     </message>
     <message>
         <source>Det korrekte er:</source>
-        <translation type="unfinished"></translation>
+        <translation>The correct was:</translation>
     </message>
 </context>
 <context>
@@ -1204,6 +1228,37 @@ Try again...</translation>
     <message>
         <source>Ups! Hjælp mig ud!</source>
         <translation>Whoops! Help me out!</translation>
+    </message>
+</context>
+<context>
+    <name>WelcomeTwo</name>
+    <message>
+        <source>Skærmtekstsøvelse 1.2: Udtale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Læs teksten op ord for ord og væn dig til de skiftende tonehøjder. Tryk &lt;Næste ord&gt; efter hvert ord, når du føler, at din udtale er ved at være korrekt. Så får du ordet i fonetisk skrift i vores lille nodesystem, så du har noget at kontrollere din udtale på. Du finder en oversættelse i indstikshæftet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Næste ord</source>
+        <translation>Next word</translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation>Done!</translation>
+    </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du læse forelæsningen som PDF?</source>
+        <translation>No tasks remain in this exercise. Do you want to view the lecture as PDF?</translation>
+    </message>
+    <message>
+        <source>Ja, åben PDF</source>
+        <translation>Yes, open the PDF</translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
+        <translation>No, back to the menu</translation>
     </message>
 </context>
 <context>

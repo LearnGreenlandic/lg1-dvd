@@ -32,7 +32,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Der er ikke flere fraser...vinduet lukker sig selv nu.</source>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -67,7 +75,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Der er ikke flere fraser...vinduet lukker sig selv nu.</source>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -102,7 +118,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Der er ikke flere fraser...vinduet lukker sig selv nu.</source>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1181,6 +1205,37 @@ Prøv igen...</source>
     </message>
     <message>
         <source>Ups! Hjælp mig ud!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>WelcomeTwo</name>
+    <message>
+        <source>Skærmtekstsøvelse 1.2: Udtale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Læs teksten op ord for ord og væn dig til de skiftende tonehøjder. Tryk &lt;Næste ord&gt; efter hvert ord, når du føler, at din udtale er ved at være korrekt. Så får du ordet i fonetisk skrift i vores lille nodesystem, så du har noget at kontrollere din udtale på. Du finder en oversættelse i indstikshæftet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Næste ord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du læse forelæsningen som PDF?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ja, åben PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

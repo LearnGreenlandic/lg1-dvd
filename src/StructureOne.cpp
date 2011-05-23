@@ -70,7 +70,14 @@ void StructureOne::playAgain() {
 void StructureOne::showNext() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(data.pairs.size())) {
-        QMessageBox::information(0, tr("Færdig!"), tr("Der er ikke flere ord...vinduet lukker sig selv nu."));
+        QMessageBox mbox(QMessageBox::Question, tr("Færdig!"), tr("Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?"));
+        QPushButton *yes = mbox.addButton(tr("Ja, næste øvelse"), QMessageBox::YesRole);
+        mbox.addButton(tr("Nej, tilbage til menuen"), QMessageBox::NoRole);
+        mbox.exec();
+
+        if (mbox.clickedButton() == yes) {
+            tc.showStructureTwo();
+        }
         close();
         return;
     }
