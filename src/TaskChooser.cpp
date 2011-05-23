@@ -20,6 +20,7 @@
 #include "StructureOne.hpp"
 #include "StructureTwo.hpp"
 #include "StructureThree.hpp"
+#include "XVidTest.hpp"
 #include "TaskChooser.hpp"
 
 TaskChooser::TaskChooser(QDir dataDir, QTranslator *translator) :
@@ -693,8 +694,14 @@ void TaskChooser::toggleLanguage() {
 
 void TaskChooser::checkFirstRun() {
     QSettings settings;
-    bool doneWelcome = settings.value("done_welcome", false).toBool();
 
+    bool hasXVid = settings.value("has_xvid", false).toBool();
+    if (!hasXVid) {
+        XVidTest *xt = new XVidTest(this, dataDir);
+        xt->show();
+    }
+
+    bool doneWelcome = settings.value("done_welcome", false).toBool();
     if (!doneWelcome) {
         showWelcomePlayer();
     }

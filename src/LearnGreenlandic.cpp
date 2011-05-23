@@ -62,6 +62,8 @@ int main(int argc, char *argv[]) {
 
     TaskChooser tc(dataDir, &translator);
     tc.show();
+    tc.raise();
+    tc.activateWindow();
 
     QTimer::singleShot(1000, &tc, SLOT(checkFirstRun()));
 
