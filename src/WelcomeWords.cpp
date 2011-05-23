@@ -156,6 +156,9 @@ void WelcomeWords::showNext() {
 
     query->setText(tr("Skriv ord nummer %1:").arg(curAt+1));
 
+    input->setFocus();
+    input->setText("");
+
     result->hide();
     yield->hide();
 
@@ -183,7 +186,7 @@ void WelcomeWords::checkInput() {
     }
     result->show();
     input->setFocus();
-    input->setText("");
+    input->selectAll();
     adjustSize();
 }
 
