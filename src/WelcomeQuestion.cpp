@@ -1,7 +1,7 @@
 #include "WelcomeQuestion.hpp"
 
 WelcomeQuestion::WelcomeQuestion(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint),
+QWidget(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint),
 tc(tc)
 {
     setWindowModality(Qt::ApplicationModal);
