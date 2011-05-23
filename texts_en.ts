@@ -1050,6 +1050,14 @@ Try again...</translation>
         <source>Forstod du alt hvad Tikaajaat sagde i velkomstfilmen?</source>
         <translation>Did you understand everything Tikaajaat said in the welcome clip?</translation>
     </message>
+    <message>
+        <source>Ja, selvfølgelig</source>
+        <translation>Yes, of course</translation>
+    </message>
+    <message>
+        <source>Nej, lær mig det</source>
+        <translation>No, please teach me</translation>
+    </message>
 </context>
 <context>
     <name>WelcomeQuestion</name>

@@ -1021,6 +1021,14 @@ Prøv igen...</source>
         <source>Forstod du alt hvad Tikaajaat sagde i velkomstfilmen?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Ja, selvfølgelig</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, lær mig det</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>WelcomeQuestion</name>

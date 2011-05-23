@@ -90,7 +90,12 @@ void WelcomePlayer::togglePlay() {
 }
 
 void WelcomePlayer::finished() {
-    if (QMessageBox::question(0, tr("Forstået?"), tr("Forstod du alt hvad Tikaajaat sagde i velkomstfilmen?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
+    QMessageBox mbox(QMessageBox::Question, tr("Forstået?"), tr("Forstod du alt hvad Tikaajaat sagde i velkomstfilmen?"));
+    QPushButton *yes = mbox.addButton(tr("Ja, selvfølgelig"), QMessageBox::YesRole);
+    mbox.addButton(tr("Nej, lær mig det"), QMessageBox::NoRole);
+    mbox.exec();
+
+    if (mbox.clickedButton() == yes) {
         WelcomeQuestion *wc = new WelcomeQuestion(tc);
         wc->show();
         close();
