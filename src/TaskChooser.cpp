@@ -713,6 +713,17 @@ void TaskChooser::checkFirstRun() {
         mbox.exec();
 
         if (mbox.clickedButton() == yes) {
+            QMessageBox::information(0, tr("Installer Xvid"), tr("Programmet åbner nu installeren i et nyt vindue og lukker så dette. Start Learn Greenlandic igen når du har installeret Xvid eller DivX."));
+            QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(
+#if defined(Q_WS_WIN)
+                "../Xvid-1.3.1-20110324.exe"
+#elif defined(Q_WS_MAC)
+                "../DivXInstaller.dmg"
+#else
+                "../"
+#endif
+                    )));
+            QCoreApplication::quit();
             return;
         }
 

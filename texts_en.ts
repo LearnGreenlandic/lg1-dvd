@@ -934,6 +934,14 @@ grønlandsk pædagogisk grammatica&apos;</source>
         <source>Afspilningen af test filmen fejlede helt. Du bør installere Xvid eller DivX codecs og så prøve igen. Hvis intet virker, så kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjælp.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Installer Xvid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Programmet åbner nu installeren i et nyt vindue og lukker så dette. Start Learn Greenlandic igen når du har installeret Xvid eller DivX.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UpdownOne</name>
