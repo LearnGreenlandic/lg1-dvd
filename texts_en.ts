@@ -304,11 +304,11 @@ The word was: </translation>
     </message>
     <message>
         <source>Nej, har ikke </source>
-        <translation type="unfinished"></translation>
+        <translation>No, doesn&apos;t have</translation>
     </message>
     <message>
         <source>Jo, har </source>
-        <translation type="unfinished"></translation>
+        <translation>Yes, has</translation>
     </message>
 </context>
 <context>
@@ -626,13 +626,13 @@ Try again...</translation>
     <message>
         <source>structure 3 ./1/</source>
         <translation>This exercise is identical to exercise 1-2 only that you this time do not get help from the written text. Your ears will suffice.
-Add the derivational morpheme N+MIU to the names of towns to form words meaning &apos;inhabitant of TOWN&apos;. Pronounce the newly formed word aloud and check your pronounciation with Tika&apos;s recording of the same word. Click &apos;next&apos; when you are pleased with your own pronounciation of the word.
+Add the derivational morpheme N+MIU to the names of towns to form words meaning &apos;inhabitant of TOWN&apos;. Pronounce the newly formed word aloud and check your pronunciation with Tika&apos;s recording of the same word. Click &apos;next&apos; when you are pleased with your own pronunciation of the word.
 If you cannot at all make up the word in your head your last resource will be to return to exercise 1-2 to check up upon what is going on in just this word.</translation>
     </message>
     <message>
         <source>structure 3 ./2/</source>
-        <translation>This exercise i identical to exercise 2-2 only that you this time do not get help from the written text. Your ears will suffice.
-Add the derivational morphemes N+MIU-U{+vuŋa} to the names of towns to form words meaning &apos;I am an inhabitant of TOWN&apos;. Pronounce the newly formed word aloud and check your pronounciation with Tika&apos;s recording of the same word. Click &apos;next&apos; when you are pleased with your own pronounciation of the word.
+        <translation>This exercise is identical to exercise 2-2 only that you this time do not get help from the written text. Your ears will suffice.
+Add the derivational morphemes N+MIU-U{+vuŋa} to the names of towns to form words meaning &apos;I am an inhabitant of TOWN&apos;. Pronounce the newly formed word aloud and check your pronunciation with Tika&apos;s recording of the same word. Click &apos;next&apos; when you are pleased with your own pronunciation of the word.
 If you cannot at all make up the word in your head your last resource will be to return to exercise 2-2 to check up upon what is going on in just this word.</translation>
     </message>
     <message>
@@ -726,7 +726,7 @@ Do not get led astray by an orthographical detail that a word final q is written
     <message>
         <source>structure 2 ./2/</source>
         <translation>Use N+MIU-U{+vuŋa} to form words meaning &apos;I am an inhabitant of TOWN&apos;. The exercise will also help you to learn to cope with sound changes and the pronunciation of very long words.
-Derivational morphemes are always added to the singular so for the seven pluralis tantum names one must first find the singular. In this exercise this has been taken care of for you (all the forms marked with an asterisk).</translation>
+Derivational morphemes are always added to the singular so for the seven pluralis tantum names one must first find the singular. In this exercise this has been taken care of for you (the forms in parantheses).</translation>
     </message>
     <message>
         <source>structure 2 ./3/</source>
@@ -1360,46 +1360,46 @@ Try again...</translation>
     </message>
     <message>
         <source>Giv op...</source>
-        <translation type="unfinished">Give up...</translation>
+        <translation>Give up...</translation>
     </message>
     <message>
         <source>Gå til næste ord</source>
-        <translation type="unfinished">Go to next word</translation>
+        <translation>Go to next word</translation>
     </message>
     <message>
         <source>Færdig!</source>
-        <translation type="unfinished">Done!</translation>
+        <translation>Done!</translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du læse forelæsningen som PDF?</source>
-        <translation type="unfinished">No tasks remain in this exercise. Do you want to view the lecture as PDF?</translation>
+        <translation>No tasks remain in this exercise. Do you want to view the lecture as PDF?</translation>
     </message>
     <message>
         <source>Ja, åben PDF</source>
-        <translation type="unfinished">Yes, open the PDF</translation>
+        <translation>Yes, open the PDF</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished">No, back to the menu</translation>
+        <translation>No, back to the menu</translation>
     </message>
     <message>
         <source>Skriv ord nummer %1:</source>
-        <translation type="unfinished"></translation>
+        <translation>Write word number %1:</translation>
     </message>
     <message>
         <source>Korrekt!</source>
-        <translation type="unfinished">Correct!</translation>
+        <translation>Correct!</translation>
     </message>
     <message>
         <source>Næsten korrekt.
 Store og små bogstaver gælder...</source>
-        <translation type="unfinished">Almost correct.
+        <translation>Almost correct.
 The check is case-sensitive...</translation>
     </message>
     <message>
         <source>Ikke korrekt.
 Prøv igen...</source>
-        <translation type="unfinished">Incorrect.
+        <translation>Incorrect.
 Try again...</translation>
     </message>
     <message>
@@ -1408,7 +1408,7 @@ Try again...</translation>
     </message>
     <message>
         <source>Det korrekte ord var:</source>
-        <translation type="unfinished">The correct word was:</translation>
+        <translation>The correct word was:</translation>
     </message>
 </context>
 <context>
