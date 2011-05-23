@@ -723,9 +723,13 @@ void TaskChooser::checkFirstRun() {
 #elif defined(Q_WS_MAC)
                 "../DivXInstaller.dmg"
 #else
-                QString("../runasroot.sh \"") + QCoreApplication::instance()->applicationDirPath() + "/install-prereq-ubuntu.sh\""
+                "../runasroot.sh"
 #endif
-                    )));
+                    ))
+#if !defined(Q_WS_WIN) && !defined(Q_WS_MAC)
+                + QString("\"") + QCoreApplication::instance()->applicationDirPath() + "/install-prereq-ubuntu.sh\""
+#endif
+                );
             QCoreApplication::quit();
             return;
         }
