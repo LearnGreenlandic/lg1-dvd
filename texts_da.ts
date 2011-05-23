@@ -154,7 +154,7 @@
     </message>
     <message>
         <source>Del ordet med -; brug noderne til hjælp.</source>
-        <translation type="unfinished"></translation>
+        <translation>Her er din første øvelse i stavelsesdeling. Du kan næsten lave den med hovedet under armen, for stavelserne kan skrives direkte af fra nodesystemet. Brug øvelsen som en kontrol på, at du har forstået de tre regler ordentligt.</translation>
     </message>
     <message>
         <source>Næste ord</source>
@@ -705,7 +705,7 @@ Prøv igen...</source>
     <name>StructureTwo</name>
     <message>
         <source>structure 2 ./1/</source>
-        <translation>Sæt tilhænget N+MIU på bynavnene, så du danner ord med betydningen &amp;apos;indbygger i BYNAVN&amp;apos;.
+        <translation>Sæt tilhænget N+MIU på bynavnene, så du danner ord med betydningen &apos;indbygger i BYNAVN&apos;.
 Lad være med at lade dig snyde af den retskrivningsdetalje, at et q sidst i ordet STAVES som -r-, når der kommer en anden konsonant bagefter. Som du allerede ved det fra forelæsning 2, udtales -r- i denne stilling alligevel ikke som -r-, men som en fordobling af den konsonant, der kommer efter. Tilhæng sættes altid til entalsformen, så for de 7 byer, hvis navne er født med en flertalsendelse, skal du bruge den entalsform, du får serveret.</translation>
     </message>
     <message>
@@ -1328,6 +1328,60 @@ Prøv igen...</source>
     </message>
     <message>
         <source>Aflyt og nedkriv Tika&apos;s velkomst ord for ord.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Giv op...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gå til næste ord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du læse forelæsningen som PDF?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ja, åben PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skriv ord nummer %1:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Korrekt!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Næsten korrekt.
+Store og små bogstaver gælder...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ikke korrekt.
+Prøv igen...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hrhm...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Det korrekte ord var:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -28,6 +28,9 @@ public slots:
     void show();
     void tick(qint64 time);
     void togglePlay();
+    void showNext();
+    void checkInput();
+    void yieldWord();
 
 private:
     TaskChooser& tc;
@@ -45,9 +48,8 @@ private:
     QLCDNumber *timeLcd;
 
     QLabel *sum;
-    QLabel *current;
+    QLabel *query;
     QLineEdit *input;
-    QPushButton *check;
     QLabel *result;
     QPushButton *yield;
 };

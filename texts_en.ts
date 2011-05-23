@@ -154,7 +154,7 @@
     </message>
     <message>
         <source>Del ordet med -; brug noderne til hjælp.</source>
-        <translation type="unfinished"></translation>
+        <translation>This is your first hyphenation exercise. You could do it without thinking at all since hyphenation could be copied directly from the staff. Do not do so but use the exercise to secure that you fully understand the three Greenlandic hyphenation rules.</translation>
     </message>
     <message>
         <source>Næste ord</source>
@@ -720,8 +720,8 @@ Try again...</translation>
     <name>StructureTwo</name>
     <message>
         <source>structure 2 ./1/</source>
-        <translation>Add the derivational morpheme N+MIU to the town names to form words meaning &amp;apos;inhabitant of TOWN&amp;apos;.
-Do not get led astray by an orthographical detail that a word final q is written as an -r- whenever followed by another consonant. As you know already from the second lecture -r- in this position is not an -r- after all rather a gemination of the following consonant. Derivational morphemes are always added to the singular so we need to construct a singular form for the seven towns with pluralis tantum names. In this exercise the singulars you need are included for you.</translation>
+        <translation>Add the derivational morpheme N+MIU to the town names to form words meaning &apos;inhabitant of TOWN&apos;.
+Do not get led astray by an orthographical detail that a word final q is written as an -r- whenever followed by another consonant. As you know already from the second lecture -r- in this position is not really an -r-, but rather a gemination of the following consonant. Derivational morphemes are always added to the singular so we need to construct a singular form for the seven towns with pluralis tantum names. In this exercise the singulars you need are included for you.</translation>
     </message>
     <message>
         <source>structure 2 ./2/</source>
@@ -1082,7 +1082,7 @@ grønlandsk pædagogisk grammatica&apos;</source>
     </message>
     <message>
         <source>./images/english.png</source>
-        <translation type="unfinished"></translation>
+        <translation>./images/danish.png</translation>
     </message>
 </context>
 <context>
@@ -1353,6 +1353,62 @@ Try again...</translation>
     <message>
         <source>Aflyt og nedkriv Tika&apos;s velkomst ord for ord.</source>
         <translation>Listen closely and take down Tika&apos;s welcome word by word.</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Giv op...</source>
+        <translation type="unfinished">Give up...</translation>
+    </message>
+    <message>
+        <source>Gå til næste ord</source>
+        <translation type="unfinished">Go to next word</translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished">Done!</translation>
+    </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du læse forelæsningen som PDF?</source>
+        <translation type="unfinished">No tasks remain in this exercise. Do you want to view the lecture as PDF?</translation>
+    </message>
+    <message>
+        <source>Ja, åben PDF</source>
+        <translation type="unfinished">Yes, open the PDF</translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
+        <translation type="unfinished">No, back to the menu</translation>
+    </message>
+    <message>
+        <source>Skriv ord nummer %1:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Korrekt!</source>
+        <translation type="unfinished">Correct!</translation>
+    </message>
+    <message>
+        <source>Næsten korrekt.
+Store og små bogstaver gælder...</source>
+        <translation type="unfinished">Almost correct.
+The check is case-sensitive...</translation>
+    </message>
+    <message>
+        <source>Ikke korrekt.
+Prøv igen...</source>
+        <translation type="unfinished">Incorrect.
+Try again...</translation>
+    </message>
+    <message>
+        <source>Hrhm...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Det korrekte ord var:</source>
+        <translation type="unfinished">The correct word was:</translation>
     </message>
 </context>
 <context>

@@ -16,7 +16,7 @@ curAt(-1)
         throw(-1);
     }
 
-    QFile input_f(dataDir.absoluteFilePath("input.txt"));
+    QFile input_f(dataDir.absoluteFilePath("welcome.txt"));
     if (!input_f.open(QIODevice::ReadOnly)) {
         QMessageBox::critical(0, "Read Error!", "Could not open input.txt from data folder!");
         throw(-1);
@@ -76,21 +76,48 @@ curAt(-1)
     qvbl = new QVBoxLayout;
 
     QLabel *label = new QLabel(tr("Aflyt og nedkriv Tika's velkomst ord for ord."));
-    label->setWordWrap(true);
+    //label->setWordWrap(true);
+    qvbl->addWidget(label);
 
-    // TODO
+    qvbl->addSpacing(10);
 
     sum = new QLabel;
     sum->setWordWrap(true);
-    current = new QLabel;
+    qvbl->addWidget(sum);
+
+    qvbl->addSpacing(10);
+
+    query = new QLabel;
+    qvbl->addWidget(query);
+
     input = new QLineEdit;
-    check = new QPushButton;
+    connect(input, SIGNAL(returnPressed()), this, SLOT(checkInput()));
+    QPushButton *check = new QPushButton(tr("Check"));
+    connect(check, SIGNAL(clicked()), this, SLOT(checkInput()));
+    yield = new QPushButton(tr("Giv op..."));
+    connect(yield, SIGNAL(clicked()), this, SLOT(yieldWord()));
     result = new QLabel;
-    yield = new QPushButton;
+    qvbl->addWidget(input);
+    qvbl->addWidget(check);
+    qvbl->addWidget(result);
+    qvbl->addWidget(yield);
+    result->hide();
+    yield->hide();
+
+    qvbl->addSpacing(15);
+
+    QPushButton *nb = new QPushButton(tr("Gå til næste ord"));
+    connect(nb, SIGNAL(clicked()), this, SLOT(showNext()));
+    qvbl->addWidget(nb);
+
+    qvbl->setAlignment(Qt::AlignLeft|Qt::AlignVCenter);
+    outerHBox->addLayout(qvbl);
 
     setLayout(outerHBox);
 
     setContentsMargins(0, 0, 0, 0);
+
+    showNext();
 }
 
 void WelcomeWords::closeEvent(QCloseEvent *event) {
@@ -102,6 +129,67 @@ void WelcomeWords::closeEvent(QCloseEvent *event) {
 void WelcomeWords::show() {
     QWidget::show();
     media->play();
+}
+
+void WelcomeWords::showNext() {
+    ++curAt;
+
+    QString sumtext = "<i>";
+    for (uint32_t i=0 ; i<curAt ; ++i) {
+        sumtext += words.at(i) + " ";
+    }
+    sumtext += " ...</i>";
+    sum->setText(sumtext);
+
+    if (curAt >= static_cast<uint32_t>(words.size())) {
+        QMessageBox mbox(QMessageBox::Question, tr("Færdig!"), tr("Der er ikke mere i denne øvelse. Vil du læse forelæsningen som PDF?"));
+        QPushButton *yes = mbox.addButton(tr("Ja, åben PDF"), QMessageBox::YesRole);
+        mbox.addButton(tr("Nej, tilbage til menuen"), QMessageBox::NoRole);
+        mbox.exec();
+
+        if (mbox.clickedButton() == yes) {
+            tc.showLectureFourPDF();
+        }
+        close();
+        return;
+    }
+
+    query->setText(tr("Skriv ord nummer %1:").arg(curAt+1));
+
+    result->hide();
+    yield->hide();
+
+    adjustSize();
+}
+
+void WelcomeWords::checkInput() {
+    QString text = input->text();
+    text.replace(QRegExp("\\W+"), "");
+
+    QString correct = words.at(curAt);
+    correct.replace(QRegExp("\\W+"), "");
+
+    if (text == correct) {
+        result->setText(QString("<center><span style='color: darkgreen;'><b>") + tr("Korrekt!") + "</b></span></center>");
+        yield->hide();
+    }
+    else if (text.compare(correct, Qt::CaseInsensitive) == 0) {
+        result->setText(QString("<center><span style='color: darkyellow;'><b>") + tr("Næsten korrekt.\nStore og små bogstaver gælder...") + "</b></span></center>");
+        yield->show();
+    }
+    else {
+        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrøv igen...") + "</b></span></center>");
+        yield->show();
+    }
+    result->show();
+    input->setFocus();
+    input->selectAll();
+    adjustSize();
+}
+
+void WelcomeWords::yieldWord() {
+    QMessageBox::information(0, tr("Hrhm..."), QString("<h1>") + tr("Det korrekte ord var:") + QString("</h1><br>") + words.at(curAt));
+    showNext();
 }
 
 void WelcomeWords::tick(qint64 time) {
@@ -123,9 +211,9 @@ void WelcomeWords::togglePlay() {
 }
 
 QSize WelcomeWords::sizeHint() const {
-    return QSize(1100, 680);
+    return QSize(1010, 335);
 }
 
 QSize WelcomeWords::minimumSizeHint() const {
-    return QSize(1100, 680);
+    return QSize(1010, 335);
 }
