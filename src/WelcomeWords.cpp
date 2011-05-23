@@ -183,7 +183,7 @@ void WelcomeWords::checkInput() {
     }
     result->show();
     input->setFocus();
-    input->selectAll();
+    input->setText("");
     adjustSize();
 }
 

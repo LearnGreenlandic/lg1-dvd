@@ -233,7 +233,7 @@ Try again...</translation>
     </message>
     <message>
         <source>Lydøvelse  1.4: Skriv hvad du hørte</source>
-        <translation>Dictation - single words</translation>
+        <translation>Sound perception 1.4: Dictation - single words</translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
@@ -288,7 +288,7 @@ The word was: </translation>
     </message>
     <message>
         <source>Lydøvelse  1.1: En eller to konsonanter</source>
-        <translation>Sound exercise 1.1: One or two consonants</translation>
+        <translation>Sound perception 1.1: One or two consonants</translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
@@ -374,7 +374,7 @@ Try again...</translation>
     </message>
     <message>
         <source>Lydøvelse  1.3: tt eller ts eller t</source>
-        <translation>Sound exercise 1.3: tt or ts or t</translation>
+        <translation>Sound perception 1.3: tt or ts or just t</translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du læse forelæsningen som PDF?</source>
@@ -429,7 +429,7 @@ Try again...</translation>
     </message>
     <message>
         <source>Lydøvelse  1.2: r eller ikke r</source>
-        <translation>Sound exercise 1.2: r or no r</translation>
+        <translation>Sound perception 1.2: -r- or no -r-</translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
