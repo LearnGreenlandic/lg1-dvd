@@ -2,6 +2,8 @@
 #define PRONOUNCETWO_HPP
 
 #include "PronounceData.hpp"
+#include "TaskChooser.hpp"
+
 #include <phonon/mediaobject.h>
 #include <phonon/audiooutput.h>
 #include <QtGui>
@@ -11,16 +13,17 @@ class PronounceTwo : public QWidget {
     Q_OBJECT
 
 public:
-    PronounceTwo(QDir dataDir);
+    PronounceTwo(QDir dataDir, TaskChooser& tc);
 
 public slots:
-    void show();
     void showNext();
     void playAgain();
     void checkInput();
     void yieldWord();
 
 private:
+    TaskChooser& tc;
+
     PronounceData data;
     uint32_t curAt;
 

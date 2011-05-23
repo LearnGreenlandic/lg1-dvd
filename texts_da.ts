@@ -317,6 +317,97 @@ Prøv igen...</source>
     </message>
 </context>
 <context>
+    <name>PronounceOne</name>
+    <message>
+        <source>Udtaleøvelse 1.1: Gentag</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lyt og gentag ordet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lyt igen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gå til næste ord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PronounceTwo</name>
+    <message>
+        <source>Udtaleøvelse 1.2: Diktat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skriv hvad du hører.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lyt igen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Giv op...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Skriv hvad du hørte:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gå til næste ord</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Korrekt!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ikke korrekt.
+Prøv igen...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hrhm...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Det korrekte ord var:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>StructureOne</name>
     <message>
         <source>structure 1 ./1/</source>
@@ -626,10 +717,6 @@ De &quot;sære&quot; lyd</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Udtaleøvelse 1.2: Afskriv</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Forelæsning 1 som PDF</source>
         <translation type="unfinished"></translation>
     </message>
@@ -786,6 +873,10 @@ grønlandsk pædagogisk grammatica&apos;</source>
         <source>Lydøvelse 1.4: Skriv hvad du hørte</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Udtaleøvelse 1.2: Diktat</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UpdownOne</name>
@@ -916,6 +1007,14 @@ Prøv igen...</source>
     <name>WelcomePlayer</name>
     <message>
         <source>Velkommen til Grønlandsk for voksne!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forstået?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forstod du alt hvad Tikaajaat sagde i velkomstfilmen?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

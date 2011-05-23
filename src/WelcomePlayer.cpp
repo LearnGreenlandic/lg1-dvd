@@ -1,8 +1,12 @@
 #include "WelcomePlayer.hpp"
+#include "TaskChooser.hpp"
+#include "LecturePlayer.hpp"
 
-WelcomePlayer::WelcomePlayer(QDir dataDir) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint)
+WelcomePlayer::WelcomePlayer(QDir dataDir, TaskChooser& tc) :
+QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+tc(tc)
 {
+    setWindowModality(Qt::ApplicationModal);
     setWindowTitle(tr("Velkommen til Grønlandsk for voksne!"));
 
     if (!dataDir.exists("welcome.dat")) {
@@ -21,6 +25,7 @@ QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::
     media->setCurrentSource(mediafile);
     media->setTickInterval(1000);
     connect(media, SIGNAL(tick(qint64)), this, SLOT(tick(qint64)));
+    connect(media, SIGNAL(finished()), this, SLOT(finished()));
 
     video->setAspectRatio(Phonon::VideoWidget::AspectRatio16_9);
     video->setMinimumSize(400, 225);
@@ -83,6 +88,15 @@ void WelcomePlayer::togglePlay() {
         playpause->setText("Pause");
         media->play();
     }
+}
+
+void WelcomePlayer::finished() {
+    if (QMessageBox::question(0, tr("Forstået?"), tr("Forstod du alt hvad Tikaajaat sagde i velkomstfilmen?"), QMessageBox::Yes|QMessageBox::No, QMessageBox::No) == QMessageBox::Yes) {
+
+    }
+
+    tc.showLectureOne();
+    close();
 }
 
 QSize WelcomePlayer::sizeHint() const {

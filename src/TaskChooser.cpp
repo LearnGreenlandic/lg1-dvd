@@ -97,7 +97,7 @@ translator(translator)
     connect(pronounceOne, SIGNAL(clicked()), this, SLOT(showPronounceOne()));
     itemVBox->addWidget(pronounceOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *pronounceTwo = new QPushButton(QString("   - ") + tr("Udtaleøvelse 1.2: Afskriv"));
+    QPushButton *pronounceTwo = new QPushButton(QString("   - ") + tr("Udtaleøvelse 1.2: Diktat"));
     pronounceTwo->setFlat(true);
     connect(pronounceTwo, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
     itemVBox->addWidget(pronounceTwo, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -528,7 +528,7 @@ void TaskChooser::showListenFour() {
 }
 
 void TaskChooser::showWelcomePlayer() {
-    WelcomePlayer *welcome = new WelcomePlayer(dataDir);
+    WelcomePlayer *welcome = new WelcomePlayer(dataDir, *this);
     welcome->show();
     welcome->raise();
     welcome->activateWindow();
@@ -556,14 +556,14 @@ void TaskChooser::showListenRepeatPlayer() {
 }
 
 void TaskChooser::showPronounceOne() {
-    PronounceOne *pronounce = new PronounceOne(dataDir);
+    PronounceOne *pronounce = new PronounceOne(dataDir, *this);
     pronounce->show();
     pronounce->raise();
     pronounce->activateWindow();
 }
 
 void TaskChooser::showPronounceTwo() {
-    PronounceTwo *pronounce = new PronounceTwo(dataDir);
+    PronounceTwo *pronounce = new PronounceTwo(dataDir, *this);
     pronounce->show();
     pronounce->raise();
     pronounce->activateWindow();
