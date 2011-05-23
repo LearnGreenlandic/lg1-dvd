@@ -20,6 +20,8 @@ int main(int argc, char *argv[]) {
         return -1;
     }
 
+    settings.setValue("encryption_key", "Please do not pirate this. We are a small company that depend on a tiny market. http://learngreenlandic.com/"); // TODO
+
     uint32_t seed = static_cast<uint32_t>(time(0)) ^ app.applicationPid();
     qsrand(seed);
     srand(seed);
