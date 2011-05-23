@@ -33,15 +33,15 @@
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
-        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+        <translation>No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
     </message>
     <message>
         <source>Ja, næste øvelse</source>
-        <translation type="unfinished">Yes, next exercise</translation>
+        <translation>Yes, next exercise</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished">No, back to the menu</translation>
+        <translation>No, back to the menu</translation>
     </message>
 </context>
 <context>
@@ -76,15 +76,15 @@
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
-        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+        <translation>No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
     </message>
     <message>
         <source>Ja, næste øvelse</source>
-        <translation type="unfinished">Yes, next exercise</translation>
+        <translation>Yes, next exercise</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished">No, back to the menu</translation>
+        <translation>No, back to the menu</translation>
     </message>
 </context>
 <context>
@@ -119,34 +119,34 @@
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
-        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+        <translation>No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
     </message>
     <message>
         <source>Ja, næste øvelse</source>
-        <translation type="unfinished">Yes, next exercise</translation>
+        <translation>Yes, next exercise</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished">No, back to the menu</translation>
+        <translation>No, back to the menu</translation>
     </message>
 </context>
 <context>
     <name>HyphenOne</name>
     <message>
         <source>Færdig!</source>
-        <translation type="unfinished">Done!</translation>
+        <translation>Done!</translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
-        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+        <translation>No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
     </message>
     <message>
         <source>Ja, næste øvelse</source>
-        <translation type="unfinished">Yes, next exercise</translation>
+        <translation>Yes, next exercise</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished">No, back to the menu</translation>
+        <translation>No, back to the menu</translation>
     </message>
     <message>
         <source>Stavelsesdeling af bynavne</source>
@@ -158,7 +158,7 @@
     </message>
     <message>
         <source>Næste ord</source>
-        <translation type="unfinished">Next word</translation>
+        <translation>Next word</translation>
     </message>
     <message>
         <source>Check</source>
@@ -166,16 +166,16 @@
     </message>
     <message>
         <source>Giv op...</source>
-        <translation type="unfinished">Give up...</translation>
+        <translation>Give up...</translation>
     </message>
     <message>
         <source>Korrekt!</source>
-        <translation type="unfinished">Correct!</translation>
+        <translation>Correct!</translation>
     </message>
     <message>
         <source>Ikke korrekt.
 Prøv igen...</source>
-        <translation type="unfinished">Incorrect.
+        <translation>Incorrect.
 Try again...</translation>
     </message>
     <message>
@@ -184,14 +184,14 @@ Try again...</translation>
     </message>
     <message>
         <source>Det korrekte er:</source>
-        <translation type="unfinished">The correct was:</translation>
+        <translation>The correct was:</translation>
     </message>
 </context>
 <context>
     <name>ListenFour</name>
     <message>
         <source>Skriv hvad du hører.</source>
-        <translation type="unfinished"></translation>
+        <translation>Write down what you hear.</translation>
     </message>
     <message>
         <source>Lyt igen</source>
@@ -237,22 +237,22 @@ Try again...</translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
-        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+        <translation>No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
     </message>
     <message>
         <source>Ja, næste øvelse</source>
-        <translation type="unfinished">Yes, next exercise</translation>
+        <translation>Yes, next exercise</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished">No, back to the menu</translation>
+        <translation>No, back to the menu</translation>
     </message>
 </context>
 <context>
     <name>ListenOne</name>
     <message>
         <source>Lyt og svar om der er to konsonanter.</source>
-        <translation type="unfinished"></translation>
+        <translation>Listen and decide whether there are two consonants at play.</translation>
     </message>
     <message>
         <source>Lyt igen</source>
@@ -260,11 +260,11 @@ Try again...</translation>
     </message>
     <message>
         <source>Ikke to konsonanter</source>
-        <translation type="unfinished"></translation>
+        <translation>Not two consonants</translation>
     </message>
     <message>
         <source>To konsonanter</source>
-        <translation type="unfinished"></translation>
+        <translation>Two consonants</translation>
     </message>
     <message>
         <source>Gå til næste ord</source>
@@ -292,15 +292,15 @@ The word was: </translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
-        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+        <translation>No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
     </message>
     <message>
         <source>Ja, næste øvelse</source>
-        <translation type="unfinished">Yes, next exercise</translation>
+        <translation>Yes, next exercise</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished">No, back to the menu</translation>
+        <translation>No, back to the menu</translation>
     </message>
     <message>
         <source>Nej, har ikke </source>
@@ -327,14 +327,14 @@ The word was: </translation>
     </message>
     <message>
         <source>&lt;b&gt;Bemærk&lt;/b&gt;: Tikaajaat bruger en form du ikke har lært endnu. I sidste ord siger hun &lt;i&gt;najugaqarlunga&lt;/i&gt; i stedet for &lt;i&gt;najugaqarpunga&lt;/i&gt;. På dette sted betyder de to ord præcis det samme, så lad være med at tænke for meget over det.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Please observe&lt;/b&gt;: Tikaajaat uses a wordform you do not know. Her last word is &lt;i&gt;najugaqarlunga&lt;/i&gt; instead of &lt;i&gt;najugaqarpunga&lt;/i&gt;. The two wordforms are absolutely identical in this case so do not worry too much about it.</translation>
     </message>
 </context>
 <context>
     <name>ListenThree</name>
     <message>
         <source>Lyt og svar om ordet indeholder &apos;tt&apos; eller &apos;ts&apos; eller kun &apos;t&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Listen and decide whether the word contains &apos;tt&apos; or &apos;ts&apos; or just &apos;t&apos;.</translation>
     </message>
     <message>
         <source>Lyt igen</source>
@@ -378,22 +378,22 @@ Try again...</translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du læse forelæsningen som PDF?</source>
-        <translation type="unfinished">No tasks remain in this exercise. Do you want to view the lecture as PDF?</translation>
+        <translation>No tasks remain in this exercise. Do you want to view the lecture as PDF?</translation>
     </message>
     <message>
         <source>Ja, åben PDF</source>
-        <translation type="unfinished">Yes, open the PDF</translation>
+        <translation>Yes, open the PDF</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished">No, back to the menu</translation>
+        <translation>No, back to the menu</translation>
     </message>
 </context>
 <context>
     <name>ListenTwo</name>
     <message>
         <source>Lyt og svar om ordet indeholder &apos;r&apos; eller ej.</source>
-        <translation type="unfinished"></translation>
+        <translation>Listen and decide whether there is &apos;r&apos; or not in the word.</translation>
     </message>
     <message>
         <source>Lyt igen</source>
@@ -433,26 +433,26 @@ Try again...</translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
-        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+        <translation>No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
     </message>
     <message>
         <source>Ja, næste øvelse</source>
-        <translation type="unfinished">Yes, next exercise</translation>
+        <translation>Yes, next exercise</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished">No, back to the menu</translation>
+        <translation>No, back to the menu</translation>
     </message>
 </context>
 <context>
     <name>PronounceOne</name>
     <message>
         <source>Udtaleøvelse 1.1: Gentag</source>
-        <translation type="unfinished"></translation>
+        <translation>Pronunciation exercise 1.1: Repeat</translation>
     </message>
     <message>
         <source>Lyt og gentag ordet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Listen and repeat the word.</translation>
     </message>
     <message>
         <source>Lyt igen</source>
@@ -483,11 +483,11 @@ Try again...</translation>
     <name>PronounceTwo</name>
     <message>
         <source>Udtaleøvelse 1.2: Diktat</source>
-        <translation type="unfinished"></translation>
+        <translation>Pronunciation exercise 1.2: Dictation</translation>
     </message>
     <message>
         <source>Skriv hvad du hører.</source>
-        <translation type="unfinished"></translation>
+        <translation>Take down what you hear.</translation>
     </message>
     <message>
         <source>Lyt igen</source>
@@ -548,15 +548,17 @@ Try again...</translation>
     <name>StructureOne</name>
     <message>
         <source>structure 1 ./1/</source>
-        <translation type="unfinished"></translation>
+        <translation>Tika will now pronounce the 18 old Greenlandic municipalities. Listen and take down the names you hear. Do not attempt any shortcuts like copying from a list or a map. It will do you no good! Remember to write proper names with capital first letter.</translation>
     </message>
     <message>
         <source>structure 1 ./2/</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Add the derivational morpheme N+MIU to the town names to form words meaning &apos;inhabitant of TOWN&apos;.
+Do not get led astray by an orthographical detail that a word final q is written as an -r- whenever followed by another consonant. As you know already from the second lecture -r- in this position is not an -r- after all rather a gemination of the following consonant. Derivational morphemes are always added to the singular so we need to construct a singular form for the seven towns with pluralis tantum names. In this exercise the singulars you need are included for you. {1 ?} {2/?}</translation>
     </message>
     <message>
         <source>structure 1 ./3/</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Add the derivational morpheme N+MIU to the town names to form words meaning &apos;inhabitant of TOWN&apos;.
+Do not get led astray by an orthographical detail that a word final q is written as an -r- whenever followed by another consonant. As you know already from the second lecture -r- in this position is not an -r- after all rather a gemination of the following consonant. Derivational morphemes are always added to the singular so we need to construct a singular form for the seven towns with pluralis tantum names. In this exercise the singulars you need are included for you. {1 ?} {3/?}</translation>
     </message>
     <message>
         <source>Lyt igen</source>
@@ -608,30 +610,34 @@ Try again...</translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
-        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+        <translation>No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
     </message>
     <message>
         <source>Ja, næste øvelse</source>
-        <translation type="unfinished">Yes, next exercise</translation>
+        <translation>Yes, next exercise</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished">No, back to the menu</translation>
+        <translation>No, back to the menu</translation>
     </message>
 </context>
 <context>
     <name>StructureThree</name>
     <message>
         <source>structure 3 ./1/</source>
-        <translation type="unfinished"></translation>
+        <translation>This exercise is identical to exercise 1-2 only that you this time do not get help from the written text. Your ears will suffice.
+Add the derivational morpheme N+MIU to the names of towns to form words meaning &apos;inhabitant of TOWN&apos;. Pronounce the newly formed word aloud and check your pronounciation with Tika&apos;s recording of the same word. Click &apos;next&apos; when you are pleased with your own pronounciation of the word.
+If you cannot at all make up the word in your head your last resource will be to return to exercise 1-2 to check up upon what is going on in just this word.</translation>
     </message>
     <message>
         <source>structure 3 ./2/</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Add the derivational morpheme N+MIU to the town names to form words meaning &apos;inhabitant of TOWN&apos;.
+Do not get led astray by an orthographical detail that a word final q is written as an -r- whenever followed by another consonant. As you know already from the second lecture -r- in this position is not an -r- after all rather a gemination of the following consonant. Derivational morphemes are always added to the singular so we need to construct a singular form for the seven towns with pluralis tantum names. In this exercise the singulars you need are included for you. {3 ?} {2/?}</translation>
     </message>
     <message>
         <source>structure 3 ./3/</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Add the derivational morpheme N+MIU to the town names to form words meaning &apos;inhabitant of TOWN&apos;.
+Do not get led astray by an orthographical detail that a word final q is written as an -r- whenever followed by another consonant. As you know already from the second lecture -r- in this position is not an -r- after all rather a gemination of the following consonant. Derivational morphemes are always added to the singular so we need to construct a singular form for the seven towns with pluralis tantum names. In this exercise the singulars you need are included for you. {3 ?} {3/?}</translation>
     </message>
     <message>
         <source>Lyt igen</source>
@@ -714,15 +720,18 @@ Try again...</translation>
     <name>StructureTwo</name>
     <message>
         <source>structure 2 ./1/</source>
-        <translation type="unfinished"></translation>
+        <translation>Add the derivational morpheme N+MIU to the town names to form words meaning &apos;inhabitant of TOWN&apos;.
+Do not get led astray by an orthographical detail that a word final q is written as an -r- whenever followed by another consonant. As you know already from the second lecture -r- in this position is not an -r- after all rather a gemination of the following consonant. Derivational morphemes are always added to the singular so we need to construct a singular form for the seven towns with pluralis tantum names. In this exercise the singulars you need are included for you.</translation>
     </message>
     <message>
         <source>structure 2 ./2/</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Add the derivational morpheme N+MIU to the town names to form words meaning &apos;inhabitant of TOWN&apos;.
+Do not get led astray by an orthographical detail that a word final q is written as an -r- whenever followed by another consonant. As you know already from the second lecture -r- in this position is not an -r- after all rather a gemination of the following consonant. Derivational morphemes are always added to the singular so we need to construct a singular form for the seven towns with pluralis tantum names. In this exercise the singulars you need are included for you. {2 ?} {2/?}</translation>
     </message>
     <message>
         <source>structure 2 ./3/</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Add the derivational morpheme N+MIU to the town names to form words meaning &apos;inhabitant of TOWN&apos;.
+Do not get led astray by an orthographical detail that a word final q is written as an -r- whenever followed by another consonant. As you know already from the second lecture -r- in this position is not an -r- after all rather a gemination of the following consonant. Derivational morphemes are always added to the singular so we need to construct a singular form for the seven towns with pluralis tantum names. In this exercise the singulars you need are included for you. {2 ?} {3/?}</translation>
     </message>
     <message>
         <source>Check</source>
@@ -879,7 +888,7 @@ The New Sounds</translation>
     </message>
     <message>
         <source>Udtaleøvelse 1.1: Gentag</source>
-        <translation type="unfinished"></translation>
+        <translation>Pronunciation exercise 1.1: Repeat</translation>
     </message>
     <message>
         <source>Forelæsning 1 som PDF</source>
@@ -937,7 +946,7 @@ Practice and repetition</translation>
     </message>
     <message>
         <source>Forelæsning 4 som PDF</source>
-        <translation type="unfinished">Lecture 5 as PDF {4 ?}</translation>
+        <translation>Lecture 4 as PDF</translation>
     </message>
     <message>
         <source>./5_1/danish/0.png</source>
@@ -1033,7 +1042,7 @@ grønlandsk pædagogisk grammatica&apos;</source>
     </message>
     <message>
         <source>Udtaleøvelse 1.2: Diktat</source>
-        <translation type="unfinished"></translation>
+        <translation>Pronunciation exercise 1.2: Dictation</translation>
     </message>
     <message>
         <source>Forelæsning 5 som PDF</source>
@@ -1112,15 +1121,15 @@ grønlandsk pædagogisk grammatica&apos;</source>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
-        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+        <translation>No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
     </message>
     <message>
         <source>Ja, næste øvelse</source>
-        <translation type="unfinished">Yes, next exercise</translation>
+        <translation>Yes, next exercise</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished">No, back to the menu</translation>
+        <translation>No, back to the menu</translation>
     </message>
 </context>
 <context>
@@ -1222,15 +1231,15 @@ Try again...</translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
-        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+        <translation>No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
     </message>
     <message>
         <source>Ja, næste øvelse</source>
-        <translation type="unfinished">Yes, next exercise</translation>
+        <translation>Yes, next exercise</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished">No, back to the menu</translation>
+        <translation>No, back to the menu</translation>
     </message>
 </context>
 <context>

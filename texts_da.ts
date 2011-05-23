@@ -704,7 +704,7 @@ Prøv igen...</source>
     <message>
         <source>structure 2 ./1/</source>
         <translation>Sæt tilhænget N+MIU på bynavnene, så du danner ord med betydningen &apos;indbygger i BYNAVN&apos;.
-Lad være med at lade dig snyde af den retskrivningsdetalje, at et q sidst i ordet STAVES som -r-, når der kommer en anden konsonant bagefter. Som du allerede ved det fra forelæsning 2, udtales -r- i denne stilling alligevel ikke som -r-, men som en fordobling af den konsonant, der kommer efter. Tilhæng sæt­tes altid til entalsfor­men, så for de 7 byer, hvis navne er født med en fler­tals­en­delse, skal du bruge den en­talsform, du får serveret.</translation>
+Lad være med at lade dig snyde af den retskrivningsdetalje, at et q sidst i ordet STAVES som -r-, når der kommer en anden konsonant bagefter. Som du allerede ved det fra forelæsning 2, udtales -r- i denne stilling alligevel ikke som -r-, men som en fordobling af den konsonant, der kommer efter. Tilhæng sættes altid til entalsformen, så for de 7 byer, hvis navne er født med en flertalsendelse, skal du bruge den entalsform, du får serveret.</translation>
     </message>
     <message>
         <source>structure 2 ./2/</source>
