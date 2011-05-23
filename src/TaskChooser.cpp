@@ -700,9 +700,9 @@ void TaskChooser::checkFirstRun() {
     bool hasXvid = settings.value("has_Xvid", false).toBool();
     if (!hasXvid) {
         QMessageBox mbox(QMessageBox::Question, tr("Xvid og MP3?"),
-#ifdef Q_WS_WIN
+#if defined(Q_WS_WIN)
              tr("Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid codec?")
-#elif Q_WS_MAC
+#elif defined(Q_WS_MAC)
              tr("Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere DivX codec?")
 #else
              tr("Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid og MP3 codecs?")
