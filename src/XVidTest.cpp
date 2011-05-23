@@ -6,7 +6,7 @@
 #include <phonon/videowidget.h>
 
 XVidTest::XVidTest(QWidget *parent, QDir dataDir) :
-QWidget(parent, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint)
+QDialog(parent, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint)
 {
     setWindowModality(Qt::WindowModal);
     setWindowTitle(tr("XVid test"));
@@ -38,6 +38,7 @@ QWidget(parent, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint |
     setLayout(qvbl);
 
     setContentsMargins(0, 0, 0, 0);
+    media->play();
 }
 
 void XVidTest::finished() {

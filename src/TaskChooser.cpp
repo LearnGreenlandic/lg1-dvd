@@ -697,8 +697,12 @@ void TaskChooser::checkFirstRun() {
 
     bool hasXVid = settings.value("has_xvid", false).toBool();
     if (!hasXVid) {
-        XVidTest *xt = new XVidTest(this, dataDir);
-        xt->show();
+        try {
+            XVidTest *xt = new XVidTest(this, dataDir);
+            xt->exec();
+        }
+        catch (...) {
+        }
     }
 
     bool doneWelcome = settings.value("done_welcome", false).toBool();

@@ -3,7 +3,7 @@
 
 #include <QtGui>
 
-class XVidTest : public QWidget {
+class XVidTest : public QDialog {
     Q_OBJECT
 
 public:
