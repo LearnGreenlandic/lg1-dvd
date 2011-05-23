@@ -23,6 +23,8 @@ public slots:
     void showLectureFourPDF();
     void showLectureFivePDF();
 
+    void showAppendixPDF();
+
     void showHyphenOne();
 
     void showDialogOne();

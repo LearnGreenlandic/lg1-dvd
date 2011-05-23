@@ -881,6 +881,10 @@ grønlandsk pædagogisk grammatica&apos;</source>
         <source>Forelæsning 5 som PDF</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>./appendix/danish.pdf</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UpdownOne</name>

@@ -391,7 +391,7 @@ translator(translator)
     QPushButton *appendix = new QPushButton(tr("Appendix:\nKapitel 3 (manuskriptudgave) af\n'Forsøg til en forbedret\ngrønlandsk pædagogisk grammatica'"));
     appendix->setFlat(true);
     appendix->setStyleSheet("font-weight: bold; text-align: left;");
-    //connect(appendix, SIGNAL(clicked()), this, SLOT(showLectureFiveTwo())); // TODO
+    connect(appendix, SIGNAL(clicked()), this, SLOT(showAppendixPDF()));
     itemVBox->addWidget(appendix, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
@@ -492,6 +492,10 @@ void TaskChooser::showLectureFourPDF() {
 
 void TaskChooser::showLectureFivePDF() {
     QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./5_1/danish/") + "lecture.pdf")));
+}
+
+void TaskChooser::showAppendixPDF() {
+    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./appendix/danish.pdf"))));
 }
 
 void TaskChooser::showHyphenOne() {

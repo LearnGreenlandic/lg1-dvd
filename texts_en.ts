@@ -746,7 +746,7 @@ The New Sounds</translation>
     </message>
     <message>
         <source>Forelæsning 1 som PDF</source>
-        <translation type="unfinished"></translation>
+        <translation>Lecture 1 as PDF</translation>
     </message>
     <message>
         <source>./2/danish/0.png</source>
@@ -760,7 +760,7 @@ Typical mistakes</translation>
     </message>
     <message>
         <source>Forelæsning 2 som PDF</source>
-        <translation type="unfinished"></translation>
+        <translation>Lecture 2 as PDF</translation>
     </message>
     <message>
         <source>./3/danish/0.png</source>
@@ -786,7 +786,7 @@ Tones and long words</translation>
     </message>
     <message>
         <source>Forelæsning 3 som PDF</source>
-        <translation type="unfinished"></translation>
+        <translation>Lecture 3 as PDF</translation>
     </message>
     <message>
         <source>./4/danish/0.png</source>
@@ -904,7 +904,11 @@ grønlandsk pædagogisk grammatica&apos;</source>
     </message>
     <message>
         <source>Forelæsning 5 som PDF</source>
-        <translation type="unfinished"></translation>
+        <translation>Lecture 5 as PDF</translation>
+    </message>
+    <message>
+        <source>./appendix/danish.pdf</source>
+        <translation>./appendix/english.pdf</translation>
     </message>
 </context>
 <context>
