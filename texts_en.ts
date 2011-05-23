@@ -351,15 +351,15 @@ Try again...</translation>
     </message>
     <message>
         <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
-        <translation type="unfinished"></translation>
+        <translation>No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
     </message>
     <message>
         <source>Ja, næste øvelse</source>
-        <translation type="unfinished"></translation>
+        <translation>Yes, next exercise</translation>
     </message>
     <message>
         <source>Nej, tilbage til menuen</source>
-        <translation type="unfinished"></translation>
+        <translation>No, back to the menu</translation>
     </message>
 </context>
 <context>
@@ -398,7 +398,7 @@ Try again...</translation>
     </message>
     <message>
         <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
-        <translation>No words remain...the window will now close.</translation>
+        <translation type="obsolete">No words remain...the window will now close.</translation>
     </message>
     <message>
         <source>Korrekt!</source>
@@ -417,6 +417,18 @@ Try again...</translation>
     <message>
         <source>Det korrekte ord var:</source>
         <translation>The correct word was:</translation>
+    </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du læse forelæsningen som PDF?</source>
+        <translation>No tasks remain in this exercise. Do you want to view the lecture as PDF?</translation>
+    </message>
+    <message>
+        <source>Ja, åben PDF</source>
+        <translation>Yes, open the PDF</translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
+        <translation>No, back to the menu</translation>
     </message>
 </context>
 <context>
@@ -805,10 +817,6 @@ Gloserne i lektion 1</source>
 Words and lexicons in lesson one</translation>
     </message>
     <message>
-        <source>Forelæsning 5.1 som PDF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>./5_2/danish/0.png</source>
         <translation>./5_2/english/0.png</translation>
     </message>
@@ -844,10 +852,6 @@ Introduction to grammar</translation>
     </message>
     <message>
         <source>Strukturøvelse 3.2: Lyt, forstå, dan ord</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Forelæsning 5.2 som PDF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -896,6 +900,10 @@ grønlandsk pædagogisk grammatica&apos;</source>
     </message>
     <message>
         <source>Udtaleøvelse 1.2: Diktat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forelæsning 5 som PDF</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

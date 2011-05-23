@@ -17,6 +17,12 @@ public slots:
     void showLectureFiveOne();
     void showLectureFiveTwo();
 
+    void showLectureOnePDF();
+    void showLectureTwoPDF();
+    void showLectureThreePDF();
+    void showLectureFourPDF();
+    void showLectureFivePDF();
+
     void showHyphenOne();
 
     void showDialogOne();

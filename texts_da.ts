@@ -386,10 +386,6 @@ Prøv igen...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Korrekt!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -404,6 +400,18 @@ Prøv igen...</source>
     </message>
     <message>
         <source>Det korrekte ord var:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du læse forelæsningen som PDF?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ja, åben PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -785,10 +793,6 @@ Gloserne i lektion 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Forelæsning 5.1 som PDF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>./5_2/danish/0.png</source>
         <translation type="unfinished"></translation>
     </message>
@@ -823,10 +827,6 @@ Grammatikken i lektion 1</source>
     </message>
     <message>
         <source>Strukturøvelse 3.2: Lyt, forstå, dan ord</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Forelæsning 5.2 som PDF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -875,6 +875,10 @@ grønlandsk pædagogisk grammatica&apos;</source>
     </message>
     <message>
         <source>Udtaleøvelse 1.2: Diktat</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forelæsning 5 som PDF</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

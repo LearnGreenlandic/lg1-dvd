@@ -104,7 +104,7 @@ translator(translator)
 
     QPushButton *lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 1 som PDF"));
     lecturePDF->setFlat(true);
-    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo())); // TODO
+    connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureOnePDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
@@ -146,7 +146,7 @@ translator(translator)
 
     lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 2 som PDF"));
     lecturePDF->setFlat(true);
-    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo())); // TODO
+    connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureTwoPDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
@@ -193,7 +193,7 @@ translator(translator)
 
     lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 3 som PDF"));
     lecturePDF->setFlat(true);
-    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo())); // TODO
+    connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureThreePDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
@@ -240,7 +240,7 @@ translator(translator)
 
     lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 4 som PDF"));
     lecturePDF->setFlat(true);
-    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo())); // TODO
+    connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureFourPDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
@@ -270,9 +270,9 @@ translator(translator)
     connect(lrPlayer, SIGNAL(clicked()), this, SLOT(showListenRepeatPlayer()));
     itemVBox->addWidget(lrPlayer, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 5.1 som PDF"));
+    lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 5 som PDF"));
     lecturePDF->setFlat(true);
-    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo())); // TODO
+    connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureFivePDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
@@ -332,9 +332,9 @@ translator(translator)
     connect(structureSeven, SIGNAL(clicked()), this, SLOT(showStructureSeven()));
     itemVBox->addWidget(structureSeven, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 5.2 som PDF"));
+    lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 5 som PDF"));
     lecturePDF->setFlat(true);
-    //connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showPronounceTwo())); // TODO
+    connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureFivePDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
     itemHBox->addLayout(itemVBox);
@@ -469,6 +469,26 @@ void TaskChooser::showLectureFiveTwo() {
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
+}
+
+void TaskChooser::showLectureOnePDF() {
+    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./1/danish/") + "lecture.pdf")));
+}
+
+void TaskChooser::showLectureTwoPDF() {
+    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./2/danish/") + "lecture.pdf")));
+}
+
+void TaskChooser::showLectureThreePDF() {
+    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./3/danish/") + "lecture.pdf")));
+}
+
+void TaskChooser::showLectureFourPDF() {
+    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./4/danish/") + "lecture.pdf")));
+}
+
+void TaskChooser::showLectureFivePDF() {
+    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./5_1/danish/") + "lecture.pdf")));
 }
 
 void TaskChooser::showHyphenOne() {
