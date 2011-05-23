@@ -1,7 +1,8 @@
 #include "StructureTwo.hpp"
 
-StructureTwo::StructureTwo(QDir dataDir, QString which, QString title) :
+StructureTwo::StructureTwo(QDir dataDir, QString which, QString title, TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+tc(tc),
 data(dataDir, which),
 curAt(-1)
 {

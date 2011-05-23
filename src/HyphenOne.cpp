@@ -3,8 +3,9 @@
 #include <algorithm>
 #include <QtOpenGL/QGLWidget>
 
-HyphenOne::HyphenOne(QDir dataDir) :
+HyphenOne::HyphenOne(QDir dataDir, TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+tc(tc),
 curAt(-1)
 {
     if (!dataDir.cd("./hyphenate/")) {
@@ -92,7 +93,14 @@ curAt(-1)
 void HyphenOne::nextWord() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(pngs.size())) {
-        QMessageBox::information(0, "Færdig!", "Der er ikke flere ord...vinduet lukker sig selv nu.");
+        QMessageBox mbox(QMessageBox::Question, tr("Færdig!"), tr("Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?"));
+        QPushButton *yes = mbox.addButton(tr("Ja, næste øvelse"), QMessageBox::YesRole);
+        mbox.addButton(tr("Nej, tilbage til menuen"), QMessageBox::NoRole);
+        mbox.exec();
+
+        if (mbox.clickedButton() == yes) {
+            tc.showListenFour();
+        }
         close();
         return;
     }

@@ -2,6 +2,8 @@
 #define STRUCTURETWO_HPP
 
 #include "StructureData.hpp"
+#include "TaskChooser.hpp"
+
 #include <QtGui>
 #include <stdint.h>
 
@@ -9,7 +11,7 @@ class StructureTwo : public QWidget {
     Q_OBJECT
 
 public:
-    StructureTwo(QDir dataDir, QString which, QString title);
+    StructureTwo(QDir dataDir, QString which, QString title, TaskChooser& tc);
 
 public slots:
     void showNext();
@@ -17,6 +19,8 @@ public slots:
     void yieldWord();
 
 private:
+    TaskChooser& tc;
+
     StructureData data;
     uint32_t curAt;
 

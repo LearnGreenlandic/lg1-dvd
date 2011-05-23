@@ -436,42 +436,42 @@ void TaskChooser::showLectureOne() {
     QSettings settings;
     settings.setValue("done_welcome", true);
 
-    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 1: De \"sære\" lyd"), dataDir, tr("./1/danish/"));
+    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 1: De \"sære\" lyd"), dataDir, tr("./1/danish/"), *this);
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureTwo() {
-    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 2: Typiske danskerfejl"), dataDir, tr("./2/danish/"));
+    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 2: Typiske danskerfejl"), dataDir, tr("./2/danish/"), *this);
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureThree() {
-    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 3: Tonerne og de lange ord"), dataDir, tr("./3/danish/"));
+    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 3: Tonerne og de lange ord"), dataDir, tr("./3/danish/"), *this);
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureFour() {
-    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 4: Træning og opsamling"), dataDir, tr("./4/danish/"));
+    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 4: Træning og opsamling"), dataDir, tr("./4/danish/"), *this);
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureFiveOne() {
-    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 5.1: Gloserne i lektion 1"), dataDir, tr("./5_1/danish/"));
+    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 5.1: Gloserne i lektion 1"), dataDir, tr("./5_1/danish/"), *this);
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureFiveTwo() {
-    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 5.2: Grammatikken i lektion 1"), dataDir, tr("./5_2/danish/"));
+    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 5.2: Grammatikken i lektion 1"), dataDir, tr("./5_2/danish/"), *this);
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
@@ -502,56 +502,56 @@ void TaskChooser::showAppendixPDF() {
 }
 
 void TaskChooser::showHyphenOne() {
-    HyphenOne *hyphen = new HyphenOne(dataDir);
+    HyphenOne *hyphen = new HyphenOne(dataDir, *this);
     hyphen->show();
     hyphen->raise();
     hyphen->activateWindow();
 }
 
 void TaskChooser::showDialogOne() {
-    DialogOne *dialog = new DialogOne(dataDir);
+    DialogOne *dialog = new DialogOne(dataDir, *this);
     dialog->show();
     dialog->raise();
     dialog->activateWindow();
 }
 
 void TaskChooser::showDialogTwo() {
-    DialogTwo *dialog = new DialogTwo(dataDir);
+    DialogTwo *dialog = new DialogTwo(dataDir, *this);
     dialog->show();
     dialog->raise();
     dialog->activateWindow();
 }
 
 void TaskChooser::showDialogThree() {
-    DialogThree *dialog = new DialogThree(dataDir);
+    DialogThree *dialog = new DialogThree(dataDir, *this);
     dialog->show();
     dialog->raise();
     dialog->activateWindow();
 }
 
 void TaskChooser::showListenOne() {
-    ListenOne *listen = new ListenOne(dataDir);
+    ListenOne *listen = new ListenOne(dataDir, *this);
     listen->show();
     listen->raise();
     listen->activateWindow();
 }
 
 void TaskChooser::showListenTwo() {
-    ListenTwo *listen = new ListenTwo(dataDir);
+    ListenTwo *listen = new ListenTwo(dataDir, *this);
     listen->show();
     listen->raise();
     listen->activateWindow();
 }
 
 void TaskChooser::showListenThree() {
-    ListenThree *listen = new ListenThree(dataDir);
+    ListenThree *listen = new ListenThree(dataDir, *this);
     listen->show();
     listen->raise();
     listen->activateWindow();
 }
 
 void TaskChooser::showListenFour() {
-    ListenFour *listen = new ListenFour(dataDir);
+    ListenFour *listen = new ListenFour(dataDir, *this);
     listen->show();
     listen->raise();
     listen->activateWindow();
@@ -565,21 +565,21 @@ void TaskChooser::showWelcomePlayer() {
 }
 
 void TaskChooser::showWelcomeOne() {
-    WelcomeOne *welcome = new WelcomeOne(dataDir);
+    WelcomeOne *welcome = new WelcomeOne(dataDir, *this);
     welcome->show();
     welcome->raise();
     welcome->activateWindow();
 }
 
 void TaskChooser::showWelcomeTwo() {
-    WelcomeTwo *welcome = new WelcomeTwo(dataDir);
+    WelcomeTwo *welcome = new WelcomeTwo(dataDir, *this);
     welcome->show();
     welcome->raise();
     welcome->activateWindow();
 }
 
 void TaskChooser::showListenRepeatPlayer() {
-    ListenRepeatPlayer *lrplayer = new ListenRepeatPlayer(dataDir);
+    ListenRepeatPlayer *lrplayer = new ListenRepeatPlayer(dataDir, *this);
     lrplayer->show();
     lrplayer->raise();
     lrplayer->activateWindow();
@@ -600,70 +600,70 @@ void TaskChooser::showPronounceTwo() {
 }
 
 void TaskChooser::showUpdownOne() {
-    UpdownOne *updown = new UpdownOne(dataDir);
+    UpdownOne *updown = new UpdownOne(dataDir, *this);
     updown->show();
     updown->raise();
     updown->activateWindow();
 }
 
 void TaskChooser::showUpdownTwo() {
-    UpdownTwo *updown = new UpdownTwo(dataDir);
+    UpdownTwo *updown = new UpdownTwo(dataDir, *this);
     updown->show();
     updown->raise();
     updown->activateWindow();
 }
 
 void TaskChooser::showUpdownThree() {
-    UpdownThree *updown = new UpdownThree(dataDir);
+    UpdownThree *updown = new UpdownThree(dataDir, *this);
     updown->show();
     updown->raise();
     updown->activateWindow();
 }
 
 void TaskChooser::showStructureOne() {
-    StructureOne *structure = new StructureOne(dataDir, "./1/", tr("Strukturøvelse 1.1: Lydopfattelse"));
+    StructureOne *structure = new StructureOne(dataDir, "./1/", tr("Strukturøvelse 1.1: Lydopfattelse"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureTwo() {
-    StructureTwo *structure = new StructureTwo(dataDir, "./1/", tr("Strukturøvelse 1.2: Dan nye ord"));
+    StructureTwo *structure = new StructureTwo(dataDir, "./1/", tr("Strukturøvelse 1.2: Dan nye ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureThree() {
-    StructureThree *structure = new StructureThree(dataDir, "./1/", tr("Strukturøvelse 1.3: Lyt, forstå, dan ord"));
+    StructureThree *structure = new StructureThree(dataDir, "./1/", tr("Strukturøvelse 1.3: Lyt, forstå, dan ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureFour() {
-    StructureTwo *structure = new StructureTwo(dataDir, "./2/", tr("Strukturøvelse 2.1: Dan nye ord"));
+    StructureTwo *structure = new StructureTwo(dataDir, "./2/", tr("Strukturøvelse 2.1: Dan nye ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureFive() {
-    StructureThree *structure = new StructureThree(dataDir, "./2/", tr("Strukturøvelse 2.2: Lyt, forstå, dan ord"));
+    StructureThree *structure = new StructureThree(dataDir, "./2/", tr("Strukturøvelse 2.2: Lyt, forstå, dan ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureSix() {
-    StructureTwo *structure = new StructureTwo(dataDir, "./3/", tr("Strukturøvelse 3.1: Dan nye ord"));
+    StructureTwo *structure = new StructureTwo(dataDir, "./3/", tr("Strukturøvelse 3.1: Dan nye ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureSeven() {
-    StructureThree *structure = new StructureThree(dataDir, "./3/", tr("Strukturøvelse 3.2: Lyt, forstå, dan ord"));
+    StructureThree *structure = new StructureThree(dataDir, "./3/", tr("Strukturøvelse 3.2: Lyt, forstå, dan ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
@@ -698,7 +698,7 @@ void TaskChooser::checkFirstRun() {
     QSettings settings;
 
     bool hasXvid = settings.value("has_Xvid", false).toBool();
-    if (!hasXvid) {
+    if (false && !hasXvid) {
         QMessageBox mbox(QMessageBox::Question, tr("Xvid og MP3?"),
 #if defined(Q_WS_WIN)
              tr("Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid codec?")

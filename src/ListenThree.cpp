@@ -1,8 +1,9 @@
 #include "ListenThree.hpp"
 #include <algorithm>
 
-ListenThree::ListenThree(QDir dataDir) :
+ListenThree::ListenThree(QDir dataDir, TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+tc(tc),
 curAt(-1)
 {
     if (!dataDir.cd("./listening/3/")) {
@@ -76,7 +77,14 @@ void ListenThree::playAgain() {
 void ListenThree::showNext() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(words.size())) {
-        QMessageBox::information(0, tr("Færdig!"), tr("Der er ikke flere ord...vinduet lukker sig selv nu."));
+        QMessageBox mbox(QMessageBox::Question, tr("Færdig!"), tr("Der er ikke mere i denne øvelse. Vil du læse forelæsningen som PDF?"));
+        QPushButton *yes = mbox.addButton(tr("Ja, åben PDF"), QMessageBox::YesRole);
+        mbox.addButton(tr("Nej, tilbage til menuen"), QMessageBox::NoRole);
+        mbox.exec();
+
+        if (mbox.clickedButton() == yes) {
+            tc.showLectureTwoPDF();
+        }
         close();
         return;
     }

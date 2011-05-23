@@ -1,7 +1,8 @@
 #include "DialogTwo.hpp"
 
-DialogTwo::DialogTwo(QDir dataDir) :
+DialogTwo::DialogTwo(QDir dataDir, TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+tc(tc),
 data(dataDir, tr("danish.txt")),
 curAt(-1)
 {

@@ -2,6 +2,8 @@
 #define UPDOWNTHREE_HPP
 
 #include "UpdownData.hpp"
+#include "TaskChooser.hpp"
+
 #include <QtGui>
 #include <stdint.h>
 
@@ -9,7 +11,7 @@ class UpdownThree : public QWidget {
     Q_OBJECT
 
 public:
-    UpdownThree(QDir dataDir);
+    UpdownThree(QDir dataDir, TaskChooser& tc);
 
 public slots:
     void showNext();
@@ -17,6 +19,8 @@ public slots:
     void yieldWord();
 
 private:
+    TaskChooser& tc;
+
     UpdownData data;
     uint32_t curAt;
 

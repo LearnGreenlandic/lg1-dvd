@@ -1,6 +1,8 @@
 #ifndef LISTENTWO_HPP
 #define LISTENTWO_HPP
 
+#include "TaskChooser.hpp"
+
 #include <phonon/mediaobject.h>
 #include <phonon/audiooutput.h>
 #include <QtGui>
@@ -10,7 +12,7 @@ class ListenTwo : public QWidget {
     Q_OBJECT
 
 public:
-    ListenTwo(QDir dataDir);
+    ListenTwo(QDir dataDir, TaskChooser& tc);
 
 public slots:
     void showNext();
@@ -19,6 +21,8 @@ public slots:
     void checkYesR();
 
 private:
+    TaskChooser& tc;
+
     QVector<QString> words;
     uint32_t curAt;
 

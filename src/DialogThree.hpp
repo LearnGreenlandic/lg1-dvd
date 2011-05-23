@@ -2,6 +2,8 @@
 #define DIALOGTHREE_HPP
 
 #include "DialogData.hpp"
+#include "TaskChooser.hpp"
+
 #include <phonon/mediaobject.h>
 #include <phonon/audiooutput.h>
 #include <QtGui>
@@ -11,7 +13,7 @@ class DialogThree : public QWidget {
     Q_OBJECT
 
 public:
-    DialogThree(QDir dataDir);
+    DialogThree(QDir dataDir, TaskChooser& tc);
 
 public slots:
     void playAgainQ();
@@ -19,6 +21,8 @@ public slots:
     void showNext();
 
 private:
+    TaskChooser& tc;
+
     DialogData data;
     uint32_t curAt;
 

@@ -2,6 +2,8 @@
 #define STRUCTURETHREE_HPP
 
 #include "StructureData.hpp"
+#include "TaskChooser.hpp"
+
 #include <phonon/mediaobject.h>
 #include <phonon/audiooutput.h>
 #include <QtGui>
@@ -11,7 +13,7 @@ class StructureThree : public QWidget {
     Q_OBJECT
 
 public:
-    StructureThree(QDir dataDir, QString which, QString title);
+    StructureThree(QDir dataDir, QString which, QString title, TaskChooser& tc);
 
 public slots:
     void show();
@@ -22,6 +24,8 @@ public slots:
     void yieldWord();
 
 private:
+    TaskChooser& tc;
+
     StructureData data;
     uint32_t curAt;
 

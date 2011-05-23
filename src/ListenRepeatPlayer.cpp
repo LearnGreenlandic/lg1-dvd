@@ -1,7 +1,8 @@
 #include "ListenRepeatPlayer.hpp"
 
-ListenRepeatPlayer::ListenRepeatPlayer(QDir _dataDir) :
+ListenRepeatPlayer::ListenRepeatPlayer(QDir _dataDir, TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+tc(tc),
 dataDir(_dataDir)
 {
     if (!dataDir.cd("./repeat/")) {

@@ -1,7 +1,8 @@
 #include "UpdownOne.hpp"
 
-UpdownOne::UpdownOne(QDir dataDir) :
+UpdownOne::UpdownOne(QDir dataDir, TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+tc(tc),
 data(dataDir),
 curAt(0)
 {

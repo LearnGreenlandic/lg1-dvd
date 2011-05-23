@@ -1,6 +1,8 @@
 #ifndef LISTENTHREE_HPP
 #define LISTENTHREE_HPP
 
+#include "TaskChooser.hpp"
+
 #include <phonon/mediaobject.h>
 #include <phonon/audiooutput.h>
 #include <QtGui>
@@ -10,7 +12,7 @@ class ListenThree : public QWidget {
     Q_OBJECT
 
 public:
-    ListenThree(QDir dataDir);
+    ListenThree(QDir dataDir, TaskChooser& tc);
 
 public slots:
     void showNext();
@@ -20,6 +22,8 @@ public slots:
     void checkT();
 
 private:
+    TaskChooser& tc;
+
     QVector<QString> words;
     uint32_t curAt;
 

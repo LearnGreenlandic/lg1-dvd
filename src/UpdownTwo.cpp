@@ -1,7 +1,8 @@
 #include "UpdownTwo.hpp"
 
-UpdownTwo::UpdownTwo(QDir dataDir) :
+UpdownTwo::UpdownTwo(QDir dataDir, TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+tc(tc),
 data(dataDir),
 curAt(0)
 {

@@ -2,6 +2,8 @@
 #define WELCOMETWO_HPP
 
 #include "ScalingGraphicsView.hpp"
+#include "TaskChooser.hpp"
+
 #include <QtGui>
 #include <stdint.h>
 
@@ -9,12 +11,14 @@ class WelcomeTwo : public QWidget {
     Q_OBJECT
 
 public:
-    WelcomeTwo(QDir dataDir);
+    WelcomeTwo(QDir dataDir, TaskChooser& tc);
 
 public slots:
     void nextWord();
 
 private:
+    TaskChooser& tc;
+
     QString text;
     QStringList pngs;
     uint32_t curAt;

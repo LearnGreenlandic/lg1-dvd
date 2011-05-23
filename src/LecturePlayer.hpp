@@ -3,6 +3,7 @@
 
 #include "ScalingGraphicsView.hpp"
 #include "CryptFile.hpp"
+#include "TaskChooser.hpp"
 
 #include <phonon/mediaobject.h>
 #include <phonon/audiooutput.h>
@@ -17,7 +18,7 @@ class LecturePlayer : public QWidget {
     Q_OBJECT
 
 public:
-    LecturePlayer(QString title, QDir dataDir, QString lecDir);
+    LecturePlayer(QString title, QDir dataDir, QString lecDir, TaskChooser& tc);
 
     void closeEvent(QCloseEvent *event);
 
@@ -28,8 +29,11 @@ public slots:
     void show();
     void tick(qint64 time);
     void togglePlay();
+    void finished();
 
 private:
+    TaskChooser& tc;
+
     typedef QMap<uint32_t, QString> slides_t;
     slides_t slides;
     QString curSlide;

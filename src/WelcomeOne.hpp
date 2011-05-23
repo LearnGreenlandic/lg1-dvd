@@ -1,13 +1,15 @@
 #ifndef WELCOMEONE_HPP
 #define WELCOMEONE_HPP
 
+#include "TaskChooser.hpp"
+
 #include <QtGui>
 
 class WelcomeOne : public QWidget {
     Q_OBJECT
 
 public:
-    WelcomeOne(QDir dataDir);
+    WelcomeOne(QDir dataDir, TaskChooser& tc);
 
 public slots:
     void preventLoss();
@@ -15,6 +17,8 @@ public slots:
     void yieldHyphen();
 
 private:
+    TaskChooser& tc;
+
     QString text, hyphenated, state;
     QTextEdit *input;
     QPushButton *yield;

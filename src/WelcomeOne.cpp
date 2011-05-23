@@ -1,7 +1,8 @@
 #include "WelcomeOne.hpp"
 
-WelcomeOne::WelcomeOne(QDir dataDir) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint)
+WelcomeOne::WelcomeOne(QDir dataDir, TaskChooser& tc) :
+QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+tc(tc)
 {
     if (!dataDir.cd("./welcome/") || !dataDir.exists("input.txt")) {
         QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/welcome/");
@@ -26,15 +27,11 @@ QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::
     hyphen_t.setCodec("UTF-8");
     hyphenated = hyphen_t.readAll();
 
-    setWindowTitle("Velkomstøvelse: Stavelsesdeling");
+    setWindowTitle(tr("Skærmtekstsøvelse 1.1: Stavelsesdeling"));
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 
-    QLabel *ql = new QLabel(
-        "Her er igen den tekst, der stod på skærmen lige efter velkomsten."
-        " Stavelsesdel den efter de tre regler, du netop har lært."
-        " Du finder facitlisten og en oversættelse i indstikshæftet, men brug den først, når du har prøvet så godt du kan selv.\n"
-        );
+    QLabel *ql = new QLabel(tr("Her er igen den tekst, der stod på skærmen lige efter velkomsten. Stavelsesdel den efter de tre regler, du netop har lært. Du finder facitlisten og en oversættelse i indstikshæftet, men brug den først, når du har prøvet så godt du kan selv."));
     ql->setWordWrap(true);
     qvbl->addWidget(ql);
 
@@ -45,9 +42,9 @@ QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::
     font.setStyleHint(QFont::TypeWriter);
     input->setFont(font);
     connect(input, SIGNAL(textChanged()), this, SLOT(preventLoss()));
-    QPushButton *check = new QPushButton("Check");
+    QPushButton *check = new QPushButton(tr("Check"));
     connect(check, SIGNAL(clicked()), this, SLOT(checkInput()));
-    yield = new QPushButton("Giv op...");
+    yield = new QPushButton(tr("Giv op..."));
     connect(yield, SIGNAL(clicked()), this, SLOT(yieldHyphen()));
     result = new QLabel;
 
@@ -78,15 +75,22 @@ void WelcomeOne::preventLoss() {
 void WelcomeOne::checkInput() {
     QString plain = input->toPlainText();
     if (plain == hyphenated) {
-        result->setText("<center><span style='color: darkgreen;'><b>Korrekt!</b></span></center>");
+        result->setText(QString("<center><span style='color: darkgreen;'><b>") + tr("Korrekt!") + "</b></span></center>");
         yield->hide();
-    }
-    else if (plain.compare(hyphenated, Qt::CaseInsensitive) == 0) {
-        result->setText("<center><span style='color: darkyellow;'><b>Næsten korrekt.\nStore og små bogstaver gælder...</b></span></center>");
-        yield->show();
+
+        QMessageBox mbox(QMessageBox::Question, tr("Korrekt!"), tr("Korrekt! Det var alt for denne øvelse. Vil du gå videre til næste øvelse?"));
+        QPushButton *yes = mbox.addButton(tr("Ja, næste øvelse"), QMessageBox::YesRole);
+        mbox.addButton(tr("Nej, tilbage til menuen"), QMessageBox::NoRole);
+        mbox.exec();
+
+        if (mbox.clickedButton() == yes) {
+            tc.showWelcomeTwo();
+        }
+        close();
+        return;
     }
     else {
-        result->setText("<center><span style='color: darkred;'><b>Ikke korrekt.\nPrøv igen...</b></span></center>");
+        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrøv igen...") + "</b></span></center>");
         yield->show();
     }
     result->show();
@@ -95,5 +99,5 @@ void WelcomeOne::checkInput() {
 }
 
 void WelcomeOne::yieldHyphen() {
-    QMessageBox::information(this, "Facit", QString("<h1>Det korrekte er:</h1>\n\n") + hyphenated);
+    QMessageBox::information(this, tr("Hrhm..."), QString("<h1>") + tr("Det korrekte er:") + QString("</h1><br>") + hyphenated);
 }

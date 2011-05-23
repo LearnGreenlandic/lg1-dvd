@@ -2,8 +2,9 @@
 
 #include <QtOpenGL/QGLWidget>
 
-WelcomeTwo::WelcomeTwo(QDir dataDir) :
+WelcomeTwo::WelcomeTwo(QDir dataDir, TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+tc(tc),
 curAt(-1)
 {
     if (!dataDir.cd("./welcome/")) {

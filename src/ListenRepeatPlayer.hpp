@@ -2,6 +2,7 @@
 #define LISTENREPEATPLAYER_HPP
 
 #include "CryptFile.hpp"
+#include "TaskChooser.hpp"
 
 #include <phonon/mediaobject.h>
 #include <phonon/audiooutput.h>
@@ -15,7 +16,7 @@ class ListenRepeatPlayer : public QWidget {
     Q_OBJECT
 
 public:
-    ListenRepeatPlayer(QDir dataDir);
+    ListenRepeatPlayer(QDir dataDir, TaskChooser& tc);
 
     void closeEvent(QCloseEvent *event);
 
@@ -30,6 +31,8 @@ public slots:
     void playTikaAgain();
 
 private:
+    TaskChooser& tc;
+
     QDir dataDir;
 
     Phonon::MediaObject *media;

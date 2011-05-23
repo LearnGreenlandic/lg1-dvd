@@ -2,6 +2,8 @@
 #define HYPHENONE_HPP
 
 #include "ScalingGraphicsView.hpp"
+#include "TaskChooser.hpp"
+
 #include <QtGui>
 #include <stdint.h>
 
@@ -9,7 +11,7 @@ class HyphenOne : public QWidget {
     Q_OBJECT
 
 public:
-    HyphenOne(QDir dataDir);
+    HyphenOne(QDir dataDir, TaskChooser& tc);
 
 public slots:
     void nextWord();
@@ -18,6 +20,8 @@ public slots:
     void yieldHyphen();
 
 private:
+    TaskChooser& tc;
+
     QString text, hyphenated, state;
     QLineEdit *input;
     QPushButton *yield;

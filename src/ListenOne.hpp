@@ -1,6 +1,8 @@
 #ifndef LISTENONE_HPP
 #define LISTENONE_HPP
 
+#include "TaskChooser.hpp"
+
 #include <phonon/mediaobject.h>
 #include <phonon/audiooutput.h>
 #include <QtGui>
@@ -10,7 +12,7 @@ class ListenOne : public QWidget {
     Q_OBJECT
 
 public:
-    ListenOne(QDir dataDir);
+    ListenOne(QDir dataDir, TaskChooser& tc);
 
 public slots:
     void showNext();
@@ -19,6 +21,8 @@ public slots:
     void twoConsonants();
 
 private:
+    TaskChooser& tc;
+
     QVector< QPair<QString,QString> > words;
     uint32_t curAt;
 

@@ -1,6 +1,8 @@
 #ifndef LISTENFOUR_HPP
 #define LISTENFOUR_HPP
 
+#include "TaskChooser.hpp"
+
 #include <phonon/mediaobject.h>
 #include <phonon/audiooutput.h>
 #include <QtGui>
@@ -10,7 +12,7 @@ class ListenFour : public QWidget {
     Q_OBJECT
 
 public:
-    ListenFour(QDir dataDir);
+    ListenFour(QDir dataDir, TaskChooser& tc);
 
 public slots:
     void showNext();
@@ -19,6 +21,8 @@ public slots:
     void yieldWord();
 
 private:
+    TaskChooser& tc;
+
     QVector<QString> words;
     uint32_t curAt;
 

@@ -1,8 +1,9 @@
 #include "ListenTwo.hpp"
 #include <algorithm>
 
-ListenTwo::ListenTwo(QDir dataDir) :
+ListenTwo::ListenTwo(QDir dataDir, TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+tc(tc),
 curAt(-1)
 {
     if (!dataDir.cd("./listening/2/")) {
@@ -73,7 +74,14 @@ void ListenTwo::playAgain() {
 void ListenTwo::showNext() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(words.size())) {
-        QMessageBox::information(0, tr("Færdig!"), tr("Der er ikke flere ord...vinduet lukker sig selv nu."));
+        QMessageBox mbox(QMessageBox::Question, tr("Færdig!"), tr("Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?"));
+        QPushButton *yes = mbox.addButton(tr("Ja, næste øvelse"), QMessageBox::YesRole);
+        mbox.addButton(tr("Nej, tilbage til menuen"), QMessageBox::NoRole);
+        mbox.exec();
+
+        if (mbox.clickedButton() == yes) {
+            tc.showListenThree();
+        }
         close();
         return;
     }

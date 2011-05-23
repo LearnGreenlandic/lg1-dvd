@@ -1,7 +1,8 @@
 #include "UpdownThree.hpp"
 
-UpdownThree::UpdownThree(QDir dataDir) :
+UpdownThree::UpdownThree(QDir dataDir, TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+tc(tc),
 data(dataDir),
 curAt(0)
 {

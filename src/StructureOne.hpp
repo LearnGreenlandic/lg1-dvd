@@ -2,6 +2,8 @@
 #define STRUCTUREONE_HPP
 
 #include "StructureData.hpp"
+#include "TaskChooser.hpp"
+
 #include <phonon/mediaobject.h>
 #include <phonon/audiooutput.h>
 #include <QtGui>
@@ -11,7 +13,7 @@ class StructureOne : public QWidget {
     Q_OBJECT
 
 public:
-    StructureOne(QDir dataDir, QString which, QString title);
+    StructureOne(QDir dataDir, QString which, QString title, TaskChooser& tc);
 
 public slots:
     void show();
@@ -21,6 +23,8 @@ public slots:
     void yieldWord();
 
 private:
+    TaskChooser& tc;
+
     StructureData data;
     uint32_t curAt;
 

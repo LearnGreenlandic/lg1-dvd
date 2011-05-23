@@ -107,6 +107,25 @@
     </message>
 </context>
 <context>
+    <name>HyphenOne</name>
+    <message>
+        <source>Færdig!</source>
+        <translation type="unfinished">Done!</translation>
+    </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished">Yes, next exercise</translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
+        <translation type="unfinished">No, back to the menu</translation>
+    </message>
+</context>
+<context>
     <name>ListenFour</name>
     <message>
         <source>Skriv hvad du hører.</source>
@@ -133,10 +152,6 @@
         <translation>Done!</translation>
     </message>
     <message>
-        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
-        <translation>No words remain...the window will now close.</translation>
-    </message>
-    <message>
         <source>Korrekt!</source>
         <translation>Correct!</translation>
     </message>
@@ -157,6 +172,18 @@ Try again...</translation>
     <message>
         <source>Lydøvelse  1.4: Skriv hvad du hørte</source>
         <translation>Sound exercise 1.4: Write what you heard</translation>
+    </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished">Yes, next exercise</translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
+        <translation type="unfinished">No, back to the menu</translation>
     </message>
 </context>
 <context>
@@ -186,10 +213,6 @@ Try again...</translation>
         <translation>Done!</translation>
     </message>
     <message>
-        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
-        <translation>No words remain...the window will now close.</translation>
-    </message>
-    <message>
         <source>Ikke korrekt.
 Prøv igen...</source>
         <translation>Incorrect.
@@ -204,6 +227,18 @@ The word was: </translation>
     <message>
         <source>Lydøvelse  1.1: En eller to konsonanter</source>
         <translation>Sound exercise 1.1: One or two consonants</translation>
+    </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished">Yes, next exercise</translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
+        <translation type="unfinished">No, back to the menu</translation>
     </message>
 </context>
 <context>
@@ -256,10 +291,6 @@ The word was: </translation>
         <translation>Done!</translation>
     </message>
     <message>
-        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
-        <translation>No words remain...the window will now close.</translation>
-    </message>
-    <message>
         <source>Korrekt!
 Ordet var: </source>
         <translation>Correct!
@@ -274,6 +305,18 @@ Try again...</translation>
     <message>
         <source>Lydøvelse  1.3: tt eller ts eller t</source>
         <translation>Sound exercise 1.3: tt or ts or t</translation>
+    </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du læse forelæsningen som PDF?</source>
+        <translation type="unfinished">No tasks remain in this exercise. Do you want to view the lecture as PDF?</translation>
+    </message>
+    <message>
+        <source>Ja, åben PDF</source>
+        <translation type="unfinished">Yes, open the PDF</translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
+        <translation type="unfinished">No, back to the menu</translation>
     </message>
 </context>
 <context>
@@ -303,10 +346,6 @@ Try again...</translation>
         <translation>Done!</translation>
     </message>
     <message>
-        <source>Der er ikke flere ord...vinduet lukker sig selv nu.</source>
-        <translation>No words remain...the window will now close.</translation>
-    </message>
-    <message>
         <source>Korrekt!
 Ordet var: </source>
         <translation>Correct!
@@ -321,6 +360,18 @@ Try again...</translation>
     <message>
         <source>Lydøvelse  1.2: r eller ikke r</source>
         <translation>Sound exercise 1.2: r or no r</translation>
+    </message>
+    <message>
+        <source>Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?</source>
+        <translation type="unfinished">No tasks remain in this exercise. Do you want to continue with next exercise?</translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished">Yes, next exercise</translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
+        <translation type="unfinished">No, back to the menu</translation>
     </message>
 </context>
 <context>
@@ -903,6 +954,10 @@ grønlandsk pædagogisk grammatica&apos;</source>
         <translation>./appendix/english.pdf</translation>
     </message>
     <message>
+        <source>Xvid og MP3?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid codec?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -923,7 +978,11 @@ grønlandsk pædagogisk grammatica&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Xvid og MP3?</source>
+        <source>Installer Xvid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Programmet åbner nu installeren i et nyt vindue og lukker så dette. Start Learn Greenlandic igen når du har installeret Xvid eller DivX.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -932,14 +991,6 @@ grønlandsk pædagogisk grammatica&apos;</source>
     </message>
     <message>
         <source>Afspilningen af test filmen fejlede helt. Du bør installere Xvid eller DivX codecs og så prøve igen. Hvis intet virker, så kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjælp.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Installer Xvid</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Programmet åbner nu installeren i et nyt vindue og lukker så dette. Start Learn Greenlandic igen når du har installeret Xvid eller DivX.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1070,6 +1121,55 @@ Try again...</translation>
     <message>
         <source>Det korrekte færdige ord var:</source>
         <translation>The correctly constructed word was:</translation>
+    </message>
+</context>
+<context>
+    <name>WelcomeOne</name>
+    <message>
+        <source>Skærmtekstsøvelse 1.1: Stavelsesdeling</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Her er igen den tekst, der stod på skærmen lige efter velkomsten. Stavelsesdel den efter de tre regler, du netop har lært. Du finder facitlisten og en oversættelse i indstikshæftet, men brug den først, når du har prøvet så godt du kan selv.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Giv op...</source>
+        <translation type="unfinished">Give up...</translation>
+    </message>
+    <message>
+        <source>Korrekt!</source>
+        <translation type="unfinished">Correct!</translation>
+    </message>
+    <message>
+        <source>Korrekt! Det var alt for denne øvelse. Vil du gå videre til næste øvelse?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ja, næste øvelse</source>
+        <translation type="unfinished">Yes, next exercise</translation>
+    </message>
+    <message>
+        <source>Nej, tilbage til menuen</source>
+        <translation type="unfinished">No, back to the menu</translation>
+    </message>
+    <message>
+        <source>Ikke korrekt.
+Prøv igen...</source>
+        <translation type="unfinished">Incorrect.
+Try again...</translation>
+    </message>
+    <message>
+        <source>Hrhm...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Det korrekte er:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
