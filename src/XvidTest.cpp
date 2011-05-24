@@ -19,7 +19,7 @@ QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
     Phonon::createPath(media, audio);
 
     media->setCurrentSource(dataDir.absoluteFilePath("testxvid.avi"));
-    QTimer::singleShot(10000, media, SLOT(finished()));
+    QTimer::singleShot(6000, this, SLOT(finished()));
     //connect(media, SIGNAL(finished()), this, SLOT(finished()));
 
     video->setAspectRatio(Phonon::VideoWidget::AspectRatio16_9);
@@ -35,6 +35,7 @@ QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
 
     setContentsMargins(0, 0, 0, 0);
     media->play();
+    adjustSize();
 }
 
 void XvidTest::closeEvent(QCloseEvent *event) {
