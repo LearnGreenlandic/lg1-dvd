@@ -711,7 +711,7 @@ Lad være med at lade dig snyde af den retskrivningsdetalje, at et q sidst i ord
     <message>
         <source>structure 2 ./2/</source>
         <translation>Brug N+MIU-U{+vuŋa} så du danner ord med betydningen &apos;jeg er indbygger i BYNAVN&apos;. Brug øvelsen også til at vænne dig til forandringerne og samtidig til at klare udtalen af meget lange ord.
-Tilhæng sættes altid til entalsformen, så for de 7 byer, hvis navne er født med en flertalsendelse, skal du først konstruere en entalsform. I denne øvelse er det gjort for dig (det er alle *-formerne).</translation>
+Tilhæng sættes altid til entalsformen, så for de 7 byer, hvis navne er født med en flertalsendelse, skal du først konstruere en entalsform. I denne øvelse er det gjort for dig (det er ordene i parentes).</translation>
     </message>
     <message>
         <source>structure 2 ./3/</source>

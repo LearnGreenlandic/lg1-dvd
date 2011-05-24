@@ -726,7 +726,7 @@ Do not get led astray by an orthographical detail that a word final q is written
     <message>
         <source>structure 2 ./2/</source>
         <translation>Use N+MIU-U{+vuŋa} to form words meaning &apos;I am an inhabitant of TOWN&apos;. The exercise will also help you to learn to cope with sound changes and the pronunciation of very long words.
-Derivational morphemes are always added to the singular so for the seven pluralis tantum names one must first find the singular. In this exercise this has been taken care of for you (the forms in parantheses).</translation>
+Derivational morphemes are always added to the singular so for the seven pluralis tantum names one must first find the singular. In this exercise this has been taken care of for you (the forms in parentheses).</translation>
     </message>
     <message>
         <source>structure 2 ./3/</source>
