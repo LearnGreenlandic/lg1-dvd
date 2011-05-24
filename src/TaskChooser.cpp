@@ -727,7 +727,7 @@ void TaskChooser::checkFirstRun() {
 #endif
                     )
 #if !defined(Q_WS_WIN) && !defined(Q_WS_MAC)
-                + QString("\"") + QCoreApplication::instance()->applicationDirPath() + "/install-prereq-ubuntu.sh\""
+                + QString(" \"Install Learn Greenlandic Dependencies\" \"") + QCoreApplication::instance()->applicationDirPath() + "/install-prereq-ubuntu.sh\""
 #endif
             ;
 #if defined(Q_WS_WIN) || defined(Q_WS_MAC)
