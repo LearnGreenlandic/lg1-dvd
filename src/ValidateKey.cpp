@@ -55,6 +55,14 @@ void ValidateKey::checkInput() {
     params.addQueryItem("key", input->text());
     params.addQueryItem("language", tr("danish"));
 
+#if defined(Q_WS_WIN)
+    params.addQueryItem("os", "win");
+#elif defined(Q_WS_MAC)
+    params.addQueryItem("os", "mac");
+#else
+    params.addQueryItem("os", "linux");
+#endif
+
     QByteArray data;
     data.append(params.toString());
     data.remove(0, 1);
