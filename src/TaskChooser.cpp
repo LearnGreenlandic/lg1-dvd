@@ -717,7 +717,7 @@ void TaskChooser::checkFirstRun() {
 
         if (mbox.clickedButton() == yes) {
             QMessageBox::information(0, tr("Installer Xvid"), tr("Programmet åbner nu installeren i et nyt vindue og lukker så dette. Start Learn Greenlandic igen når du har installeret Xvid eller DivX."));
-            QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(
+            QString torun = dataDir.absoluteFilePath(
 #if defined(Q_WS_WIN)
                 "../Xvid-1.3.1-20110324.exe"
 #elif defined(Q_WS_MAC)
@@ -729,7 +729,12 @@ void TaskChooser::checkFirstRun() {
 #if !defined(Q_WS_WIN) && !defined(Q_WS_MAC)
                 + QString("\"") + QCoreApplication::instance()->applicationDirPath() + "/install-prereq-ubuntu.sh\""
 #endif
-                ));
+            ;
+#if defined(Q_WS_WIN) || defined(Q_WS_MAC)
+            QDesktopServices::openUrl(QUrl::fromLocalFile(torun));
+#else
+            system(torun.toStdString().c_str());
+#endif
             QCoreApplication::quit();
             return;
         }
