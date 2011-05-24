@@ -11,7 +11,7 @@ class XvidTest : public QDialog {
     Q_OBJECT
 
 public:
-    XvidTest(QWidget *parent, QDir dataDir);
+    XvidTest(QDir dataDir);
 
     void closeEvent(QCloseEvent *event);
 

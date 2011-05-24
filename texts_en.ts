@@ -1084,6 +1084,14 @@ grønlandsk pædagogisk grammatica&apos;</source>
         <source>./images/english.png</source>
         <translation>./images/danish.png</translation>
     </message>
+    <message>
+        <source>Validation error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Validering af licensnøgle fejlede helt. Kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjælp.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UpdownOne</name>
@@ -1228,6 +1236,41 @@ Try again...</translation>
     <message>
         <source>Nej, tilbage til menuen</source>
         <translation>No, back to the menu</translation>
+    </message>
+</context>
+<context>
+    <name>ValidateKey</name>
+    <message>
+        <source>Validering af licensnøgle</source>
+        <translation>Validation of license key</translation>
+    </message>
+    <message>
+        <source>Indtast din licensnøgle nedenfor. Du finder den bag på indstikshæftet. Dette check kræver at din computer er online og at du registrerer dig på http://learngreenlandic.com/register/</source>
+        <translation>Input your license key below. You will find it on the back of the pamphlet. This step requires that your computer is online and that you have registered at http://learngreenlandic.com/register/</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Bemærk:&lt;/b&gt; Du må kun bruge din licensnøgle en gang, for en person, på en computer!</source>
+        <translation>&lt;b&gt;Notice:&lt;/b&gt; You may only use your license key one time, for one person, on one computer!</translation>
+    </message>
+    <message>
+        <source>Valider online</source>
+        <translation>Validate online</translation>
+    </message>
+    <message>
+        <source>... checker licensnøgle via learngreenlandic.com ...</source>
+        <translation>... checking license key via learngreenlandic.com ...</translation>
+    </message>
+    <message>
+        <source>danish</source>
+        <translation>english</translation>
+    </message>
+    <message>
+        <source>http://learngreenlandic.com/register/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Afslut program</source>
+        <translation>Quit program</translation>
     </message>
 </context>
 <context>
@@ -1416,6 +1459,22 @@ Try again...</translation>
     <message>
         <source>Xvid test</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Virkede det?</source>
+        <translation>Did it work?</translation>
+    </message>
+    <message>
+        <source>Kunne du både se billede og høre lyd på testfilmen?</source>
+        <translation>Was both video and audio functional in the test clip?</translation>
+    </message>
+    <message>
+        <source>Ja, det virkede</source>
+        <translation>Yes, it worked</translation>
+    </message>
+    <message>
+        <source>Nej, noget var galt</source>
+        <translation>No, something was wrong</translation>
     </message>
 </context>
 </TS>

@@ -1,9 +1,9 @@
 #include "XvidTest.hpp"
 
-XvidTest::XvidTest(QWidget *parent, QDir dataDir) :
-QDialog(parent, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
+XvidTest::XvidTest(QDir dataDir) :
+QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
 {
-    setWindowModality(Qt::WindowModal);
+    setWindowModality(Qt::ApplicationModal);
     setWindowTitle(tr("Xvid test"));
 
     if (!dataDir.exists("testxvid.avi")) {
@@ -43,5 +43,14 @@ void XvidTest::closeEvent(QCloseEvent *event) {
 }
 
 void XvidTest::finished() {
+    QMessageBox mbox(QMessageBox::Question, tr("Virkede det?"), tr("Kunne du både se billede og høre lyd på testfilmen?"));
+    QPushButton *yes = mbox.addButton(tr("Ja, det virkede"), QMessageBox::YesRole);
+    mbox.addButton(tr("Nej, noget var galt"), QMessageBox::NoRole);
+    mbox.exec();
 
+    if (mbox.clickedButton() == yes) {
+        QSettings settings;
+        settings.setValue("has_xvid", true);
+    }
+    close();
 }

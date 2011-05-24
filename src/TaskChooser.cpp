@@ -21,6 +21,7 @@
 #include "StructureTwo.hpp"
 #include "StructureThree.hpp"
 #include "XvidTest.hpp"
+#include "ValidateKey.hpp"
 #include "TaskChooser.hpp"
 
 #include <QtGlobal>
@@ -32,13 +33,16 @@ translator(translator)
 {
     setWindowTitle(tr("Grønlandsk for voksne"));
     setContentsMargins(5,5,5,5);
-    setStyleSheet("margin: 0; padding: 0;");
+    setStyleSheet("margin: 0; padding: 0; text-align: left;");
 
     QPixmap qpx;
     QLabel *ql = new QLabel;
 
-    QGridLayout *outerGrid = new QGridLayout;
-    outerGrid->setContentsMargins(0,0,0,0);
+    QHBoxLayout *outerHBox = new QHBoxLayout;
+    outerHBox->setContentsMargins(0,0,0,0);
+
+    QVBoxLayout *outerVBox = new QVBoxLayout;
+    outerVBox->setContentsMargins(0,0,0,0);
 
 
     QHBoxLayout *itemHBox = new QHBoxLayout;
@@ -59,8 +63,10 @@ translator(translator)
     connect(welcomePlayer, SIGNAL(clicked()), this, SLOT(showWelcomePlayer()));
     itemVBox->addWidget(welcomePlayer, 0, Qt::AlignLeft|Qt::AlignTop);
 
+    itemVBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 1, 0, 1, 3, Qt::AlignLeft|Qt::AlignTop);
+    itemHBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
+    outerVBox->addLayout(itemHBox);
 
 
     itemHBox = new QHBoxLayout;
@@ -96,8 +102,10 @@ translator(translator)
     connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureOnePDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
+    itemVBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 2, 0, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    itemHBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
+    outerVBox->addLayout(itemHBox);
 
 
     itemHBox = new QHBoxLayout;
@@ -138,8 +146,10 @@ translator(translator)
     connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureTwoPDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
+    itemVBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 3, 0, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    itemHBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
+    outerVBox->addLayout(itemHBox);
 
 
     itemHBox = new QHBoxLayout;
@@ -185,8 +195,16 @@ translator(translator)
     connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureThreePDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
+    itemVBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 4, 0, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    itemHBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
+    outerVBox->addLayout(itemHBox);
+
+
+    outerVBox->setAlignment(Qt::AlignCenter|Qt::AlignTop);
+    outerHBox->addLayout(outerVBox);
+    outerVBox = new QVBoxLayout;
+    outerVBox->setContentsMargins(0,0,0,0);
 
 
     itemHBox = new QHBoxLayout;
@@ -232,8 +250,10 @@ translator(translator)
     connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureFourPDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
+    itemVBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 2, 1, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    itemHBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
+    outerVBox->addLayout(itemHBox);
 
 
     itemHBox = new QHBoxLayout;
@@ -264,8 +284,10 @@ translator(translator)
     connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureFivePDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
+    itemVBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 3, 1, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    itemHBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
+    outerVBox->addLayout(itemHBox);
 
 
     itemHBox = new QHBoxLayout;
@@ -326,8 +348,16 @@ translator(translator)
     connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureFivePDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
 
+    itemVBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 4, 1, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    itemHBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
+    outerVBox->addLayout(itemHBox);
+
+
+    outerVBox->setAlignment(Qt::AlignCenter|Qt::AlignTop);
+    outerHBox->addLayout(outerVBox);
+    outerVBox = new QVBoxLayout;
+    outerVBox->setContentsMargins(0,0,0,0);
 
 
     itemHBox = new QHBoxLayout;
@@ -361,8 +391,10 @@ translator(translator)
     connect(updownThree, SIGNAL(clicked()), this, SLOT(showUpdownThree()));
     itemVBox->addWidget(updownThree, 0, Qt::AlignLeft|Qt::AlignTop);
 
+    itemVBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 2, 2, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    itemHBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
+    outerVBox->addLayout(itemHBox);
 
 
     itemHBox = new QHBoxLayout;
@@ -392,8 +424,10 @@ translator(translator)
     connect(pamphlet, SIGNAL(clicked()), this, SLOT(showPamphletPDF()));
     itemVBox->addWidget(pamphlet, 0, Qt::AlignLeft|Qt::AlignTop);
 
+    itemVBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 3, 2, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    itemHBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
+    outerVBox->addLayout(itemHBox);
 
 
     itemHBox = new QHBoxLayout;
@@ -414,13 +448,17 @@ translator(translator)
     connect(toggleLang, SIGNAL(clicked()), this, SLOT(toggleLanguage()));
     itemVBox->addWidget(toggleLang, 0, Qt::AlignLeft|Qt::AlignTop);
 
+    itemVBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
     itemHBox->addLayout(itemVBox);
-    outerGrid->addLayout(itemHBox, 4, 2, 1, 1, Qt::AlignLeft|Qt::AlignTop);
+    itemHBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
+    outerVBox->addLayout(itemHBox);
 
 
-    outerGrid->setAlignment(Qt::AlignCenter|Qt::AlignTop);
+    outerVBox->setAlignment(Qt::AlignCenter|Qt::AlignTop);
+    outerHBox->addLayout(outerVBox);
+    outerHBox->setAlignment(Qt::AlignCenter|Qt::AlignTop);
 
-    setLayout(outerGrid);
+    setLayout(outerHBox);
 }
 
 void TaskChooser::showLectureOne() {
@@ -699,9 +737,8 @@ void TaskChooser::toggleLanguage() {
 void TaskChooser::checkFirstRun() {
     QSettings settings;
 
-    // TODO
-    bool hasXvid = settings.value("has_Xvid", false).toBool();
-    if (!hasXvid) {
+    bool hasXvid = settings.value("has_xvid", false).toBool();
+    while (!hasXvid) {
         QMessageBox mbox(QMessageBox::Question, tr("Xvid og MP3?"),
 #if defined(Q_WS_WIN)
              tr("Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid codec?")
@@ -718,29 +755,31 @@ void TaskChooser::checkFirstRun() {
         if (mbox.clickedButton() == yes) {
             QMessageBox::information(0, tr("Installer Xvid"), tr("Programmet åbner nu installeren i et nyt vindue og lukker så dette. Start Learn Greenlandic igen når du har installeret Xvid eller DivX."));
             QString torun = dataDir.absoluteFilePath(
-#if defined(Q_WS_WIN)
+            #if defined(Q_WS_WIN)
                 "../Xvid-1.3.1-20110324.exe"
-#elif defined(Q_WS_MAC)
+            #elif defined(Q_WS_MAC)
                 "../DivXInstaller.dmg"
-#else
+            #else
                 "../runasroot.sh"
-#endif
+            #endif
                     )
-#if !defined(Q_WS_WIN) && !defined(Q_WS_MAC)
+            #if !defined(Q_WS_WIN) && !defined(Q_WS_MAC)
                 + QString(" \"Install Learn Greenlandic Dependencies\" \"") + QCoreApplication::instance()->applicationDirPath() + "/install-prereq-ubuntu.sh\""
-#endif
+            #endif
             ;
-#if defined(Q_WS_WIN) || defined(Q_WS_MAC)
-            QDesktopServices::openUrl(QUrl::fromLocalFile(torun));
-#else
-            system(torun.toStdString().c_str());
-#endif
+
+            #if defined(Q_WS_WIN) || defined(Q_WS_MAC)
+                QDesktopServices::openUrl(QUrl::fromLocalFile(torun));
+            #else
+                system(torun.toStdString().c_str());
+            #endif
+
             QCoreApplication::quit();
             return;
         }
 
         try {
-            XvidTest *xt = new XvidTest(this, dataDir);
+            XvidTest *xt = new XvidTest(dataDir);
             xt->exec();
         }
         catch (...) {
@@ -748,6 +787,23 @@ void TaskChooser::checkFirstRun() {
             QCoreApplication::quit();
             return;
         }
+        hasXvid = settings.value("has_xvid", false).toBool();
+    }
+
+    QString hasEncKey = settings.value("encryption_key", "E").toString();
+    while (hasEncKey[0] != 'P') {
+        try {
+            ValidateKey *vk = new ValidateKey;
+            if (vk->exec() == QDialog::Rejected) {
+                return;
+            }
+        }
+        catch (...) {
+            QMessageBox::information(0, tr("Validation error"), tr("Validering af licensnøgle fejlede helt. Kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjælp."));
+            QCoreApplication::quit();
+            return;
+        }
+        hasEncKey = settings.value("encryption_key", "E").toString();
     }
 
     bool doneWelcome = settings.value("done_welcome", false).toBool();

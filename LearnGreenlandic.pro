@@ -1,6 +1,6 @@
 QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.4
 
-QT += core gui phonon opengl
+QT += core gui phonon opengl network
 
 TARGET = LearnGreenlandic
 TEMPLATE = app
@@ -42,7 +42,8 @@ SOURCES += \
     src/ListenRepeatPlayer.cpp \
     src/WelcomeQuestion.cpp \
     src/XvidTest.cpp \
-    src/WelcomeWords.cpp
+    src/WelcomeWords.cpp \
+    src/ValidateKey.cpp
 
 HEADERS  += \
     src/TaskChooser.hpp \
@@ -75,7 +76,8 @@ HEADERS  += \
     src/ListenRepeatPlayer.hpp \
     src/WelcomeQuestion.hpp \
     src/XvidTest.hpp \
-    src/WelcomeWords.hpp
+    src/WelcomeWords.hpp \
+    src/ValidateKey.hpp
 
 CONFIG -= warn_off
 CONFIG += warn_on

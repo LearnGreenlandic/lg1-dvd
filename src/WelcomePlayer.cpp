@@ -2,7 +2,7 @@
 #include "WelcomeQuestion.hpp"
 
 WelcomePlayer::WelcomePlayer(QDir dataDir, TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint),
 tc(tc)
 {
     setWindowModality(Qt::ApplicationModal);
