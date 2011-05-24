@@ -8,8 +8,6 @@ QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
     setWindowModality(Qt::ApplicationModal);
     setWindowTitle(tr("Validering af licensnøgle"));
 
-    setResult(QDialog::Accepted);
-
     nam = new QNetworkAccessManager(this);
     connect(nam, SIGNAL(finished(QNetworkReply*)), this, SLOT(finished(QNetworkReply*)));
 
@@ -71,7 +69,8 @@ void ValidateKey::openLGRegister() {
 }
 
 void ValidateKey::bailOut() {
-    setResult(QDialog::Rejected);
+    QSettings settings;
+    settings.setValue("license_bailout", true);
     QCoreApplication::quit();
     close();
 }

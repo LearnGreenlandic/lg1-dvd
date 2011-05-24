@@ -790,14 +790,18 @@ void TaskChooser::checkFirstRun() {
 
     QString hasEncKey = settings.value("encryption_key", "E").toString();
     while (hasEncKey[0] != 'P') {
+        settings.setValue("license_bailout", false);
+
         try {
             ValidateKey *vk = new ValidateKey;
-            if (vk->exec() == QDialog::Rejected) {
-                return;
-            }
+            vk->exec();
         }
         catch (...) {
             QMessageBox::information(0, tr("Validation error"), tr("Validering af licensnøgle fejlede helt. Kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjælp."));
+            QCoreApplication::quit();
+            return;
+        }
+        if (settings.value("license_bailout", false).toBool() == true) {
             QCoreApplication::quit();
             return;
         }
