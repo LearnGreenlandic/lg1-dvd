@@ -759,6 +759,8 @@ void TaskChooser::checkFirstRun() {
                 "../Xvid-1.3.1-20110324.exe"
             #elif defined(Q_WS_MAC)
                 "../DivXInstaller.dmg"
+            #else
+                "../autorun.sh"
             #endif
                     )
             ;
