@@ -759,19 +759,14 @@ void TaskChooser::checkFirstRun() {
                 "../Xvid-1.3.1-20110324.exe"
             #elif defined(Q_WS_MAC)
                 "../DivXInstaller.dmg"
-            #else
-                "../runasroot.sh"
             #endif
                     )
-            #if !defined(Q_WS_WIN) && !defined(Q_WS_MAC)
-                + QString("\" \"Install Learn Greenlandic Dependencies\" \"") + QCoreApplication::instance()->applicationDirPath() + "/install-prereq-ubuntu.sh\""
-            #endif
             ;
 
             #if defined(Q_WS_WIN) || defined(Q_WS_MAC)
                 QDesktopServices::openUrl(QUrl::fromLocalFile(torun));
             #else
-                torun = QString("\"") + torun;
+                torun = QString("/usr/bin/xterm -e \"") + QCoreApplication::instance()->applicationDirPath() + "/install-prereq-ubuntu.sh\" &";
                 system(torun.toStdString().c_str());
             #endif
 
