@@ -1,6 +1,7 @@
 QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.4
 
-QT += core gui phonon opengl network
+QT += core gui phonon network
+QT -= opengl
 
 TARGET = LearnGreenlandic
 TEMPLATE = app

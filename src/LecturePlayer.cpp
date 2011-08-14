@@ -1,7 +1,5 @@
 #include "LecturePlayer.hpp"
 
-#include <QtOpenGL/QGLWidget>
-
 LecturePlayer::LecturePlayer(QString title, QDir dataDir, QString lecDir, TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc)
@@ -54,13 +52,6 @@ tc(tc)
 
     view = new ScalingGraphicsView(scene);
     view->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
-    QGLWidget *opengl = new QGLWidget(QGLFormat(QGL::SampleBuffers));
-    if (QGLFormat::hasOpenGL() && opengl->isValid()) {
-        view->setViewport(opengl);
-    }
-    else {
-        delete opengl;
-    }
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->setContentsMargins(0, 0, 0, 0);

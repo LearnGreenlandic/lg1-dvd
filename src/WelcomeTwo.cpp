@@ -1,7 +1,5 @@
 #include "WelcomeTwo.hpp"
 
-#include <QtOpenGL/QGLWidget>
-
 WelcomeTwo::WelcomeTwo(QDir dataDir, TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
@@ -58,13 +56,6 @@ curAt(-1)
 
     view = new ScalingGraphicsView(scene);
     view->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
-    QGLWidget *opengl = new QGLWidget(QGLFormat(QGL::SampleBuffers));
-    if (QGLFormat::hasOpenGL() && opengl->isValid()) {
-        view->setViewport(opengl);
-    }
-    else {
-        delete opengl;
-    }
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->setContentsMargins(0, 0, 0, 0);
