@@ -11,21 +11,17 @@ QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
         throw(-1);
     }
 
-    media = new Phonon::MediaObject;
-    video = new Phonon::VideoWidget;
-    Phonon::createPath(media, video);
+    video = new QAxWidget("{6BF52A52-394A-11D3-B153-00C04F79FAA6}");
+    controls = video->querySubObject("controls");
 
-    audio = new Phonon::AudioOutput(Phonon::VideoCategory);
-    Phonon::createPath(media, audio);
-
-    media->setCurrentSource(dataDir.absoluteFilePath("testxvid.avi"));
     QTimer::singleShot(6000, this, SLOT(finished()));
-    //connect(media, SIGNAL(finished()), this, SLOT(finished()));
 
-    video->setAspectRatio(Phonon::VideoWidget::AspectRatio16_9);
     video->setMinimumSize(400, 225);
     video->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
     video->setContentsMargins(0, 0, 0, 0);
+    video->dynamicCall("setUiMode(QString)", "full");
+    video->dynamicCall("setEnabled(bool)", true);
+    video->dynamicCall("SetURL(QString)", QUrl::fromLocalFile(dataDir.absoluteFilePath("testxvid.avi")));
 
     QVBoxLayout *qvbl = new QVBoxLayout;
     qvbl->setContentsMargins(0, 0, 0, 0);
@@ -34,13 +30,14 @@ QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
     setLayout(qvbl);
 
     setContentsMargins(0, 0, 0, 0);
-    media->play();
+    controls->dynamicCall("play()");
     adjustSize();
 }
 
 void XvidTest::closeEvent(QCloseEvent *event) {
-    media->stop();
-    media->clear();
+    controls->dynamicCall("stop()");
+    controls->clear();
+    video->clear();
     event->accept();
 }
 

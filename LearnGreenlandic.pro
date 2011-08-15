@@ -82,5 +82,6 @@ HEADERS  += \
 
 CONFIG -= warn_off
 CONFIG += warn_on
+CONFIG += qaxcontainer
 QMAKE_CFLAGS   += -Wall -Wextra
 QMAKE_CXXFLAGS += -Wall -Wextra

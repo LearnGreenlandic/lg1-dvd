@@ -4,12 +4,8 @@
 #include "CryptFile.hpp"
 #include "TaskChooser.hpp"
 
-#include <phonon/mediaobject.h>
-#include <phonon/audiooutput.h>
-#include <phonon/mediasource.h>
-#include <phonon/videowidget.h>
-#include <phonon/seekslider.h>
-#include <phonon/effect.h>
+#include <QAxWidget>
+#include <QAxObject>
 #include <QtGui>
 
 class ListenRepeatPlayer : public QWidget {
@@ -25,8 +21,7 @@ public:
 
 public slots:
     void show();
-    void tick(qint64 time);
-    void togglePlay();
+    void playStateChange(int);
     void playPerAgain();
     void playTikaAgain();
 
@@ -35,13 +30,10 @@ private:
 
     QDir dataDir;
 
-    Phonon::MediaObject *media;
-    Phonon::VideoWidget *video;
-    Phonon::AudioOutput *audio;
-
-    QPushButton *playpause;
-    Phonon::SeekSlider *seeker;
-    QLCDNumber *timeLcd;
+    QAxWidget *video;
+    QAxObject *controls;
+    QString tmpfile_per, tmpfile_tik;
+    QString current;
 };
 
 #endif // LISTENREPEATPLAYER_HPP
