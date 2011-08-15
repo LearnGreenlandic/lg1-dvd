@@ -1,0 +1,1562 @@
+<h1 align=center>Windows Media Player Reference</h1>
+<p>The Windows Media Player COM object is a QAxWidget with the CLSID {6BF52A52-394A-11D3-B153-00C04F79FAA6}.</p>
+<h3>Interfaces</h3>
+<ul>
+<li>IWMPPlayer4
+</ul>
+<h3>Event Interfaces</h3>
+<ul>
+<li>_WMPOCXEvents
+<li>{19A6627B-DA9E-47C1-BB23-00B5E668236A}
+<li>{1E7601FA-47EA-4107-9EA9-9004ED9684FF}
+<li>{1F504270-A66B-4223-8E96-26A06C63D69F}
+<li>{26DABCFA-306B-404D-9A6F-630A8405048D}
+</ul>
+<h2>Public Slots:</h2>
+<ul>
+<li>void <a href="#SetURL"><b>SetURL</b></a>(QString URL);</li>
+<li>void <a href="#close"><b>close</b></a>();</li>
+<li>void <a href="#launchURL"><b>launchURL</b></a>(QString bstrURL);</li>
+<li>IDispatch* <a href="#newMedia"><b>newMedia</b></a>(QString bstrURL);</li>
+<li>IDispatch* <a href="#newPlaylist"><b>newPlaylist</b></a>(QString bstrName, QString bstrURL);</li>
+<li>void <a href="#openPlayer"><b>openPlayer</b></a>(QString bstrURL);</li>
+<li>void <a href="#setCurrentMedia"><b>setCurrentMedia</b></a>(IDispatch* currentMedia);</li>
+<li>void <a href="#setCurrentPlaylist"><b>setCurrentPlaylist</b></a>(IDispatch* currentPlaylist);</li>
+<li>void <a href="#setEnableContextMenu"><b>setEnableContextMenu</b></a>(bool enableContextMenu);</li>
+<li>void <a href="#setEnabled"><b>setEnabled</b></a>(bool enabled);</li>
+<li>void <a href="#setFullScreen"><b>setFullScreen</b></a>(bool fullScreen);</li>
+<li>void <a href="#setStretchToFit"><b>setStretchToFit</b></a>(bool stretchToFit);</li>
+<li>void <a href="#setUiMode"><b>setUiMode</b></a>(QString uiMode);</li>
+<li>void <a href="#setWindowlessVideo"><b>setWindowlessVideo</b></a>(bool windowlessVideo);</li>
+</ul>
+<h2>Signals:</h2>
+<ul>
+<li>void <a href="#AudioLanguageChange"><b>AudioLanguageChange</b></a>(int LangID);</li>
+<li>void <a href="#Buffering"><b>Buffering</b></a>(bool Start);</li>
+<li>void <a href="#CdromBurnError"><b>CdromBurnError</b></a>(IWMPCdromBurn* pCdromBurn, HRESULT hrError);</li>
+<li>void <a href="#CdromBurnMediaError"><b>CdromBurnMediaError</b></a>(IWMPCdromBurn* pCdromBurn, IDispatch* pMedia);</li>
+<li>void <a href="#CdromBurnStateChange"><b>CdromBurnStateChange</b></a>(IWMPCdromBurn* pCdromBurn, WMPBurnState wmpbs);</li>
+<li>void <a href="#CdromMediaChange"><b>CdromMediaChange</b></a>(int CdromNum);</li>
+<li>void <a href="#CdromRipMediaError"><b>CdromRipMediaError</b></a>(IWMPCdromRip* pCdromRip, IDispatch* pMedia);</li>
+<li>void <a href="#CdromRipStateChange"><b>CdromRipStateChange</b></a>(IWMPCdromRip* pCdromRip, WMPRipState wmprs);</li>
+<li>void <a href="#Click"><b>Click</b></a>(int nButton, int nShiftState, int fX, int fY);</li>
+<li>void <a href="#CreatePartnershipComplete"><b>CreatePartnershipComplete</b></a>(IWMPSyncDevice* pDevice, HRESULT hrResult);</li>
+<li>void <a href="#CurrentItemChange"><b>CurrentItemChange</b></a>(IDispatch* pdispMedia);</li>
+<li>void <a href="#CurrentMediaItemAvailable"><b>CurrentMediaItemAvailable</b></a>(QString bstrItemName);</li>
+<li>void <a href="#CurrentPlaylistChange"><b>CurrentPlaylistChange</b></a>(WMPPlaylistChangeEventType change);</li>
+<li>void <a href="#CurrentPlaylistItemAvailable"><b>CurrentPlaylistItemAvailable</b></a>(QString bstrItemName);</li>
+<li>void <a href="#DeviceConnect"><b>DeviceConnect</b></a>(IWMPSyncDevice* pDevice);</li>
+<li>void <a href="#DeviceDisconnect"><b>DeviceDisconnect</b></a>(IWMPSyncDevice* pDevice);</li>
+<li>void <a href="#DeviceEstimation"><b>DeviceEstimation</b></a>(IWMPSyncDevice* pDevice, HRESULT hrResult, qlonglong qwEstimatedUsedSpace, qlonglong qwEstimatedSpace);</li>
+<li>void <a href="#DeviceStatusChange"><b>DeviceStatusChange</b></a>(IWMPSyncDevice* pDevice, WMPDeviceStatus NewStatus);</li>
+<li>void <a href="#DeviceSyncError"><b>DeviceSyncError</b></a>(IWMPSyncDevice* pDevice, IDispatch* pMedia);</li>
+<li>void <a href="#DeviceSyncStateChange"><b>DeviceSyncStateChange</b></a>(IWMPSyncDevice* pDevice, WMPSyncState NewState);</li>
+<li>void <a href="#Disconnect"><b>Disconnect</b></a>(int Result);</li>
+<li>void <a href="#DomainChange"><b>DomainChange</b></a>(QString strDomain);</li>
+<li>void <a href="#DoubleClick"><b>DoubleClick</b></a>(int nButton, int nShiftState, int fX, int fY);</li>
+<li>void <a href="#DurationUnitChange"><b>DurationUnitChange</b></a>(int NewDurationUnit);</li>
+<li>void <a href="#EndOfStream"><b>EndOfStream</b></a>(int Result);</li>
+<li>void <a href="#Error"><b>Error</b></a>();</li>
+<li>void <a href="#FolderScanStateChange"><b>FolderScanStateChange</b></a>(WMPFolderScanState wmpfss);</li>
+<li>void <a href="#KeyDown"><b>KeyDown</b></a>(int nKeyCode, int nShiftState);</li>
+<li>void <a href="#KeyPress"><b>KeyPress</b></a>(int nKeyAscii);</li>
+<li>void <a href="#KeyUp"><b>KeyUp</b></a>(int nKeyCode, int nShiftState);</li>
+<li>void <a href="#LibraryConnect"><b>LibraryConnect</b></a>(IWMPLibrary* pLibrary);</li>
+<li>void <a href="#LibraryDisconnect"><b>LibraryDisconnect</b></a>(IWMPLibrary* pLibrary);</li>
+<li>void <a href="#MarkerHit"><b>MarkerHit</b></a>(int MarkerNum);</li>
+<li>void <a href="#MediaChange"><b>MediaChange</b></a>(IDispatch* Item);</li>
+<li>void <a href="#MediaCollectionAttributeStringAdded"><b>MediaCollectionAttributeStringAdded</b></a>(QString bstrAttribName, QString bstrAttribVal);</li>
+<li>void <a href="#MediaCollectionAttributeStringChanged"><b>MediaCollectionAttributeStringChanged</b></a>(QString bstrAttribName, QString bstrOldAttribVal, QString bstrNewAttribVal);</li>
+<li>void <a href="#MediaCollectionAttributeStringRemoved"><b>MediaCollectionAttributeStringRemoved</b></a>(QString bstrAttribName, QString bstrAttribVal);</li>
+<li>void <a href="#MediaCollectionChange"><b>MediaCollectionChange</b></a>();</li>
+<li>void <a href="#MediaCollectionMediaAdded"><b>MediaCollectionMediaAdded</b></a>(IDispatch* pdispMedia);</li>
+<li>void <a href="#MediaCollectionMediaRemoved"><b>MediaCollectionMediaRemoved</b></a>(IDispatch* pdispMedia);</li>
+<li>void <a href="#MediaError"><b>MediaError</b></a>(IDispatch* pMediaObject);</li>
+<li>void <a href="#ModeChange"><b>ModeChange</b></a>(QString ModeName, bool NewValue);</li>
+<li>void <a href="#MouseDown"><b>MouseDown</b></a>(int nButton, int nShiftState, int fX, int fY);</li>
+<li>void <a href="#MouseMove"><b>MouseMove</b></a>(int nButton, int nShiftState, int fX, int fY);</li>
+<li>void <a href="#MouseUp"><b>MouseUp</b></a>(int nButton, int nShiftState, int fX, int fY);</li>
+<li>void <a href="#NewStream"><b>NewStream</b></a>();</li>
+<li>void <a href="#OpenPlaylistSwitch"><b>OpenPlaylistSwitch</b></a>(IDispatch* pItem);</li>
+<li>void <a href="#OpenStateChange"><b>OpenStateChange</b></a>(int NewState);</li>
+<li>void <a href="#PlayStateChange"><b>PlayStateChange</b></a>(int NewState);</li>
+<li>void <a href="#PlayerDockedStateChange"><b>PlayerDockedStateChange</b></a>();</li>
+<li>void <a href="#PlayerReconnect"><b>PlayerReconnect</b></a>();</li>
+<li>void <a href="#PlaylistChange"><b>PlaylistChange</b></a>(IDispatch* Playlist, WMPPlaylistChangeEventType change);</li>
+<li>void <a href="#PlaylistCollectionChange"><b>PlaylistCollectionChange</b></a>();</li>
+<li>void <a href="#PlaylistCollectionPlaylistAdded"><b>PlaylistCollectionPlaylistAdded</b></a>(QString bstrPlaylistName);</li>
+<li>void <a href="#PlaylistCollectionPlaylistRemoved"><b>PlaylistCollectionPlaylistRemoved</b></a>(QString bstrPlaylistName);</li>
+<li>void <a href="#PlaylistCollectionPlaylistSetAsDeleted"><b>PlaylistCollectionPlaylistSetAsDeleted</b></a>(QString bstrPlaylistName, bool varfIsDeleted);</li>
+<li>void <a href="#PositionChange"><b>PositionChange</b></a>(double oldPosition, double newPosition);</li>
+<li>void <a href="#ScriptCommand"><b>ScriptCommand</b></a>(QString scType, QString Param);</li>
+<li>void <a href="#StatusChange"><b>StatusChange</b></a>();</li>
+<li>void <a href="#StringCollectionChange"><b>StringCollectionChange</b></a>(IDispatch* pdispStringCollection, WMPStringCollectionChangeEventType change, int lCollectionIndex);</li>
+<li>void <a href="#SwitchedToControl"><b>SwitchedToControl</b></a>();</li>
+<li>void <a href="#SwitchedToPlayerApplication"><b>SwitchedToPlayerApplication</b></a>();</li>
+<li>void <a href="#Warning"><b>Warning</b></a>(int WarningType, int Param, QString Description);</li>
+<li>void <a href="#exception"><b>exception</b></a>(int code, QString source, QString disc, QString help);</li>
+<li>void <a href="#propertyChanged"><b>propertyChanged</b></a>(QString name);</li>
+<li>void <a href="#signal"><b>signal</b></a>(QString name, int argc, void* argv);</li>
+</ul>
+<h2>Properties:</h2>
+<ul>
+<li>QString <a href="#objectName"><b>objectName</b></a>;</li>
+<li>bool <a href="#modal"><b>modal</b></a>;</li>
+<li>Qt::WindowModality <a href="#windowModality"><b>windowModality</b></a>;</li>
+<li>bool <a href="#enabled"><b>enabled</b></a>;</li>
+<li>QRect <a href="#geometry"><b>geometry</b></a>;</li>
+<li>QRect <a href="#frameGeometry"><b>frameGeometry</b></a>;</li>
+<li>QRect <a href="#normalGeometry"><b>normalGeometry</b></a>;</li>
+<li>int <a href="#x"><b>x</b></a>;</li>
+<li>int <a href="#y"><b>y</b></a>;</li>
+<li>QPoint <a href="#pos"><b>pos</b></a>;</li>
+<li>QSize <a href="#frameSize"><b>frameSize</b></a>;</li>
+<li>QSize <a href="#size"><b>size</b></a>;</li>
+<li>int <a href="#width"><b>width</b></a>;</li>
+<li>int <a href="#height"><b>height</b></a>;</li>
+<li>QRect <a href="#rect"><b>rect</b></a>;</li>
+<li>QRect <a href="#childrenRect"><b>childrenRect</b></a>;</li>
+<li>QRegion <a href="#childrenRegion"><b>childrenRegion</b></a>;</li>
+<li>QSizePolicy <a href="#sizePolicy"><b>sizePolicy</b></a>;</li>
+<li>QSize <a href="#minimumSize"><b>minimumSize</b></a>;</li>
+<li>QSize <a href="#maximumSize"><b>maximumSize</b></a>;</li>
+<li>int <a href="#minimumWidth"><b>minimumWidth</b></a>;</li>
+<li>int <a href="#minimumHeight"><b>minimumHeight</b></a>;</li>
+<li>int <a href="#maximumWidth"><b>maximumWidth</b></a>;</li>
+<li>int <a href="#maximumHeight"><b>maximumHeight</b></a>;</li>
+<li>QSize <a href="#sizeIncrement"><b>sizeIncrement</b></a>;</li>
+<li>QSize <a href="#baseSize"><b>baseSize</b></a>;</li>
+<li>QPalette <a href="#palette"><b>palette</b></a>;</li>
+<li>QFont <a href="#font"><b>font</b></a>;</li>
+<li>QCursor <a href="#cursor"><b>cursor</b></a>;</li>
+<li>bool <a href="#mouseTracking"><b>mouseTracking</b></a>;</li>
+<li>bool <a href="#isActiveWindow"><b>isActiveWindow</b></a>;</li>
+<li>Qt::FocusPolicy <a href="#focusPolicy"><b>focusPolicy</b></a>;</li>
+<li>bool <a href="#focus"><b>focus</b></a>;</li>
+<li>Qt::ContextMenuPolicy <a href="#contextMenuPolicy"><b>contextMenuPolicy</b></a>;</li>
+<li>bool <a href="#updatesEnabled"><b>updatesEnabled</b></a>;</li>
+<li>bool <a href="#visible"><b>visible</b></a>;</li>
+<li>bool <a href="#minimized"><b>minimized</b></a>;</li>
+<li>bool <a href="#maximized"><b>maximized</b></a>;</li>
+<li>bool <a href="#fullScreen"><b>fullScreen</b></a>;</li>
+<li>QSize <a href="#sizeHint"><b>sizeHint</b></a>;</li>
+<li>QSize <a href="#minimumSizeHint"><b>minimumSizeHint</b></a>;</li>
+<li>bool <a href="#acceptDrops"><b>acceptDrops</b></a>;</li>
+<li>QString <a href="#windowTitle"><b>windowTitle</b></a>;</li>
+<li>QIcon <a href="#windowIcon"><b>windowIcon</b></a>;</li>
+<li>QString <a href="#windowIconText"><b>windowIconText</b></a>;</li>
+<li>double <a href="#windowOpacity"><b>windowOpacity</b></a>;</li>
+<li>bool <a href="#windowModified"><b>windowModified</b></a>;</li>
+<li>QString <a href="#toolTip"><b>toolTip</b></a>;</li>
+<li>QString <a href="#statusTip"><b>statusTip</b></a>;</li>
+<li>QString <a href="#whatsThis"><b>whatsThis</b></a>;</li>
+<li>QString <a href="#accessibleName"><b>accessibleName</b></a>;</li>
+<li>QString <a href="#accessibleDescription"><b>accessibleDescription</b></a>;</li>
+<li>Qt::LayoutDirection <a href="#layoutDirection"><b>layoutDirection</b></a>;</li>
+<li>bool <a href="#autoFillBackground"><b>autoFillBackground</b></a>;</li>
+<li>QString <a href="#styleSheet"><b>styleSheet</b></a>;</li>
+<li>QLocale <a href="#locale"><b>locale</b></a>;</li>
+<li>QString <a href="#windowFilePath"><b>windowFilePath</b></a>;</li>
+<li>Qt::InputMethodHints <a href="#inputMethodHints"><b>inputMethodHints</b></a>;</li>
+<li>IDispatch* <a href="#Error"><b>Error</b></a>;</li>
+<li>QString <a href="#URL"><b>URL</b></a>;</li>
+<li>IDispatch* <a href="#cdromCollection"><b>cdromCollection</b></a>;</li>
+<li>IDispatch* <a href="#closedCaption"><b>closedCaption</b></a>;</li>
+<li>QString <a href="#control"><b>control</b></a>;</li>
+<li>IDispatch* <a href="#controls"><b>controls</b></a>;</li>
+<li>IDispatch* <a href="#currentMedia"><b>currentMedia</b></a>;</li>
+<li>IDispatch* <a href="#currentPlaylist"><b>currentPlaylist</b></a>;</li>
+<li>IDispatch* <a href="#dvd"><b>dvd</b></a>;</li>
+<li>bool <a href="#enableContextMenu"><b>enableContextMenu</b></a>;</li>
+<li>bool <a href="#enabled"><b>enabled</b></a>;</li>
+<li>bool <a href="#fullScreen"><b>fullScreen</b></a>;</li>
+<li>bool <a href="#isOnline"><b>isOnline</b></a>;</li>
+<li>bool <a href="#isRemote"><b>isRemote</b></a>;</li>
+<li>IDispatch* <a href="#mediaCollection"><b>mediaCollection</b></a>;</li>
+<li>IDispatch* <a href="#network"><b>network</b></a>;</li>
+<li>WMPOpenState <a href="#openState"><b>openState</b></a>;</li>
+<li>WMPPlayState <a href="#playState"><b>playState</b></a>;</li>
+<li>IDispatch* <a href="#playerApplication"><b>playerApplication</b></a>;</li>
+<li>IDispatch* <a href="#playlistCollection"><b>playlistCollection</b></a>;</li>
+<li>IDispatch* <a href="#settings"><b>settings</b></a>;</li>
+<li>QString <a href="#status"><b>status</b></a>;</li>
+<li>bool <a href="#stretchToFit"><b>stretchToFit</b></a>;</li>
+<li>QString <a href="#uiMode"><b>uiMode</b></a>;</li>
+<li>QString <a href="#versionInfo"><b>versionInfo</b></a>;</li>
+<li>bool <a href="#windowlessVideo"><b>windowlessVideo</b></a>;</li>
+</ul>
+<hr><h2>Member Type Documentation</h2>
+<h3><a name=WMPBurnFormat></a>WMPBurnFormat</h3>
+<ul>
+<li>wmpbfAudioCD	=0</li>
+<li>wmpbfDataCD	=1</li>
+</ul>
+<h3><a name=WMPBurnState></a>WMPBurnState</h3>
+<ul>
+<li>wmpbsUnknown	=0</li>
+<li>wmpbsBusy	=1</li>
+<li>wmpbsReady	=2</li>
+<li>wmpbsWaitingForDisc	=3</li>
+<li>wmpbsRefreshStatusPending	=4</li>
+<li>wmpbsPreparingToBurn	=5</li>
+<li>wmpbsBurning	=6</li>
+<li>wmpbsStopped	=7</li>
+<li>wmpbsErasing	=8</li>
+<li>wmpbsDownloading	=9</li>
+</ul>
+<h3><a name=WMPDeviceStatus></a>WMPDeviceStatus</h3>
+<ul>
+<li>wmpdsUnknown	=0</li>
+<li>wmpdsPartnershipExists	=1</li>
+<li>wmpdsPartnershipDeclined	=2</li>
+<li>wmpdsPartnershipAnother	=3</li>
+<li>wmpdsManualDevice	=4</li>
+<li>wmpdsNewDevice	=5</li>
+<li>wmpdsLast	=6</li>
+</ul>
+<h3><a name=WMPFolderScanState></a>WMPFolderScanState</h3>
+<ul>
+<li>wmpfssUnknown	=0</li>
+<li>wmpfssScanning	=1</li>
+<li>wmpfssUpdating	=2</li>
+<li>wmpfssStopped	=3</li>
+</ul>
+<h3><a name=WMPLibraryType></a>WMPLibraryType</h3>
+<ul>
+<li>wmpltUnknown	=0</li>
+<li>wmpltAll	=1</li>
+<li>wmpltLocal	=2</li>
+<li>wmpltRemote	=3</li>
+<li>wmpltDisc	=4</li>
+<li>wmpltPortableDevice	=5</li>
+</ul>
+<h3><a name=WMPOpenState></a>WMPOpenState</h3>
+<ul>
+<li>wmposUndefined	=0</li>
+<li>wmposPlaylistChanging	=1</li>
+<li>wmposPlaylistLocating	=2</li>
+<li>wmposPlaylistConnecting	=3</li>
+<li>wmposPlaylistLoading	=4</li>
+<li>wmposPlaylistOpening	=5</li>
+<li>wmposPlaylistOpenNoMedia	=6</li>
+<li>wmposPlaylistChanged	=7</li>
+<li>wmposMediaChanging	=8</li>
+<li>wmposMediaLocating	=9</li>
+<li>wmposMediaConnecting	=10</li>
+<li>wmposMediaLoading	=11</li>
+<li>wmposMediaOpening	=12</li>
+<li>wmposMediaOpen	=13</li>
+<li>wmposBeginCodecAcquisition	=14</li>
+<li>wmposEndCodecAcquisition	=15</li>
+<li>wmposBeginLicenseAcquisition	=16</li>
+<li>wmposEndLicenseAcquisition	=17</li>
+<li>wmposBeginIndividualization	=18</li>
+<li>wmposEndIndividualization	=19</li>
+<li>wmposMediaWaiting	=20</li>
+<li>wmposOpeningUnknownURL	=21</li>
+</ul>
+<h3><a name=WMPPlayState></a>WMPPlayState</h3>
+<ul>
+<li>wmppsUndefined	=0</li>
+<li>wmppsStopped	=1</li>
+<li>wmppsPaused	=2</li>
+<li>wmppsPlaying	=3</li>
+<li>wmppsScanForward	=4</li>
+<li>wmppsScanReverse	=5</li>
+<li>wmppsBuffering	=6</li>
+<li>wmppsWaiting	=7</li>
+<li>wmppsMediaEnded	=8</li>
+<li>wmppsTransitioning	=9</li>
+<li>wmppsReady	=10</li>
+<li>wmppsReconnecting	=11</li>
+<li>wmppsLast	=12</li>
+</ul>
+<h3><a name=WMPPlaylistChangeEventType></a>WMPPlaylistChangeEventType</h3>
+<ul>
+<li>wmplcUnknown	=0</li>
+<li>wmplcClear	=1</li>
+<li>wmplcInfoChange	=2</li>
+<li>wmplcMove	=3</li>
+<li>wmplcDelete	=4</li>
+<li>wmplcInsert	=5</li>
+<li>wmplcAppend	=6</li>
+<li>wmplcPrivate	=7</li>
+<li>wmplcNameChange	=8</li>
+<li>wmplcMorph	=9</li>
+<li>wmplcSort	=10</li>
+<li>wmplcLast	=11</li>
+</ul>
+<h3><a name=WMPRipState></a>WMPRipState</h3>
+<ul>
+<li>wmprsUnknown	=0</li>
+<li>wmprsRipping	=1</li>
+<li>wmprsStopped	=2</li>
+</ul>
+<h3><a name=WMPStringCollectionChangeEventType></a>WMPStringCollectionChangeEventType</h3>
+<ul>
+<li>wmpsccetUnknown	=0</li>
+<li>wmpsccetInsert	=1</li>
+<li>wmpsccetChange	=2</li>
+<li>wmpsccetDelete	=3</li>
+<li>wmpsccetClear	=4</li>
+<li>wmpsccetBeginUpdates	=5</li>
+<li>wmpsccetEndUpdates	=6</li>
+</ul>
+<h3><a name=WMPSubscriptionDownloadState></a>WMPSubscriptionDownloadState</h3>
+<ul>
+<li>wmpsdlsDownloading	=0</li>
+<li>wmpsdlsPaused	=1</li>
+<li>wmpsdlsProcessing	=2</li>
+<li>wmpsdlsCompleted	=3</li>
+<li>wmpsdlsCancelled	=4</li>
+</ul>
+<h3><a name=WMPSyncState></a>WMPSyncState</h3>
+<ul>
+<li>wmpssUnknown	=0</li>
+<li>wmpssSynchronizing	=1</li>
+<li>wmpssStopped	=2</li>
+<li>wmpssEstimating	=3</li>
+<li>wmpssLast	=4</li>
+</ul>
+<h3><a name=WMP_WRITENAMESEX_TYPE></a>WMP_WRITENAMESEX_TYPE</h3>
+<ul>
+<li>WMP_WRITENAMES_TYPE_CD_BY_TOC	=0</li>
+<li>WMP_WRITENAMES_TYPE_CD_BY_CONTENT_ID	=1</li>
+<li>WMP_WRITENAMES_TYPE_CD_BY_MDQCD	=2</li>
+<li>WMP_WRITENAMES_TYPE_DVD_BY_DVDID	=3</li>
+</ul>
+<hr><h2>Member Function Documentation</h2>
+<h3><a name=SetURL></a>void SetURL (QString URL)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(QString)), object, SLOT(SetURL(QString)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("SetURL(QString)", params);</pre>
+
+<h3><a name=close></a>void close ()<tt> [slot]</tt></h3>
+<p>Closes the media
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal()), object, SLOT(close()));</pre>
+<p>Or call the function directly:<pre>
+	object->dynamicCall("close()");</pre>
+
+<h3><a name=launchURL></a>void launchURL (QString bstrURL)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(QString)), object, SLOT(launchURL(QString)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("launchURL(QString)", params);</pre>
+
+<h3><a name=newMedia></a>IDispatch* newMedia (QString bstrURL)<tt> [slot]</tt></h3>
+<p>Creates a new media object
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(QString)), object, SLOT(newMedia(QString)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	QAxObject * result = object->querySubObject("newMedia(QString)", params);</pre>
+
+<h3><a name=newPlaylist></a>IDispatch* newPlaylist (QString bstrName, QString bstrURL)<tt> [slot]</tt></h3>
+<p>Creates a new playlist object
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(QString, QString)), object, SLOT(newPlaylist(QString, QString)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	QAxObject * result = object->querySubObject("newPlaylist(QString, QString)", params);</pre>
+
+<h3><a name=openPlayer></a>void openPlayer (QString bstrURL)<tt> [slot]</tt></h3>
+<p>Opens the player with the specified URL
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(QString)), object, SLOT(openPlayer(QString)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("openPlayer(QString)", params);</pre>
+
+<h3><a name=setCurrentMedia></a>void setCurrentMedia (IDispatch* currentMedia)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(IDispatch*)), object, SLOT(setCurrentMedia(IDispatch*)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("setCurrentMedia(IDispatch*)", params);</pre>
+
+<h3><a name=setCurrentPlaylist></a>void setCurrentPlaylist (IDispatch* currentPlaylist)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(IDispatch*)), object, SLOT(setCurrentPlaylist(IDispatch*)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("setCurrentPlaylist(IDispatch*)", params);</pre>
+
+<h3><a name=setEnableContextMenu></a>void setEnableContextMenu (bool enableContextMenu)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(bool)), object, SLOT(setEnableContextMenu(bool)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("setEnableContextMenu(bool)", params);</pre>
+
+<h3><a name=setEnabled></a>void setEnabled (bool enabled)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(bool)), object, SLOT(setEnabled(bool)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("setEnabled(bool)", params);</pre>
+
+<h3><a name=setFullScreen></a>void setFullScreen (bool fullScreen)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(bool)), object, SLOT(setFullScreen(bool)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("setFullScreen(bool)", params);</pre>
+
+<h3><a name=setStretchToFit></a>void setStretchToFit (bool stretchToFit)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(bool)), object, SLOT(setStretchToFit(bool)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("setStretchToFit(bool)", params);</pre>
+
+<h3><a name=setUiMode></a>void setUiMode (QString uiMode)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(QString)), object, SLOT(setUiMode(QString)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("setUiMode(QString)", params);</pre>
+
+<h3><a name=setWindowlessVideo></a>void setWindowlessVideo (bool windowlessVideo)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(bool)), object, SLOT(setWindowlessVideo(bool)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("setWindowlessVideo(bool)", params);</pre>
+
+<h3><a name=AudioLanguageChange></a>void AudioLanguageChange (int LangID)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(AudioLanguageChange(int)), receiver, SLOT(someSlot(int)));</pre>
+
+<h3><a name=Buffering></a>void Buffering (bool Start)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(Buffering(bool)), receiver, SLOT(someSlot(bool)));</pre>
+
+<h3><a name=CdromBurnError></a>void CdromBurnError (IWMPCdromBurn* pCdromBurn, HRESULT hrError)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(CdromBurnError(IWMPCdromBurn*, HRESULT)), receiver, SLOT(someSlot(IWMPCdromBurn*, HRESULT)));</pre>
+
+<h3><a name=CdromBurnMediaError></a>void CdromBurnMediaError (IWMPCdromBurn* pCdromBurn, IDispatch* pMedia)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(CdromBurnMediaError(IWMPCdromBurn*, IDispatch*)), receiver, SLOT(someSlot(IWMPCdromBurn*, IDispatch*)));</pre>
+
+<h3><a name=CdromBurnStateChange></a>void CdromBurnStateChange (IWMPCdromBurn* pCdromBurn, WMPBurnState wmpbs)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(CdromBurnStateChange(IWMPCdromBurn*, WMPBurnState)), receiver, SLOT(someSlot(IWMPCdromBurn*, WMPBurnState)));</pre>
+
+<h3><a name=CdromMediaChange></a>void CdromMediaChange (int CdromNum)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(CdromMediaChange(int)), receiver, SLOT(someSlot(int)));</pre>
+
+<h3><a name=CdromRipMediaError></a>void CdromRipMediaError (IWMPCdromRip* pCdromRip, IDispatch* pMedia)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(CdromRipMediaError(IWMPCdromRip*, IDispatch*)), receiver, SLOT(someSlot(IWMPCdromRip*, IDispatch*)));</pre>
+
+<h3><a name=CdromRipStateChange></a>void CdromRipStateChange (IWMPCdromRip* pCdromRip, WMPRipState wmprs)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(CdromRipStateChange(IWMPCdromRip*, WMPRipState)), receiver, SLOT(someSlot(IWMPCdromRip*, WMPRipState)));</pre>
+
+<h3><a name=Click></a>void Click (int nButton, int nShiftState, int fX, int fY)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(Click(int, int, int, int)), receiver, SLOT(someSlot(int, int, int, int)));</pre>
+
+<h3><a name=CreatePartnershipComplete></a>void CreatePartnershipComplete (IWMPSyncDevice* pDevice, HRESULT hrResult)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(CreatePartnershipComplete(IWMPSyncDevice*, HRESULT)), receiver, SLOT(someSlot(IWMPSyncDevice*, HRESULT)));</pre>
+
+<h3><a name=CurrentItemChange></a>void CurrentItemChange (IDispatch* pdispMedia)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(CurrentItemChange(IDispatch*)), receiver, SLOT(someSlot(IDispatch*)));</pre>
+
+<h3><a name=CurrentMediaItemAvailable></a>void CurrentMediaItemAvailable (QString bstrItemName)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(CurrentMediaItemAvailable(QString)), receiver, SLOT(someSlot(QString)));</pre>
+
+<h3><a name=CurrentPlaylistChange></a>void CurrentPlaylistChange (WMPPlaylistChangeEventType change)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(CurrentPlaylistChange(WMPPlaylistChangeEventType)), receiver, SLOT(someSlot(WMPPlaylistChangeEventType)));</pre>
+
+<h3><a name=CurrentPlaylistItemAvailable></a>void CurrentPlaylistItemAvailable (QString bstrItemName)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(CurrentPlaylistItemAvailable(QString)), receiver, SLOT(someSlot(QString)));</pre>
+
+<h3><a name=DeviceConnect></a>void DeviceConnect (IWMPSyncDevice* pDevice)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(DeviceConnect(IWMPSyncDevice*)), receiver, SLOT(someSlot(IWMPSyncDevice*)));</pre>
+
+<h3><a name=DeviceDisconnect></a>void DeviceDisconnect (IWMPSyncDevice* pDevice)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(DeviceDisconnect(IWMPSyncDevice*)), receiver, SLOT(someSlot(IWMPSyncDevice*)));</pre>
+
+<h3><a name=DeviceEstimation></a>void DeviceEstimation (IWMPSyncDevice* pDevice, HRESULT hrResult, qlonglong qwEstimatedUsedSpace, qlonglong qwEstimatedSpace)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(DeviceEstimation(IWMPSyncDevice*, HRESULT, qlonglong, qlonglong)), receiver, SLOT(someSlot(IWMPSyncDevice*, HRESULT, qlonglong, qlonglong)));</pre>
+
+<h3><a name=DeviceStatusChange></a>void DeviceStatusChange (IWMPSyncDevice* pDevice, WMPDeviceStatus NewStatus)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(DeviceStatusChange(IWMPSyncDevice*, WMPDeviceStatus)), receiver, SLOT(someSlot(IWMPSyncDevice*, WMPDeviceStatus)));</pre>
+
+<h3><a name=DeviceSyncError></a>void DeviceSyncError (IWMPSyncDevice* pDevice, IDispatch* pMedia)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(DeviceSyncError(IWMPSyncDevice*, IDispatch*)), receiver, SLOT(someSlot(IWMPSyncDevice*, IDispatch*)));</pre>
+
+<h3><a name=DeviceSyncStateChange></a>void DeviceSyncStateChange (IWMPSyncDevice* pDevice, WMPSyncState NewState)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(DeviceSyncStateChange(IWMPSyncDevice*, WMPSyncState)), receiver, SLOT(someSlot(IWMPSyncDevice*, WMPSyncState)));</pre>
+
+<h3><a name=Disconnect></a>void Disconnect (int Result)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(Disconnect(int)), receiver, SLOT(someSlot(int)));</pre>
+
+<h3><a name=DomainChange></a>void DomainChange (QString strDomain)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(DomainChange(QString)), receiver, SLOT(someSlot(QString)));</pre>
+
+<h3><a name=DoubleClick></a>void DoubleClick (int nButton, int nShiftState, int fX, int fY)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(DoubleClick(int, int, int, int)), receiver, SLOT(someSlot(int, int, int, int)));</pre>
+
+<h3><a name=DurationUnitChange></a>void DurationUnitChange (int NewDurationUnit)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(DurationUnitChange(int)), receiver, SLOT(someSlot(int)));</pre>
+
+<h3><a name=EndOfStream></a>void EndOfStream (int Result)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(EndOfStream(int)), receiver, SLOT(someSlot(int)));</pre>
+
+<h3><a name=Error></a>void Error ()<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(Error()), receiver, SLOT(someSlot()));</pre>
+
+<h3><a name=FolderScanStateChange></a>void FolderScanStateChange (WMPFolderScanState wmpfss)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(FolderScanStateChange(WMPFolderScanState)), receiver, SLOT(someSlot(WMPFolderScanState)));</pre>
+
+<h3><a name=KeyDown></a>void KeyDown (int nKeyCode, int nShiftState)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(KeyDown(int, int)), receiver, SLOT(someSlot(int, int)));</pre>
+
+<h3><a name=KeyPress></a>void KeyPress (int nKeyAscii)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(KeyPress(int)), receiver, SLOT(someSlot(int)));</pre>
+
+<h3><a name=KeyUp></a>void KeyUp (int nKeyCode, int nShiftState)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(KeyUp(int, int)), receiver, SLOT(someSlot(int, int)));</pre>
+
+<h3><a name=LibraryConnect></a>void LibraryConnect (IWMPLibrary* pLibrary)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(LibraryConnect(IWMPLibrary*)), receiver, SLOT(someSlot(IWMPLibrary*)));</pre>
+
+<h3><a name=LibraryDisconnect></a>void LibraryDisconnect (IWMPLibrary* pLibrary)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(LibraryDisconnect(IWMPLibrary*)), receiver, SLOT(someSlot(IWMPLibrary*)));</pre>
+
+<h3><a name=MarkerHit></a>void MarkerHit (int MarkerNum)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(MarkerHit(int)), receiver, SLOT(someSlot(int)));</pre>
+
+<h3><a name=MediaChange></a>void MediaChange (IDispatch* Item)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(MediaChange(IDispatch*)), receiver, SLOT(someSlot(IDispatch*)));</pre>
+
+<h3><a name=MediaCollectionAttributeStringAdded></a>void MediaCollectionAttributeStringAdded (QString bstrAttribName, QString bstrAttribVal)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(MediaCollectionAttributeStringAdded(QString, QString)), receiver, SLOT(someSlot(QString, QString)));</pre>
+
+<h3><a name=MediaCollectionAttributeStringChanged></a>void MediaCollectionAttributeStringChanged (QString bstrAttribName, QString bstrOldAttribVal, QString bstrNewAttribVal)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(MediaCollectionAttributeStringChanged(QString, QString, QString)), receiver, SLOT(someSlot(QString, QString, QString)));</pre>
+
+<h3><a name=MediaCollectionAttributeStringRemoved></a>void MediaCollectionAttributeStringRemoved (QString bstrAttribName, QString bstrAttribVal)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(MediaCollectionAttributeStringRemoved(QString, QString)), receiver, SLOT(someSlot(QString, QString)));</pre>
+
+<h3><a name=MediaCollectionChange></a>void MediaCollectionChange ()<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(MediaCollectionChange()), receiver, SLOT(someSlot()));</pre>
+
+<h3><a name=MediaCollectionMediaAdded></a>void MediaCollectionMediaAdded (IDispatch* pdispMedia)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(MediaCollectionMediaAdded(IDispatch*)), receiver, SLOT(someSlot(IDispatch*)));</pre>
+
+<h3><a name=MediaCollectionMediaRemoved></a>void MediaCollectionMediaRemoved (IDispatch* pdispMedia)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(MediaCollectionMediaRemoved(IDispatch*)), receiver, SLOT(someSlot(IDispatch*)));</pre>
+
+<h3><a name=MediaError></a>void MediaError (IDispatch* pMediaObject)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(MediaError(IDispatch*)), receiver, SLOT(someSlot(IDispatch*)));</pre>
+
+<h3><a name=ModeChange></a>void ModeChange (QString ModeName, bool NewValue)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(ModeChange(QString, bool)), receiver, SLOT(someSlot(QString, bool)));</pre>
+
+<h3><a name=MouseDown></a>void MouseDown (int nButton, int nShiftState, int fX, int fY)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(MouseDown(int, int, int, int)), receiver, SLOT(someSlot(int, int, int, int)));</pre>
+
+<h3><a name=MouseMove></a>void MouseMove (int nButton, int nShiftState, int fX, int fY)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(MouseMove(int, int, int, int)), receiver, SLOT(someSlot(int, int, int, int)));</pre>
+
+<h3><a name=MouseUp></a>void MouseUp (int nButton, int nShiftState, int fX, int fY)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(MouseUp(int, int, int, int)), receiver, SLOT(someSlot(int, int, int, int)));</pre>
+
+<h3><a name=NewStream></a>void NewStream ()<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(NewStream()), receiver, SLOT(someSlot()));</pre>
+
+<h3><a name=OpenPlaylistSwitch></a>void OpenPlaylistSwitch (IDispatch* pItem)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(OpenPlaylistSwitch(IDispatch*)), receiver, SLOT(someSlot(IDispatch*)));</pre>
+
+<h3><a name=OpenStateChange></a>void OpenStateChange (int NewState)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(OpenStateChange(int)), receiver, SLOT(someSlot(int)));</pre>
+
+<h3><a name=PlayStateChange></a>void PlayStateChange (int NewState)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(PlayStateChange(int)), receiver, SLOT(someSlot(int)));</pre>
+
+<h3><a name=PlayerDockedStateChange></a>void PlayerDockedStateChange ()<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(PlayerDockedStateChange()), receiver, SLOT(someSlot()));</pre>
+
+<h3><a name=PlayerReconnect></a>void PlayerReconnect ()<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(PlayerReconnect()), receiver, SLOT(someSlot()));</pre>
+
+<h3><a name=PlaylistChange></a>void PlaylistChange (IDispatch* Playlist, WMPPlaylistChangeEventType change)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(PlaylistChange(IDispatch*, WMPPlaylistChangeEventType)), receiver, SLOT(someSlot(IDispatch*, WMPPlaylistChangeEventType)));</pre>
+
+<h3><a name=PlaylistCollectionChange></a>void PlaylistCollectionChange ()<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(PlaylistCollectionChange()), receiver, SLOT(someSlot()));</pre>
+
+<h3><a name=PlaylistCollectionPlaylistAdded></a>void PlaylistCollectionPlaylistAdded (QString bstrPlaylistName)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(PlaylistCollectionPlaylistAdded(QString)), receiver, SLOT(someSlot(QString)));</pre>
+
+<h3><a name=PlaylistCollectionPlaylistRemoved></a>void PlaylistCollectionPlaylistRemoved (QString bstrPlaylistName)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(PlaylistCollectionPlaylistRemoved(QString)), receiver, SLOT(someSlot(QString)));</pre>
+
+<h3><a name=PlaylistCollectionPlaylistSetAsDeleted></a>void PlaylistCollectionPlaylistSetAsDeleted (QString bstrPlaylistName, bool varfIsDeleted)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(PlaylistCollectionPlaylistSetAsDeleted(QString, bool)), receiver, SLOT(someSlot(QString, bool)));</pre>
+
+<h3><a name=PositionChange></a>void PositionChange (double oldPosition, double newPosition)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(PositionChange(double, double)), receiver, SLOT(someSlot(double, double)));</pre>
+
+<h3><a name=ScriptCommand></a>void ScriptCommand (QString scType, QString Param)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(ScriptCommand(QString, QString)), receiver, SLOT(someSlot(QString, QString)));</pre>
+
+<h3><a name=StatusChange></a>void StatusChange ()<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(StatusChange()), receiver, SLOT(someSlot()));</pre>
+
+<h3><a name=StringCollectionChange></a>void StringCollectionChange (IDispatch* pdispStringCollection, WMPStringCollectionChangeEventType change, int lCollectionIndex)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(StringCollectionChange(IDispatch*, WMPStringCollectionChangeEventType, int)), receiver, SLOT(someSlot(IDispatch*, WMPStringCollectionChangeEventType, int)));</pre>
+
+<h3><a name=SwitchedToControl></a>void SwitchedToControl ()<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(SwitchedToControl()), receiver, SLOT(someSlot()));</pre>
+
+<h3><a name=SwitchedToPlayerApplication></a>void SwitchedToPlayerApplication ()<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(SwitchedToPlayerApplication()), receiver, SLOT(someSlot()));</pre>
+
+<h3><a name=Warning></a>void Warning (int WarningType, int Param, QString Description)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(Warning(int, int, QString)), receiver, SLOT(someSlot(int, int, QString)));</pre>
+
+<h3><a name=exception></a>void exception (int code, QString source, QString disc, QString help)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(exception(int, QString, QString, QString)), receiver, SLOT(someSlot(int, QString, QString, QString)));</pre>
+
+<h3><a name=propertyChanged></a>void propertyChanged (QString name)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(propertyChanged(QString)), receiver, SLOT(someSlot(QString)));</pre>
+
+<h3><a name=signal></a>void signal (QString name, int argc, void* argv)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(signal(QString, int, void*)), receiver, SLOT(someSlot(QString, int, void*)));</pre>
+
+<hr><h2>Property Documentation</h2>
+<h3><a name=objectName></a>QString objectName</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("objectName").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("objectName", newValue);
+</pre>
+Or using the <a href="#setObjectName">setObjectName</a> slot.
+
+<h3><a name=modal></a>bool modal</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("modal").toBool();
+</pre>
+
+<h3><a name=windowModality></a>Qt::WindowModality windowModality</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("windowModality").toInt();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	int newValue = ... // string representation of values also supported
+	object->setProperty("windowModality", newValue);
+</pre>
+Or using the <a href="#setWindowModality">setWindowModality</a> slot.
+<p>See also <a href="#Qt::WindowModality">Qt::WindowModality</a>.
+
+<h3><a name=enabled></a>bool enabled</h3>
+<p>Returns a boolean value specifying whether or not the control is enabled
+
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("enabled").toBool();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	bool newValue = ...
+	object->setProperty("enabled", newValue);
+</pre>
+Or using the <a href="#setEnabled">setEnabled</a> slot.
+
+<h3><a name=geometry></a>QRect geometry</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QRect val = object->property("geometry").toRect();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QRect newValue = ...
+	object->setProperty("geometry", newValue);
+</pre>
+Or using the <a href="#setGeometry">setGeometry</a> slot.
+
+<h3><a name=frameGeometry></a>QRect frameGeometry</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QRect val = object->property("frameGeometry").toRect();
+</pre>
+
+<h3><a name=normalGeometry></a>QRect normalGeometry</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QRect val = object->property("normalGeometry").toRect();
+</pre>
+
+<h3><a name=x></a>int x</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("x").toInt();
+</pre>
+
+<h3><a name=y></a>int y</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("y").toInt();
+</pre>
+
+<h3><a name=pos></a>QPoint pos</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QPoint val = object->property("pos").toPoint();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QPoint newValue = ...
+	object->setProperty("pos", newValue);
+</pre>
+Or using the <a href="#setPos">setPos</a> slot.
+
+<h3><a name=frameSize></a>QSize frameSize</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QSize val = object->property("frameSize").toSize();
+</pre>
+
+<h3><a name=size></a>QSize size</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QSize val = object->property("size").toSize();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QSize newValue = ...
+	object->setProperty("size", newValue);
+</pre>
+Or using the <a href="#setSize">setSize</a> slot.
+
+<h3><a name=width></a>int width</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("width").toInt();
+</pre>
+
+<h3><a name=height></a>int height</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("height").toInt();
+</pre>
+
+<h3><a name=rect></a>QRect rect</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QRect val = object->property("rect").toRect();
+</pre>
+
+<h3><a name=childrenRect></a>QRect childrenRect</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QRect val = object->property("childrenRect").toRect();
+</pre>
+
+<h3><a name=childrenRegion></a>QRegion childrenRegion</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QRegion val = object->property("childrenRegion").toRegion();
+</pre>
+
+<h3><a name=sizePolicy></a>QSizePolicy sizePolicy</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QSizePolicy val = object->property("sizePolicy").toSizePolicy();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QSizePolicy newValue = ...
+	object->setProperty("sizePolicy", newValue);
+</pre>
+Or using the <a href="#setSizePolicy">setSizePolicy</a> slot.
+
+<h3><a name=minimumSize></a>QSize minimumSize</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QSize val = object->property("minimumSize").toSize();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QSize newValue = ...
+	object->setProperty("minimumSize", newValue);
+</pre>
+Or using the <a href="#setMinimumSize">setMinimumSize</a> slot.
+
+<h3><a name=maximumSize></a>QSize maximumSize</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QSize val = object->property("maximumSize").toSize();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QSize newValue = ...
+	object->setProperty("maximumSize", newValue);
+</pre>
+Or using the <a href="#setMaximumSize">setMaximumSize</a> slot.
+
+<h3><a name=minimumWidth></a>int minimumWidth</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("minimumWidth").toInt();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	int newValue = ...
+	object->setProperty("minimumWidth", newValue);
+</pre>
+Or using the <a href="#setMinimumWidth">setMinimumWidth</a> slot.
+
+<h3><a name=minimumHeight></a>int minimumHeight</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("minimumHeight").toInt();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	int newValue = ...
+	object->setProperty("minimumHeight", newValue);
+</pre>
+Or using the <a href="#setMinimumHeight">setMinimumHeight</a> slot.
+
+<h3><a name=maximumWidth></a>int maximumWidth</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("maximumWidth").toInt();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	int newValue = ...
+	object->setProperty("maximumWidth", newValue);
+</pre>
+Or using the <a href="#setMaximumWidth">setMaximumWidth</a> slot.
+
+<h3><a name=maximumHeight></a>int maximumHeight</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("maximumHeight").toInt();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	int newValue = ...
+	object->setProperty("maximumHeight", newValue);
+</pre>
+Or using the <a href="#setMaximumHeight">setMaximumHeight</a> slot.
+
+<h3><a name=sizeIncrement></a>QSize sizeIncrement</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QSize val = object->property("sizeIncrement").toSize();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QSize newValue = ...
+	object->setProperty("sizeIncrement", newValue);
+</pre>
+Or using the <a href="#setSizeIncrement">setSizeIncrement</a> slot.
+
+<h3><a name=baseSize></a>QSize baseSize</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QSize val = object->property("baseSize").toSize();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QSize newValue = ...
+	object->setProperty("baseSize", newValue);
+</pre>
+Or using the <a href="#setBaseSize">setBaseSize</a> slot.
+
+<h3><a name=palette></a>QPalette palette</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QPalette val = object->property("palette").toPalette();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QPalette newValue = ...
+	object->setProperty("palette", newValue);
+</pre>
+Or using the <a href="#setPalette">setPalette</a> slot.
+
+<h3><a name=font></a>QFont font</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QFont val = object->property("font").toFont();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QFont newValue = ...
+	object->setProperty("font", newValue);
+</pre>
+Or using the <a href="#setFont">setFont</a> slot.
+
+<h3><a name=cursor></a>QCursor cursor</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QCursor val = object->property("cursor").toCursor();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QCursor newValue = ...
+	object->setProperty("cursor", newValue);
+</pre>
+Or using the <a href="#setCursor">setCursor</a> slot.
+
+<h3><a name=mouseTracking></a>bool mouseTracking</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("mouseTracking").toBool();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	bool newValue = ...
+	object->setProperty("mouseTracking", newValue);
+</pre>
+Or using the <a href="#setMouseTracking">setMouseTracking</a> slot.
+
+<h3><a name=isActiveWindow></a>bool isActiveWindow</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("isActiveWindow").toBool();
+</pre>
+
+<h3><a name=focusPolicy></a>Qt::FocusPolicy focusPolicy</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("focusPolicy").toInt();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	int newValue = ... // string representation of values also supported
+	object->setProperty("focusPolicy", newValue);
+</pre>
+Or using the <a href="#setFocusPolicy">setFocusPolicy</a> slot.
+<p>See also <a href="#Qt::FocusPolicy">Qt::FocusPolicy</a>.
+
+<h3><a name=focus></a>bool focus</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("focus").toBool();
+</pre>
+
+<h3><a name=contextMenuPolicy></a>Qt::ContextMenuPolicy contextMenuPolicy</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("contextMenuPolicy").toInt();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	int newValue = ... // string representation of values also supported
+	object->setProperty("contextMenuPolicy", newValue);
+</pre>
+Or using the <a href="#setContextMenuPolicy">setContextMenuPolicy</a> slot.
+<p>See also <a href="#Qt::ContextMenuPolicy">Qt::ContextMenuPolicy</a>.
+
+<h3><a name=updatesEnabled></a>bool updatesEnabled</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("updatesEnabled").toBool();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	bool newValue = ...
+	object->setProperty("updatesEnabled", newValue);
+</pre>
+Or using the <a href="#setUpdatesEnabled">setUpdatesEnabled</a> slot.
+
+<h3><a name=visible></a>bool visible</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("visible").toBool();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	bool newValue = ...
+	object->setProperty("visible", newValue);
+</pre>
+Or using the <a href="#setVisible">setVisible</a> slot.
+
+<h3><a name=minimized></a>bool minimized</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("minimized").toBool();
+</pre>
+
+<h3><a name=maximized></a>bool maximized</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("maximized").toBool();
+</pre>
+
+<h3><a name=fullScreen></a>bool fullScreen</h3>
+<p>Returns a boolean value specifying whether or not the control is in full screen mode
+
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("fullScreen").toBool();
+</pre>
+
+<h3><a name=sizeHint></a>QSize sizeHint</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QSize val = object->property("sizeHint").toSize();
+</pre>
+
+<h3><a name=minimumSizeHint></a>QSize minimumSizeHint</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QSize val = object->property("minimumSizeHint").toSize();
+</pre>
+
+<h3><a name=acceptDrops></a>bool acceptDrops</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("acceptDrops").toBool();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	bool newValue = ...
+	object->setProperty("acceptDrops", newValue);
+</pre>
+Or using the <a href="#setAcceptDrops">setAcceptDrops</a> slot.
+
+<h3><a name=windowTitle></a>QString windowTitle</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("windowTitle").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("windowTitle", newValue);
+</pre>
+Or using the <a href="#setWindowTitle">setWindowTitle</a> slot.
+
+<h3><a name=windowIcon></a>QIcon windowIcon</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QIcon val = object->property("windowIcon").toIcon();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QIcon newValue = ...
+	object->setProperty("windowIcon", newValue);
+</pre>
+Or using the <a href="#setWindowIcon">setWindowIcon</a> slot.
+
+<h3><a name=windowIconText></a>QString windowIconText</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("windowIconText").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("windowIconText", newValue);
+</pre>
+Or using the <a href="#setWindowIconText">setWindowIconText</a> slot.
+
+<h3><a name=windowOpacity></a>double windowOpacity</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	double val = object->property("windowOpacity").toDouble();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	double newValue = ...
+	object->setProperty("windowOpacity", newValue);
+</pre>
+Or using the <a href="#setWindowOpacity">setWindowOpacity</a> slot.
+
+<h3><a name=windowModified></a>bool windowModified</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("windowModified").toBool();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	bool newValue = ...
+	object->setProperty("windowModified", newValue);
+</pre>
+Or using the <a href="#setWindowModified">setWindowModified</a> slot.
+
+<h3><a name=toolTip></a>QString toolTip</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("toolTip").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("toolTip", newValue);
+</pre>
+Or using the <a href="#setToolTip">setToolTip</a> slot.
+
+<h3><a name=statusTip></a>QString statusTip</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("statusTip").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("statusTip", newValue);
+</pre>
+Or using the <a href="#setStatusTip">setStatusTip</a> slot.
+
+<h3><a name=whatsThis></a>QString whatsThis</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("whatsThis").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("whatsThis", newValue);
+</pre>
+Or using the <a href="#setWhatsThis">setWhatsThis</a> slot.
+
+<h3><a name=accessibleName></a>QString accessibleName</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("accessibleName").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("accessibleName", newValue);
+</pre>
+Or using the <a href="#setAccessibleName">setAccessibleName</a> slot.
+
+<h3><a name=accessibleDescription></a>QString accessibleDescription</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("accessibleDescription").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("accessibleDescription", newValue);
+</pre>
+Or using the <a href="#setAccessibleDescription">setAccessibleDescription</a> slot.
+
+<h3><a name=layoutDirection></a>Qt::LayoutDirection layoutDirection</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("layoutDirection").toInt();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	int newValue = ... // string representation of values also supported
+	object->setProperty("layoutDirection", newValue);
+</pre>
+Or using the <a href="#setLayoutDirection">setLayoutDirection</a> slot.
+<p>See also <a href="#Qt::LayoutDirection">Qt::LayoutDirection</a>.
+
+<h3><a name=autoFillBackground></a>bool autoFillBackground</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("autoFillBackground").toBool();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	bool newValue = ...
+	object->setProperty("autoFillBackground", newValue);
+</pre>
+Or using the <a href="#setAutoFillBackground">setAutoFillBackground</a> slot.
+
+<h3><a name=styleSheet></a>QString styleSheet</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("styleSheet").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("styleSheet", newValue);
+</pre>
+Or using the <a href="#setStyleSheet">setStyleSheet</a> slot.
+
+<h3><a name=locale></a>QLocale locale</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QLocale val = object->property("locale").toLocale();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QLocale newValue = ...
+	object->setProperty("locale", newValue);
+</pre>
+Or using the <a href="#setLocale">setLocale</a> slot.
+
+<h3><a name=windowFilePath></a>QString windowFilePath</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("windowFilePath").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("windowFilePath", newValue);
+</pre>
+Or using the <a href="#setWindowFilePath">setWindowFilePath</a> slot.
+
+<h3><a name=inputMethodHints></a>Qt::InputMethodHints inputMethodHints</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("inputMethodHints").toInt();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	int newValue = ... // string representation of values also supported
+	object->setProperty("inputMethodHints", newValue);
+</pre>
+Or using the <a href="#setInputMethodHints">setInputMethodHints</a> slot.
+<p>See also <a href="#Qt::InputMethodHints">Qt::InputMethodHints</a>.
+
+<h3><a name=Error></a>IDispatch* Error</h3>
+<p>Returns the error object
+
+<p>Read this property's value using QObject::property:<pre>
+	IDispatch* val = object->property("Error").toIDispatch*();
+</pre>
+
+<h3><a name=URL></a>QString URL</h3>
+<p>Returns or sets the URL
+
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("URL").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("URL", newValue);
+</pre>
+Or using the <a href="#SetURL">SetURL</a> slot.
+
+<h3><a name=cdromCollection></a>IDispatch* cdromCollection</h3>
+<p>Get the CDROM drive collection
+
+<p>Read this property's value using QObject::property:<pre>
+	IDispatch* val = object->property("cdromCollection").toIDispatch*();
+</pre>
+
+<h3><a name=closedCaption></a>IDispatch* closedCaption</h3>
+<p>Returns the closed caption handler
+
+<p>Read this property's value using QObject::property:<pre>
+	IDispatch* val = object->property("closedCaption").toIDispatch*();
+</pre>
+
+<h3><a name=control></a>QString control</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("control").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("control", newValue);
+</pre>
+Or using the <a href="#setControl">setControl</a> slot.
+
+<h3><a name=controls></a>IDispatch* controls</h3>
+<p>Returns the control handler
+
+<p>Read this property's value using QObject::property:<pre>
+	IDispatch* val = object->property("controls").toIDispatch*();
+</pre>
+
+<h3><a name=currentMedia></a>IDispatch* currentMedia</h3>
+<p>Returns or sets the current media object
+
+<p>Read this property's value using QObject::property:<pre>
+	IDispatch* val = object->property("currentMedia").toIDispatch*();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	IDispatch* newValue = ...
+	object->setProperty("currentMedia", newValue);
+</pre>
+Or using the <a href="#setCurrentMedia">setCurrentMedia</a> slot.
+
+<h3><a name=currentPlaylist></a>IDispatch* currentPlaylist</h3>
+<p>Returns/sets the current playlist
+
+<p>Read this property's value using QObject::property:<pre>
+	IDispatch* val = object->property("currentPlaylist").toIDispatch*();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	IDispatch* newValue = ...
+	object->setProperty("currentPlaylist", newValue);
+</pre>
+Or using the <a href="#setCurrentPlaylist">setCurrentPlaylist</a> slot.
+
+<h3><a name=dvd></a>IDispatch* dvd</h3>
+<p>Returns the DVD handler
+
+<p>Read this property's value using QObject::property:<pre>
+	IDispatch* val = object->property("dvd").toIDispatch*();
+</pre>
+
+<h3><a name=enableContextMenu></a>bool enableContextMenu</h3>
+<p>Returns a boolean value specifying whether or not the context menu is enabled on the control
+
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("enableContextMenu").toBool();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	bool newValue = ...
+	object->setProperty("enableContextMenu", newValue);
+</pre>
+Or using the <a href="#setEnableContextMenu">setEnableContextMenu</a> slot.
+
+<h3><a name=enabled></a>bool enabled</h3>
+<p>Returns a boolean value specifying whether or not the control is enabled
+
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("enabled").toBool();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	bool newValue = ...
+	object->setProperty("enabled", newValue);
+</pre>
+Or using the <a href="#setEnabled">setEnabled</a> slot.
+
+<h3><a name=fullScreen></a>bool fullScreen</h3>
+<p>Returns a boolean value specifying whether or not the control is in full screen mode
+
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("fullScreen").toBool();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	bool newValue = ...
+	object->setProperty("fullScreen", newValue);
+</pre>
+Or using the <a href="#setFullScreen">setFullScreen</a> slot.
+
+<h3><a name=isOnline></a>bool isOnline</h3>
+<p>Returns whether the machine is online.
+
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("isOnline").toBool();
+</pre>
+
+<h3><a name=isRemote></a>bool isRemote</h3>
+<p>Indicates whether the player is running remotely
+
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("isRemote").toBool();
+</pre>
+
+<h3><a name=mediaCollection></a>IDispatch* mediaCollection</h3>
+<p>Returns the media collection handler
+
+<p>Read this property's value using QObject::property:<pre>
+	IDispatch* val = object->property("mediaCollection").toIDispatch*();
+</pre>
+
+<h3><a name=network></a>IDispatch* network</h3>
+<p>Returns the network information handler
+
+<p>Read this property's value using QObject::property:<pre>
+	IDispatch* val = object->property("network").toIDispatch*();
+</pre>
+
+<h3><a name=openState></a>WMPOpenState openState</h3>
+<p>Returns the open state of the player
+
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("openState").toInt();
+</pre>
+<p>See also <a href="#WMPOpenState">WMPOpenState</a>.
+
+<h3><a name=playState></a>WMPPlayState playState</h3>
+<p>Returns the play state of the player
+
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("playState").toInt();
+</pre>
+<p>See also <a href="#WMPPlayState">WMPPlayState</a>.
+
+<h3><a name=playerApplication></a>IDispatch* playerApplication</h3>
+<p>Returns the player application handler
+
+<p>Read this property's value using QObject::property:<pre>
+	IDispatch* val = object->property("playerApplication").toIDispatch*();
+</pre>
+
+<h3><a name=playlistCollection></a>IDispatch* playlistCollection</h3>
+<p>Returns the playlist collection handler
+
+<p>Read this property's value using QObject::property:<pre>
+	IDispatch* val = object->property("playlistCollection").toIDispatch*();
+</pre>
+
+<h3><a name=settings></a>IDispatch* settings</h3>
+<p>Returns the settings handler
+
+<p>Read this property's value using QObject::property:<pre>
+	IDispatch* val = object->property("settings").toIDispatch*();
+</pre>
+
+<h3><a name=status></a>QString status</h3>
+<p>Returns status string
+
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("status").toString();
+</pre>
+
+<h3><a name=stretchToFit></a>bool stretchToFit</h3>
+<p>Returns a boolean value specifying whether or not video is stretched
+
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("stretchToFit").toBool();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	bool newValue = ...
+	object->setProperty("stretchToFit", newValue);
+</pre>
+Or using the <a href="#setStretchToFit">setStretchToFit</a> slot.
+
+<h3><a name=uiMode></a>QString uiMode</h3>
+<p>Specifies the ui mode to select
+
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("uiMode").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("uiMode", newValue);
+</pre>
+Or using the <a href="#setUiMode">setUiMode</a> slot.
+
+<h3><a name=versionInfo></a>QString versionInfo</h3>
+<p>Returns the version information for the player
+
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("versionInfo").toString();
+</pre>
+
+<h3><a name=windowlessVideo></a>bool windowlessVideo</h3>
+<p>Returns a boolean value specifying whether or not video is windowless
+
+<p>Read this property's value using QObject::property:<pre>
+	bool val = object->property("windowlessVideo").toBool();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	bool newValue = ...
+	object->setProperty("windowlessVideo", newValue);
+</pre>
+Or using the <a href="#setWindowlessVideo">setWindowlessVideo</a> slot.
+

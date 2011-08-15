@@ -1,0 +1,473 @@
+<h1 align=center> Reference</h1>
+<p>The  COM object is a QAxObject with the CLSID .</p>
+<h3>Interfaces</h3>
+<ul>
+<li>IWMPControls3
+</ul>
+<h3>Event Interfaces</h3>
+<ul>
+</ul>
+<h2>Public Slots:</h2>
+<ul>
+<li>void <a href="#fastForward"><b>fastForward</b></a>();</li>
+<li>void <a href="#fastReverse"><b>fastReverse</b></a>();</li>
+<li>QString <a href="#getAudioLanguageDescription"><b>getAudioLanguageDescription</b></a>(int lIndex);</li>
+<li>int <a href="#getAudioLanguageID"><b>getAudioLanguageID</b></a>(int lIndex);</li>
+<li>QString <a href="#getLanguageName"><b>getLanguageName</b></a>(int lLangID);</li>
+<li>bool <a href="#isAvailable"><b>isAvailable</b></a>(QString bstrItem);</li>
+<li>void <a href="#next"><b>next</b></a>();</li>
+<li>void <a href="#pause"><b>pause</b></a>();</li>
+<li>void <a href="#play"><b>play</b></a>();</li>
+<li>void <a href="#playItem"><b>playItem</b></a>(IDispatch* pIWMPMedia);</li>
+<li>void <a href="#previous"><b>previous</b></a>();</li>
+<li>void <a href="#setCurrentAudioLanguage"><b>setCurrentAudioLanguage</b></a>(int currentAudioLanguage);</li>
+<li>void <a href="#setCurrentAudioLanguageIndex"><b>setCurrentAudioLanguageIndex</b></a>(int currentAudioLanguageIndex);</li>
+<li>void <a href="#setCurrentItem"><b>setCurrentItem</b></a>(IDispatch* currentItem);</li>
+<li>void <a href="#setCurrentMarker"><b>setCurrentMarker</b></a>(int currentMarker);</li>
+<li>void <a href="#setCurrentPosition"><b>setCurrentPosition</b></a>(double currentPosition);</li>
+<li>void <a href="#setCurrentPositionTimecode"><b>setCurrentPositionTimecode</b></a>(QString currentPositionTimecode);</li>
+<li>void <a href="#step"><b>step</b></a>(int lStep);</li>
+<li>void <a href="#stop"><b>stop</b></a>();</li>
+</ul>
+<h2>Signals:</h2>
+<ul>
+<li>void <a href="#exception"><b>exception</b></a>(int code, QString source, QString disc, QString help);</li>
+<li>void <a href="#propertyChanged"><b>propertyChanged</b></a>(QString name);</li>
+<li>void <a href="#signal"><b>signal</b></a>(QString name, int argc, void* argv);</li>
+</ul>
+<h2>Properties:</h2>
+<ul>
+<li>QString <a href="#objectName"><b>objectName</b></a>;</li>
+<li>int <a href="#audioLanguageCount"><b>audioLanguageCount</b></a>;</li>
+<li>QString <a href="#control"><b>control</b></a>;</li>
+<li>int <a href="#currentAudioLanguage"><b>currentAudioLanguage</b></a>;</li>
+<li>int <a href="#currentAudioLanguageIndex"><b>currentAudioLanguageIndex</b></a>;</li>
+<li>IDispatch* <a href="#currentItem"><b>currentItem</b></a>;</li>
+<li>int <a href="#currentMarker"><b>currentMarker</b></a>;</li>
+<li>double <a href="#currentPosition"><b>currentPosition</b></a>;</li>
+<li>QString <a href="#currentPositionString"><b>currentPositionString</b></a>;</li>
+<li>QString <a href="#currentPositionTimecode"><b>currentPositionTimecode</b></a>;</li>
+</ul>
+<hr><h2>Member Type Documentation</h2>
+<h3><a name=WMPBurnFormat></a>WMPBurnFormat</h3>
+<ul>
+<li>wmpbfAudioCD	=0</li>
+<li>wmpbfDataCD	=1</li>
+</ul>
+<h3><a name=WMPBurnState></a>WMPBurnState</h3>
+<ul>
+<li>wmpbsUnknown	=0</li>
+<li>wmpbsBusy	=1</li>
+<li>wmpbsReady	=2</li>
+<li>wmpbsWaitingForDisc	=3</li>
+<li>wmpbsRefreshStatusPending	=4</li>
+<li>wmpbsPreparingToBurn	=5</li>
+<li>wmpbsBurning	=6</li>
+<li>wmpbsStopped	=7</li>
+<li>wmpbsErasing	=8</li>
+<li>wmpbsDownloading	=9</li>
+</ul>
+<h3><a name=WMPDeviceStatus></a>WMPDeviceStatus</h3>
+<ul>
+<li>wmpdsUnknown	=0</li>
+<li>wmpdsPartnershipExists	=1</li>
+<li>wmpdsPartnershipDeclined	=2</li>
+<li>wmpdsPartnershipAnother	=3</li>
+<li>wmpdsManualDevice	=4</li>
+<li>wmpdsNewDevice	=5</li>
+<li>wmpdsLast	=6</li>
+</ul>
+<h3><a name=WMPFolderScanState></a>WMPFolderScanState</h3>
+<ul>
+<li>wmpfssUnknown	=0</li>
+<li>wmpfssScanning	=1</li>
+<li>wmpfssUpdating	=2</li>
+<li>wmpfssStopped	=3</li>
+</ul>
+<h3><a name=WMPLibraryType></a>WMPLibraryType</h3>
+<ul>
+<li>wmpltUnknown	=0</li>
+<li>wmpltAll	=1</li>
+<li>wmpltLocal	=2</li>
+<li>wmpltRemote	=3</li>
+<li>wmpltDisc	=4</li>
+<li>wmpltPortableDevice	=5</li>
+</ul>
+<h3><a name=WMPOpenState></a>WMPOpenState</h3>
+<ul>
+<li>wmposUndefined	=0</li>
+<li>wmposPlaylistChanging	=1</li>
+<li>wmposPlaylistLocating	=2</li>
+<li>wmposPlaylistConnecting	=3</li>
+<li>wmposPlaylistLoading	=4</li>
+<li>wmposPlaylistOpening	=5</li>
+<li>wmposPlaylistOpenNoMedia	=6</li>
+<li>wmposPlaylistChanged	=7</li>
+<li>wmposMediaChanging	=8</li>
+<li>wmposMediaLocating	=9</li>
+<li>wmposMediaConnecting	=10</li>
+<li>wmposMediaLoading	=11</li>
+<li>wmposMediaOpening	=12</li>
+<li>wmposMediaOpen	=13</li>
+<li>wmposBeginCodecAcquisition	=14</li>
+<li>wmposEndCodecAcquisition	=15</li>
+<li>wmposBeginLicenseAcquisition	=16</li>
+<li>wmposEndLicenseAcquisition	=17</li>
+<li>wmposBeginIndividualization	=18</li>
+<li>wmposEndIndividualization	=19</li>
+<li>wmposMediaWaiting	=20</li>
+<li>wmposOpeningUnknownURL	=21</li>
+</ul>
+<h3><a name=WMPPlayState></a>WMPPlayState</h3>
+<ul>
+<li>wmppsUndefined	=0</li>
+<li>wmppsStopped	=1</li>
+<li>wmppsPaused	=2</li>
+<li>wmppsPlaying	=3</li>
+<li>wmppsScanForward	=4</li>
+<li>wmppsScanReverse	=5</li>
+<li>wmppsBuffering	=6</li>
+<li>wmppsWaiting	=7</li>
+<li>wmppsMediaEnded	=8</li>
+<li>wmppsTransitioning	=9</li>
+<li>wmppsReady	=10</li>
+<li>wmppsReconnecting	=11</li>
+<li>wmppsLast	=12</li>
+</ul>
+<h3><a name=WMPPlaylistChangeEventType></a>WMPPlaylistChangeEventType</h3>
+<ul>
+<li>wmplcUnknown	=0</li>
+<li>wmplcClear	=1</li>
+<li>wmplcInfoChange	=2</li>
+<li>wmplcMove	=3</li>
+<li>wmplcDelete	=4</li>
+<li>wmplcInsert	=5</li>
+<li>wmplcAppend	=6</li>
+<li>wmplcPrivate	=7</li>
+<li>wmplcNameChange	=8</li>
+<li>wmplcMorph	=9</li>
+<li>wmplcSort	=10</li>
+<li>wmplcLast	=11</li>
+</ul>
+<h3><a name=WMPRipState></a>WMPRipState</h3>
+<ul>
+<li>wmprsUnknown	=0</li>
+<li>wmprsRipping	=1</li>
+<li>wmprsStopped	=2</li>
+</ul>
+<h3><a name=WMPStringCollectionChangeEventType></a>WMPStringCollectionChangeEventType</h3>
+<ul>
+<li>wmpsccetUnknown	=0</li>
+<li>wmpsccetInsert	=1</li>
+<li>wmpsccetChange	=2</li>
+<li>wmpsccetDelete	=3</li>
+<li>wmpsccetClear	=4</li>
+<li>wmpsccetBeginUpdates	=5</li>
+<li>wmpsccetEndUpdates	=6</li>
+</ul>
+<h3><a name=WMPSubscriptionDownloadState></a>WMPSubscriptionDownloadState</h3>
+<ul>
+<li>wmpsdlsDownloading	=0</li>
+<li>wmpsdlsPaused	=1</li>
+<li>wmpsdlsProcessing	=2</li>
+<li>wmpsdlsCompleted	=3</li>
+<li>wmpsdlsCancelled	=4</li>
+</ul>
+<h3><a name=WMPSyncState></a>WMPSyncState</h3>
+<ul>
+<li>wmpssUnknown	=0</li>
+<li>wmpssSynchronizing	=1</li>
+<li>wmpssStopped	=2</li>
+<li>wmpssEstimating	=3</li>
+<li>wmpssLast	=4</li>
+</ul>
+<h3><a name=WMP_WRITENAMESEX_TYPE></a>WMP_WRITENAMESEX_TYPE</h3>
+<ul>
+<li>WMP_WRITENAMES_TYPE_CD_BY_TOC	=0</li>
+<li>WMP_WRITENAMES_TYPE_CD_BY_CONTENT_ID	=1</li>
+<li>WMP_WRITENAMES_TYPE_CD_BY_MDQCD	=2</li>
+<li>WMP_WRITENAMES_TYPE_DVD_BY_DVDID	=3</li>
+</ul>
+<hr><h2>Member Function Documentation</h2>
+<h3><a name=fastForward></a>void fastForward ()<tt> [slot]</tt></h3>
+<p>Fast play of media in forward direction
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal()), object, SLOT(fastForward()));</pre>
+<p>Or call the function directly:<pre>
+	object->dynamicCall("fastForward()");</pre>
+
+<h3><a name=fastReverse></a>void fastReverse ()<tt> [slot]</tt></h3>
+<p>Fast play of media in reverse direction
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal()), object, SLOT(fastReverse()));</pre>
+<p>Or call the function directly:<pre>
+	object->dynamicCall("fastReverse()");</pre>
+
+<h3><a name=getAudioLanguageDescription></a>QString getAudioLanguageDescription (int lIndex)<tt> [slot]</tt></h3>
+<p>Returns the desription corresponding to the index
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(int)), object, SLOT(getAudioLanguageDescription(int)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	QString result = object->dynamicCall("getAudioLanguageDescription(int)", params).toString();</pre>
+
+<h3><a name=getAudioLanguageID></a>int getAudioLanguageID (int lIndex)<tt> [slot]</tt></h3>
+<p>Returns the LCID corresponding to the index
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(int)), object, SLOT(getAudioLanguageID(int)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	int result = object->dynamicCall("getAudioLanguageID(int)", params).toInt();</pre>
+
+<h3><a name=getLanguageName></a>QString getLanguageName (int lLangID)<tt> [slot]</tt></h3>
+<p>Returns the human-readable name of language specified by LCID
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(int)), object, SLOT(getLanguageName(int)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	QString result = object->dynamicCall("getLanguageName(int)", params).toString();</pre>
+
+<h3><a name=isAvailable></a>bool isAvailable (QString bstrItem)<tt> [slot]</tt></h3>
+<p>Returns whether or not the specified media functionality is available
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(QString)), object, SLOT(isAvailable(QString)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	bool result = object->dynamicCall("isAvailable(QString)", params).toBool();</pre>
+
+<h3><a name=next></a>void next ()<tt> [slot]</tt></h3>
+<p>Sets the current item to the next item in the playlist
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal()), object, SLOT(next()));</pre>
+<p>Or call the function directly:<pre>
+	object->dynamicCall("next()");</pre>
+
+<h3><a name=pause></a>void pause ()<tt> [slot]</tt></h3>
+<p>Pauses play of media
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal()), object, SLOT(pause()));</pre>
+<p>Or call the function directly:<pre>
+	object->dynamicCall("pause()");</pre>
+
+<h3><a name=play></a>void play ()<tt> [slot]</tt></h3>
+<p>Begins playing media
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal()), object, SLOT(play()));</pre>
+<p>Or call the function directly:<pre>
+	object->dynamicCall("play()");</pre>
+
+<h3><a name=playItem></a>void playItem (IDispatch* pIWMPMedia)<tt> [slot]</tt></h3>
+<p>Sets the current item and plays it
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(IDispatch*)), object, SLOT(playItem(IDispatch*)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("playItem(IDispatch*)", params);</pre>
+
+<h3><a name=previous></a>void previous ()<tt> [slot]</tt></h3>
+<p>Sets the current item to the previous item in the playlist
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal()), object, SLOT(previous()));</pre>
+<p>Or call the function directly:<pre>
+	object->dynamicCall("previous()");</pre>
+
+<h3><a name=setCurrentAudioLanguage></a>void setCurrentAudioLanguage (int currentAudioLanguage)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(int)), object, SLOT(setCurrentAudioLanguage(int)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("setCurrentAudioLanguage(int)", params);</pre>
+
+<h3><a name=setCurrentAudioLanguageIndex></a>void setCurrentAudioLanguageIndex (int currentAudioLanguageIndex)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(int)), object, SLOT(setCurrentAudioLanguageIndex(int)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("setCurrentAudioLanguageIndex(int)", params);</pre>
+
+<h3><a name=setCurrentItem></a>void setCurrentItem (IDispatch* currentItem)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(IDispatch*)), object, SLOT(setCurrentItem(IDispatch*)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("setCurrentItem(IDispatch*)", params);</pre>
+
+<h3><a name=setCurrentMarker></a>void setCurrentMarker (int currentMarker)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(int)), object, SLOT(setCurrentMarker(int)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("setCurrentMarker(int)", params);</pre>
+
+<h3><a name=setCurrentPosition></a>void setCurrentPosition (double currentPosition)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(double)), object, SLOT(setCurrentPosition(double)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("setCurrentPosition(double)", params);</pre>
+
+<h3><a name=setCurrentPositionTimecode></a>void setCurrentPositionTimecode (QString currentPositionTimecode)<tt> [slot]</tt></h3>
+<p>
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(QString)), object, SLOT(setCurrentPositionTimecode(QString)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("setCurrentPositionTimecode(QString)", params);</pre>
+
+<h3><a name=step></a>void step (int lStep)<tt> [slot]</tt></h3>
+<p>Advances the video one frame
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal(int)), object, SLOT(step(int)));</pre>
+<p>Or call the function directly:<pre>
+	QVariantList params = ...
+	object->dynamicCall("step(int)", params);</pre>
+
+<h3><a name=stop></a>void stop ()<tt> [slot]</tt></h3>
+<p>Stops play of media
+
+<p>Connect a signal to this slot:<pre>
+	QObject::connect(sender, SIGNAL(someSignal()), object, SLOT(stop()));</pre>
+<p>Or call the function directly:<pre>
+	object->dynamicCall("stop()");</pre>
+
+<h3><a name=exception></a>void exception (int code, QString source, QString disc, QString help)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(exception(int, QString, QString, QString)), receiver, SLOT(someSlot(int, QString, QString, QString)));</pre>
+
+<h3><a name=propertyChanged></a>void propertyChanged (QString name)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(propertyChanged(QString)), receiver, SLOT(someSlot(QString)));</pre>
+
+<h3><a name=signal></a>void signal (QString name, int argc, void* argv)<tt> [signal]</tt></h3>
+<p>
+<p>Connect a slot to this signal:<pre>
+	QObject::connect(object, SIGNAL(signal(QString, int, void*)), receiver, SLOT(someSlot(QString, int, void*)));</pre>
+
+<hr><h2>Property Documentation</h2>
+<h3><a name=objectName></a>QString objectName</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("objectName").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("objectName", newValue);
+</pre>
+Or using the <a href="#setObjectName">setObjectName</a> slot.
+
+<h3><a name=audioLanguageCount></a>int audioLanguageCount</h3>
+<p>Returns the count of supported audio languages
+
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("audioLanguageCount").toInt();
+</pre>
+
+<h3><a name=control></a>QString control</h3>
+<p>
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("control").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("control", newValue);
+</pre>
+Or using the <a href="#setControl">setControl</a> slot.
+
+<h3><a name=currentAudioLanguage></a>int currentAudioLanguage</h3>
+<p>Gets the current audio language setting for playback
+
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("currentAudioLanguage").toInt();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	int newValue = ...
+	object->setProperty("currentAudioLanguage", newValue);
+</pre>
+Or using the <a href="#setCurrentAudioLanguage">setCurrentAudioLanguage</a> slot.
+
+<h3><a name=currentAudioLanguageIndex></a>int currentAudioLanguageIndex</h3>
+<p>Gets the current audio language index setting for playback
+
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("currentAudioLanguageIndex").toInt();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	int newValue = ...
+	object->setProperty("currentAudioLanguageIndex", newValue);
+</pre>
+Or using the <a href="#setCurrentAudioLanguageIndex">setCurrentAudioLanguageIndex</a> slot.
+
+<h3><a name=currentItem></a>IDispatch* currentItem</h3>
+<p>Returns/Sets the play item
+
+<p>Read this property's value using QObject::property:<pre>
+	IDispatch* val = object->property("currentItem").toIDispatch*();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	IDispatch* newValue = ...
+	object->setProperty("currentItem", newValue);
+</pre>
+Or using the <a href="#setCurrentItem">setCurrentItem</a> slot.
+
+<h3><a name=currentMarker></a>int currentMarker</h3>
+<p>Returns the current marker
+
+<p>Read this property's value using QObject::property:<pre>
+	int val = object->property("currentMarker").toInt();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	int newValue = ...
+	object->setProperty("currentMarker", newValue);
+</pre>
+Or using the <a href="#setCurrentMarker">setCurrentMarker</a> slot.
+
+<h3><a name=currentPosition></a>double currentPosition</h3>
+<p>Returns the current position in media
+
+<p>Read this property's value using QObject::property:<pre>
+	double val = object->property("currentPosition").toDouble();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	double newValue = ...
+	object->setProperty("currentPosition", newValue);
+</pre>
+Or using the <a href="#setCurrentPosition">setCurrentPosition</a> slot.
+
+<h3><a name=currentPositionString></a>QString currentPositionString</h3>
+<p>Returns the current position in media as a string
+
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("currentPositionString").toString();
+</pre>
+
+<h3><a name=currentPositionTimecode></a>QString currentPositionTimecode</h3>
+<p>Returns the current timecode position in media
+
+<p>Read this property's value using QObject::property:<pre>
+	QString val = object->property("currentPositionTimecode").toString();
+</pre>
+Set this property' value using QObject::setProperty:<pre>
+	QString newValue = ...
+	object->setProperty("currentPositionTimecode", newValue);
+</pre>
+Or using the <a href="#setCurrentPositionTimecode">setCurrentPositionTimecode</a> slot.
+
