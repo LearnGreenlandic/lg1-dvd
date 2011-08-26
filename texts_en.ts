@@ -304,11 +304,11 @@ The word was: </translation>
     </message>
     <message>
         <source>Nej, har ikke </source>
-        <translation>No, doesn&apos;t have</translation>
+        <translation>No, doesn&apos;t have </translation>
     </message>
     <message>
         <source>Jo, har </source>
-        <translation>Yes, has</translation>
+        <translation>Yes, has </translation>
     </message>
 </context>
 <context>
