@@ -6,14 +6,14 @@ ValidateKey::ValidateKey() :
 QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
 {
     setWindowModality(Qt::ApplicationModal);
-    setWindowTitle(tr("Validering af licensnøgle"));
+    setWindowTitle(tr("Validering af licensnÃ¸gle"));
 
     nam = new QNetworkAccessManager(this);
     connect(nam, SIGNAL(finished(QNetworkReply*)), this, SLOT(finished(QNetworkReply*)));
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 
-    QLabel *label = new QLabel(tr("Indtast din licensnøgle nedenfor. Du finder den bag på indstikshæftet. Dette check kræver at din computer er online og at du registrerer dig på http://learngreenlandic.com/register/"));
+    QLabel *label = new QLabel(tr("Indtast din licensnÃ¸gle nedenfor. Du finder den bag pÃ¥ indstikshÃ¦ftet. Dette check krÃ¦ver at din computer er online og at du registrerer dig pÃ¥ http://learngreenlandic.com/register/"));
     label->setWordWrap(true);
     qvbl->addWidget(label);
 
@@ -21,7 +21,7 @@ QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
     connect(openlg, SIGNAL(clicked()), this, SLOT(openLGRegister()));
     qvbl->addWidget(openlg);
 
-    label = new QLabel(tr("<b>Bemærk:</b> Du må kun bruge din licensnøgle en gang, for en person, på en computer!"));
+    label = new QLabel(tr("<b>BemÃ¦rk:</b> Du mÃ¥ kun bruge din licensnÃ¸gle en gang, for en person, pÃ¥ en computer!"));
     qvbl->addWidget(label);
 
     input = new QLineEdit;
@@ -43,7 +43,7 @@ QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
 }
 
 void ValidateKey::checkInput() {
-    result->setText(tr("... checker licensnøgle via learngreenlandic.com ..."));
+    result->setText(tr("... checker licensnÃ¸gle via learngreenlandic.com ..."));
 
     QNetworkRequest request(QUrl("http://learngreenlandic.com/callback/"));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");

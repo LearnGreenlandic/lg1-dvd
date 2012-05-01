@@ -42,7 +42,7 @@ curAt(-1)
 
     qvbl->addSpacing(15);
 
-    QPushButton *nb = new QPushButton(tr("Gå til næste ord"));
+    QPushButton *nb = new QPushButton(tr("GÃ¥ til nÃ¦ste ord"));
     connect(nb, SIGNAL(clicked()), this, SLOT(showNext()));
     qvbl->addWidget(nb);
 
@@ -54,8 +54,8 @@ curAt(-1)
 void StructureTwo::showNext() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(data.pairs.size())) {
-        QMessageBox mbox(QMessageBox::Question, tr("Færdig!"), tr("Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?"));
-        QPushButton *yes = mbox.addButton(tr("Ja, næste øvelse"), QMessageBox::YesRole);
+        QMessageBox mbox(QMessageBox::Question, tr("FÃ¦rdig!"), tr("Der er ikke mere i denne Ã¸velse. Vil du fortsÃ¦tte med nÃ¦ste Ã¸velse?"));
+        QPushButton *yes = mbox.addButton(tr("Ja, nÃ¦ste Ã¸velse"), QMessageBox::YesRole);
         mbox.addButton(tr("Nej, tilbage til menuen"), QMessageBox::NoRole);
         mbox.exec();
 
@@ -101,11 +101,11 @@ void StructureTwo::checkInput() {
         yield->hide();
     }
     else if (input->text().compare(data.pairs.at(curAt).at(1), Qt::CaseInsensitive) == 0) {
-        result->setText(QString("<center><span style='color: darkyellow;'><b>") + tr("Næsten korrekt.\nStore og små bogstaver gælder...") + "</b></span></center>");
+        result->setText(QString("<center><span style='color: darkyellow;'><b>") + tr("NÃ¦sten korrekt.\nStore og smÃ¥ bogstaver gÃ¦lder...") + "</b></span></center>");
         yield->show();
     }
     else {
-        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrøv igen...") + "</b></span></center>");
+        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrÃ¸v igen...") + "</b></span></center>");
         yield->show();
     }
     result->show();

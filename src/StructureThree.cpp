@@ -44,7 +44,7 @@ curAt(0)
     yield = new QPushButton(tr("Giv op..."));
     connect(yield, SIGNAL(clicked()), this, SLOT(yieldWord()));
     result = new QLabel;
-    cagain = new QPushButton(tr("Hør den korrekte udtale"));
+    cagain = new QPushButton(tr("HÃ¸r den korrekte udtale"));
     connect(cagain, SIGNAL(clicked()), this, SLOT(playCorrectAgain()));
 
 #if 0
@@ -65,7 +65,7 @@ curAt(0)
 
     qvbl->addSpacing(15);
 
-    QPushButton *nb = new QPushButton(tr("Gå til næste ord"));
+    QPushButton *nb = new QPushButton(tr("GÃ¥ til nÃ¦ste ord"));
     connect(nb, SIGNAL(clicked()), this, SLOT(showNext()));
     qvbl->addWidget(nb);
 
@@ -92,8 +92,8 @@ void StructureThree::playCorrectAgain() {
 void StructureThree::showNext() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(data.pairs.size())) {
-        QMessageBox mbox(QMessageBox::Question, tr("Færdig!"), tr("Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?"));
-        QPushButton *yes = mbox.addButton(tr("Ja, næste øvelse"), QMessageBox::YesRole);
+        QMessageBox mbox(QMessageBox::Question, tr("FÃ¦rdig!"), tr("Der er ikke mere i denne Ã¸velse. Vil du fortsÃ¦tte med nÃ¦ste Ã¸velse?"));
+        QPushButton *yes = mbox.addButton(tr("Ja, nÃ¦ste Ã¸velse"), QMessageBox::YesRole);
         mbox.addButton(tr("Nej, tilbage til menuen"), QMessageBox::NoRole);
         mbox.exec();
 
@@ -126,16 +126,16 @@ void StructureThree::showNext() {
 
 void StructureThree::checkInput() {
     if (input->text() == data.pairs.at(curAt).at(1)) {
-        result->setText(QString("<center><span style='color: darkgreen;'><b>") + tr("Korrekt!") + QString("</b></span><br>") + tr("Prøv nu selv at udtale ordet inden du hører den korrekte udtale.") + "</center>");
+        result->setText(QString("<center><span style='color: darkgreen;'><b>") + tr("Korrekt!") + QString("</b></span><br>") + tr("PrÃ¸v nu selv at udtale ordet inden du hÃ¸rer den korrekte udtale.") + "</center>");
         cagain->show();
         yield->hide();
     }
     else if (input->text().compare(data.pairs.at(curAt).at(1), Qt::CaseInsensitive) == 0) {
-        result->setText(QString("<center><span style='color: darkyellow;'><b>") + tr("Næsten korrekt.\nStore og små bogstaver gælder...") + "</b></span></center>");
+        result->setText(QString("<center><span style='color: darkyellow;'><b>") + tr("NÃ¦sten korrekt.\nStore og smÃ¥ bogstaver gÃ¦lder...") + "</b></span></center>");
         yield->show();
     }
     else {
-        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrøv igen...") + "</b></span></center>");
+        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrÃ¸v igen...") + "</b></span></center>");
         yield->show();
     }
     result->show();

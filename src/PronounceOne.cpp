@@ -6,7 +6,7 @@ tc(tc),
 data(dataDir),
 curAt(-1)
 {
-    setWindowTitle(tr("Udtaleøvelse 1.1: Gentag"));
+    setWindowTitle(tr("UdtaleÃ¸velse 1.1: Gentag"));
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 
@@ -29,7 +29,7 @@ curAt(-1)
 
     qvbl->addSpacing(5);
 
-    QPushButton *nb = new QPushButton(tr("Gå til næste ord"));
+    QPushButton *nb = new QPushButton(tr("GÃ¥ til nÃ¦ste ord"));
     connect(nb, SIGNAL(clicked()), this, SLOT(showNext()));
     qvbl->addWidget(nb);
 
@@ -47,8 +47,8 @@ void PronounceOne::playAgain() {
 void PronounceOne::showNext() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(data.words.size())) {
-        QMessageBox mbox(QMessageBox::Question, tr("Færdig!"), tr("Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?"));
-        QPushButton *yes = mbox.addButton(tr("Ja, næste øvelse"), QMessageBox::YesRole);
+        QMessageBox mbox(QMessageBox::Question, tr("FÃ¦rdig!"), tr("Der er ikke mere i denne Ã¸velse. Vil du fortsÃ¦tte med nÃ¦ste Ã¸velse?"));
+        QPushButton *yes = mbox.addButton(tr("Ja, nÃ¦ste Ã¸velse"), QMessageBox::YesRole);
         mbox.addButton(tr("Nej, tilbage til menuen"), QMessageBox::NoRole);
         mbox.exec();
 

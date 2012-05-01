@@ -23,11 +23,11 @@ curAt(-1)
 
     std::random_shuffle(words.begin(), words.end());
 
-    setWindowTitle(tr("Lydøvelse  1.4: Skriv hvad du hørte"));
+    setWindowTitle(tr("LydÃ¸velse  1.4: Skriv hvad du hÃ¸rte"));
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 
-    QLabel *ql = new QLabel(tr("Skriv hvad du hører."));
+    QLabel *ql = new QLabel(tr("Skriv hvad du hÃ¸rer."));
     ql->setWordWrap(true);
     qvbl->addWidget(ql);
     qvbl->addSpacing(5);
@@ -58,7 +58,7 @@ curAt(-1)
 
     qvbl->addSpacing(15);
 
-    QPushButton *nb = new QPushButton(tr("Gå til næste ord"));
+    QPushButton *nb = new QPushButton(tr("GÃ¥ til nÃ¦ste ord"));
     connect(nb, SIGNAL(clicked()), this, SLOT(showNext()));
     qvbl->addWidget(nb);
 
@@ -76,8 +76,8 @@ void ListenFour::playAgain() {
 void ListenFour::showNext() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(words.size())) {
-        QMessageBox mbox(QMessageBox::Question, tr("Færdig!"), tr("Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?"));
-        QPushButton *yes = mbox.addButton(tr("Ja, næste øvelse"), QMessageBox::YesRole);
+        QMessageBox mbox(QMessageBox::Question, tr("FÃ¦rdig!"), tr("Der er ikke mere i denne Ã¸velse. Vil du fortsÃ¦tte med nÃ¦ste Ã¸velse?"));
+        QPushButton *yes = mbox.addButton(tr("Ja, nÃ¦ste Ã¸velse"), QMessageBox::YesRole);
         mbox.addButton(tr("Nej, tilbage til menuen"), QMessageBox::NoRole);
         mbox.exec();
 
@@ -105,7 +105,7 @@ void ListenFour::checkInput() {
         yield->hide();
     }
     else {
-        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrøv igen...") + "</b></span></center>");
+        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrÃ¸v igen...") + "</b></span></center>");
         yield->show();
     }
     result->show();

@@ -31,7 +31,7 @@ curAt(-1)
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 
-    QLabel *ql = new QLabel(tr("Del ordet med -; brug noderne til hjælp."));
+    QLabel *ql = new QLabel(tr("Del ordet med -; brug noderne til hjÃ¦lp."));
     ql->setWordWrap(true);
     qvbl->addWidget(ql);
 
@@ -41,7 +41,7 @@ curAt(-1)
     label->setWordWrap(true);
     label->setMinimumWidth(700);
 
-    QPushButton *next = new QPushButton(tr("Næste ord"));
+    QPushButton *next = new QPushButton(tr("NÃ¦ste ord"));
     connect(next, SIGNAL(clicked()), this, SLOT(nextWord()));
 
     scene = new QGraphicsScene;
@@ -85,8 +85,8 @@ curAt(-1)
 void HyphenOne::nextWord() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(pngs.size())) {
-        QMessageBox mbox(QMessageBox::Question, tr("Færdig!"), tr("Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?"));
-        QPushButton *yes = mbox.addButton(tr("Ja, næste øvelse"), QMessageBox::YesRole);
+        QMessageBox mbox(QMessageBox::Question, tr("FÃ¦rdig!"), tr("Der er ikke mere i denne Ã¸velse. Vil du fortsÃ¦tte med nÃ¦ste Ã¸velse?"));
+        QPushButton *yes = mbox.addButton(tr("Ja, nÃ¦ste Ã¸velse"), QMessageBox::YesRole);
         mbox.addButton(tr("Nej, tilbage til menuen"), QMessageBox::NoRole);
         mbox.exec();
 
@@ -137,7 +137,7 @@ void HyphenOne::checkInput() {
         yield->hide();
     }
     else {
-        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrøv igen...") + "</b></span></center>");
+        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrÃ¸v igen...") + "</b></span></center>");
         yield->show();
     }
     result->show();

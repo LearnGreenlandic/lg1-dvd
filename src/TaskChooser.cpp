@@ -31,7 +31,7 @@ QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::
 dataDir(dataDir),
 translator(translator)
 {
-    setWindowTitle(tr("Grønlandsk for voksne"));
+    setWindowTitle(tr("GrÃ¸nlandsk for voksne"));
     setContentsMargins(5,5,5,5);
     setStyleSheet("margin: 0; padding: 0; text-align: left;");
 
@@ -81,23 +81,23 @@ translator(translator)
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureOne = new QPushButton(tr("Forelæsning 1: De \"sære\" lyd"));
+    QPushButton *lectureOne = new QPushButton(tr("ForelÃ¦sning 1: De \"sÃ¦re\" lyd"));
     lectureOne->setFlat(true);
     lectureOne->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureOne, SIGNAL(clicked()), this, SLOT(showLectureOne()));
     itemVBox->addWidget(lectureOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *pronounceOne = new QPushButton(QString("   - ") + tr("Udtaleøvelse 1.1: Gentag"));
+    QPushButton *pronounceOne = new QPushButton(QString("   - ") + tr("UdtaleÃ¸velse 1.1: Gentag"));
     pronounceOne->setFlat(true);
     connect(pronounceOne, SIGNAL(clicked()), this, SLOT(showPronounceOne()));
     itemVBox->addWidget(pronounceOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *pronounceTwo = new QPushButton(QString("   - ") + tr("Udtaleøvelse 1.2: Diktat"));
+    QPushButton *pronounceTwo = new QPushButton(QString("   - ") + tr("UdtaleÃ¸velse 1.2: Diktat"));
     pronounceTwo->setFlat(true);
     connect(pronounceTwo, SIGNAL(clicked()), this, SLOT(showPronounceTwo()));
     itemVBox->addWidget(pronounceTwo, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 1 som PDF"));
+    QPushButton *lecturePDF = new QPushButton(QString("   - ") + tr("ForelÃ¦sning 1 som PDF"));
     lecturePDF->setFlat(true);
     connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureOnePDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -120,28 +120,28 @@ translator(translator)
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureTwo = new QPushButton(tr("Forelæsning 2: Typiske danskerfejl"));
+    QPushButton *lectureTwo = new QPushButton(tr("ForelÃ¦sning 2: Typiske danskerfejl"));
     lectureTwo->setFlat(true);
     lectureTwo->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureTwo, SIGNAL(clicked()), this, SLOT(showLectureTwo()));
     itemVBox->addWidget(lectureTwo, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *listenOne = new QPushButton(QString("   - ") + tr("Lydøvelse 1.1: En eller to konsonanter"));
+    QPushButton *listenOne = new QPushButton(QString("   - ") + tr("LydÃ¸velse 1.1: En eller to konsonanter"));
     listenOne->setFlat(true);
     connect(listenOne, SIGNAL(clicked()), this, SLOT(showListenOne()));
     itemVBox->addWidget(listenOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *listenTwo = new QPushButton(QString("   - ") + tr("Lydøvelse 1.2: r eller ikke r"));
+    QPushButton *listenTwo = new QPushButton(QString("   - ") + tr("LydÃ¸velse 1.2: r eller ikke r"));
     listenTwo->setFlat(true);
     connect(listenTwo, SIGNAL(clicked()), this, SLOT(showListenTwo()));
     itemVBox->addWidget(listenTwo, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *listenThree = new QPushButton(QString("   - ") + tr("Lydøvelse 1.3: tt eller ts eller t"));
+    QPushButton *listenThree = new QPushButton(QString("   - ") + tr("LydÃ¸velse 1.3: tt eller ts eller t"));
     listenThree->setFlat(true);
     connect(listenThree, SIGNAL(clicked()), this, SLOT(showListenThree()));
     itemVBox->addWidget(listenThree, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 2 som PDF"));
+    lecturePDF = new QPushButton(QString("   - ") + tr("ForelÃ¦sning 2 som PDF"));
     lecturePDF->setFlat(true);
     connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureTwoPDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -164,7 +164,7 @@ translator(translator)
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureThree = new QPushButton(tr("Forelæsning 3: Tonerne og de lange ord"));
+    QPushButton *lectureThree = new QPushButton(tr("ForelÃ¦sning 3: Tonerne og de lange ord"));
     lectureThree->setFlat(true);
     lectureThree->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureThree, SIGNAL(clicked()), this, SLOT(showLectureThree()));
@@ -175,22 +175,22 @@ translator(translator)
     connect(hyphenOne, SIGNAL(clicked()), this, SLOT(showHyphenOne()));
     itemVBox->addWidget(hyphenOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *listenFour = new QPushButton(QString("   - ") + tr("Lydøvelse 1.4: Skriv hvad du hørte"));
+    QPushButton *listenFour = new QPushButton(QString("   - ") + tr("LydÃ¸velse 1.4: Skriv hvad du hÃ¸rte"));
     listenFour->setFlat(true);
     connect(listenFour, SIGNAL(clicked()), this, SLOT(showListenFour()));
     itemVBox->addWidget(listenFour, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *welcomeOne = new QPushButton(QString("   - ") + tr("Skærmtekstsøvelse 1.1: Stavelsesdeling"));
+    QPushButton *welcomeOne = new QPushButton(QString("   - ") + tr("SkÃ¦rmtekstsÃ¸velse 1.1: Stavelsesdeling"));
     welcomeOne->setFlat(true);
     connect(welcomeOne, SIGNAL(clicked()), this, SLOT(showWelcomeOne()));
     itemVBox->addWidget(welcomeOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *welcomeTwo = new QPushButton(QString("   - ") + tr("Skærmtekstsøvelse 1.2: Udtale"));
+    QPushButton *welcomeTwo = new QPushButton(QString("   - ") + tr("SkÃ¦rmtekstsÃ¸velse 1.2: Udtale"));
     welcomeTwo->setFlat(true);
     connect(welcomeTwo, SIGNAL(clicked()), this, SLOT(showWelcomeTwo()));
     itemVBox->addWidget(welcomeTwo, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 3 som PDF"));
+    lecturePDF = new QPushButton(QString("   - ") + tr("ForelÃ¦sning 3 som PDF"));
     lecturePDF->setFlat(true);
     connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureThreePDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -219,7 +219,7 @@ translator(translator)
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureFour = new QPushButton(tr("Forelæsning 4: Træning og opsamling"));
+    QPushButton *lectureFour = new QPushButton(tr("ForelÃ¦sning 4: TrÃ¦ning og opsamling"));
     lectureFour->setFlat(true);
     lectureFour->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureFour, SIGNAL(clicked()), this, SLOT(showLectureFour()));
@@ -235,7 +235,7 @@ translator(translator)
     connect(dialogTwo, SIGNAL(clicked()), this, SLOT(showDialogTwo()));
     itemVBox->addWidget(dialogTwo, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *dialogThree = new QPushButton(QString("   - ") + tr("Minidialog 1.3: Stil spørgsmål"));
+    QPushButton *dialogThree = new QPushButton(QString("   - ") + tr("Minidialog 1.3: Stil spÃ¸rgsmÃ¥l"));
     dialogThree->setFlat(true);
     connect(dialogThree, SIGNAL(clicked()), this, SLOT(showDialogThree()));
     itemVBox->addWidget(dialogThree, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -245,7 +245,7 @@ translator(translator)
     connect(welcomeWords, SIGNAL(clicked()), this, SLOT(showWelcomeWords()));
     itemVBox->addWidget(welcomeWords, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 4 som PDF"));
+    lecturePDF = new QPushButton(QString("   - ") + tr("ForelÃ¦sning 4 som PDF"));
     lecturePDF->setFlat(true);
     connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureFourPDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -268,18 +268,18 @@ translator(translator)
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureFiveOne = new QPushButton(tr("Forelæsning 5.1: Gloserne i lektion 1"));
+    QPushButton *lectureFiveOne = new QPushButton(tr("ForelÃ¦sning 5.1: Gloserne i lektion 1"));
     lectureFiveOne->setFlat(true);
     lectureFiveOne->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureFiveOne, SIGNAL(clicked()), this, SLOT(showLectureFiveOne()));
     itemVBox->addWidget(lectureFiveOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lrPlayer = new QPushButton(QString("   - ") + tr("Lyt, forstå, gentag"));
+    QPushButton *lrPlayer = new QPushButton(QString("   - ") + tr("Lyt, forstÃ¥, gentag"));
     lrPlayer->setFlat(true);
     connect(lrPlayer, SIGNAL(clicked()), this, SLOT(showListenRepeatPlayer()));
     itemVBox->addWidget(lrPlayer, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 5 som PDF"));
+    lecturePDF = new QPushButton(QString("   - ") + tr("ForelÃ¦sning 5 som PDF"));
     lecturePDF->setFlat(true);
     connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureFivePDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -302,48 +302,48 @@ translator(translator)
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *lectureFiveTwo = new QPushButton(tr("Forelæsning 5.2: Grammatikken i lektion 1"));
+    QPushButton *lectureFiveTwo = new QPushButton(tr("ForelÃ¦sning 5.2: Grammatikken i lektion 1"));
     lectureFiveTwo->setFlat(true);
     lectureFiveTwo->setStyleSheet("font-weight: bold; text-align: left;");
     connect(lectureFiveTwo, SIGNAL(clicked()), this, SLOT(showLectureFiveTwo()));
     itemVBox->addWidget(lectureFiveTwo, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *structureOne = new QPushButton(QString("   - ") + tr("Strukturøvelse 1.1: Lydopfattelse"));
+    QPushButton *structureOne = new QPushButton(QString("   - ") + tr("StrukturÃ¸velse 1.1: Lydopfattelse"));
     structureOne->setFlat(true);
     connect(structureOne, SIGNAL(clicked()), this, SLOT(showStructureOne()));
     itemVBox->addWidget(structureOne, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *structureTwo = new QPushButton(QString("   - ") + tr("Strukturøvelse 1.2: Dan nye ord"));
+    QPushButton *structureTwo = new QPushButton(QString("   - ") + tr("StrukturÃ¸velse 1.2: Dan nye ord"));
     structureTwo->setFlat(true);
     connect(structureTwo, SIGNAL(clicked()), this, SLOT(showStructureTwo()));
     itemVBox->addWidget(structureTwo, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *structureThree = new QPushButton(QString("   - ") + tr("Strukturøvelse 1.3: Lyt, forstå, dan ord"));
+    QPushButton *structureThree = new QPushButton(QString("   - ") + tr("StrukturÃ¸velse 1.3: Lyt, forstÃ¥, dan ord"));
     structureThree->setFlat(true);
     connect(structureThree, SIGNAL(clicked()), this, SLOT(showStructureThree()));
     itemVBox->addWidget(structureThree, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *structureFour = new QPushButton(QString("   - ") + tr("Strukturøvelse 2.1: Dan nye ord"));
+    QPushButton *structureFour = new QPushButton(QString("   - ") + tr("StrukturÃ¸velse 2.1: Dan nye ord"));
     structureFour->setFlat(true);
     connect(structureFour, SIGNAL(clicked()), this, SLOT(showStructureFour()));
     itemVBox->addWidget(structureFour, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *structureFive = new QPushButton(QString("   - ") + tr("Strukturøvelse 2.2: Lyt, forstå, dan ord"));
+    QPushButton *structureFive = new QPushButton(QString("   - ") + tr("StrukturÃ¸velse 2.2: Lyt, forstÃ¥, dan ord"));
     structureFive->setFlat(true);
     connect(structureFive, SIGNAL(clicked()), this, SLOT(showStructureFive()));
     itemVBox->addWidget(structureFive, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *structureSix = new QPushButton(QString("   - ") + tr("Strukturøvelse 3.1: Dan nye ord"));
+    QPushButton *structureSix = new QPushButton(QString("   - ") + tr("StrukturÃ¸velse 3.1: Dan nye ord"));
     structureSix->setFlat(true);
     connect(structureSix, SIGNAL(clicked()), this, SLOT(showStructureSix()));
     itemVBox->addWidget(structureSix, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *structureSeven = new QPushButton(QString("   - ") + tr("Strukturøvelse 3.2: Lyt, forstå, dan ord"));
+    QPushButton *structureSeven = new QPushButton(QString("   - ") + tr("StrukturÃ¸velse 3.2: Lyt, forstÃ¥, dan ord"));
     structureSeven->setFlat(true);
     connect(structureSeven, SIGNAL(clicked()), this, SLOT(showStructureSeven()));
     itemVBox->addWidget(structureSeven, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    lecturePDF = new QPushButton(QString("   - ") + tr("Forelæsning 5 som PDF"));
+    lecturePDF = new QPushButton(QString("   - ") + tr("ForelÃ¦sning 5 som PDF"));
     lecturePDF->setFlat(true);
     connect(lecturePDF, SIGNAL(clicked()), this, SLOT(showLectureFivePDF()));
     itemVBox->addWidget(lecturePDF, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -372,7 +372,7 @@ translator(translator)
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QLabel *updownHeader = new QLabel(tr("Øvelser i ordbygning:\nForstå, sammenkæd selv, oversæt"));
+    QLabel *updownHeader = new QLabel(tr("Ã˜velser i ordbygning:\nForstÃ¥, sammenkÃ¦d selv, oversÃ¦t"));
     updownHeader->setStyleSheet("font-weight: bold; text-align: left;");
     itemVBox->addWidget(updownHeader, 0, Qt::AlignLeft|Qt::AlignTop);
 
@@ -386,7 +386,7 @@ translator(translator)
     connect(updownTwo, SIGNAL(clicked()), this, SLOT(showUpdownTwo()));
     itemVBox->addWidget(updownTwo, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *updownThree = new QPushButton(QString("   - ") + tr("Ordbygning: Oversættelse"));
+    QPushButton *updownThree = new QPushButton(QString("   - ") + tr("Ordbygning: OversÃ¦ttelse"));
     updownThree->setFlat(true);
     connect(updownThree, SIGNAL(clicked()), this, SLOT(showUpdownThree()));
     itemVBox->addWidget(updownThree, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -413,13 +413,13 @@ translator(translator)
     appendixHeader->setStyleSheet("font-weight: bold; text-align: left;");
     itemVBox->addWidget(appendixHeader, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *grammatica = new QPushButton(QString("   - ") + tr("Kapitel 3 (manuskriptudgave) af\n'Forsøg til en forbedret\ngrønlandsk pædagogisk grammatica'"));
+    QPushButton *grammatica = new QPushButton(QString("   - ") + tr("Kapitel 3 (manuskriptudgave) af\n'ForsÃ¸g til en forbedret\ngrÃ¸nlandsk pÃ¦dagogisk grammatica'"));
     grammatica->setFlat(true);
     grammatica->setStyleSheet("text-align: left;");
     connect(grammatica, SIGNAL(clicked()), this, SLOT(showGrammaticaPDF()));
     itemVBox->addWidget(grammatica, 0, Qt::AlignLeft|Qt::AlignTop);
 
-    QPushButton *pamphlet = new QPushButton(QString("   - ") + tr("Indstikshæfte som PDF"));
+    QPushButton *pamphlet = new QPushButton(QString("   - ") + tr("IndstikshÃ¦fte som PDF"));
     pamphlet->setFlat(true);
     connect(pamphlet, SIGNAL(clicked()), this, SLOT(showPamphletPDF()));
     itemVBox->addWidget(pamphlet, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -465,42 +465,42 @@ void TaskChooser::showLectureOne() {
     QSettings settings;
     settings.setValue("done_welcome", true);
 
-    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 1: De \"sære\" lyd"), dataDir, tr("./1/danish/"), *this);
+    LecturePlayer *lecture = new LecturePlayer(*this, tr("./1/danish/"), tr("ForelÃ¦sning 1: De \"sÃ¦re\" lyd"));
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureTwo() {
-    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 2: Typiske danskerfejl"), dataDir, tr("./2/danish/"), *this);
+    LecturePlayer *lecture = new LecturePlayer(*this, tr("./2/danish/"), tr("ForelÃ¦sning 2: Typiske danskerfejl"));
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureThree() {
-    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 3: Tonerne og de lange ord"), dataDir, tr("./3/danish/"), *this);
+    LecturePlayer *lecture = new LecturePlayer(*this, tr("./3/danish/"), tr("ForelÃ¦sning 3: Tonerne og de lange ord"));
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureFour() {
-    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 4: Træning og opsamling"), dataDir, tr("./4/danish/"), *this);
+    LecturePlayer *lecture = new LecturePlayer(*this, tr("./4/danish/"), tr("ForelÃ¦sning 4: TrÃ¦ning og opsamling"));
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureFiveOne() {
-    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 5.1: Gloserne i lektion 1"), dataDir, tr("./5_1/danish/"), *this);
+    LecturePlayer *lecture = new LecturePlayer(*this, tr("./5_1/danish/"), tr("ForelÃ¦sning 5.1: Gloserne i lektion 1"));
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
 }
 
 void TaskChooser::showLectureFiveTwo() {
-    LecturePlayer *lecture = new LecturePlayer(tr("Forelæsning 5.2: Grammatikken i lektion 1"), dataDir, tr("./5_2/danish/"), *this);
+    LecturePlayer *lecture = new LecturePlayer(*this, tr("./5_2/danish/"), tr("ForelÃ¦sning 5.2: Grammatikken i lektion 1"));
     lecture->show();
     lecture->raise();
     lecture->activateWindow();
@@ -661,49 +661,49 @@ void TaskChooser::showUpdownThree() {
 }
 
 void TaskChooser::showStructureOne() {
-    StructureOne *structure = new StructureOne(dataDir, "./1/", tr("Strukturøvelse 1.1: Lydopfattelse"), *this);
+    StructureOne *structure = new StructureOne(dataDir, "./1/", tr("StrukturÃ¸velse 1.1: Lydopfattelse"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureTwo() {
-    StructureTwo *structure = new StructureTwo(dataDir, "./1/", tr("Strukturøvelse 1.2: Dan nye ord"), *this);
+    StructureTwo *structure = new StructureTwo(dataDir, "./1/", tr("StrukturÃ¸velse 1.2: Dan nye ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureThree() {
-    StructureThree *structure = new StructureThree(dataDir, "./1/", tr("Strukturøvelse 1.3: Lyt, forstå, dan ord"), *this);
+    StructureThree *structure = new StructureThree(dataDir, "./1/", tr("StrukturÃ¸velse 1.3: Lyt, forstÃ¥, dan ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureFour() {
-    StructureTwo *structure = new StructureTwo(dataDir, "./2/", tr("Strukturøvelse 2.1: Dan nye ord"), *this);
+    StructureTwo *structure = new StructureTwo(dataDir, "./2/", tr("StrukturÃ¸velse 2.1: Dan nye ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureFive() {
-    StructureThree *structure = new StructureThree(dataDir, "./2/", tr("Strukturøvelse 2.2: Lyt, forstå, dan ord"), *this);
+    StructureThree *structure = new StructureThree(dataDir, "./2/", tr("StrukturÃ¸velse 2.2: Lyt, forstÃ¥, dan ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureSix() {
-    StructureTwo *structure = new StructureTwo(dataDir, "./3/", tr("Strukturøvelse 3.1: Dan nye ord"), *this);
+    StructureTwo *structure = new StructureTwo(dataDir, "./3/", tr("StrukturÃ¸velse 3.1: Dan nye ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureSeven() {
-    StructureThree *structure = new StructureThree(dataDir, "./3/", tr("Strukturøvelse 3.2: Lyt, forstå, dan ord"), *this);
+    StructureThree *structure = new StructureThree(dataDir, "./3/", tr("StrukturÃ¸velse 3.2: Lyt, forstÃ¥, dan ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
@@ -741,11 +741,11 @@ void TaskChooser::checkFirstRun() {
     while (!hasXvid) {
         QMessageBox mbox(QMessageBox::Question, tr("Xvid og MP3?"),
 #if defined(Q_WS_WIN)
-             tr("Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid codec?")
+             tr("Dette program krÃ¦ver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid codec?")
 #elif defined(Q_WS_MAC)
-             tr("Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere DivX codec?")
+             tr("Dette program krÃ¦ver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere DivX codec?")
 #else
-             tr("Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid og MP3 codecs?")
+             tr("Dette program krÃ¦ver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid og MP3 codecs?")
 #endif
              );
         QPushButton *yes = mbox.addButton(tr("Ja"), QMessageBox::YesRole);
@@ -753,7 +753,7 @@ void TaskChooser::checkFirstRun() {
         mbox.exec();
 
         if (mbox.clickedButton() == yes) {
-            QMessageBox::information(0, tr("Installer Xvid"), tr("Programmet åbner nu installeren i et nyt vindue og lukker så dette. Start Learn Greenlandic igen når du har installeret Xvid eller DivX."));
+            QMessageBox::information(0, tr("Installer Xvid"), tr("Programmet Ã¥bner nu installeren i et nyt vindue og lukker sÃ¥ dette. Start Learn Greenlandic igen nÃ¥r du har installeret Xvid eller DivX."));
             QString torun = dataDir.absoluteFilePath(
             #if defined(Q_WS_WIN)
                 "../Xvid-1.3.1-20110324.exe"
@@ -781,7 +781,7 @@ void TaskChooser::checkFirstRun() {
             xt->exec();
         }
         catch (...) {
-            QMessageBox::information(0, tr("Xvid error"), tr("Afspilningen af test filmen fejlede helt. Du bør installere Xvid eller DivX codecs og så prøve igen. Hvis intet virker, så kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjælp."));
+            QMessageBox::information(0, tr("Xvid error"), tr("Afspilningen af test filmen fejlede helt. Du bÃ¸r installere Xvid eller DivX codecs og sÃ¥ prÃ¸ve igen. Hvis intet virker, sÃ¥ kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjÃ¦lp."));
             QCoreApplication::quit();
             return;
         }
@@ -797,7 +797,7 @@ void TaskChooser::checkFirstRun() {
             vk->exec();
         }
         catch (...) {
-            QMessageBox::information(0, tr("Validation error"), tr("Validering af licensnøgle fejlede helt. Kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjælp."));
+            QMessageBox::information(0, tr("Validation error"), tr("Validering af licensnÃ¸gle fejlede helt. Kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjÃ¦lp."));
             QCoreApplication::quit();
             return;
         }

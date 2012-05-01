@@ -9,6 +9,8 @@ class TaskChooser : public QWidget {
 public:
     TaskChooser(QDir dataDir, QTranslator *translator);
 
+    QDir dataDir;
+
 public slots:
     void showLectureOne();
     void showLectureTwo();
@@ -65,7 +67,6 @@ public slots:
     void checkFirstRun();
 
 private:
-    QDir dataDir;
     QTranslator *translator;
 };
 

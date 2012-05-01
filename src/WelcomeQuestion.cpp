@@ -5,7 +5,7 @@ QWidget(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint),
 tc(tc)
 {
     setWindowModality(Qt::ApplicationModal);
-    setWindowTitle(tr("Velkommen til Grønlandsk for voksne!"));
+    setWindowTitle(tr("Velkommen til GrÃ¸nlandsk for voksne!"));
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 
@@ -17,7 +17,7 @@ tc(tc)
     connect(text, SIGNAL(textChanged(const QString&)), this, SLOT(checkInput(const QString&)));
     qvbl->addWidget(text);
 
-    QPushButton *ohno = new QPushButton(tr("Ups! Hjælp mig ud!"));
+    QPushButton *ohno = new QPushButton(tr("Ups! HjÃ¦lp mig ud!"));
     connect(ohno, SIGNAL(clicked()), this, SLOT(whoops()));
     qvbl->addWidget(ohno);
 

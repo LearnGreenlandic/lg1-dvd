@@ -27,11 +27,11 @@ tc(tc)
     hyphen_t.setCodec("UTF-8");
     hyphenated = hyphen_t.readAll();
 
-    setWindowTitle(tr("Skærmtekstsøvelse 1.1: Stavelsesdeling"));
+    setWindowTitle(tr("SkÃ¦rmtekstsÃ¸velse 1.1: Stavelsesdeling"));
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 
-    QLabel *ql = new QLabel(tr("Her er igen den tekst, der stod på skærmen lige efter velkomsten. Stavelsesdel den efter de tre regler, du netop har lært. Du finder facitlisten og en oversættelse i indstikshæftet, men brug den først, når du har prøvet så godt du kan selv."));
+    QLabel *ql = new QLabel(tr("Her er igen den tekst, der stod pÃ¥ skÃ¦rmen lige efter velkomsten. Stavelsesdel den efter de tre regler, du netop har lÃ¦rt. Du finder facitlisten og en oversÃ¦ttelse i indstikshÃ¦ftet, men brug den fÃ¸rst, nÃ¥r du har prÃ¸vet sÃ¥ godt du kan selv."));
     ql->setWordWrap(true);
     qvbl->addWidget(ql);
 
@@ -78,8 +78,8 @@ void WelcomeOne::checkInput() {
         result->setText(QString("<center><span style='color: darkgreen;'><b>") + tr("Korrekt!") + "</b></span></center>");
         yield->hide();
 
-        QMessageBox mbox(QMessageBox::Question, tr("Korrekt!"), tr("Korrekt! Det var alt for denne øvelse. Vil du gå videre til næste øvelse?"));
-        QPushButton *yes = mbox.addButton(tr("Ja, næste øvelse"), QMessageBox::YesRole);
+        QMessageBox mbox(QMessageBox::Question, tr("Korrekt!"), tr("Korrekt! Det var alt for denne Ã¸velse. Vil du gÃ¥ videre til nÃ¦ste Ã¸velse?"));
+        QPushButton *yes = mbox.addButton(tr("Ja, nÃ¦ste Ã¸velse"), QMessageBox::YesRole);
         mbox.addButton(tr("Nej, tilbage til menuen"), QMessageBox::NoRole);
         mbox.exec();
 
@@ -90,7 +90,7 @@ void WelcomeOne::checkInput() {
         return;
     }
     else {
-        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrøv igen...") + "</b></span></center>");
+        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrÃ¸v igen...") + "</b></span></center>");
         yield->show();
     }
     result->show();

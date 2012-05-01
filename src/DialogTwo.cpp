@@ -10,7 +10,7 @@ curAt(-1)
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 
-    QLabel *label = new QLabel(tr("Anden øvelse er lidt vanskeligere, for nu er der også lidt indhold med i spillet. Du får først Beatrines sætninger som du så skal give et fornuftigt respons på!"));
+    QLabel *label = new QLabel(tr("Anden Ã¸velse er lidt vanskeligere, for nu er der ogsÃ¥ lidt indhold med i spillet. Du fÃ¥r fÃ¸rst Beatrines sÃ¦tninger som du sÃ¥ skal give et fornuftigt respons pÃ¥!"));
     label->setWordWrap(true);
     qvbl->addWidget(label);
 
@@ -21,7 +21,7 @@ curAt(-1)
     Phonon::createPath(mediaQ, audioQ);
 
     labelQ = new QLabel;
-    QPushButton *againQ = new QPushButton(tr("Hør spørgsmålet"));
+    QPushButton *againQ = new QPushButton(tr("HÃ¸r spÃ¸rgsmÃ¥let"));
     connect(againQ, SIGNAL(clicked()), this, SLOT(playAgainQ()));
     qvbl->addWidget(labelQ);
     qvbl->addWidget(againQ);
@@ -31,14 +31,14 @@ curAt(-1)
     Phonon::createPath(mediaA, audioA);
 
     labelA = new QLabel;
-    QPushButton *againA = new QPushButton(tr("Hør svaret"));
+    QPushButton *againA = new QPushButton(tr("HÃ¸r svaret"));
     connect(againA, SIGNAL(clicked()), this, SLOT(playAgainA()));
     qvbl->addWidget(labelA);
     qvbl->addWidget(againA);
 
     qvbl->addSpacing(15);
 
-    QPushButton *next = new QPushButton(tr("Næste dialog"));
+    QPushButton *next = new QPushButton(tr("NÃ¦ste dialog"));
     connect(next, SIGNAL(clicked()), this, SLOT(showNext()));
     qvbl->addWidget(next);
 
@@ -64,8 +64,8 @@ void DialogTwo::playAgainA() {
 void DialogTwo::showNext() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(data.phrases.size())) {
-        QMessageBox mbox(QMessageBox::Question, tr("Færdig!"), tr("Der er ikke mere i denne øvelse. Vil du fortsætte med næste øvelse?"));
-        QPushButton *yes = mbox.addButton(tr("Ja, næste øvelse"), QMessageBox::YesRole);
+        QMessageBox mbox(QMessageBox::Question, tr("FÃ¦rdig!"), tr("Der er ikke mere i denne Ã¸velse. Vil du fortsÃ¦tte med nÃ¦ste Ã¸velse?"));
+        QPushButton *yes = mbox.addButton(tr("Ja, nÃ¦ste Ã¸velse"), QMessageBox::YesRole);
         mbox.addButton(tr("Nej, tilbage til menuen"), QMessageBox::NoRole);
         mbox.exec();
 

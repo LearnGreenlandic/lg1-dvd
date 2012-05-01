@@ -6,9 +6,9 @@ tc(tc),
 data(dataDir),
 curAt(0)
 {
-    setWindowTitle(tr("Ordbygning: Oversættelse"));
+    setWindowTitle(tr("Ordbygning: OversÃ¦ttelse"));
 
-    QLabel *ql = new QLabel(tr("Oversæt følgende glossering til et ord i færdig form:"));
+    QLabel *ql = new QLabel(tr("OversÃ¦t fÃ¸lgende glossering til et ord i fÃ¦rdig form:"));
 
     QVBoxLayout *qvbl = new QVBoxLayout;
     qvbl->addWidget(ql);
@@ -31,7 +31,7 @@ curAt(0)
     result->hide();
     yield->hide();
 
-    QPushButton *nb = new QPushButton(tr("Gå til næste ord"));
+    QPushButton *nb = new QPushButton(tr("GÃ¥ til nÃ¦ste ord"));
     connect(nb, SIGNAL(clicked()), this, SLOT(showNext()));
 
     qvbl->addLayout(curWord);
@@ -44,7 +44,7 @@ curAt(0)
 void UpdownThree::showNext() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(data.updowns.size())) {
-        QMessageBox::information(0, tr("Færdig!"), tr("Der er ikke flere ord...vinduet lukker sig selv nu."));
+        QMessageBox::information(0, tr("FÃ¦rdig!"), tr("Der er ikke flere ord...vinduet lukker sig selv nu."));
         close();
         return;
     }
@@ -62,11 +62,11 @@ void UpdownThree::checkInput() {
         yield->hide();
     }
     else if (input->text().compare(data.updowns.at(curAt).first, Qt::CaseInsensitive) == 0) {
-        result->setText(QString("<center><span style='color: darkyellow;'><b>") + tr("Næsten korrekt.\nStore og små bogstaver gælder...") + "</b></span></center>");
+        result->setText(QString("<center><span style='color: darkyellow;'><b>") + tr("NÃ¦sten korrekt.\nStore og smÃ¥ bogstaver gÃ¦lder...") + "</b></span></center>");
         yield->show();
     }
     else {
-        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrøv igen...") + "</b></span></center>");
+        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrÃ¸v igen...") + "</b></span></center>");
         yield->show();
     }
     result->show();
@@ -77,6 +77,6 @@ void UpdownThree::checkInput() {
 }
 
 void UpdownThree::yieldWord() {
-    QMessageBox::information(0, "Hrhm...", QString("<h1>") + tr("Det korrekte færdige ord var:") + QString("</h1><br>") + data.updowns.at(curAt).first);
+    QMessageBox::information(0, "Hrhm...", QString("<h1>") + tr("Det korrekte fÃ¦rdige ord var:") + QString("</h1><br>") + data.updowns.at(curAt).first);
     showNext();
 }

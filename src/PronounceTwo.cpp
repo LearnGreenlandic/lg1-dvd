@@ -6,11 +6,11 @@ tc(tc),
 data(dataDir),
 curAt(-1)
 {
-    setWindowTitle(tr("Udtaleøvelse 1.2: Diktat"));
+    setWindowTitle(tr("UdtaleÃ¸velse 1.2: Diktat"));
 
     QVBoxLayout *qvbl = new QVBoxLayout;
 
-    QLabel *ql = new QLabel(tr("Skriv hvad du hører."));
+    QLabel *ql = new QLabel(tr("Skriv hvad du hÃ¸rer."));
     ql->setWordWrap(true);
     qvbl->addWidget(ql);
 
@@ -31,7 +31,7 @@ curAt(-1)
     yield = new QPushButton(tr("Giv op..."));
     connect(yield, SIGNAL(clicked()), this, SLOT(yieldWord()));
     result = new QLabel;
-    qvbl->addWidget(new QLabel(tr("Skriv hvad du hørte:")));
+    qvbl->addWidget(new QLabel(tr("Skriv hvad du hÃ¸rte:")));
     qvbl->addWidget(input);
     qvbl->addWidget(check);
     qvbl->addWidget(result);
@@ -41,7 +41,7 @@ curAt(-1)
 
     qvbl->addSpacing(15);
 
-    QPushButton *nb = new QPushButton(tr("Gå til næste ord"));
+    QPushButton *nb = new QPushButton(tr("GÃ¥ til nÃ¦ste ord"));
     connect(nb, SIGNAL(clicked()), this, SLOT(showNext()));
     qvbl->addWidget(nb);
 
@@ -59,8 +59,8 @@ void PronounceTwo::playAgain() {
 void PronounceTwo::showNext() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(data.words.size())) {
-        QMessageBox mbox(QMessageBox::Question, tr("Færdig!"), tr("Der er ikke mere i denne øvelse. Vil du læse forelæsningen som PDF?"));
-        QPushButton *yes = mbox.addButton(tr("Ja, åben PDF"), QMessageBox::YesRole);
+        QMessageBox mbox(QMessageBox::Question, tr("FÃ¦rdig!"), tr("Der er ikke mere i denne Ã¸velse. Vil du lÃ¦se forelÃ¦sningen som PDF?"));
+        QPushButton *yes = mbox.addButton(tr("Ja, Ã¥ben PDF"), QMessageBox::YesRole);
         mbox.addButton(tr("Nej, tilbage til menuen"), QMessageBox::NoRole);
         mbox.exec();
 
@@ -85,7 +85,7 @@ void PronounceTwo::checkInput() {
         yield->hide();
     }
     else {
-        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrøv igen...") + "</b></span></center>");
+        result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrÃ¸v igen...") + "</b></span></center>");
         yield->show();
     }
     result->show();
