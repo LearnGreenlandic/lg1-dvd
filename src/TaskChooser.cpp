@@ -453,6 +453,15 @@ translator(translator)
     itemHBox->setAlignment(Qt::AlignLeft|Qt::AlignTop);
     outerVBox->addLayout(itemHBox);
 
+    QSettings settings;
+    if (!settings.value("site_title").toString().isEmpty()) {
+        QString labeltxt = QString(tr("Denne licens tilhører %1 og vil kræve fornyelse efter %2")).arg(settings.value("site_title").toString()).arg(settings.value("site_expire").toString());
+        QLabel *label = new QLabel(QString("<i>") + labeltxt + "</i>");
+        label->setWordWrap(true);
+        outerVBox->addSpacing(15);
+        outerVBox->addWidget(label);
+    }
+
 
     outerVBox->setAlignment(Qt::AlignCenter|Qt::AlignTop);
     outerHBox->addLayout(outerVBox);
@@ -756,7 +765,7 @@ void TaskChooser::checkFirstRun() {
             QMessageBox::information(0, tr("Installer Xvid"), tr("Programmet åbner nu installeren i et nyt vindue og lukker så dette. Start Learn Greenlandic igen når du har installeret Xvid eller DivX."));
             QString torun = dataDir.absoluteFilePath(
             #if defined(Q_WS_WIN)
-                "../Xvid-1.3.1-20110324.exe"
+                "../Xvid-1.3.2-20110601.exe"
             #elif defined(Q_WS_MAC)
                 "../DivXInstaller.dmg"
             #else
@@ -788,24 +797,33 @@ void TaskChooser::checkFirstRun() {
         hasXvid = settings.value("has_xvid", false).toBool();
     }
 
-    QString hasEncKey = settings.value("encryption_key", "E").toString();
-    while (hasEncKey[0] != 'P') {
-        settings.setValue("license_bailout", false);
+    if (!settings.value("license_key", "").toString().isEmpty() && settings.value("license_key", "").toString().at(0) == 'V') {
+        QCryptographicHash sha1(QCryptographicHash::Sha1);
+        sha1.addData(settings.value("license_key").toString().toUtf8());
+        sha1.addData(settings.value("site_title").toString().toUtf8());
+        sha1.addData(settings.value("site_expire").toString().toUtf8());
+        sha1.addData("Keeping honest people honest.");
+        sha1.addData(settings.value("encryption_key").toString().toUtf8());
+        if (sha1.result().toHex() != settings.value("site_verification").toString().toUtf8()) {
+            settings.remove("site_expire");
+        }
 
-        try {
-            ValidateKey *vk = new ValidateKey;
-            vk->exec();
+        QDate now = QDate::currentDate();
+        QDate expires = settings.value("site_expire").toDate();
+        if (!expires.isValid() || now > expires) {
+            settings.remove("license_key");
+            settings.remove("site_title");
+            settings.remove("site_expire");
+            settings.remove("site_verification");
+            settings.remove("encryption_key");
         }
-        catch (...) {
-            QMessageBox::information(0, tr("Validation error"), tr("Validering af licensnøgle fejlede helt. Kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjælp."));
-            QCoreApplication::quit();
-            return;
-        }
-        if (settings.value("license_bailout", false).toBool() == true) {
-            QCoreApplication::quit();
-            return;
-        }
-        hasEncKey = settings.value("encryption_key", "E").toString();
+    }
+
+    if (settings.value("license_key", "").toString().isEmpty() || settings.value("encryption_key", "").toString().isEmpty() || settings.value("encryption_key", "").toString().at(0) != 'P') {
+        ValidateKey *vk = new ValidateKey;
+        vk->show();
+        vk->raise();
+        vk->activateWindow();
     }
 
     bool doneWelcome = settings.value("done_welcome", false).toBool();

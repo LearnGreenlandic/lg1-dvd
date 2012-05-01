@@ -80,7 +80,8 @@ HEADERS  += \
     src/WelcomeQuestion.hpp \
     src/XvidTest.hpp \
     src/WelcomeWords.hpp \
-    src/ValidateKey.hpp
+    src/ValidateKey.hpp \
+    src/common.hpp
 
 CONFIG -= warn_off
 CONFIG += warn_on

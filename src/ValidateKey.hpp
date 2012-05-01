@@ -12,14 +12,14 @@ public:
 
 public slots:
     void checkInput();
-    void openLGRegister();
+    void launchXvid();
     void bailOut();
     void finished(QNetworkReply *reply);
 
 private:
     QNetworkAccessManager *nam;
     QLabel *result;
-    QLineEdit *input;
+    QLineEdit *email1, *email2, *lkey;
 };
 
 #endif // VALIDATEKEY_HPP
