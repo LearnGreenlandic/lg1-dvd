@@ -273,6 +273,24 @@ void WelcomeWords::show() {
     media->play();
 }
 
+void WelcomeWords::tick(qint64 time) {
+    QTime displayTime(0, (time / 60000) % 60, (time / 1000) % 60);
+    timeLcd->display(displayTime.toString("mm:ss"));
+}
+
+void WelcomeWords::togglePlay() {
+    if (media->state() == Phonon::PlayingState) {
+        playpause->setIcon(style()->standardIcon(QStyle::SP_MediaPlay));
+        playpause->setText("Play");
+        media->pause();
+    }
+    else {
+        playpause->setIcon(style()->standardIcon(QStyle::SP_MediaPause));
+        playpause->setText("Pause");
+        media->play();
+    }
+}
+
 #endif
 
 void WelcomeWords::showNext() {
