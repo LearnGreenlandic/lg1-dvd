@@ -2,9 +2,11 @@
 #include <algorithm>
 #include <stdint.h>
 
-UpdownData::UpdownData(QDir dataDir)
+UpdownData::UpdownData(const dirmap_t& dirs)
 {
-    if (!dataDir.cd("./updown/")) {
+    QString f_d = find_newest(dirs, "./updown/updown.txt");
+    QDir dataDir(f_d.replace("updown.txt", ""));
+    if (!dataDir.exists()) {
         QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/updown/");
         throw(-1);
     }

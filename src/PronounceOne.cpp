@@ -1,9 +1,9 @@
 #include "PronounceOne.hpp"
 
-PronounceOne::PronounceOne(QDir dataDir, TaskChooser& tc) :
+PronounceOne::PronounceOne(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
-data(dataDir),
+data(tc.dirs),
 curAt(-1)
 {
     setWindowTitle(tr("Udtaleøvelse 1.1: Gentag"));

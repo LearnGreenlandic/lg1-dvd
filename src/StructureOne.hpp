@@ -13,7 +13,7 @@ class StructureOne : public QWidget {
     Q_OBJECT
 
 public:
-    StructureOne(QDir dataDir, QString which, QString title, TaskChooser& tc);
+    StructureOne(QString which, QString title, TaskChooser& tc);
 
 public slots:
     void show();

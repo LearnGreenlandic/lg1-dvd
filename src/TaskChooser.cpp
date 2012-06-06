@@ -26,9 +26,9 @@
 
 #include <QtGlobal>
 
-TaskChooser::TaskChooser(QDir dataDir, QTranslator *translator) :
+TaskChooser::TaskChooser(const dirmap_t& dirs, QTranslator *translator) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
-dataDir(dataDir),
+dirs(dirs),
 translator(translator)
 {
     setWindowTitle(tr("Grønlandsk for voksne"));
@@ -52,7 +52,7 @@ translator(translator)
     itemVBox->setContentsMargins(0,0,0,0);
 
     ql = new QLabel;
-    qpx.load(dataDir.absoluteFilePath("./images/welcome.png"));
+    qpx.load(find_newest(dirs, "./images/welcome.png"));
     qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -76,7 +76,7 @@ translator(translator)
     itemVBox->setContentsMargins(0,0,0,0);
 
     ql = new QLabel;
-    qpx.load(dataDir.absoluteFilePath(tr("./1/danish/0.png")));
+    qpx.load(find_newest(dirs, tr("./1/danish/0.png")));
     qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -115,7 +115,7 @@ translator(translator)
     itemVBox->setContentsMargins(0,0,0,0);
 
     ql = new QLabel;
-    qpx.load(dataDir.absoluteFilePath(tr("./2/danish/0.png")));
+    qpx.load(find_newest(dirs, tr("./2/danish/0.png")));
     qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -159,7 +159,7 @@ translator(translator)
     itemVBox->setContentsMargins(0,0,0,0);
 
     ql = new QLabel;
-    qpx.load(dataDir.absoluteFilePath(tr("./3/danish/0.png")));
+    qpx.load(find_newest(dirs, tr("./3/danish/0.png")));
     qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -214,7 +214,7 @@ translator(translator)
     itemVBox->setContentsMargins(0,0,0,0);
 
     ql = new QLabel;
-    qpx.load(dataDir.absoluteFilePath(tr("./4/danish/0.png")));
+    qpx.load(find_newest(dirs, tr("./4/danish/0.png")));
     qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -263,7 +263,7 @@ translator(translator)
     itemVBox->setContentsMargins(0,0,0,0);
 
     ql = new QLabel;
-    qpx.load(dataDir.absoluteFilePath(tr("./5_1/danish/0.png")));
+    qpx.load(find_newest(dirs, tr("./5_1/danish/0.png")));
     qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -297,7 +297,7 @@ translator(translator)
     itemVBox->setContentsMargins(0,0,0,0);
 
     ql = new QLabel;
-    qpx.load(dataDir.absoluteFilePath(tr("./5_2/danish/0.png")));
+    qpx.load(find_newest(dirs, tr("./5_2/danish/0.png")));
     qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -367,7 +367,7 @@ translator(translator)
     itemVBox->setContentsMargins(0,0,0,0);
 
     ql = new QLabel;
-    qpx.load(dataDir.absoluteFilePath(tr("./images/updown.png")));
+    qpx.load(find_newest(dirs, tr("./images/updown.png")));
     qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -404,7 +404,7 @@ translator(translator)
     itemVBox->setContentsMargins(0,0,0,0);
 
     ql = new QLabel;
-    qpx.load(dataDir.absoluteFilePath(tr("./images/pdf.png")));
+    qpx.load(find_newest(dirs, tr("./images/pdf.png")));
     qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -437,7 +437,7 @@ translator(translator)
     itemVBox->setContentsMargins(0,0,0,0);
 
     ql = new QLabel;
-    qpx.load(dataDir.absoluteFilePath(tr("./images/english.png")));
+    qpx.load(find_newest(dirs, tr("./images/english.png")));
     qpx = qpx.scaled(85, 85, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ql->setPixmap(qpx);
     itemHBox->addWidget(ql, 0, Qt::AlignLeft|Qt::AlignTop);
@@ -516,203 +516,203 @@ void TaskChooser::showLectureFiveTwo() {
 }
 
 void TaskChooser::showLectureOnePDF() {
-    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./1/danish/") + "lecture.pdf")));
+    QDesktopServices::openUrl(QUrl::fromLocalFile(find_newest(dirs, tr("./1/danish/") + "lecture.pdf")));
 }
 
 void TaskChooser::showLectureTwoPDF() {
-    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./2/danish/") + "lecture.pdf")));
+    QDesktopServices::openUrl(QUrl::fromLocalFile(find_newest(dirs, tr("./2/danish/") + "lecture.pdf")));
 }
 
 void TaskChooser::showLectureThreePDF() {
-    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./3/danish/") + "lecture.pdf")));
+    QDesktopServices::openUrl(QUrl::fromLocalFile(find_newest(dirs, tr("./3/danish/") + "lecture.pdf")));
 }
 
 void TaskChooser::showLectureFourPDF() {
-    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./4/danish/") + "lecture.pdf")));
+    QDesktopServices::openUrl(QUrl::fromLocalFile(find_newest(dirs, tr("./4/danish/") + "lecture.pdf")));
 }
 
 void TaskChooser::showLectureFivePDF() {
-    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./5_1/danish/") + "lecture.pdf")));
+    QDesktopServices::openUrl(QUrl::fromLocalFile(find_newest(dirs, tr("./5_1/danish/") + "lecture.pdf")));
 }
 
 void TaskChooser::showGrammaticaPDF() {
-    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./grammatica/danish.pdf"))));
+    QDesktopServices::openUrl(QUrl::fromLocalFile(find_newest(dirs, tr("./grammatica/danish.pdf"))));
 }
 
 void TaskChooser::showPamphletPDF() {
-    QDesktopServices::openUrl(QUrl::fromLocalFile(dataDir.absoluteFilePath(tr("./pamphlet/danish.pdf"))));
+    QDesktopServices::openUrl(QUrl::fromLocalFile(find_newest(dirs, tr("./pamphlet/danish.pdf"))));
 }
 
 void TaskChooser::showHyphenOne() {
-    HyphenOne *hyphen = new HyphenOne(dataDir, *this);
+    HyphenOne *hyphen = new HyphenOne(*this);
     hyphen->show();
     hyphen->raise();
     hyphen->activateWindow();
 }
 
 void TaskChooser::showDialogOne() {
-    DialogOne *dialog = new DialogOne(dataDir, *this);
+    DialogOne *dialog = new DialogOne(*this);
     dialog->show();
     dialog->raise();
     dialog->activateWindow();
 }
 
 void TaskChooser::showDialogTwo() {
-    DialogTwo *dialog = new DialogTwo(dataDir, *this);
+    DialogTwo *dialog = new DialogTwo(*this);
     dialog->show();
     dialog->raise();
     dialog->activateWindow();
 }
 
 void TaskChooser::showDialogThree() {
-    DialogThree *dialog = new DialogThree(dataDir, *this);
+    DialogThree *dialog = new DialogThree(*this);
     dialog->show();
     dialog->raise();
     dialog->activateWindow();
 }
 
 void TaskChooser::showListenOne() {
-    ListenOne *listen = new ListenOne(dataDir, *this);
+    ListenOne *listen = new ListenOne(*this);
     listen->show();
     listen->raise();
     listen->activateWindow();
 }
 
 void TaskChooser::showListenTwo() {
-    ListenTwo *listen = new ListenTwo(dataDir, *this);
+    ListenTwo *listen = new ListenTwo(*this);
     listen->show();
     listen->raise();
     listen->activateWindow();
 }
 
 void TaskChooser::showListenThree() {
-    ListenThree *listen = new ListenThree(dataDir, *this);
+    ListenThree *listen = new ListenThree(*this);
     listen->show();
     listen->raise();
     listen->activateWindow();
 }
 
 void TaskChooser::showListenFour() {
-    ListenFour *listen = new ListenFour(dataDir, *this);
+    ListenFour *listen = new ListenFour(*this);
     listen->show();
     listen->raise();
     listen->activateWindow();
 }
 
 void TaskChooser::showWelcomePlayer() {
-    WelcomePlayer *welcome = new WelcomePlayer(dataDir, *this);
+    WelcomePlayer *welcome = new WelcomePlayer(*this);
     welcome->show();
     welcome->raise();
     welcome->activateWindow();
 }
 
 void TaskChooser::showWelcomeWords() {
-    WelcomeWords *welcome = new WelcomeWords(dataDir, *this);
+    WelcomeWords *welcome = new WelcomeWords(*this);
     welcome->show();
     welcome->raise();
     welcome->activateWindow();
 }
 
 void TaskChooser::showWelcomeOne() {
-    WelcomeOne *welcome = new WelcomeOne(dataDir, *this);
+    WelcomeOne *welcome = new WelcomeOne(*this);
     welcome->show();
     welcome->raise();
     welcome->activateWindow();
 }
 
 void TaskChooser::showWelcomeTwo() {
-    WelcomeTwo *welcome = new WelcomeTwo(dataDir, *this);
+    WelcomeTwo *welcome = new WelcomeTwo(*this);
     welcome->show();
     welcome->raise();
     welcome->activateWindow();
 }
 
 void TaskChooser::showListenRepeatPlayer() {
-    ListenRepeatPlayer *lrplayer = new ListenRepeatPlayer(dataDir, *this);
+    ListenRepeatPlayer *lrplayer = new ListenRepeatPlayer(*this);
     lrplayer->show();
     lrplayer->raise();
     lrplayer->activateWindow();
 }
 
 void TaskChooser::showPronounceOne() {
-    PronounceOne *pronounce = new PronounceOne(dataDir, *this);
+    PronounceOne *pronounce = new PronounceOne(*this);
     pronounce->show();
     pronounce->raise();
     pronounce->activateWindow();
 }
 
 void TaskChooser::showPronounceTwo() {
-    PronounceTwo *pronounce = new PronounceTwo(dataDir, *this);
+    PronounceTwo *pronounce = new PronounceTwo(*this);
     pronounce->show();
     pronounce->raise();
     pronounce->activateWindow();
 }
 
 void TaskChooser::showUpdownOne() {
-    UpdownOne *updown = new UpdownOne(dataDir, *this);
+    UpdownOne *updown = new UpdownOne(*this);
     updown->show();
     updown->raise();
     updown->activateWindow();
 }
 
 void TaskChooser::showUpdownTwo() {
-    UpdownTwo *updown = new UpdownTwo(dataDir, *this);
+    UpdownTwo *updown = new UpdownTwo(*this);
     updown->show();
     updown->raise();
     updown->activateWindow();
 }
 
 void TaskChooser::showUpdownThree() {
-    UpdownThree *updown = new UpdownThree(dataDir, *this);
+    UpdownThree *updown = new UpdownThree(*this);
     updown->show();
     updown->raise();
     updown->activateWindow();
 }
 
 void TaskChooser::showStructureOne() {
-    StructureOne *structure = new StructureOne(dataDir, "./1/", tr("Strukturøvelse 1.1: Lydopfattelse"), *this);
+    StructureOne *structure = new StructureOne("./1/", tr("Strukturøvelse 1.1: Lydopfattelse"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureTwo() {
-    StructureTwo *structure = new StructureTwo(dataDir, "./1/", tr("Strukturøvelse 1.2: Dan nye ord"), *this);
+    StructureTwo *structure = new StructureTwo("./1/", tr("Strukturøvelse 1.2: Dan nye ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureThree() {
-    StructureThree *structure = new StructureThree(dataDir, "./1/", tr("Strukturøvelse 1.3: Lyt, forstå, dan ord"), *this);
+    StructureThree *structure = new StructureThree("./1/", tr("Strukturøvelse 1.3: Lyt, forstå, dan ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureFour() {
-    StructureTwo *structure = new StructureTwo(dataDir, "./2/", tr("Strukturøvelse 2.1: Dan nye ord"), *this);
+    StructureTwo *structure = new StructureTwo("./2/", tr("Strukturøvelse 2.1: Dan nye ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureFive() {
-    StructureThree *structure = new StructureThree(dataDir, "./2/", tr("Strukturøvelse 2.2: Lyt, forstå, dan ord"), *this);
+    StructureThree *structure = new StructureThree("./2/", tr("Strukturøvelse 2.2: Lyt, forstå, dan ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureSix() {
-    StructureTwo *structure = new StructureTwo(dataDir, "./3/", tr("Strukturøvelse 3.1: Dan nye ord"), *this);
+    StructureTwo *structure = new StructureTwo("./3/", tr("Strukturøvelse 3.1: Dan nye ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
 }
 
 void TaskChooser::showStructureSeven() {
-    StructureThree *structure = new StructureThree(dataDir, "./3/", tr("Strukturøvelse 3.2: Lyt, forstå, dan ord"), *this);
+    StructureThree *structure = new StructureThree("./3/", tr("Strukturøvelse 3.2: Lyt, forstå, dan ord"), *this);
     structure->show();
     structure->raise();
     structure->activateWindow();
@@ -731,13 +731,13 @@ void TaskChooser::toggleLanguage() {
 
     lang = settings.value("language").toString();
     if (lang == "english") {
-        translator->load("texts_en", dataDir.absoluteFilePath("./i18n/"));
+        translator->load(find_newest(dirs, "i18n/texts_en.qm"));
     }
     else {
-        translator->load("texts_da", dataDir.absoluteFilePath("./i18n/"));
+        translator->load(find_newest(dirs, "i18n/texts_da.qm"));
     }
 
-    TaskChooser *tc = new TaskChooser(dataDir, translator);
+    TaskChooser *tc = new TaskChooser(dirs, translator);
     tc->show();
 
     close();
@@ -763,7 +763,7 @@ void TaskChooser::checkFirstRun() {
 
         if (mbox.clickedButton() == yes) {
             QMessageBox::information(0, tr("Installer Xvid"), tr("Programmet åbner nu installeren i et nyt vindue og lukker så dette. Start Learn Greenlandic igen når du har installeret Xvid eller DivX."));
-            QString torun = dataDir.absoluteFilePath(
+            QString torun = find_newest(dirs,
             #if defined(Q_WS_WIN)
                 "../Xvid-1.3.2-20110601.exe"
             #elif defined(Q_WS_MAC)
@@ -786,7 +786,7 @@ void TaskChooser::checkFirstRun() {
         }
 
         try {
-            XvidTest *xt = new XvidTest(dataDir);
+            XvidTest *xt = new XvidTest(find_newest(dirs, "testxvid.avi"));
             xt->exec();
         }
         catch (...) {

@@ -1,9 +1,9 @@
 #include "StructureTwo.hpp"
 
-StructureTwo::StructureTwo(QDir dataDir, QString which, QString title, TaskChooser& tc) :
+StructureTwo::StructureTwo(QString which, QString title, TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
-data(dataDir, which),
+data(tc.dirs, which),
 curAt(-1)
 {
     setWindowTitle(title);

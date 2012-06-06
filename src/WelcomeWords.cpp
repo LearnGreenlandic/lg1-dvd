@@ -5,24 +5,26 @@
 
 #if defined(Q_WS_WIN)
 
-WelcomeWords::WelcomeWords(QDir dataDir, TaskChooser& tc) :
+WelcomeWords::WelcomeWords(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 curAt(-1)
 {
-    if (!dataDir.exists("welcome.dat")) {
+    QString f_dat = find_newest(tc.dirs, "welcome.dat");
+    if (f_dat.isEmpty()) {
         QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate welcome.dat!");
         throw(-1);
     }
 
-    if (!dataDir.exists("welcome.txt")) {
+    QString f_txt = find_newest(tc.dirs, "welcome.txt");
+    if (f_txt.isEmpty()) {
         QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate welcome.txt!");
         throw(-1);
     }
 
-    QFile input_f(dataDir.absoluteFilePath("welcome.txt"));
+    QFile input_f(f_txt);
     if (!input_f.open(QIODevice::ReadOnly)) {
-        QMessageBox::critical(0, "Read Error!", "Could not open input.txt from data folder!");
+        QMessageBox::critical(0, "Read Error!", "Could not open welcome.txt from data folder!");
         throw(-1);
     }
     QTextStream input_t(&input_f);
@@ -36,12 +38,12 @@ curAt(-1)
     controls = video->querySubObject("controls");
 
     QCryptographicHash sha1(QCryptographicHash::Sha1);
-    sha1.addData(dataDir.absoluteFilePath("welcome.dat").toUtf8());
+    sha1.addData(f_dat.toUtf8());
     QDir tmpdir(QDir::tempPath());
     tmpfile = tmpdir.absoluteFilePath(QString(sha1.result().toHex()) + "-welcome.avi");
 
     if (!tmpdir.exists(tmpfile)) {
-        CryptFile input(dataDir.absoluteFilePath("welcome.dat"));
+        CryptFile input(f_dat);
         QFile output(tmpfile);
 
         input.open(QIODevice::ReadOnly);
@@ -143,24 +145,26 @@ void WelcomeWords::show() {
 
 #else
 
-WelcomeWords::WelcomeWords(QDir dataDir, TaskChooser& tc) :
+WelcomeWords::WelcomeWords(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 curAt(-1)
 {
-    if (!dataDir.exists("welcome.dat")) {
+    QString f_dat = find_newest(tc.dirs, "welcome.dat");
+    if (f_dat.isEmpty()) {
         QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate welcome.dat!");
         throw(-1);
     }
 
-    if (!dataDir.exists("welcome.txt")) {
+    QString f_txt = find_newest(tc.dirs, "welcome.txt");
+    if (f_txt.isEmpty()) {
         QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate welcome.txt!");
         throw(-1);
     }
 
-    QFile input_f(dataDir.absoluteFilePath("welcome.txt"));
+    QFile input_f(f_txt);
     if (!input_f.open(QIODevice::ReadOnly)) {
-        QMessageBox::critical(0, "Read Error!", "Could not open input.txt from data folder!");
+        QMessageBox::critical(0, "Read Error!", "Could not open welcome.txt from data folder!");
         throw(-1);
     }
     QTextStream input_t(&input_f);
@@ -177,7 +181,7 @@ curAt(-1)
     audio = new Phonon::AudioOutput(Phonon::VideoCategory);
     Phonon::createPath(media, audio);
 
-    mediafile = new CryptFile(dataDir.absoluteFilePath("welcome.dat"));
+    mediafile = new CryptFile(f_dat);
     media->setCurrentSource(mediafile);
     media->setTickInterval(1000);
     connect(media, SIGNAL(tick(qint64)), this, SLOT(tick(qint64)));

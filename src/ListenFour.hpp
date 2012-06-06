@@ -12,7 +12,7 @@ class ListenFour : public QWidget {
     Q_OBJECT
 
 public:
-    ListenFour(QDir dataDir, TaskChooser& tc);
+    ListenFour(TaskChooser& tc);
 
 public slots:
     void showNext();

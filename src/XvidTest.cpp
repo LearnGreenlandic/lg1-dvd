@@ -2,13 +2,13 @@
 
 #if defined(Q_WS_WIN)
 
-XvidTest::XvidTest(QDir dataDir) :
+XvidTest::XvidTest(QString avi) :
 QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
 {
     setWindowModality(Qt::ApplicationModal);
     setWindowTitle(tr("Xvid test"));
 
-    if (!dataDir.exists("testxvid.avi")) {
+    if (avi.isEmpty()) {
         QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate testxvid.avi!");
         throw(-1);
     }
@@ -23,7 +23,7 @@ QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
     video->setContentsMargins(0, 0, 0, 0);
     video->dynamicCall("setUiMode(QString)", "full");
     video->dynamicCall("setEnabled(bool)", true);
-    video->dynamicCall("SetURL(QString)", QUrl::fromLocalFile(dataDir.absoluteFilePath("testxvid.avi")));
+    video->dynamicCall("SetURL(QString)", QUrl::fromLocalFile(avi));
 
     QVBoxLayout *qvbl = new QVBoxLayout;
     qvbl->setContentsMargins(0, 0, 0, 0);
@@ -45,13 +45,13 @@ void XvidTest::closeEvent(QCloseEvent *event) {
 
 #else
 
-XvidTest::XvidTest(QDir dataDir) :
+XvidTest::XvidTest(QString avi) :
 QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
 {
     setWindowModality(Qt::ApplicationModal);
     setWindowTitle(tr("Xvid test"));
 
-    if (!dataDir.exists("testxvid.avi")) {
+    if (avi.isEmpty()) {
         QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate testxvid.avi!");
         throw(-1);
     }
@@ -63,7 +63,7 @@ QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
     audio = new Phonon::AudioOutput(Phonon::VideoCategory);
     Phonon::createPath(media, audio);
 
-    media->setCurrentSource(dataDir.absoluteFilePath("testxvid.avi"));
+    media->setCurrentSource(avi);
     QTimer::singleShot(6000, this, SLOT(finished()));
     //connect(media, SIGNAL(finished()), this, SLOT(finished()));
 

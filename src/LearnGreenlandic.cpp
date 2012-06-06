@@ -1,4 +1,5 @@
 #include "TaskChooser.hpp"
+#include "common.hpp"
 #include <QtGui/QApplication>
 #include <ctime>
 #include <cstdlib>
@@ -29,29 +30,134 @@ int main(int argc, char *argv[]) {
     qsrand(seed);
     srand(seed);
 
-    QDir tDir(app.applicationDirPath());
-    while (!tDir.exists("./lessons/1/danish/0.png") && tDir.cdUp()) {
+    dirmap_t dirs;
+
+    if (settings.contains("paths")) {
+        int z = settings.beginReadArray("paths");
+        for (int i=0 ; i<z ; ++i) {
+            settings.setArrayIndex(i);
+            size_t rev = settings.value("revision").toUInt();
+            QString path = settings.value("path").toString();
+            dirs.insert(std::make_pair(rev,path));
+        }
+        settings.endArray();
     }
 
-    QDir dataDir(tDir.absolutePath() + "/lessons");
-    if (!dataDir.exists() || !dataDir.exists("./1/danish/lecture.dat") || !dataDir.exists("./1/danish/0.png")) {
-        QFileInfoList drives = QDir::drives();
-        foreach (QFileInfo drive, drives) {
-            if (drive.absoluteDir().exists("./lessons/1/danish/0.png")) {
-                dataDir = drive.absoluteDir().absolutePath() + "/lessons";
-                break;
+    if (dirs.empty() || dirs.begin()->first < lg1_revision || !check_files(dirs)) {
+        QDir tDir(app.applicationDirPath());
+        do {
+            size_t rev = 0;
+            if (tDir.exists("./lessons/revision.txt")) {
+                if ((rev = read_revision(tDir.absoluteFilePath("./lessons/revision.txt"))) != 0) {
+                    dirs.insert(std::make_pair(rev, tDir.absoluteFilePath("lessons")));
+                }
+            }
+            else if (tDir.exists("./lessons/welcome.txt")) {
+                dirs.insert(std::make_pair(1, tDir.absoluteFilePath("lessons")));
+            }
+
+            if (tDir.exists("./demo/lessons/revision.txt")) {
+                if ((rev = read_revision(tDir.absoluteFilePath("./demo/lessons/revision.txt"))) != 0) {
+                    dirs.insert(std::make_pair(rev, tDir.absoluteFilePath("demo/lessons")));
+                }
+            }
+            else if (tDir.exists("./demo/lessons/welcome.txt")) {
+                dirs.insert(std::make_pair(1, tDir.absoluteFilePath("demo/lessons")));
+            }
+        } while (tDir.cdUp());
+
+        {
+            QProgressDialog progress("Checking all drives for LG1 data...", "", 0, 26);
+            progress.setWindowModality(Qt::WindowModal);
+            progress.setCancelButton(0);
+            progress.show();
+            QFileInfoList drives = QDir::drives();
+            drives.append(QDir("/mnt/").entryInfoList(QDir::Dirs|QDir::NoDotAndDotDot));
+            drives.append(QDir("/media/").entryInfoList(QDir::Dirs|QDir::NoDotAndDotDot));
+            drives.append(QDir("/Volumes/").entryInfoList(QDir::Dirs|QDir::NoDotAndDotDot));
+            progress.setMaximum(drives.size());
+
+            foreach (QFileInfo drive, drives) {
+                size_t rev = 0;
+                QFileInfo f(drive.absoluteFilePath() + "/lessons/revision.txt");
+                progress.setLabelText(QString("Trying to read ") + f.absoluteFilePath() + " ...");
+                if (f.exists() && (rev = read_revision(f.absoluteFilePath()))) {
+                    dirs.insert(std::make_pair(rev, f.absoluteDir().absolutePath()));
+                }
+                else {
+                    QFileInfo f(drive.absoluteFilePath() + "/lessons/welcome.txt");
+                    progress.setLabelText(QString("Trying to read ") + f.absoluteFilePath() + " ...");
+                    if (f.exists() && f.size() == 531) {
+                        dirs.insert(std::make_pair(1, f.absoluteDir().absolutePath()));
+                    }
+                }
+                progress.setValue(progress.value()+1);
+            }
+            progress.setValue(drives.size());
+        }
+
+        if (dirs.empty() || (find_newest(dirs, "./revision.txt").isEmpty() && find_newest(dirs, "./welcome.txt").isEmpty()) || !check_files(dirs)) {
+            QMessageBox::information(0, "Missing Data / Manglende Data!",
+                                     "English: Could not find a suitable lessons folder. Maybe you forgot to insert the DVD or mount a network share? You will now be asked to find the revisions.txt file from the lessons folder.\n\n"
+                                     "Dansk: Kunne ikke finde en passende lessons mappe. Måske har du glemt at indsætte DVD'en eller forbinde til netværket? Du vil nu blive bedt om at finde revision.txt fra lessons mappen.");
+            QFileInfo revfile = QFileDialog::getOpenFileName(0, "Find lessons/revision.txt", QString(), "revision.txt (*.txt)");
+            size_t rev = read_revision(revfile.absoluteFilePath());
+            dirs.insert(std::make_pair(rev, revfile.absoluteDir().absolutePath()));
+
+            if (dirs.empty() || (find_newest(dirs, "./revision.txt").isEmpty() && find_newest(dirs, "./welcome.txt").isEmpty()) || !check_files(dirs)) {
+                QMessageBox::critical(0, "Missing Data / Manglende Data!",
+                                         "English: Could not find a suitable lessons folder. Maybe you forgot to insert the DVD or mount a network share?\n\n"
+                                         "Dansk: Kunne ikke finde en passende lessons mappe. Måske har du glemt at indsætte DVD'en eller forbinde til netværket?");
+                app.exit(-1);
+                return -1;
             }
         }
     }
-    if (!dataDir.exists() || !dataDir.exists("./1/danish/lecture.dat") || !dataDir.exists("./1/danish/0.png")) {
-        QMessageBox::critical(0, "Missing Data!", "Could not find required files in lessons/1/danish/");
-        app.exit(-1);
-        return -1;
+
+    if (settings.value("revision", uint(0)).toUInt() > lg1_revision) {
+        QMessageBox runoldq(QMessageBox::Warning,
+                          "Old version / Gammel version",
+                          "English: You have previously run a newer version of LG1 on this machine.\n"
+                          "Are you sure you want to run this older version instead?\n\n"
+                          "Dansk: Du har tidligere brugt en nyere version af LG1 på denne maskine.\n"
+                          "Er du sikker på at du vil køre denne ældre version i stedet?"
+                          );
+        QPushButton *yes = runoldq.addButton("Run old / Kør gammel", QMessageBox::YesRole);
+        runoldq.addButton("Exit / Afslut", QMessageBox::NoRole);
+
+        runoldq.exec();
+        if (runoldq.clickedButton() != yes) {
+            app.quit();
+            return 0;
+        }
     }
+    else {
+        settings.setValue("revision", lg1_revision);
+    }
+
+    if (!dirs.empty()) {
+        int z = dirs.size(), i = 0;
+        settings.beginWriteArray("paths", z);
+        for (dirmap_t::const_iterator it = dirs.begin() ; it != dirs.end() ; ++it, ++i) {
+            settings.setArrayIndex(i);
+            settings.setValue("revision", uint(it->first));
+            settings.setValue("path", it->second);
+        }
+        settings.endArray();
+    }
+
+    QTranslator xtl;
+    xtl.load(find_newest(dirs, "i18n/texts_da.qm"));
+    app.installTranslator(&xtl);
 
     QString lang = settings.value("language").toString();
     if (lang != "english" && lang != "danish") {
-        QMessageBox langq(QMessageBox::Question, "First question / Første spørgsmål...", "Do you prefer English or Danish?\nYou can change language later from the main menu.\n\nForetrækker du engelsk eller dansk?\nDu kan skife sprog senere fra hovedmenuen.");
+        QMessageBox langq(QMessageBox::Question,
+                          "English / Dansk...",
+                          "Do you prefer English or Danish?\n"
+                          "You can change language later from the main menu.\n\n"
+                          "Foretrækker du engelsk eller dansk?\n"
+                          "Du kan skife sprog senere fra hovedmenuen.");
         QPushButton *lang_eng = langq.addButton("I prefer English", QMessageBox::YesRole);
         langq.addButton("Jeg foretrækker dansk", QMessageBox::NoRole);
 
@@ -67,14 +173,14 @@ int main(int argc, char *argv[]) {
     lang = settings.value("language").toString();
     QTranslator translator;
     if (lang == "english") {
-        translator.load("texts_en", dataDir.absoluteFilePath("./i18n/"));
+        translator.load(find_newest(dirs, "i18n/texts_en.qm"));
     }
     else {
-        translator.load("texts_da", dataDir.absoluteFilePath("./i18n/"));
+        translator.load(find_newest(dirs, "i18n/texts_da.qm"));
     }
     app.installTranslator(&translator);
 
-    TaskChooser tc(dataDir, &translator);
+    TaskChooser tc(dirs, &translator);
     tc.show();
     tc.raise();
     tc.activateWindow();

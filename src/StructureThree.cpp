@@ -1,9 +1,9 @@
 #include "StructureThree.hpp"
 
-StructureThree::StructureThree(QDir dataDir, QString which, QString title, TaskChooser& tc) :
+StructureThree::StructureThree(QString which, QString title, TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
-data(dataDir, which),
+data(tc.dirs, which),
 curAt(0)
 {
     setWindowTitle(title);

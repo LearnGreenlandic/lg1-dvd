@@ -1,15 +1,17 @@
 #ifndef TASKCHOOSER_HPP
 #define TASKCHOOSER_HPP
 
+#include "common.hpp"
 #include <QtGui>
 
 class TaskChooser : public QWidget {
     Q_OBJECT
 
 public:
-    TaskChooser(QDir dataDir, QTranslator *translator);
+    TaskChooser(const dirmap_t& dirs, QTranslator *translator);
 
     QDir dataDir;
+    dirmap_t dirs;
 
 public slots:
     void showLectureOne();

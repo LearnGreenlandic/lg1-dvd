@@ -12,13 +12,13 @@ tc(tc)
     setWindowTitle(title);
     setMinimumSize(minimumSizeHint());
 
-    QString lecfile = QDir(tc.dataDir).absoluteFilePath(lecDir + "/lecture.dat");
+    QString lecfile = find_newest(tc.dirs, lecDir + "/lecture.dat");
     if (lecfile.isEmpty()) {
         QMessageBox::critical(0, "Missing Lecture Data!", "Could not locate lecture.dat!");
         throw(-1);
     }
 
-    QString slide0 = QDir(tc.dataDir).absoluteFilePath(lecDir + "/0.png");
+    QString slide0 = find_newest(tc.dirs, lecDir + "/0.png");
     if (slide0.isEmpty()) {
         QMessageBox::critical(0, "Missing Slides!", "Could not locate slides for lecture!");
         throw(-1);
@@ -154,13 +154,13 @@ tc(tc)
     setWindowTitle(title);
     setMinimumSize(minimumSizeHint());
 
-    QString lecfile = QDir(tc.dataDir).absoluteFilePath(lecDir + "/lecture.dat");
+    QString lecfile = find_newest(tc.dirs, lecDir + "/lecture.dat");
     if (lecfile.isEmpty()) {
         QMessageBox::critical(0, "Missing Lecture Data!", "Could not locate lecture.dat!");
         throw(-1);
     }
 
-    QString slide0 = QDir(tc.dataDir).absoluteFilePath(lecDir + "/0.png");
+    QString slide0 = find_newest(tc.dirs, lecDir + "/0.png");
     if (slide0.isEmpty()) {
         QMessageBox::critical(0, "Missing Slides!", "Could not locate slides for lecture!");
         throw(-1);

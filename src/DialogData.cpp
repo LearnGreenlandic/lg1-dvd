@@ -2,18 +2,20 @@
 #include <algorithm>
 #include <stdint.h>
 
-DialogData::DialogData(QDir dataDir, QString which){
-    if (!dataDir.cd("./dialogue/")) {
-        QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/dialogue/");
+DialogData::DialogData(const dirmap_t& dirs, QString which){
+    QString f_kal = find_newest(dirs, "./dialogue/greenlandic.txt");
+    if (f_kal.isEmpty()) {
+        QMessageBox::critical(0, "Missing Data!", "Could not find ./dialogue/greenlandic.txt");
         throw(-1);
     }
 
-    if (!dataDir.exists("greenlandic.txt") || !dataDir.exists(which)) {
-        QMessageBox::critical(0, "Missing Data!", "Data files missing from lessons/dialogue/");
+    QString f_which = find_newest(dirs, QString("./dialogue/") + which);
+    if (f_which.isEmpty()) {
+        QMessageBox::critical(0, "Missing Data!", QString("Could not find ./dialogue/") + which);
         throw(-1);
     }
 
-    QFile fg(dataDir.absoluteFilePath("greenlandic.txt"));
+    QFile fg(f_kal);
     fg.open(QIODevice::ReadOnly);
     QTextStream tg(&fg);
     tg.setCodec("UTF-8");
@@ -29,23 +31,25 @@ DialogData::DialogData(QDir dataDir, QString which){
             uint32_t w = ls.at(0).toULong()-1;
             phrases.resize(std::max(w+1, (uint32_t)phrases.size()));
 
-            if (!dataDir.exists(ls.at(0) + " Q.wav")) {
+            QString f_q = find_newest(dirs, QString("./dialogue/") + ls.at(0) + " Q.wav");
+            if (f_q.isEmpty()) {
                 QMessageBox::critical(0, "Missing Data!", QString("Sound file '") + ls.at(0) + " Q.wav' missing from data folder.");
                 throw(-1);
             }
-            if (!dataDir.exists(ls.at(0) + " A.wav")) {
+            QString f_a = find_newest(dirs, QString("./dialogue/") + ls.at(0) + " A.wav");
+            if (f_a.isEmpty()) {
                 QMessageBox::critical(0, "Missing Data!", QString("Sound file '") + ls.at(0) + " A.wav' missing from data folder.");
                 throw(-1);
             }
             phrases[w].clear();
-            phrases[w].push_back(dataDir.absoluteFilePath(ls.at(0) + " Q.wav"));
-            phrases[w].push_back(dataDir.absoluteFilePath(ls.at(0) + " A.wav"));
+            phrases[w].push_back(f_q);
+            phrases[w].push_back(f_a);
             ls.pop_front();
             phrases[w] += ls;
         }
     }
 
-    QFile fgw(dataDir.absoluteFilePath(which));
+    QFile fgw(f_which);
     fgw.open(QIODevice::ReadOnly);
     QTextStream tgw(&fgw);
     tgw.setCodec("UTF-8");

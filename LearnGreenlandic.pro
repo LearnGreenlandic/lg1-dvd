@@ -46,7 +46,8 @@ SOURCES += \
     src/WelcomeQuestion.cpp \
     src/XvidTest.cpp \
     src/WelcomeWords.cpp \
-    src/ValidateKey.cpp
+    src/ValidateKey.cpp \
+    src/common.cpp
 
 HEADERS  += \
     src/TaskChooser.hpp \
@@ -81,7 +82,8 @@ HEADERS  += \
     src/XvidTest.hpp \
     src/WelcomeWords.hpp \
     src/ValidateKey.hpp \
-    src/common.hpp
+    src/common.hpp \
+    src/files.hpp
 
 CONFIG -= warn_off
 CONFIG += warn_on

@@ -13,7 +13,7 @@ class StructureThree : public QWidget {
     Q_OBJECT
 
 public:
-    StructureThree(QDir dataDir, QString which, QString title, TaskChooser& tc);
+    StructureThree(QString which, QString title, TaskChooser& tc);
 
 public slots:
     void show();

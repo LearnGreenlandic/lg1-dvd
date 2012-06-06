@@ -1,9 +1,9 @@
 #include "PronounceTwo.hpp"
 
-PronounceTwo::PronounceTwo(QDir dataDir, TaskChooser& tc) :
+PronounceTwo::PronounceTwo(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
-data(dataDir),
+data(tc.dirs),
 curAt(-1)
 {
     setWindowTitle(tr("Udtaleøvelse 1.2: Diktat"));

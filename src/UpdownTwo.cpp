@@ -1,9 +1,9 @@
 #include "UpdownTwo.hpp"
 
-UpdownTwo::UpdownTwo(QDir dataDir, TaskChooser& tc) :
+UpdownTwo::UpdownTwo(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
-data(dataDir),
+data(tc.dirs),
 curAt(0)
 {
     setWindowTitle(tr("Ordbygning: Produktion"));

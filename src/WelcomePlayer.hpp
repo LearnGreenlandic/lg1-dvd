@@ -14,7 +14,7 @@ class WelcomePlayer : public QWidget {
     Q_OBJECT
 
 public:
-    WelcomePlayer(QDir dataDir, TaskChooser& tc);
+    WelcomePlayer(TaskChooser& tc);
 
     void closeEvent(QCloseEvent *event);
 
@@ -46,7 +46,7 @@ class WelcomePlayer : public QWidget {
     Q_OBJECT
 
 public:
-    WelcomePlayer(QDir dataDir, TaskChooser& tc);
+    WelcomePlayer(TaskChooser& tc);
 
     void closeEvent(QCloseEvent *event);
 

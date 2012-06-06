@@ -12,7 +12,7 @@ class ListenOne : public QWidget {
     Q_OBJECT
 
 public:
-    ListenOne(QDir dataDir, TaskChooser& tc);
+    ListenOne(TaskChooser& tc);
 
 public slots:
     void showNext();

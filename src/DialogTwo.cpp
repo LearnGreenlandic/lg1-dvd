@@ -1,9 +1,9 @@
 #include "DialogTwo.hpp"
 
-DialogTwo::DialogTwo(QDir dataDir, TaskChooser& tc) :
+DialogTwo::DialogTwo(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
-data(dataDir, tr("danish.txt")),
+data(tc.dirs, tr("danish.txt")),
 curAt(-1)
 {
     setWindowTitle(tr("Minidialog 1.2: Giv respons"));

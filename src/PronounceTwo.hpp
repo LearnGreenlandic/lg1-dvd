@@ -13,7 +13,7 @@ class PronounceTwo : public QWidget {
     Q_OBJECT
 
 public:
-    PronounceTwo(QDir dataDir, TaskChooser& tc);
+    PronounceTwo(TaskChooser& tc);
 
 public slots:
     void showNext();

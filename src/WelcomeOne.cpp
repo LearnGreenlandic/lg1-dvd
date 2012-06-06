@@ -1,10 +1,12 @@
 #include "WelcomeOne.hpp"
 
-WelcomeOne::WelcomeOne(QDir dataDir, TaskChooser& tc) :
+WelcomeOne::WelcomeOne(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc)
 {
-    if (!dataDir.cd("./welcome/") || !dataDir.exists("input.txt")) {
+    QString f_d = find_newest(tc.dirs, "./welcome/input.txt");
+    QDir dataDir(f_d.replace("input.txt", ""));
+    if (!dataDir.exists() || !dataDir.exists("input.txt")) {
         QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/welcome/");
         throw(-1);
     }

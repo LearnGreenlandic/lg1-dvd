@@ -1,9 +1,9 @@
 #include "DialogThree.hpp"
 
-DialogThree::DialogThree(QDir dataDir, TaskChooser& tc) :
+DialogThree::DialogThree(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
-data(dataDir, tr("danish.txt")),
+data(tc.dirs, tr("danish.txt")),
 curAt(-1)
 {
     setWindowTitle(tr("Minidialog 1.3: Stil spørgsmål"));

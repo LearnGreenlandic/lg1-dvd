@@ -1,12 +1,14 @@
 #include "ListenOne.hpp"
 #include <algorithm>
 
-ListenOne::ListenOne(QDir dataDir, TaskChooser& tc) :
+ListenOne::ListenOne(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 curAt(-1)
 {
-    if (!dataDir.cd("./listening/1/")) {
+    QString f_d = find_newest(tc.dirs, "./listening/1/ima.wav");
+    QDir dataDir(f_d.replace("ima.wav", ""));
+    if (!dataDir.exists()) {
         QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/listening/1/");
         throw(-1);
     }

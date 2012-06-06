@@ -11,7 +11,7 @@ class WelcomeTwo : public QWidget {
     Q_OBJECT
 
 public:
-    WelcomeTwo(QDir dataDir, TaskChooser& tc);
+    WelcomeTwo(TaskChooser& tc);
 
 public slots:
     void nextWord();

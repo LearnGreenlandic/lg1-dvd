@@ -11,7 +11,7 @@ class UpdownThree : public QWidget {
     Q_OBJECT
 
 public:
-    UpdownThree(QDir dataDir, TaskChooser& tc);
+    UpdownThree(TaskChooser& tc);
 
 public slots:
     void showNext();

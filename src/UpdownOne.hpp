@@ -11,7 +11,7 @@ class UpdownOne : public QWidget {
     Q_OBJECT
 
 public:
-    UpdownOne(QDir dataDir, TaskChooser& tc);
+    UpdownOne(TaskChooser& tc);
 
 public slots:
     void showNext();

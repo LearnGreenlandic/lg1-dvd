@@ -1,9 +1,9 @@
 #include "UpdownOne.hpp"
 
-UpdownOne::UpdownOne(QDir dataDir, TaskChooser& tc) :
+UpdownOne::UpdownOne(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
-data(dataDir),
+data(tc.dirs),
 curAt(0)
 {
     setWindowTitle(tr("Ordbygning: Reception"));

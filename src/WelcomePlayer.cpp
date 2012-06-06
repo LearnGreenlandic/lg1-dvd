@@ -6,14 +6,15 @@
 
 #if defined(Q_WS_WIN)
 
-WelcomePlayer::WelcomePlayer(QDir dataDir, TaskChooser& tc) :
+WelcomePlayer::WelcomePlayer(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint),
 tc(tc)
 {
     setWindowModality(Qt::ApplicationModal);
     setWindowTitle(tr("Velkommen til Grønlandsk for voksne!"));
 
-    if (!dataDir.exists("welcome.dat")) {
+    QString f_w = find_newest(tc.dirs, "welcome.dat");
+    if (f_w.isEmpty()) {
         QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate welcome.dat!");
         throw(-1);
     }
@@ -22,12 +23,12 @@ tc(tc)
     controls = video->querySubObject("controls");
 
     QCryptographicHash sha1(QCryptographicHash::Sha1);
-    sha1.addData(dataDir.absoluteFilePath("welcome.dat").toUtf8());
+    sha1.addData(f_w.toUtf8());
     QDir tmpdir(QDir::tempPath());
     tmpfile = tmpdir.absoluteFilePath(QString(sha1.result().toHex()) + "-welcome.avi");
 
     if (!tmpdir.exists(tmpfile)) {
-        CryptFile input(dataDir.absoluteFilePath("welcome.dat"));
+        CryptFile input(f_w);
         QFile output(tmpfile);
 
         input.open(QIODevice::ReadOnly);
@@ -106,14 +107,15 @@ void WelcomePlayer::finished(int state) {
 
 #else
 
-WelcomePlayer::WelcomePlayer(QDir dataDir, TaskChooser& tc) :
+WelcomePlayer::WelcomePlayer(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint),
 tc(tc)
 {
     setWindowModality(Qt::ApplicationModal);
     setWindowTitle(tr("Velkommen til Grønlandsk for voksne!"));
 
-    if (!dataDir.exists("welcome.dat")) {
+    QString f_w = find_newest(tc.dirs, "welcome.dat");
+    if (f_w.isEmpty()) {
         QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate welcome.dat!");
         throw(-1);
     }
@@ -125,7 +127,7 @@ tc(tc)
     audio = new Phonon::AudioOutput(Phonon::VideoCategory);
     Phonon::createPath(media, audio);
 
-    mediafile = new CryptFile(dataDir.absoluteFilePath("welcome.dat"));
+    mediafile = new CryptFile(f_w);
     media->setCurrentSource(mediafile);
     media->setTickInterval(1000);
     connect(media, SIGNAL(tick(qint64)), this, SLOT(tick(qint64)));

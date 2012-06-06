@@ -12,7 +12,7 @@ class ListenThree : public QWidget {
     Q_OBJECT
 
 public:
-    ListenThree(QDir dataDir, TaskChooser& tc);
+    ListenThree(TaskChooser& tc);
 
 public slots:
     void showNext();

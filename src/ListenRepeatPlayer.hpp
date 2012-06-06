@@ -14,7 +14,7 @@ class ListenRepeatPlayer : public QWidget {
     Q_OBJECT
 
 public:
-    ListenRepeatPlayer(QDir dataDir, TaskChooser& tc);
+    ListenRepeatPlayer(TaskChooser& tc);
 
     void closeEvent(QCloseEvent *event);
 
@@ -51,7 +51,7 @@ class ListenRepeatPlayer : public QWidget {
     Q_OBJECT
 
 public:
-    ListenRepeatPlayer(QDir dataDir, TaskChooser& tc);
+    ListenRepeatPlayer(TaskChooser& tc);
 
     void closeEvent(QCloseEvent *event);
 

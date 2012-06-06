@@ -2,16 +2,12 @@
 #include <algorithm>
 #include <stdint.h>
 
-StructureData::StructureData(QDir _dataDir, QString _which):
-dataDir(_dataDir),
-which(_which)
+StructureData::StructureData(const dirmap_t& dirs, QString which):
+which(which)
 {
-    if (!dataDir.cd("./structure/")) {
-        QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/structure/");
-        throw(-1);
-    }
-
-    if (!dataDir.cd(which)) {
+    QString f_d = find_newest(dirs, QString("./structure/") + which + "pairs.txt");
+    dataDir = QDir(f_d.replace("pairs.txt", ""));
+    if (!dataDir.exists()) {
         QMessageBox::critical(0, "Missing Data Folder!", QString("Could not change working folder to lessons/structure/") + which);
         throw(-1);
     }

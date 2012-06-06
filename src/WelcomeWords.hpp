@@ -15,7 +15,7 @@ class WelcomeWords : public QWidget {
     Q_OBJECT
 
 public:
-    WelcomeWords(QDir dataDir, TaskChooser& tc);
+    WelcomeWords(TaskChooser& tc);
 
     void closeEvent(QCloseEvent *event);
 
@@ -58,7 +58,7 @@ class WelcomeWords : public QWidget {
     Q_OBJECT
 
 public:
-    WelcomeWords(QDir dataDir, TaskChooser& tc);
+    WelcomeWords(TaskChooser& tc);
 
     void closeEvent(QCloseEvent *event);
 

@@ -1,12 +1,14 @@
 #include "ListenThree.hpp"
 #include <algorithm>
 
-ListenThree::ListenThree(QDir dataDir, TaskChooser& tc) :
+ListenThree::ListenThree(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 curAt(-1)
 {
-    if (!dataDir.cd("./listening/3/")) {
+    QString f_d = find_newest(tc.dirs, "./listening/3/ateq.wav");
+    QDir dataDir(f_d.replace("ateq.wav", ""));
+    if (!dataDir.exists()) {
         QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/listening/3/");
         throw(-1);
     }

@@ -11,7 +11,7 @@ class StructureTwo : public QWidget {
     Q_OBJECT
 
 public:
-    StructureTwo(QDir dataDir, QString which, QString title, TaskChooser& tc);
+    StructureTwo(QString which, QString title, TaskChooser& tc);
 
 public slots:
     void showNext();

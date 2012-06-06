@@ -13,7 +13,7 @@ class DialogOne : public QWidget {
     Q_OBJECT
 
 public:
-    DialogOne(QDir dataDir, TaskChooser& tc);
+    DialogOne(TaskChooser& tc);
 
 public slots:
     void playAgainQ();

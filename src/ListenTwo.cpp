@@ -1,12 +1,14 @@
 #include "ListenTwo.hpp"
 #include <algorithm>
 
-ListenTwo::ListenTwo(QDir dataDir, TaskChooser& tc) :
+ListenTwo::ListenTwo(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 curAt(-1)
 {
-    if (!dataDir.cd("./listening/2/")) {
+    QString f_d = find_newest(tc.dirs, "./listening/2/alla.wav");
+    QDir dataDir(f_d.replace("alla.wav", ""));
+    if (!dataDir.exists()) {
         QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/listening/2/");
         throw(-1);
     }

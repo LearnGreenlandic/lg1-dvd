@@ -5,12 +5,13 @@
 
 #if defined(Q_WS_WIN)
 
-ListenRepeatPlayer::ListenRepeatPlayer(QDir _dataDir, TaskChooser& tc) :
+ListenRepeatPlayer::ListenRepeatPlayer(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
-tc(tc),
-dataDir(_dataDir)
+tc(tc)
 {
-    if (!dataDir.cd("./repeat/")) {
+    QString f_d = find_newest(tc.dirs, "./repeat/per.dat");
+    dataDir = QDir(f_d.replace("per.dat", ""));
+    if (!dataDir.exists()) {
         QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/repeat/");
         throw(-1);
     }
@@ -165,12 +166,13 @@ QSize ListenRepeatPlayer::minimumSizeHint() const {
 
 #else
 
-ListenRepeatPlayer::ListenRepeatPlayer(QDir _dataDir, TaskChooser& tc) :
+ListenRepeatPlayer::ListenRepeatPlayer(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
-dataDir(_dataDir)
 {
-    if (!dataDir.cd("./repeat/")) {
+    QString f_d = find_newest(tc.dirs, "./repeat/per.dat");
+    dataDir = QDir(f_d.replace("per.dat", ""));
+    if (!dataDir.exists()) {
         QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/repeat/");
         throw(-1);
     }

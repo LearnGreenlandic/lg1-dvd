@@ -1,12 +1,13 @@
 #ifndef DIALOGDATA_HPP
 #define DIALOGDATA_HPP
 
+#include "common.hpp"
 #include <QtGui>
 
 class DialogData
 {
 public:
-    DialogData(QDir dataDir, QString which);
+    DialogData(const dirmap_t& dirs, QString which);
 
     QVector<QStringList> phrases;
 };

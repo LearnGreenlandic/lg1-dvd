@@ -1,12 +1,13 @@
 #ifndef UPDOWNDATA_HPP
 #define UPDOWNDATA_HPP
 
+#include "common.hpp"
 #include <QtGui>
 
 class UpdownData
 {
 public:
-    UpdownData(QDir dataDir);
+    UpdownData(const dirmap_t& dirs);
 
     QString glossUpperDetailed(QString upper);
     QString glossUpperShort(QString upper);

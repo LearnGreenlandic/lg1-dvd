@@ -11,7 +11,7 @@ class HyphenOne : public QWidget {
     Q_OBJECT
 
 public:
-    HyphenOne(QDir dataDir, TaskChooser& tc);
+    HyphenOne(TaskChooser& tc);
 
 public slots:
     void nextWord();

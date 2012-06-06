@@ -2,12 +2,14 @@
 
 #include <algorithm>
 
-HyphenOne::HyphenOne(QDir dataDir, TaskChooser& tc) :
+HyphenOne::HyphenOne(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 curAt(-1)
 {
-    if (!dataDir.cd("./hyphenate/")) {
+    QString f_d = find_newest(tc.dirs, "./hyphenate/Nuuk.png");
+    QDir dataDir(f_d.replace("Nuuk.png", ""));
+    if (!dataDir.exists()) {
         QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/hyphenate/");
         throw(-1);
     }

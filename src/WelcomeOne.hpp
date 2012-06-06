@@ -9,7 +9,7 @@ class WelcomeOne : public QWidget {
     Q_OBJECT
 
 public:
-    WelcomeOne(QDir dataDir, TaskChooser& tc);
+    WelcomeOne(TaskChooser& tc);
 
 public slots:
     void preventLoss();

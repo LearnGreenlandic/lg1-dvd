@@ -1,11 +1,12 @@
 #ifndef STRUCTUREDATA_HPP
 #define STRUCTUREDATA_HPP
 
+#include "common.hpp"
 #include <QtGui>
 
 class StructureData {
 public:
-    StructureData(QDir dataDir, QString which);
+    StructureData(const dirmap_t& dirs, QString which);
 
     QDir dataDir;
     QString which;

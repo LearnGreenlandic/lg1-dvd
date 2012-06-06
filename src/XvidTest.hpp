@@ -12,7 +12,7 @@ class XvidTest : public QDialog {
     Q_OBJECT
 
 public:
-    XvidTest(QDir dataDir);
+    XvidTest(QString avi);
 
     void closeEvent(QCloseEvent *event);
 
@@ -35,7 +35,7 @@ class XvidTest : public QDialog {
     Q_OBJECT
 
 public:
-    XvidTest(QDir dataDir);
+    XvidTest(QString avi);
 
     void closeEvent(QCloseEvent *event);
 
