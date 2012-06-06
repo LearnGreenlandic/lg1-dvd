@@ -168,7 +168,7 @@ QSize ListenRepeatPlayer::minimumSizeHint() const {
 
 ListenRepeatPlayer::ListenRepeatPlayer(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
-tc(tc),
+tc(tc)
 {
     QString f_d = find_newest(tc.dirs, "./repeat/per.dat");
     dataDir = QDir(f_d.replace("per.dat", ""));
