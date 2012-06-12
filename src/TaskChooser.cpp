@@ -825,9 +825,4 @@ void TaskChooser::checkFirstRun() {
         vk->raise();
         vk->activateWindow();
     }
-
-    bool doneWelcome = settings.value("done_welcome", false).toBool();
-    if (!doneWelcome) {
-        showWelcomePlayer();
-    }
 }

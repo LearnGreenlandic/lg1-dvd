@@ -7,7 +7,7 @@
 #if defined(Q_WS_WIN)
 
 WelcomePlayer::WelcomePlayer(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint),
+QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc)
 {
     setWindowModality(Qt::ApplicationModal);
@@ -108,7 +108,7 @@ void WelcomePlayer::finished(int state) {
 #else
 
 WelcomePlayer::WelcomePlayer(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint),
+QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc)
 {
     setWindowModality(Qt::ApplicationModal);
