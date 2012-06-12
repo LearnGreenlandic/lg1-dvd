@@ -5,7 +5,7 @@
 #include <utility>
 #include <set>
 
-const uint lg1_revision = 8317;
+const uint lg1_revision = 8358;
 
 typedef std::pair<size_t,QString> dirmap_e;
 typedef std::set<dirmap_e,std::greater<dirmap_e> > dirmap_t;
