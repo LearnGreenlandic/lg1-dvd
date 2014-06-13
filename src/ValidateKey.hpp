@@ -2,7 +2,7 @@
 #define VALIDATEKEY_HPP
 
 #include <QNetworkAccessManager>
-#include <QtGui>
+#include <QtWidgets>
 
 class ValidateKey : public QDialog {
     Q_OBJECT

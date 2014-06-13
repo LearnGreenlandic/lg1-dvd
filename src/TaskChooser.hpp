@@ -2,6 +2,7 @@
 #define TASKCHOOSER_HPP
 
 #include "common.hpp"
+#include <QtWidgets>
 #include <QtGui>
 
 class TaskChooser : public QWidget {

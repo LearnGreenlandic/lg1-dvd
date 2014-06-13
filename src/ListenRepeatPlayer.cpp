@@ -1,9 +1,6 @@
 #include "ListenRepeatPlayer.hpp"
-#include <QProgressDialog>
-#include <QCryptographicHash>
-#include <iostream>
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
 
 ListenRepeatPlayer::ListenRepeatPlayer(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
@@ -28,65 +25,8 @@ tc(tc)
 
     QDir tmpdir(QDir::tempPath());
 
-    QCryptographicHash sha1(QCryptographicHash::Sha1);
-    sha1.addData(dataDir.absoluteFilePath("per.dat").toUtf8());
-    tmpfile_per = tmpdir.absoluteFilePath(QString(sha1.result().toHex()) + "-per.avi");
-
-    sha1.reset();
-    sha1.addData(dataDir.absoluteFilePath("tikaajaat.dat").toUtf8());
-    tmpfile_tik = tmpdir.absoluteFilePath(QString(sha1.result().toHex()) + "-tikaajaat.avi");
-
-    if (!tmpdir.exists(tmpfile_per)) {
-        CryptFile input(dataDir.absoluteFilePath("per.dat"));
-        QFile output(tmpfile_per);
-
-        input.open(QIODevice::ReadOnly);
-        output.open(QIODevice::WriteOnly);
-
-        QProgressDialog progress("Transcoding for Windows Media Player...", "", 0, input.size(), this);
-        progress.setWindowModality(Qt::WindowModal);
-        progress.setCancelButton(0);
-
-        char buf[32768];
-        qint64 r;
-        while (!input.atEnd() && (r = input.read(buf, sizeof(buf))) > 0) {
-            if (output.write(buf, r) <= 0) {
-                std::cerr << "Write failed at offsets " << input.pos() << ", " << output.pos() << std::endl;
-                throw(-1);
-            }
-            progress.setValue(input.pos());
-        }
-        progress.setValue(input.size());
-
-        output.close();
-        input.close();
-    }
-
-    if (!tmpdir.exists(tmpfile_tik)) {
-        CryptFile input(dataDir.absoluteFilePath("tikaajaat.dat"));
-        QFile output(tmpfile_tik);
-
-        input.open(QIODevice::ReadOnly);
-        output.open(QIODevice::WriteOnly);
-
-        QProgressDialog progress("Transcoding for Windows Media Player...", "", 0, input.size(), this);
-        progress.setWindowModality(Qt::WindowModal);
-        progress.setCancelButton(0);
-
-        char buf[32768];
-        qint64 r;
-        while (!input.atEnd() && (r = input.read(buf, sizeof(buf))) > 0) {
-            if (output.write(buf, r) <= 0) {
-                std::cerr << "Write failed at offsets " << input.pos() << ", " << output.pos() << std::endl;
-                throw(-1);
-            }
-            progress.setValue(input.pos());
-        }
-        progress.setValue(input.size());
-
-        output.close();
-        input.close();
-    }
+    tmpfile_per = decrypt_to_tmp(dataDir.absoluteFilePath("per.dat").toUtf8());
+    tmpfile_tik = decrypt_to_tmp(dataDir.absoluteFilePath("tikaajaat.dat").toUtf8());
 
     video->setMinimumSize(400, 225);
     video->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
@@ -184,21 +124,20 @@ tc(tc)
 
     setWindowTitle(tr("Lyt, forstå, gentag"));
 
-    media = new Phonon::MediaObject;
-    video = new Phonon::VideoWidget;
-    Phonon::createPath(media, video);
+    media = new QMediaPlayer;
+    video = new QVideoWidget;
+    media->setVideoOutput(video);
 
-    audio = new Phonon::AudioOutput(Phonon::VideoCategory);
-    Phonon::createPath(media, audio);
+    tmpfile_per = decrypt_to_tmp(dataDir.absoluteFilePath("per.dat").toUtf8());
+    tmpfile_tik = decrypt_to_tmp(dataDir.absoluteFilePath("tikaajaat.dat").toUtf8());
+    playlist.addMedia(QUrl::fromLocalFile(tmpfile_per));
+    playlist.addMedia(QUrl::fromLocalFile(tmpfile_tik));
 
-    CryptFile *mediafile = new CryptFile(dataDir.absoluteFilePath("per.dat"));
-    media->setCurrentSource(mediafile);
-    mediafile = new CryptFile(dataDir.absoluteFilePath("tikaajaat.dat"));
-    media->enqueue(mediafile);
-    media->setTickInterval(1000);
-    connect(media, SIGNAL(tick(qint64)), this, SLOT(tick(qint64)));
+    media->setPlaylist(&playlist);
+    media->setNotifyInterval(1000);
+    connect(media, SIGNAL(positionChanged(qint64)), this, SLOT(tick(qint64)));
 
-    video->setAspectRatio(Phonon::VideoWidget::AspectRatio16_9);
+    video->setAspectRatioMode(Qt::KeepAspectRatio);
     video->setMinimumSize(400, 225);
     video->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
     video->setContentsMargins(0, 0, 0, 0);
@@ -228,8 +167,8 @@ tc(tc)
     playpause->setShortcut(QString("Space"));
     connect(playpause, SIGNAL(clicked()), this, SLOT(togglePlay()));
 
-    seeker = new Phonon::SeekSlider(this);
-    seeker->setMediaObject(media);
+    //seeker = new QMediaPlayer::SeekSlider(this);
+    //seeker->setMediaObject(media);
 
     QPalette palette;
     palette.setBrush(QPalette::Light, Qt::darkGray);
@@ -239,7 +178,7 @@ tc(tc)
 
     qhbl = new QHBoxLayout;
     qhbl->addWidget(playpause, 1);
-    qhbl->addWidget(seeker, 96);
+    //qhbl->addWidget(seeker, 96);
     qhbl->addWidget(timeLcd, 1);
 
     qvbl->addLayout(qhbl);
@@ -251,7 +190,9 @@ tc(tc)
 
 void ListenRepeatPlayer::closeEvent(QCloseEvent *event) {
     media->stop();
-    media->clear();
+    media->setMedia(QMediaContent());
+    QFile::remove(tmpfile_per);
+    QFile::remove(tmpfile_tik);
     event->accept();
 }
 
@@ -266,7 +207,7 @@ void ListenRepeatPlayer::tick(qint64 time) {
 }
 
 void ListenRepeatPlayer::togglePlay() {
-    if (media->state() == Phonon::PlayingState) {
+    if (media->state() == QMediaPlayer::PlayingState) {
         playpause->setIcon(style()->standardIcon(QStyle::SP_MediaPlay));
         playpause->setText("Play");
         media->pause();
@@ -280,17 +221,13 @@ void ListenRepeatPlayer::togglePlay() {
 
 void ListenRepeatPlayer::playPerAgain() {
     media->stop();
-    media->clear();
-    CryptFile *mediafile = new CryptFile(dataDir.absoluteFilePath("per.dat"));
-    media->setCurrentSource(mediafile);
+    playlist.setCurrentIndex(0);
     media->play();
 }
 
 void ListenRepeatPlayer::playTikaAgain() {
     media->stop();
-    media->clear();
-    CryptFile *mediafile = new CryptFile(dataDir.absoluteFilePath("tikaajaat.dat"));
-    media->setCurrentSource(mediafile);
+    playlist.setCurrentIndex(1);
     media->play();
 }
 

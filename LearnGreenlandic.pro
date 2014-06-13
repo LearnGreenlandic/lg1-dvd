@@ -1,7 +1,11 @@
 QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.4
 
-QT += core gui phonon network
+QT += core gui multimedia multimediawidgets network
 QT -= opengl
+
+win32 {
+    QT += axcontainer
+}
 
 TARGET = LearnGreenlandic
 TEMPLATE = app
@@ -87,6 +91,3 @@ HEADERS  += \
 
 CONFIG -= warn_off
 CONFIG += warn_on
-CONFIG += qaxcontainer
-QMAKE_CFLAGS   += -Wall -Wextra
-QMAKE_CXXFLAGS += -Wall -Wextra

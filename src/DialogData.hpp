@@ -2,7 +2,7 @@
 #define DIALOGDATA_HPP
 
 #include "common.hpp"
-#include <QtGui>
+#include <QtWidgets>
 
 class DialogData
 {

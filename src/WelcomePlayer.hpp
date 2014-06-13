@@ -5,7 +5,7 @@
 #include "TaskChooser.hpp"
 #include <QtGui>
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
 
 #include <QAxWidget>
 #include <QAxObject>
@@ -35,12 +35,8 @@ private:
 
 #else
 
-#include <phonon/mediaobject.h>
-#include <phonon/audiooutput.h>
-#include <phonon/mediasource.h>
-#include <phonon/videowidget.h>
-#include <phonon/seekslider.h>
-#include <phonon/effect.h>
+#include <QtMultimedia>
+#include <QVideoWidget>
 
 class WelcomePlayer : public QWidget {
     Q_OBJECT
@@ -62,14 +58,13 @@ public slots:
 private:
     TaskChooser& tc;
 
-    CryptFile *mediafile;
-    Phonon::MediaObject *media;
-    Phonon::VideoWidget *video;
-    Phonon::AudioOutput *audio;
+    QMediaPlayer *media;
+    QVideoWidget *video;
 
     QPushButton *playpause;
-    Phonon::SeekSlider *seeker;
+    //QMediaPlayer::SeekSlider *seeker;
     QLCDNumber *timeLcd;
+    QString tmpfile;
 };
 
 #endif

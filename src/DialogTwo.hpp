@@ -4,8 +4,7 @@
 #include "DialogData.hpp"
 #include "TaskChooser.hpp"
 
-#include <phonon/mediaobject.h>
-#include <phonon/audiooutput.h>
+#include <QtMultimedia>
 #include <QtGui>
 #include <stdint.h>
 
@@ -27,11 +26,9 @@ private:
     uint32_t curAt;
 
     QLabel *labelQ;
-    Phonon::MediaObject *mediaQ;
-    Phonon::AudioOutput *audioQ;
+    QMediaPlayer *mediaQ;
     QLabel *labelA;
-    Phonon::MediaObject *mediaA;
-    Phonon::AudioOutput *audioA;
+    QMediaPlayer *mediaA;
 };
 
 #endif // DIALOGTWO_HPP

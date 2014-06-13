@@ -2,7 +2,7 @@
 #define PRONOUNCEDATA_HPP
 
 #include "common.hpp"
-#include <QtGui>
+#include <QtWidgets>
 
 class PronounceData {
 public:

@@ -1,9 +1,9 @@
 #ifndef XVIDTEST_HPP
 #define XVIDTEST_HPP
 
-#include <QtGui>
+#include <QtWidgets>
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
 
 #include <QAxWidget>
 #include <QAxObject>
@@ -26,10 +26,8 @@ private:
 
 #else
 
-#include <phonon/mediaobject.h>
-#include <phonon/audiooutput.h>
-#include <phonon/mediasource.h>
-#include <phonon/videowidget.h>
+#include <QtMultimedia>
+#include <QVideoWidget>
 
 class XvidTest : public QDialog {
     Q_OBJECT
@@ -43,9 +41,8 @@ public slots:
     void finished();
 
 private:
-    Phonon::MediaObject *media;
-    Phonon::VideoWidget *video;
-    Phonon::AudioOutput *audio;
+    QMediaPlayer *media;
+    QVideoWidget *video;
 };
 
 #endif

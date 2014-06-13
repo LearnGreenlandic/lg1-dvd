@@ -3,8 +3,7 @@
 
 #include "TaskChooser.hpp"
 
-#include <phonon/mediaobject.h>
-#include <phonon/audiooutput.h>
+#include <QtMultimedia>
 #include <QtGui>
 #include <stdint.h>
 
@@ -26,8 +25,7 @@ private:
     QVector<QString> words;
     uint32_t curAt;
 
-    Phonon::MediaObject *media;
-    Phonon::AudioOutput *audio;
+    QMediaPlayer *media;
     QLabel *result;
     QLineEdit *input;
     QPushButton *check;

@@ -68,9 +68,9 @@ QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
 
 void ValidateKey::launchXvid() {
     QString torun = QCoreApplication::instance()->applicationDirPath() +
-    #if defined(Q_WS_WIN)
+    #if defined(Q_OS_WIN)
         "/../Xvid-1.3.2-20110601.exe"
-    #elif defined(Q_WS_MAC)
+    #elif defined(Q_OS_MAC)
         "/../DivXInstaller.dmg"
     #else
         "/install-prereq-ubuntu.sh"
@@ -81,7 +81,7 @@ void ValidateKey::launchXvid() {
         QMessageBox::information(0, "Missing Xvid / DivX packages!", QString("Could not locate ") + torun + "\nPlease open the DVD in your file manager and install Xvid / DivX manually, or have your system administrator help you.");
     }
 
-    #if defined(Q_WS_WIN) || defined(Q_WS_MAC)
+    #if defined(Q_OS_WIN) || defined(Q_OS_MAC)
         QDesktopServices::openUrl(QUrl::fromLocalFile(torun));
     #else
         torun = QString("/usr/bin/xterm -e \"") + torun + "\" &";
@@ -99,16 +99,16 @@ void ValidateKey::checkInput() {
     QNetworkRequest request(QUrl("http://learngreenlandic.com/callback/"));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
 
-    QUrl params;
+    QUrlQuery params;
     params.addQueryItem("app", "LG1");
     params.addQueryItem("revision", QVariant(lg1_revision).toString());
     params.addQueryItem("email", email1->text().simplified());
     params.addQueryItem("key", lkey->text().simplified());
     params.addQueryItem("language", tr("danish"));
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
     params.addQueryItem("os", "win");
-#elif defined(Q_WS_MAC)
+#elif defined(Q_OS_MAC)
     params.addQueryItem("os", "mac");
 #else
     if (sizeof(void*) > 4) {

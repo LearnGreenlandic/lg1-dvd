@@ -3,7 +3,7 @@
 #include <QCryptographicHash>
 #include <iostream>
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
 
 WelcomeWords::WelcomeWords(TaskChooser& tc) :
 QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
@@ -37,36 +37,7 @@ curAt(-1)
     video = new QAxWidget("{6BF52A52-394A-11D3-B153-00C04F79FAA6}");
     controls = video->querySubObject("controls");
 
-    QCryptographicHash sha1(QCryptographicHash::Sha1);
-    sha1.addData(f_dat.toUtf8());
-    QDir tmpdir(QDir::tempPath());
-    tmpfile = tmpdir.absoluteFilePath(QString(sha1.result().toHex()) + "-welcome.avi");
-
-    if (!tmpdir.exists(tmpfile)) {
-        CryptFile input(f_dat);
-        QFile output(tmpfile);
-
-        input.open(QIODevice::ReadOnly);
-        output.open(QIODevice::WriteOnly);
-
-        QProgressDialog progress("Transcoding for Windows Media Player...", "", 0, input.size(), this);
-        progress.setWindowModality(Qt::WindowModal);
-        progress.setCancelButton(0);
-
-        char buf[32768];
-        qint64 r;
-        while (!input.atEnd() && (r = input.read(buf, sizeof(buf))) > 0) {
-            if (output.write(buf, r) <= 0) {
-                std::cerr << "Write failed at offsets " << input.pos() << ", " << output.pos() << std::endl;
-                throw(-1);
-            }
-            progress.setValue(input.pos());
-        }
-        progress.setValue(input.size());
-
-        output.close();
-        input.close();
-    }
+    tmpfile = decrypt_to_tmp(f_dat);
 
     video->setMinimumSize(400, 225);
     video->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
@@ -174,19 +145,16 @@ curAt(-1)
 
     setWindowTitle(tr("Diktat af Tika's velkomst"));
 
-    media = new Phonon::MediaObject;
-    video = new Phonon::VideoWidget;
-    Phonon::createPath(media, video);
+    media = new QMediaPlayer;
+    video = new QVideoWidget;
+    media->setVideoOutput(video);
 
-    audio = new Phonon::AudioOutput(Phonon::VideoCategory);
-    Phonon::createPath(media, audio);
+    tmpfile = decrypt_to_tmp(f_dat);
+    media->setMedia(QUrl::fromLocalFile(tmpfile));
+    media->setNotifyInterval(1000);
+    connect(media, SIGNAL(positionChanged(qint64)), this, SLOT(tick(qint64)));
 
-    mediafile = new CryptFile(f_dat);
-    media->setCurrentSource(mediafile);
-    media->setTickInterval(1000);
-    connect(media, SIGNAL(tick(qint64)), this, SLOT(tick(qint64)));
-
-    video->setAspectRatio(Phonon::VideoWidget::AspectRatio16_9);
+    video->setAspectRatioMode(Qt::KeepAspectRatio);
     video->setMinimumSize(400, 225);
     video->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
     video->setContentsMargins(0, 0, 0, 0);
@@ -201,8 +169,8 @@ curAt(-1)
     playpause->setShortcut(QString("Space"));
     connect(playpause, SIGNAL(clicked()), this, SLOT(togglePlay()));
 
-    seeker = new Phonon::SeekSlider(this);
-    seeker->setMediaObject(media);
+    //seeker = new QMediaPlayer::SeekSlider(this);
+    //seeker->setMediaObject(media);
 
     QPalette palette;
     palette.setBrush(QPalette::Light, Qt::darkGray);
@@ -212,7 +180,7 @@ curAt(-1)
 
     QHBoxLayout *qhbl = new QHBoxLayout;
     qhbl->addWidget(playpause, 1);
-    qhbl->addWidget(seeker, 96);
+    //qhbl->addWidget(seeker, 96);
     qhbl->addWidget(timeLcd, 1);
 
     qvbl->addLayout(qhbl);
@@ -268,7 +236,7 @@ curAt(-1)
 
 void WelcomeWords::closeEvent(QCloseEvent *event) {
     media->stop();
-    media->clear();
+    media->setMedia(QMediaContent());
     event->accept();
 }
 
@@ -283,7 +251,7 @@ void WelcomeWords::tick(qint64 time) {
 }
 
 void WelcomeWords::togglePlay() {
-    if (media->state() == Phonon::PlayingState) {
+    if (media->state() == QMediaPlayer::PlayingState) {
         playpause->setIcon(style()->standardIcon(QStyle::SP_MediaPlay));
         playpause->setText("Play");
         media->pause();

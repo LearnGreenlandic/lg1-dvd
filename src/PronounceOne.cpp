@@ -14,9 +14,7 @@ curAt(-1)
     ql->setWordWrap(true);
     qvbl->addWidget(ql);
 
-    media = new Phonon::MediaObject;
-    audio = new Phonon::AudioOutput;
-    Phonon::createPath(media, audio);
+    media = new QMediaPlayer;
 
     text = new QLabel;
     qvbl->addWidget(text);
@@ -40,7 +38,7 @@ curAt(-1)
 
 void PronounceOne::playAgain() {
     media->stop();
-    media->seek(0);
+    media->setPosition(0);
     media->play();
 }
 
@@ -58,7 +56,7 @@ void PronounceOne::showNext() {
         close();
         return;
     }
-    media->setCurrentSource(data.sounds[data.words.at(curAt)]);
+    media->setMedia(QUrl::fromLocalFile(data.sounds[data.words.at(curAt)]));
     text->setText(QString("<h2>") + data.words.at(curAt) + "</h2>");
     adjustSize();
     playAgain();

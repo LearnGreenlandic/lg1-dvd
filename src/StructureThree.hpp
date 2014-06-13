@@ -4,8 +4,7 @@
 #include "StructureData.hpp"
 #include "TaskChooser.hpp"
 
-#include <phonon/mediaobject.h>
-#include <phonon/audiooutput.h>
+#include <QtMultimedia>
 #include <QtGui>
 #include <stdint.h>
 
@@ -29,10 +28,8 @@ private:
     StructureData data;
     uint32_t curAt;
 
-    Phonon::MediaObject *media;
-    Phonon::AudioOutput *audio;
-    Phonon::MediaObject *cmedia;
-    Phonon::AudioOutput *caudio;
+    QMediaPlayer *media;
+    QMediaPlayer *cmedia;
     QLabel *query;
     QLabel *result;
     QLineEdit *input;

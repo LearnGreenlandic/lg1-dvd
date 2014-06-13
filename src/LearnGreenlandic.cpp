@@ -1,11 +1,12 @@
 #include "TaskChooser.hpp"
 #include "common.hpp"
-#include <QtGui/QApplication>
+#include <QApplication>
+#include <QtWidgets>
 #include <ctime>
 #include <cstdlib>
 #include <stdint.h>
 
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
     #define WIN32_LEAN_AND_MEAN
     #define VC_EXTRALEAN
     #include <windows.h>
@@ -13,9 +14,6 @@
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
-
-    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
-    QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
 
     app.setOrganizationDomain("learngreenlandic.com");
     app.setOrganizationName("LearnGreenlandic");
@@ -84,9 +82,11 @@ int main(int argc, char *argv[]) {
             progress.setMaximum(drives.size());
 
             foreach (QFileInfo drive, drives) {
+                #if defined(Q_OS_WIN)
                 if (GetDriveTypeA(drive.absolutePath().toStdString().c_str()) == DRIVE_REMOTE) {
                     continue;
                 }
+                #endif
                 size_t rev = 0;
                 QFileInfo f(drive.absoluteFilePath() + "/lessons/revision.txt");
                 progress.setLabelText(QString("Trying to read ") + f.absoluteFilePath() + " ...");

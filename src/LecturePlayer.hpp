@@ -7,7 +7,7 @@
 #include <QtGui>
 #include <stdint.h>
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
 
 #include <QAxWidget>
 #include <QAxObject>
@@ -45,12 +45,8 @@ private:
 
 #else
 
-#include <phonon/mediaobject.h>
-#include <phonon/audiooutput.h>
-#include <phonon/mediasource.h>
-#include <phonon/videowidget.h>
-#include <phonon/seekslider.h>
-#include <phonon/effect.h>
+#include <QtMultimedia>
+#include <QVideoWidget>
 
 class LecturePlayer : public QWidget {
     Q_OBJECT
@@ -79,15 +75,14 @@ private:
     ScalingGraphicsView *view;
     QGraphicsPixmapItem *slide;
 
-    CryptFile *mediafile;
-    Phonon::MediaObject *media;
-    Phonon::VideoWidget *video;
-    Phonon::AudioOutput *audio;
+    QMediaPlayer *media;
+    QVideoWidget *video;
 
     QPushButton *playpause;
-    Phonon::SeekSlider *seeker;
+    //QMediaPlayer::SeekSlider *seeker;
     QLCDNumber *timeLcd;
+    QString tmpfile;
 };
 
-#endif // Q_WS_WIN
+#endif // Q_OS_WIN
 #endif // LECTUREPLAYER_H

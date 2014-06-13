@@ -57,9 +57,7 @@ curAt(-1)
     qvbl->addWidget(ql);
     qvbl->addSpacing(5);
 
-    media = new Phonon::MediaObject;
-    audio = new Phonon::AudioOutput;
-    Phonon::createPath(media, audio);
+    media = new QMediaPlayer;
 
     QPushButton *again = new QPushButton(tr("Lyt igen"));
     connect(again, SIGNAL(clicked()), this, SLOT(playAgain()));
@@ -92,7 +90,7 @@ curAt(-1)
 
 void ListenOne::playAgain() {
     media->stop();
-    media->seek(0);
+    media->setPosition(0);
     media->play();
 }
 
@@ -111,7 +109,7 @@ void ListenOne::showNext() {
         return;
     }
 
-    media->setCurrentSource(words.at(curAt).first);
+    media->setMedia(QUrl::fromLocalFile(words.at(curAt).first));
     result->hide();
 
     QString tmp = QString(tr("Nej, har ikke ")) + words.at(curAt).second + words.at(curAt).second;

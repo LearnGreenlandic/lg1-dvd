@@ -16,9 +16,7 @@ curAt(-1)
 
     qvbl->addSpacing(15);
 
-    mediaQ = new Phonon::MediaObject;
-    audioQ = new Phonon::AudioOutput;
-    Phonon::createPath(mediaQ, audioQ);
+    mediaQ = new QMediaPlayer;
 
     labelQ = new QLabel;
     QPushButton *againQ = new QPushButton(tr("Hør spørgsmålet"));
@@ -26,9 +24,7 @@ curAt(-1)
     qvbl->addWidget(labelQ);
     qvbl->addWidget(againQ);
 
-    mediaA = new Phonon::MediaObject;
-    audioA = new Phonon::AudioOutput;
-    Phonon::createPath(mediaA, audioA);
+    mediaA = new QMediaPlayer;
 
     labelA = new QLabel;
     QPushButton *againA = new QPushButton(tr("Hør svaret"));
@@ -51,13 +47,13 @@ curAt(-1)
 
 void DialogTwo::playAgainQ() {
     mediaQ->stop();
-    mediaQ->seek(0);
+    mediaQ->setPosition(0);
     mediaQ->play();
 }
 
 void DialogTwo::playAgainA() {
     mediaA->stop();
-    mediaA->seek(0);
+    mediaA->setPosition(0);
     mediaA->play();
 }
 
@@ -78,11 +74,11 @@ void DialogTwo::showNext() {
 
     labelQ->setText(QString("<h2>") + data.phrases.at(curAt).at(2) + "</h2>");
     labelQ->setToolTip(QString("<h2>") + data.phrases.at(curAt).at(4) + "</h2>");
-    mediaQ->setCurrentSource(data.phrases.at(curAt).at(0));
+    mediaQ->setMedia(QUrl::fromLocalFile(data.phrases.at(curAt).at(0)));
 
     labelA->setText(QString("<h2>") + data.phrases.at(curAt).at(5) + "</h2>");
     labelA->setToolTip(QString("<h2>") + data.phrases.at(curAt).at(3) + "</h2>");
-    mediaA->setCurrentSource(data.phrases.at(curAt).at(1));
+    mediaA->setMedia(QUrl::fromLocalFile(data.phrases.at(curAt).at(1)));
 
     adjustSize();
     playAgainQ();

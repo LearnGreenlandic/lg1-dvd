@@ -34,9 +34,7 @@ curAt(-1)
     qvbl->addWidget(ql);
     qvbl->addSpacing(5);
 
-    media = new Phonon::MediaObject;
-    audio = new Phonon::AudioOutput;
-    Phonon::createPath(media, audio);
+    media = new QMediaPlayer;
 
     QPushButton *again = new QPushButton(tr("Lyt igen"));
     connect(again, SIGNAL(clicked()), this, SLOT(playAgain()));
@@ -71,7 +69,7 @@ curAt(-1)
 
 void ListenFour::playAgain() {
     media->stop();
-    media->seek(0);
+    media->setPosition(0);
     media->play();
 }
 
@@ -89,7 +87,7 @@ void ListenFour::showNext() {
         close();
         return;
     }
-    media->setCurrentSource(words.at(curAt));
+    media->setMedia(QUrl::fromLocalFile(words.at(curAt)));
     result->hide();
     yield->hide();
     input->setText("");

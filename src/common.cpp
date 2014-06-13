@@ -1,5 +1,9 @@
 #include "files.hpp"
 #include "common.hpp"
+#include "CryptFile.hpp"
+#include <QProgressDialog>
+#include <QCryptographicHash>
+#include <iostream>
 
 QString find_newest(const dirmap_t& dirs, const QString& name) {
     QString file;
@@ -46,4 +50,40 @@ bool check_files(const dirmap_t& dirs) {
     }
 
     return true;
+}
+
+QString decrypt_to_tmp(const QString &file) {
+    QCryptographicHash sha1(QCryptographicHash::Sha1);
+    sha1.addData(file.toUtf8());
+    QDir tmpdir(QDir::tempPath());
+    QString tmpfile = tmpdir.absoluteFilePath(QString(sha1.result().toHex()) + "-learngreenlandic.avi");
+
+    if (!tmpdir.exists(tmpfile)) {
+        CryptFile input(file);
+        QFile output(tmpfile);
+
+        input.open(QIODevice::ReadOnly);
+        output.open(QIODevice::WriteOnly);
+
+        QProgressDialog progress("Transcoding for playback...", "", 0, input.size());
+        progress.setWindowModality(Qt::WindowModal);
+        progress.setCancelButton(0);
+        progress.show();
+
+        char buf[32768];
+        qint64 r;
+        while (!input.atEnd() && (r = input.read(buf, sizeof(buf))) > 0) {
+            if (output.write(buf, r) <= 0) {
+                std::cerr << "Write failed at offsets " << input.pos() << ", " << output.pos() << std::endl;
+                throw(-1);
+            }
+            progress.setValue(input.pos());
+        }
+        progress.setValue(input.size());
+
+        output.close();
+        input.close();
+    }
+
+    return tmpfile;
 }

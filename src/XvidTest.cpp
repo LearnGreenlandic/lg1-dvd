@@ -1,6 +1,6 @@
 #include "XvidTest.hpp"
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
 
 XvidTest::XvidTest(QString avi) :
 QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
@@ -56,18 +56,14 @@ QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
         throw(-1);
     }
 
-    media = new Phonon::MediaObject;
-    video = new Phonon::VideoWidget;
-    Phonon::createPath(media, video);
+    media = new QMediaPlayer;
+    video = new QVideoWidget;
+    media->setVideoOutput(video);
 
-    audio = new Phonon::AudioOutput(Phonon::VideoCategory);
-    Phonon::createPath(media, audio);
-
-    media->setCurrentSource(avi);
+    media->setMedia(QUrl::fromLocalFile(avi));
     QTimer::singleShot(6000, this, SLOT(finished()));
-    //connect(media, SIGNAL(finished()), this, SLOT(finished()));
 
-    video->setAspectRatio(Phonon::VideoWidget::AspectRatio16_9);
+    video->setAspectRatioMode(Qt::KeepAspectRatio);
     video->setMinimumSize(400, 225);
     video->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
     video->setContentsMargins(0, 0, 0, 0);
@@ -85,7 +81,7 @@ QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
 
 void XvidTest::closeEvent(QCloseEvent *event) {
     media->stop();
-    media->clear();
+    media->setMedia(QMediaContent());
     event->accept();
 }
 

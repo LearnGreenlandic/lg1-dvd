@@ -749,9 +749,9 @@ void TaskChooser::checkFirstRun() {
     bool hasXvid = settings.value("has_xvid", false).toBool();
     while (!hasXvid) {
         QMessageBox mbox(QMessageBox::Question, tr("Xvid og MP3?"),
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
              tr("Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid codec?")
-#elif defined(Q_WS_MAC)
+#elif defined(Q_OS_MAC)
              tr("Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere DivX codec?")
 #else
              tr("Dette program kræver at kunne afspille videoer med Xvid og MP3 codecs. Vil du installere Xvid og MP3 codecs?")
@@ -764,9 +764,9 @@ void TaskChooser::checkFirstRun() {
         if (mbox.clickedButton() == yes) {
             QMessageBox::information(0, tr("Installer Xvid"), tr("Programmet åbner nu installeren i et nyt vindue og lukker så dette. Start Learn Greenlandic igen når du har installeret Xvid eller DivX."));
             QString torun = find_newest(dirs,
-            #if defined(Q_WS_WIN)
+            #if defined(Q_OS_WIN)
                 "../Xvid-1.3.2-20110601.exe"
-            #elif defined(Q_WS_MAC)
+            #elif defined(Q_OS_MAC)
                 "../DivXInstaller.dmg"
             #else
                 "../autorun.sh"
@@ -774,7 +774,7 @@ void TaskChooser::checkFirstRun() {
                     )
             ;
 
-            #if defined(Q_WS_WIN) || defined(Q_WS_MAC)
+            #if defined(Q_OS_WIN) || defined(Q_OS_MAC)
                 QDesktopServices::openUrl(QUrl::fromLocalFile(torun));
             #else
                 torun = QString("/usr/bin/xterm -e \"") + QCoreApplication::instance()->applicationDirPath() + "/install-prereq-ubuntu.sh\" &";

@@ -14,9 +14,7 @@ curAt(-1)
     ql->setWordWrap(true);
     qvbl->addWidget(ql);
 
-    media = new Phonon::MediaObject;
-    audio = new Phonon::AudioOutput;
-    Phonon::createPath(media, audio);
+    media = new QMediaPlayer;
 
     QPushButton *again = new QPushButton(tr("Lyt igen"));
     connect(again, SIGNAL(clicked()), this, SLOT(playAgain()));
@@ -52,7 +50,7 @@ curAt(-1)
 
 void PronounceTwo::playAgain() {
     media->stop();
-    media->seek(0);
+    media->setPosition(0);
     media->play();
 }
 
@@ -70,7 +68,7 @@ void PronounceTwo::showNext() {
         close();
         return;
     }
-    media->setCurrentSource(data.sounds[data.words.at(curAt)]);
+    media->setMedia(QUrl::fromLocalFile(data.sounds[data.words.at(curAt)]));
     result->hide();
     yield->hide();
     input->setText("");

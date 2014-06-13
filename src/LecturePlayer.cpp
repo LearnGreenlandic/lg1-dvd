@@ -1,5 +1,5 @@
 #include "LecturePlayer.hpp"
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
 
 #include <QProgressDialog>
 #include <QCryptographicHash>
@@ -33,36 +33,7 @@ tc(tc)
     video = new QAxWidget("{6BF52A52-394A-11D3-B153-00C04F79FAA6}");
     controls = video->querySubObject("controls");
 
-    QCryptographicHash sha1(QCryptographicHash::Sha1);
-    sha1.addData(lecfile.toUtf8());
-    QDir tmpdir(QDir::tempPath());
-    tmpfile = tmpdir.absoluteFilePath(QString(sha1.result().toHex()) + "-lecture.avi");
-
-    if (!tmpdir.exists(tmpfile)) {
-        CryptFile input(lecfile);
-        QFile output(tmpfile);
-
-        input.open(QIODevice::ReadOnly);
-        output.open(QIODevice::WriteOnly);
-
-        QProgressDialog progress("Transcoding for Windows Media Player...", "", 0, input.size(), this);
-        progress.setWindowModality(Qt::WindowModal);
-        progress.setCancelButton(0);
-
-        char buf[32768];
-        qint64 r;
-        while (!input.atEnd() && (r = input.read(buf, sizeof(buf))) > 0) {
-            if (output.write(buf, r) <= 0) {
-                std::cerr << "Write failed at offsets " << input.pos() << ", " << output.pos() << std::endl;
-                throw(-1);
-            }
-            progress.setValue(input.pos());
-        }
-        progress.setValue(input.size());
-
-        output.close();
-        input.close();
-    }
+    tmpfile = decrypt_to_tmp(lecfile);
 
     video->setMinimumSize(400, 225);
     video->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
@@ -172,19 +143,16 @@ tc(tc)
         slides[key] = slideFile.canonicalFilePath();
     }
 
-    media = new Phonon::MediaObject;
-    video = new Phonon::VideoWidget;
-    Phonon::createPath(media, video);
+    media = new QMediaPlayer;
+    video = new QVideoWidget;
+    media->setVideoOutput(video);
 
-    audio = new Phonon::AudioOutput(Phonon::VideoCategory);
-    Phonon::createPath(media, audio);
+    tmpfile = decrypt_to_tmp(lecfile);
+    media->setMedia(QUrl::fromLocalFile(tmpfile));
+    media->setNotifyInterval(1000);
+    connect(media, SIGNAL(positionChanged(qint64)), this, SLOT(tick(qint64)));
 
-    mediafile = new CryptFile(lecfile);
-    media->setCurrentSource(mediafile);
-    media->setTickInterval(1000);
-    connect(media, SIGNAL(tick(qint64)), this, SLOT(tick(qint64)));
-
-    video->setAspectRatio(Phonon::VideoWidget::AspectRatio16_9);
+    video->setAspectRatioMode(Qt::KeepAspectRatio);
     video->setMinimumSize(400, 225);
     video->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
     video->setContentsMargins(0, 0, 0, 0);
@@ -216,8 +184,8 @@ tc(tc)
     playpause->setShortcut(QString("Space"));
     connect(playpause, SIGNAL(clicked()), this, SLOT(togglePlay()));
 
-    seeker = new Phonon::SeekSlider(this);
-    seeker->setMediaObject(media);
+    //seeker = new QMediaPlayer::SeekSlider(this);
+    //seeker->setMediaObject(media);
 
     QPalette palette;
     palette.setBrush(QPalette::Light, Qt::darkGray);
@@ -227,7 +195,7 @@ tc(tc)
 
     QHBoxLayout *qhbl = new QHBoxLayout;
     qhbl->addWidget(playpause, 1);
-    qhbl->addWidget(seeker, 96);
+    //qhbl->addWidget(seeker, 96);
     qhbl->addWidget(timeLcd, 1);
 
     qgl->addLayout(qhbl, 1, 0, 1, 2);
@@ -238,7 +206,8 @@ tc(tc)
 
 void LecturePlayer::closeEvent(QCloseEvent *event) {
     media->stop();
-    media->clear();
+    media->setMedia(QMediaContent());
+    QFile::remove(tmpfile);
     event->accept();
 }
 
@@ -272,7 +241,7 @@ void LecturePlayer::tick(qint64 time) {
 }
 
 void LecturePlayer::togglePlay() {
-    if (media->state() == Phonon::PlayingState) {
+    if (media->state() == QMediaPlayer::PlayingState) {
         playpause->setIcon(style()->standardIcon(QStyle::SP_MediaPlay));
         playpause->setText("Play");
         media->pause();

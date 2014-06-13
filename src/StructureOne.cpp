@@ -21,11 +21,9 @@ curAt(0)
     qvbl->addWidget(ql);
     qvbl->addSpacing(5);
 
-    media = new Phonon::MediaObject;
-    audio = new Phonon::AudioOutput;
-    Phonon::createPath(media, audio);
+    media = new QMediaPlayer;
 
-    media->setCurrentSource(data.dataDir.absoluteFilePath(data.pairs.at(curAt).at(0)) + ".wav");
+    media->setMedia(QUrl::fromLocalFile(data.dataDir.absoluteFilePath(data.pairs.at(curAt).at(0)) + ".wav"));
     QPushButton *again = new QPushButton(tr("Lyt igen"));
     connect(again, SIGNAL(clicked()), this, SLOT(playAgain()));
     qvbl->addWidget(again);
@@ -63,7 +61,7 @@ void StructureOne::show() {
 
 void StructureOne::playAgain() {
     media->stop();
-    media->seek(0);
+    media->setPosition(0);
     media->play();
 }
 
@@ -81,7 +79,7 @@ void StructureOne::showNext() {
         close();
         return;
     }
-    media->setCurrentSource(data.dataDir.absoluteFilePath(data.pairs.at(curAt).at(0)) + ".wav");
+    media->setMedia(QUrl::fromLocalFile(data.dataDir.absoluteFilePath(data.pairs.at(curAt).at(0)) + ".wav"));
     result->hide();
     yield->hide();
     input->setText("");

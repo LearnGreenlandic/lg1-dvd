@@ -2,7 +2,7 @@
 #define STRUCTUREDATA_HPP
 
 #include "common.hpp"
-#include <QtGui>
+#include <QtWidgets>
 
 class StructureData {
 public:

@@ -2,7 +2,7 @@
 #define UPDOWNDATA_HPP
 
 #include "common.hpp"
-#include <QtGui>
+#include <QtWidgets>
 
 class UpdownData
 {

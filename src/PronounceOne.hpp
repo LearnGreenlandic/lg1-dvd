@@ -4,8 +4,7 @@
 #include "PronounceData.hpp"
 #include "TaskChooser.hpp"
 
-#include <phonon/mediaobject.h>
-#include <phonon/audiooutput.h>
+#include <QtMultimedia>
 #include <QtGui>
 #include <stdint.h>
 
@@ -25,8 +24,7 @@ private:
     PronounceData data;
     uint32_t curAt;
 
-    Phonon::MediaObject *media;
-    Phonon::AudioOutput *audio;
+    QMediaPlayer *media;
     QLabel *text;
 };
 
