@@ -1,14 +1,14 @@
 #include "DialogTwo.hpp"
 
 DialogTwo::DialogTwo(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 data(tc.dirs, tr("danish.txt")),
 curAt(-1)
 {
     setWindowTitle(tr("Minidialog 1.2: Giv respons"));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
 
     QLabel *label = new QLabel(tr("Anden øvelse er lidt vanskeligere, for nu er der også lidt indhold med i spillet. Du får først Beatrines sætninger som du så skal give et fornuftigt respons på!"));
     label->setWordWrap(true);

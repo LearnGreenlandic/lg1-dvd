@@ -1,26 +1,27 @@
 #include "ListenOne.hpp"
 #include <algorithm>
+#include <random>
 
 ListenOne::ListenOne(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 curAt(-1)
 {
     QString f_d = find_newest(tc.dirs, "./listening/1/ima.wav");
     QDir dataDir(f_d.replace("ima.wav", ""));
     if (!dataDir.exists()) {
-        QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/listening/1/");
+        QMessageBox::critical(nullptr, "Missing Data Folder!", "Could not change working folder to lessons/listening/1/");
         throw(-1);
     }
 
     if (!dataDir.exists("words.txt")) {
-        QMessageBox::critical(0, "Missing Data!", "Could not find words.txt!");
+        QMessageBox::critical(nullptr, "Missing Data!", "Could not find words.txt!");
         throw(-1);
     }
 
     QFile list(dataDir.absoluteFilePath("words.txt"));
     if (!list.open(QIODevice::ReadOnly)) {
-        QMessageBox::critical(0, "Bad Data!", "Could not open words.txt for reading!");
+        QMessageBox::critical(nullptr, "Bad Data!", "Could not open words.txt for reading!");
         throw(-1);
     }
 
@@ -33,7 +34,7 @@ curAt(-1)
             QStringList wds = sp.at(1).split(" ");
             foreach (line, wds) {
                 if (!dataDir.exists(line + ".wav")) {
-                    QMessageBox::critical(0, "Bad Data!", QString("Missing audio file ") + line + ".wav!");
+                    QMessageBox::critical(nullptr, "Bad Data!", QString("Missing audio file ") + line + ".wav!");
                     throw(-1);
                 }
                 words.push_back(qMakePair(dataDir.absoluteFilePath(line + ".wav"), sp.at(0)));
@@ -42,15 +43,15 @@ curAt(-1)
     }
 
     if (words.empty()) {
-        QMessageBox::critical(0, "Data Error!", "Failed to read data files!");
+        QMessageBox::critical(nullptr, "Data Error!", "Failed to read data files!");
         throw(-1);
     }
 
-    std::random_shuffle(words.begin(), words.end());
+    std::shuffle(words.begin(), words.end(), std::mt19937(std::random_device()()));
 
     setWindowTitle(tr("Lydøvelse  1.1: En eller to konsonanter"));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
 
     QLabel *ql = new QLabel(tr("Lyt og svar om der er to konsonanter."));
     ql->setWordWrap(true);

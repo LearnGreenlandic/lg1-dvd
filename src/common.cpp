@@ -7,8 +7,8 @@
 
 QString find_newest(const dirmap_t& dirs, const QString& name) {
     QString file;
-    for (dirmap_t::const_iterator it = dirs.begin() ; it != dirs.end() ; ++it) {
-        QString str(it->second);
+    for (const auto& it : dirs) {
+        QString str(it.second);
         QDir dir(str);
         if (dir.exists(name)) {
             file = dir.absoluteFilePath(name);
@@ -37,7 +37,7 @@ bool check_files(const dirmap_t& dirs) {
     int z = sizeof(file_list)/sizeof(*file_list);
     QProgressDialog progress("Verifying existence of LG1 data...", "", 0, z);
     progress.setWindowModality(Qt::WindowModal);
-    progress.setCancelButton(0);
+    progress.setCancelButton(nullptr);
     progress.show();
 
     for (int i=0 ; i<z ; ++i) {
@@ -67,7 +67,7 @@ QString decrypt_to_tmp(const QString &file) {
 
         QProgressDialog progress("Transcoding for playback...", "", 0, input.size());
         progress.setWindowModality(Qt::WindowModal);
-        progress.setCancelButton(0);
+        progress.setCancelButton(nullptr);
         progress.show();
 
         char buf[32768];

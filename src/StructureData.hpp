@@ -6,7 +6,7 @@
 
 class StructureData {
 public:
-    StructureData(const dirmap_t& dirs, QString which);
+    StructureData(const dirmap_t& dirs, const QString& which);
 
     QDir dataDir;
     QString which;

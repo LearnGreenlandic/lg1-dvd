@@ -1,19 +1,19 @@
 #include "WelcomeOne.hpp"
 
 WelcomeOne::WelcomeOne(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc)
 {
     QString f_d = find_newest(tc.dirs, "./welcome/input.txt");
     QDir dataDir(f_d.replace("input.txt", ""));
     if (!dataDir.exists() || !dataDir.exists("input.txt")) {
-        QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/welcome/");
+        QMessageBox::critical(nullptr, "Missing Data Folder!", "Could not change working folder to lessons/welcome/");
         throw(-1);
     }
 
     QFile input_f(dataDir.absoluteFilePath("input.txt"));
     if (!input_f.open(QIODevice::ReadOnly)) {
-        QMessageBox::critical(0, "Read Error!", "Could not open input.txt from data folder!");
+        QMessageBox::critical(nullptr, "Read Error!", "Could not open input.txt from data folder!");
         throw(-1);
     }
     QTextStream input_t(&input_f);
@@ -22,7 +22,7 @@ tc(tc)
 
     QFile hyphen_f(dataDir.absoluteFilePath("hyphenated.txt"));
     if (!hyphen_f.open(QIODevice::ReadOnly)) {
-        QMessageBox::critical(0, "Read Error!", "Could not open hyphenated.txt from data folder!");
+        QMessageBox::critical(nullptr, "Read Error!", "Could not open hyphenated.txt from data folder!");
         throw(-1);
     }
     QTextStream hyphen_t(&hyphen_f);
@@ -31,7 +31,7 @@ tc(tc)
 
     setWindowTitle(tr("Skærmtekstsøvelse 1.1: Stavelsesdeling"));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
 
     QLabel *ql = new QLabel(tr("Her er igen den tekst, der stod på skærmen lige efter velkomsten. Stavelsesdel den efter de tre regler, du netop har lært. Du finder facitlisten og en oversættelse i indstikshæftet, men brug den først, når du har prøvet så godt du kan selv."));
     ql->setWordWrap(true);
@@ -91,10 +91,10 @@ void WelcomeOne::checkInput() {
         close();
         return;
     }
-    else {
+    
         result->setText(QString("<center><span style='color: darkred;'><b>") + tr("Ikke korrekt.\nPrøv igen...") + "</b></span></center>");
         yield->show();
-    }
+    
     result->show();
     input->setFocus();
     adjustSize();

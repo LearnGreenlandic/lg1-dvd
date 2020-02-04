@@ -1,14 +1,14 @@
 #include "PronounceOne.hpp"
 
 PronounceOne::PronounceOne(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 data(tc.dirs),
 curAt(-1)
 {
     setWindowTitle(tr("Udtaleøvelse 1.1: Gentag"));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
 
     QLabel *ql = new QLabel(tr("Lyt og gentag ordet."));
     ql->setWordWrap(true);

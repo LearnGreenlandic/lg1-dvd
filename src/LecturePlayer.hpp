@@ -16,7 +16,7 @@ class LecturePlayer : public QWidget {
     Q_OBJECT
 
 public:
-    LecturePlayer(TaskChooser& tc, QString lecDir, QString title);
+    LecturePlayer(TaskChooser& tc, const QString& lecDir, const QString& title);
 
     void closeEvent(QCloseEvent *event);
 

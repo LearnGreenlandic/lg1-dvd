@@ -1,16 +1,17 @@
 #include "HyphenOne.hpp"
 
 #include <algorithm>
+#include <random>
 
 HyphenOne::HyphenOne(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 curAt(-1)
 {
     QString f_d = find_newest(tc.dirs, "./hyphenate/Nuuk.png");
     QDir dataDir(f_d.replace("Nuuk.png", ""));
     if (!dataDir.exists()) {
-        QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/hyphenate/");
+        QMessageBox::critical(nullptr, "Missing Data Folder!", "Could not change working folder to lessons/hyphenate/");
         throw(-1);
     }
 
@@ -20,18 +21,18 @@ curAt(-1)
     }
 
     if (pngs.empty()) {
-        QMessageBox::critical(0, "Data Error!", "Failed to read data files!");
+        QMessageBox::critical(nullptr, "Data Error!", "Failed to read data files!");
         throw(-1);
     }
 
-    std::random_shuffle(pngs.begin(), pngs.end());
+    std::shuffle(pngs.begin(), pngs.end(), std::mt19937(std::random_device()()));
 
     QPixmap qpx;
     qpx.load(pngs.front());
 
     setWindowTitle(tr("Stavelsesdeling af bynavne"));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
 
     QLabel *ql = new QLabel(tr("Del ordet med -; brug noderne til hjælp."));
     ql->setWordWrap(true);

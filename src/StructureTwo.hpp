@@ -11,7 +11,7 @@ class StructureTwo : public QWidget {
     Q_OBJECT
 
 public:
-    StructureTwo(QString which, QString title, TaskChooser& tc);
+    StructureTwo(const QString& which, const QString& title, TaskChooser& tc);
 
 public slots:
     void showNext();

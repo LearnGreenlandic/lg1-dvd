@@ -6,11 +6,11 @@
 
 int main(int argc, char *argv[]) {
     QCoreApplication app(argc, argv);
-    app.setOrganizationDomain("learngreenlandic.com");
-    app.setOrganizationName("LearnGreenlandic");
-    app.setApplicationName("LG Encryption Helper");
+    QCoreApplication::setOrganizationDomain("learngreenlandic.com");
+    QCoreApplication::setOrganizationName("LearnGreenlandic");
+    QCoreApplication::setApplicationName("LG Encryption Helper");
 
-    QStringList args = app.arguments();
+    QStringList args = QCoreApplication::arguments();
     QIODevice *input, *output;
 
     if (args[1] == "-d") {

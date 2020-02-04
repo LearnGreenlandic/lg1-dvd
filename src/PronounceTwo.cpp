@@ -1,14 +1,14 @@
 #include "PronounceTwo.hpp"
 
 PronounceTwo::PronounceTwo(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 data(tc.dirs),
 curAt(-1)
 {
     setWindowTitle(tr("Udtaleøvelse 1.2: Diktat"));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
 
     QLabel *ql = new QLabel(tr("Skriv hvad du hører."));
     ql->setWordWrap(true);
@@ -93,6 +93,6 @@ void PronounceTwo::checkInput() {
 }
 
 void PronounceTwo::yieldWord() {
-    QMessageBox::information(0, tr("Hrhm..."), QString("<h1>") + tr("Det korrekte ord var:") + QString("</h1><br>") + data.words.at(curAt));
+    QMessageBox::information(nullptr, tr("Hrhm..."), QString("<h1>") + tr("Det korrekte ord var:") + QString("</h1><br>") + data.words.at(curAt));
     showNext();
 }

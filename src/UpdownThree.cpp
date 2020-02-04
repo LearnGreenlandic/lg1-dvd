@@ -1,7 +1,7 @@
 #include "UpdownThree.hpp"
 
 UpdownThree::UpdownThree(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 data(tc.dirs),
 curAt(0)
@@ -10,10 +10,10 @@ curAt(0)
 
     QLabel *ql = new QLabel(tr("Oversæt følgende glossering til et ord i færdig form:"));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
     qvbl->addWidget(ql);
 
-    QVBoxLayout *curWord = new QVBoxLayout;
+    auto *curWord = new QVBoxLayout;
     up = new QLabel(QString("<center><h2>") + data.glossUpperShort(data.updowns.at(curAt).second) + "</h2></center>");
     input = new QLineEdit;
     connect(input, SIGNAL(returnPressed()), this, SLOT(checkInput()));
@@ -44,7 +44,7 @@ curAt(0)
 void UpdownThree::showNext() {
     ++curAt;
     if (curAt >= static_cast<uint32_t>(data.updowns.size())) {
-        QMessageBox::information(0, tr("Færdig!"), tr("Der er ikke flere ord...vinduet lukker sig selv nu."));
+        QMessageBox::information(nullptr, tr("Færdig!"), tr("Der er ikke flere ord...vinduet lukker sig selv nu."));
         close();
         return;
     }
@@ -77,6 +77,6 @@ void UpdownThree::checkInput() {
 }
 
 void UpdownThree::yieldWord() {
-    QMessageBox::information(0, "Hrhm...", QString("<h1>") + tr("Det korrekte færdige ord var:") + QString("</h1><br>") + data.updowns.at(curAt).first);
+    QMessageBox::information(nullptr, "Hrhm...", QString("<h1>") + tr("Det korrekte færdige ord var:") + QString("</h1><br>") + data.updowns.at(curAt).first);
     showNext();
 }

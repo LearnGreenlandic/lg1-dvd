@@ -1,14 +1,14 @@
 #include "StructureTwo.hpp"
 
-StructureTwo::StructureTwo(QString which, QString title, TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+StructureTwo::StructureTwo(const QString& which, const QString& title, TaskChooser& tc) :
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 data(tc.dirs, which),
 curAt(-1)
 {
     setWindowTitle(title);
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
 
 #if 0
     tr("structure 2 ./1/");
@@ -115,6 +115,6 @@ void StructureTwo::checkInput() {
 }
 
 void StructureTwo::yieldWord() {
-    QMessageBox::information(0, tr("Hrhm..."), QString("<h1>") + tr("Det korrekte ord var:") + QString("</h1><br>") + data.pairs.at(curAt).at(1));
+    QMessageBox::information(nullptr, tr("Hrhm..."), QString("<h1>") + tr("Det korrekte ord var:") + QString("</h1><br>") + data.pairs.at(curAt).at(1));
     showNext();
 }

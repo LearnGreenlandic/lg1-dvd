@@ -27,7 +27,7 @@
 #include <QtGlobal>
 
 TaskChooser::TaskChooser(const dirmap_t& dirs, QTranslator *translator) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 dirs(dirs),
 translator(translator)
 {
@@ -38,17 +38,17 @@ translator(translator)
     QPixmap qpx;
     QLabel *ql = new QLabel;
 
-    QHBoxLayout *outerHBox = new QHBoxLayout;
+    auto *outerHBox = new QHBoxLayout;
     outerHBox->setContentsMargins(0,0,0,0);
 
-    QVBoxLayout *outerVBox = new QVBoxLayout;
+    auto *outerVBox = new QVBoxLayout;
     outerVBox->setContentsMargins(0,0,0,0);
 
 
-    QHBoxLayout *itemHBox = new QHBoxLayout;
+    auto *itemHBox = new QHBoxLayout;
     itemHBox->setContentsMargins(0,0,0,0);
 
-    QVBoxLayout *itemVBox = new QVBoxLayout;
+    auto *itemVBox = new QVBoxLayout;
     itemVBox->setContentsMargins(0,0,0,0);
 
     ql = new QLabel;
@@ -544,126 +544,126 @@ void TaskChooser::showPamphletPDF() {
 }
 
 void TaskChooser::showHyphenOne() {
-    HyphenOne *hyphen = new HyphenOne(*this);
+    auto *hyphen = new HyphenOne(*this);
     hyphen->show();
     hyphen->raise();
     hyphen->activateWindow();
 }
 
 void TaskChooser::showDialogOne() {
-    DialogOne *dialog = new DialogOne(*this);
+    auto *dialog = new DialogOne(*this);
     dialog->show();
     dialog->raise();
     dialog->activateWindow();
 }
 
 void TaskChooser::showDialogTwo() {
-    DialogTwo *dialog = new DialogTwo(*this);
+    auto *dialog = new DialogTwo(*this);
     dialog->show();
     dialog->raise();
     dialog->activateWindow();
 }
 
 void TaskChooser::showDialogThree() {
-    DialogThree *dialog = new DialogThree(*this);
+    auto *dialog = new DialogThree(*this);
     dialog->show();
     dialog->raise();
     dialog->activateWindow();
 }
 
 void TaskChooser::showListenOne() {
-    ListenOne *listen = new ListenOne(*this);
+    auto *listen = new ListenOne(*this);
     listen->show();
     listen->raise();
     listen->activateWindow();
 }
 
 void TaskChooser::showListenTwo() {
-    ListenTwo *listen = new ListenTwo(*this);
+    auto *listen = new ListenTwo(*this);
     listen->show();
     listen->raise();
     listen->activateWindow();
 }
 
 void TaskChooser::showListenThree() {
-    ListenThree *listen = new ListenThree(*this);
+    auto *listen = new ListenThree(*this);
     listen->show();
     listen->raise();
     listen->activateWindow();
 }
 
 void TaskChooser::showListenFour() {
-    ListenFour *listen = new ListenFour(*this);
+    auto *listen = new ListenFour(*this);
     listen->show();
     listen->raise();
     listen->activateWindow();
 }
 
 void TaskChooser::showWelcomePlayer() {
-    WelcomePlayer *welcome = new WelcomePlayer(*this);
+    auto *welcome = new WelcomePlayer(*this);
     welcome->show();
     welcome->raise();
     welcome->activateWindow();
 }
 
 void TaskChooser::showWelcomeWords() {
-    WelcomeWords *welcome = new WelcomeWords(*this);
+    auto *welcome = new WelcomeWords(*this);
     welcome->show();
     welcome->raise();
     welcome->activateWindow();
 }
 
 void TaskChooser::showWelcomeOne() {
-    WelcomeOne *welcome = new WelcomeOne(*this);
+    auto *welcome = new WelcomeOne(*this);
     welcome->show();
     welcome->raise();
     welcome->activateWindow();
 }
 
 void TaskChooser::showWelcomeTwo() {
-    WelcomeTwo *welcome = new WelcomeTwo(*this);
+    auto *welcome = new WelcomeTwo(*this);
     welcome->show();
     welcome->raise();
     welcome->activateWindow();
 }
 
 void TaskChooser::showListenRepeatPlayer() {
-    ListenRepeatPlayer *lrplayer = new ListenRepeatPlayer(*this);
+    auto *lrplayer = new ListenRepeatPlayer(*this);
     lrplayer->show();
     lrplayer->raise();
     lrplayer->activateWindow();
 }
 
 void TaskChooser::showPronounceOne() {
-    PronounceOne *pronounce = new PronounceOne(*this);
+    auto *pronounce = new PronounceOne(*this);
     pronounce->show();
     pronounce->raise();
     pronounce->activateWindow();
 }
 
 void TaskChooser::showPronounceTwo() {
-    PronounceTwo *pronounce = new PronounceTwo(*this);
+    auto *pronounce = new PronounceTwo(*this);
     pronounce->show();
     pronounce->raise();
     pronounce->activateWindow();
 }
 
 void TaskChooser::showUpdownOne() {
-    UpdownOne *updown = new UpdownOne(*this);
+    auto *updown = new UpdownOne(*this);
     updown->show();
     updown->raise();
     updown->activateWindow();
 }
 
 void TaskChooser::showUpdownTwo() {
-    UpdownTwo *updown = new UpdownTwo(*this);
+    auto *updown = new UpdownTwo(*this);
     updown->show();
     updown->raise();
     updown->activateWindow();
 }
 
 void TaskChooser::showUpdownThree() {
-    UpdownThree *updown = new UpdownThree(*this);
+    auto *updown = new UpdownThree(*this);
     updown->show();
     updown->raise();
     updown->activateWindow();
@@ -737,7 +737,7 @@ void TaskChooser::toggleLanguage() {
         translator->load(find_newest(dirs, "i18n/texts_da.qm"));
     }
 
-    TaskChooser *tc = new TaskChooser(dirs, translator);
+    auto *tc = new TaskChooser(dirs, translator);
     tc->show();
 
     close();
@@ -762,7 +762,7 @@ void TaskChooser::checkFirstRun() {
         mbox.exec();
 
         if (mbox.clickedButton() == yes) {
-            QMessageBox::information(0, tr("Installer Xvid"), tr("Programmet åbner nu installeren i et nyt vindue og lukker så dette. Start Learn Greenlandic igen når du har installeret Xvid eller DivX."));
+            QMessageBox::information(nullptr, tr("Installer Xvid"), tr("Programmet åbner nu installeren i et nyt vindue og lukker så dette. Start Learn Greenlandic igen når du har installeret Xvid eller DivX."));
             QString torun = find_newest(dirs,
             #if defined(Q_OS_WIN)
                 "../Xvid-1.3.2-20110601.exe"
@@ -790,7 +790,7 @@ void TaskChooser::checkFirstRun() {
             xt->exec();
         }
         catch (...) {
-            QMessageBox::information(0, tr("Xvid error"), tr("Afspilningen af test filmen fejlede helt. Du bør installere Xvid eller DivX codecs og så prøve igen. Hvis intet virker, så kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjælp."));
+            QMessageBox::information(nullptr, tr("Xvid error"), tr("Afspilningen af test filmen fejlede helt. Du bør installere Xvid eller DivX codecs og så prøve igen. Hvis intet virker, så kontakt install@learngreenlandic.com eller se http://learngreenlandic.com/ for hjælp."));
             QCoreApplication::quit();
             return;
         }
@@ -820,7 +820,7 @@ void TaskChooser::checkFirstRun() {
     }
 
     if (settings.value("license_key", "").toString().isEmpty() || settings.value("encryption_key", "").toString().isEmpty() || settings.value("encryption_key", "").toString().at(0) != 'P') {
-        ValidateKey *vk = new ValidateKey;
+        auto *vk = new ValidateKey;
         vk->show();
         vk->raise();
         vk->activateWindow();

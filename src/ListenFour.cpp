@@ -1,15 +1,16 @@
 #include "ListenFour.hpp"
 #include <algorithm>
+#include <random>
 
 ListenFour::ListenFour(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 curAt(-1)
 {
     QString f_d = find_newest(tc.dirs, "./listening/4/ima.wav");
     QDir dataDir(f_d.replace("ima.wav", ""));
     if (!dataDir.exists()) {
-        QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/listening/4/");
+        QMessageBox::critical(nullptr, "Missing Data Folder!", "Could not change working folder to lessons/listening/4/");
         throw(-1);
     }
 
@@ -19,15 +20,15 @@ curAt(-1)
     }
 
     if (words.empty()) {
-        QMessageBox::critical(0, "Data Error!", "Failed to read data files!");
+        QMessageBox::critical(nullptr, "Data Error!", "Failed to read data files!");
         throw(-1);
     }
 
-    std::random_shuffle(words.begin(), words.end());
+    std::shuffle(words.begin(), words.end(), std::mt19937(std::random_device()()));
 
     setWindowTitle(tr("Lydøvelse  1.4: Skriv hvad du hørte"));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
 
     QLabel *ql = new QLabel(tr("Skriv hvad du hører."));
     ql->setWordWrap(true);
@@ -118,6 +119,6 @@ void ListenFour::yieldWord() {
     QFileInfo fi(words.at(curAt));
     QString tmp = fi.baseName();
 
-    QMessageBox::information(0, tr("Hrhm..."), QString("<h1>") + tr("Det korrekte ord var:") + QString("</h1><br>") + tmp);
+    QMessageBox::information(nullptr, tr("Hrhm..."), QString("<h1>") + tr("Det korrekte ord var:") + QString("</h1><br>") + tmp);
     showNext();
 }

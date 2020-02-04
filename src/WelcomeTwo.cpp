@@ -1,20 +1,20 @@
 #include "WelcomeTwo.hpp"
 
 WelcomeTwo::WelcomeTwo(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 curAt(-1)
 {
     QString f_d = find_newest(tc.dirs, "./welcome/input.txt");
     QDir dataDir(f_d.replace("input.txt", ""));
     if (!dataDir.exists() || !dataDir.exists("input.txt")) {
-        QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/welcome/");
+        QMessageBox::critical(nullptr, "Missing Data Folder!", "Could not change working folder to lessons/welcome/");
         throw(-1);
     }
 
     QFile input_f(dataDir.absoluteFilePath("input.txt"));
     if (!input_f.open(QIODevice::ReadOnly)) {
-        QMessageBox::critical(0, "Read Error!", "Could not open input.txt from data folder!");
+        QMessageBox::critical(nullptr, "Read Error!", "Could not open input.txt from data folder!");
         throw(-1);
     }
     QTextStream input_t(&input_f);
@@ -27,7 +27,7 @@ curAt(-1)
     }
 
     if (pngs.empty()) {
-        QMessageBox::critical(0, "Data Error!", "Failed to read data files!");
+        QMessageBox::critical(nullptr, "Data Error!", "Failed to read data files!");
         throw(-1);
     }
 
@@ -36,7 +36,7 @@ curAt(-1)
 
     setWindowTitle(tr("Skærmtekstsøvelse 1.2: Udtale"));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
 
     QLabel *ql = new QLabel(tr("Læs teksten op ord for ord og væn dig til de skiftende tonehøjder. Tryk <Næste ord> efter hvert ord, når du føler, at din udtale er ved at være korrekt. Så får du ordet i fonetisk skrift i vores lille nodesystem, så du har noget at kontrollere din udtale på. Du finder en oversættelse i indstikshæftet."));
     ql->setWordWrap(true);

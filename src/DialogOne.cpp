@@ -1,14 +1,14 @@
 #include "DialogOne.hpp"
 
 DialogOne::DialogOne(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 data(tc.dirs, tr("danish.txt")),
 curAt(-1)
 {
     setWindowTitle(tr("Minidialog 1.1: Gentag"));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
 
     QLabel *label = new QLabel(tr("I denne første øvelse skal du udelukkende koncentrere dig om udtale. Du skal blot gentage Beatrines og Tikas sætninger præcis som de er. Du kan pege på teksterne for at se dem oversat."));
     label->setWordWrap(true);

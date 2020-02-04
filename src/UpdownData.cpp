@@ -1,13 +1,14 @@
 #include "UpdownData.hpp"
 #include <algorithm>
-#include <stdint.h>
+#include <random>
+#include <cstdint>
 
 UpdownData::UpdownData(const dirmap_t& dirs)
 {
     QString f_d = find_newest(dirs, "./updown/updown.txt");
     QDir dataDir(f_d.replace("updown.txt", ""));
     if (!dataDir.exists()) {
-        QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/updown/");
+        QMessageBox::critical(nullptr, "Missing Data Folder!", "Could not change working folder to lessons/updown/");
         throw(-1);
     }
 
@@ -15,7 +16,7 @@ UpdownData::UpdownData(const dirmap_t& dirs)
     QString lang = settings.value("language").toString();
 
     if (!dataDir.exists(lang + "_gloss.txt") || !dataDir.exists("updown.txt")) {
-        QMessageBox::critical(0, "Missing Data!", "Data files missing from lessons/updown/");
+        QMessageBox::critical(nullptr, "Missing Data!", "Data files missing from lessons/updown/");
         throw(-1);
     }
 
@@ -64,14 +65,14 @@ UpdownData::UpdownData(const dirmap_t& dirs)
     }
 
     if (glosses.empty() || updowns.empty()) {
-        QMessageBox::critical(0, "Data Error!", "Failed to read data files!");
+        QMessageBox::critical(nullptr, "Data Error!", "Failed to read data files!");
         throw(-1);
     }
 
-    std::random_shuffle(updowns.begin(), updowns.end());
+    std::shuffle(updowns.begin(), updowns.end(), std::mt19937(std::random_device()()));
 }
 
-QString UpdownData::glossUpperDetailed(QString upper) {
+QString UpdownData::glossUpperDetailed(const QString& upper) {
     QStringList ql;
     QRegExp qr("[-+]");
     int o = 0, n = 0;
@@ -103,7 +104,7 @@ QString UpdownData::glossUpperDetailed(QString upper) {
     return QString("<font size='+2'><table>") + ql.join("\n") + "</table></font>";
 }
 
-QString UpdownData::glossUpperShort(QString upper) {
+QString UpdownData::glossUpperShort(const QString& upper) {
     QStringList ql;
     QRegExp qr("[-+]");
     int o = 0, n = 0;

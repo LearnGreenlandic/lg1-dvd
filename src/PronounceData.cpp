@@ -1,11 +1,12 @@
 #include "PronounceData.hpp"
 #include <algorithm>
+#include <random>
 
 PronounceData::PronounceData(const dirmap_t& dirs) {
     QString f_d = find_newest(dirs, "./pronounce/alla.wav");
     QDir dataDir(f_d.replace("alla.wav", ""));
     if (!dataDir.exists()) {
-        QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/pronounce/");
+        QMessageBox::critical(nullptr, "Missing Data Folder!", "Could not change working folder to lessons/pronounce/");
         throw(-1);
     }
 
@@ -17,9 +18,9 @@ PronounceData::PronounceData(const dirmap_t& dirs) {
     }
 
     if (words.empty() || sounds.empty()) {
-        QMessageBox::critical(0, "Data Error!", "Failed to read data files!");
+        QMessageBox::critical(nullptr, "Data Error!", "Failed to read data files!");
         throw(-1);
     }
 
-    std::random_shuffle(words.begin(), words.end());
+    std::shuffle(words.begin(), words.end(), std::mt19937(std::random_device()()));
 }

@@ -1,17 +1,18 @@
 #include "DialogData.hpp"
 #include <algorithm>
-#include <stdint.h>
+#include <random>
+#include <cstdint>
 
-DialogData::DialogData(const dirmap_t& dirs, QString which){
+DialogData::DialogData(const dirmap_t& dirs, const QString& which){
     QString f_kal = find_newest(dirs, "./dialogue/greenlandic.txt");
     if (f_kal.isEmpty()) {
-        QMessageBox::critical(0, "Missing Data!", "Could not find ./dialogue/greenlandic.txt");
+        QMessageBox::critical(nullptr, "Missing Data!", "Could not find ./dialogue/greenlandic.txt");
         throw(-1);
     }
 
     QString f_which = find_newest(dirs, QString("./dialogue/") + which);
     if (f_which.isEmpty()) {
-        QMessageBox::critical(0, "Missing Data!", QString("Could not find ./dialogue/") + which);
+        QMessageBox::critical(nullptr, "Missing Data!", QString("Could not find ./dialogue/") + which);
         throw(-1);
     }
 
@@ -29,16 +30,16 @@ DialogData::DialogData(const dirmap_t& dirs, QString which){
         if (!tmp.isEmpty() && tmp.at(0) != '#' && tmp.contains('\t')) {
             QStringList ls = tmp.split('\t');
             uint32_t w = ls.at(0).toULong()-1;
-            phrases.resize(std::max(w+1, (uint32_t)phrases.size()));
+            phrases.resize(std::max(w+1, static_cast<uint32_t>(phrases.size())));
 
             QString f_q = find_newest(dirs, QString("./dialogue/") + ls.at(0) + " Q.wav");
             if (f_q.isEmpty()) {
-                QMessageBox::critical(0, "Missing Data!", QString("Sound file '") + ls.at(0) + " Q.wav' missing from data folder.");
+                QMessageBox::critical(nullptr, "Missing Data!", QString("Sound file '") + ls.at(0) + " Q.wav' missing from data folder.");
                 throw(-1);
             }
             QString f_a = find_newest(dirs, QString("./dialogue/") + ls.at(0) + " A.wav");
             if (f_a.isEmpty()) {
-                QMessageBox::critical(0, "Missing Data!", QString("Sound file '") + ls.at(0) + " A.wav' missing from data folder.");
+                QMessageBox::critical(nullptr, "Missing Data!", QString("Sound file '") + ls.at(0) + " A.wav' missing from data folder.");
                 throw(-1);
             }
             phrases[w].clear();
@@ -69,9 +70,9 @@ DialogData::DialogData(const dirmap_t& dirs, QString which){
     }
 
     if (phrases.empty()) {
-        QMessageBox::critical(0, "Data Error!", "Failed to read data files!");
+        QMessageBox::critical(nullptr, "Data Error!", "Failed to read data files!");
         throw(-1);
     }
 
-    std::random_shuffle(phrases.begin(), phrases.end());
+    std::shuffle(phrases.begin(), phrases.end(), std::mt19937(std::random_device()()));
 }

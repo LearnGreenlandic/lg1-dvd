@@ -2,14 +2,14 @@
 
 #if defined(Q_OS_WIN)
 
-XvidTest::XvidTest(QString avi) :
-QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
+XvidTest::XvidTest(const QString& avi) :
+QDialog(nullptr, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
 {
     setWindowModality(Qt::ApplicationModal);
     setWindowTitle(tr("Xvid test"));
 
     if (avi.isEmpty()) {
-        QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate testxvid.avi!");
+        QMessageBox::critical(nullptr, "Missing Welcome Data!", "Could not locate testxvid.avi!");
         throw(-1);
     }
 
@@ -25,7 +25,7 @@ QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
     video->dynamicCall("setEnabled(bool)", true);
     video->dynamicCall("SetURL(QString)", QUrl::fromLocalFile(avi));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
     qvbl->setContentsMargins(0, 0, 0, 0);
     qvbl->addWidget(video);
 

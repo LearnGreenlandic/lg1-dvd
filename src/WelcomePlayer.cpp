@@ -7,7 +7,7 @@
 #if defined(Q_OS_WIN)
 
 WelcomePlayer::WelcomePlayer(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc)
 {
     setWindowModality(Qt::ApplicationModal);
@@ -15,7 +15,7 @@ tc(tc)
 
     QString f_w = find_newest(tc.dirs, "welcome.dat");
     if (f_w.isEmpty()) {
-        QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate welcome.dat!");
+        QMessageBox::critical(nullptr, "Missing Welcome Data!", "Could not locate welcome.dat!");
         throw(-1);
     }
 
@@ -33,7 +33,7 @@ tc(tc)
     video->dynamicCall("SetURL(QString)", QUrl::fromLocalFile(tmpfile));
     connect(video, SIGNAL(PlayStateChange(int)), this, SLOT(finished(int)));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
     qvbl->setContentsMargins(0, 0, 0, 0);
     qvbl->addWidget(video);
 
@@ -66,7 +66,7 @@ void WelcomePlayer::finished(int state) {
     mbox.exec();
 
     if (mbox.clickedButton() == yes) {
-        WelcomeQuestion *wc = new WelcomeQuestion(tc);
+        auto *wc = new WelcomeQuestion(tc);
         wc->show();
         QTimer::singleShot(1000, this, SLOT(close()));
         return;
@@ -185,9 +185,9 @@ void WelcomePlayer::finished() {
 #endif
 
 QSize WelcomePlayer::sizeHint() const {
-    return QSize(1100, 680);
+    return {1100, 680};
 }
 
 QSize WelcomePlayer::minimumSizeHint() const {
-    return QSize(1100, 680);
+    return {1100, 680};
 }

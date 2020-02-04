@@ -4,7 +4,7 @@
 #include <QNetworkReply>
 
 ValidateKey::ValidateKey() :
-QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
+QDialog(nullptr, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
 {
     setWindowModality(Qt::ApplicationModal);
     setWindowTitle(tr("Validering af licensnøgle"));
@@ -13,7 +13,7 @@ QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
     nam = new QNetworkAccessManager(this);
     connect(nam, SIGNAL(finished(QNetworkReply*)), this, SLOT(finished(QNetworkReply*)));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
 
     QLabel *label = new QLabel(tr("xvid text"));
     label->setWordWrap(true);
@@ -44,7 +44,7 @@ QDialog(0, Qt::Window | Qt::CustomizeWindowHint | Qt::WindowTitleHint)
     lkey = new QLineEdit;
     connect(lkey, SIGNAL(returnPressed()), this, SLOT(checkInput()));
 
-    QFormLayout *form = new QFormLayout;
+    auto *form = new QFormLayout;
     form->addRow(tr("Email"), email1);
     form->addRow(tr("Gentag email"), email2);
     form->addRow(tr("Licensnøgle"), lkey);
@@ -78,7 +78,7 @@ void ValidateKey::launchXvid() {
     ;
 
     if (!QFileInfo(torun).exists()) {
-        QMessageBox::information(0, "Missing Xvid / DivX packages!", QString("Could not locate ") + torun + "\nPlease open the DVD in your file manager and install Xvid / DivX manually, or have your system administrator help you.");
+        QMessageBox::information(nullptr, "Missing Xvid / DivX packages!", QString("Could not locate ") + torun + "\nPlease open the DVD in your file manager and install Xvid / DivX manually, or have your system administrator help you.");
     }
 
     #if defined(Q_OS_WIN) || defined(Q_OS_MAC)
@@ -172,7 +172,7 @@ void ValidateKey::finished(QNetworkReply *reply) {
         close();
         return;
     }
-    else if (rv.indexOf("site_verification")) {
+    if (rv.indexOf("site_verification")) {
         QSettings settings;
         QStringList rvs = rv.trimmed().split('\n');
         foreach (QString r, rvs) {

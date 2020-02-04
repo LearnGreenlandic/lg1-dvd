@@ -5,8 +5,8 @@
 #include <QCryptographicHash>
 #include <iostream>
 
-LecturePlayer::LecturePlayer(TaskChooser& tc, QString lecDir, QString title) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+LecturePlayer::LecturePlayer(TaskChooser& tc, const QString& lecDir, const QString& title) :
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc)
 {
     setWindowTitle(title);
@@ -14,13 +14,13 @@ tc(tc)
 
     QString lecfile = find_newest(tc.dirs, lecDir + "/lecture.dat");
     if (lecfile.isEmpty()) {
-        QMessageBox::critical(0, "Missing Lecture Data!", "Could not locate lecture.dat!");
+        QMessageBox::critical(nullptr, "Missing Lecture Data!", "Could not locate lecture.dat!");
         throw(-1);
     }
 
     QString slide0 = find_newest(tc.dirs, lecDir + "/0.png");
     if (slide0.isEmpty()) {
-        QMessageBox::critical(0, "Missing Slides!", "Could not locate slides for lecture!");
+        QMessageBox::critical(nullptr, "Missing Slides!", "Could not locate slides for lecture!");
         throw(-1);
     }
 
@@ -42,7 +42,7 @@ tc(tc)
     video->dynamicCall("setEnabled(bool)", true);
     video->dynamicCall("SetURL(QString)", QUrl::fromLocalFile(tmpfile));
 
-    QTimer *timer = new QTimer(this);
+    auto *timer = new QTimer(this);
     timer->start(1000);
     connect(timer, SIGNAL(timeout()), this, SLOT(tick()));
 
@@ -61,7 +61,7 @@ tc(tc)
     view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->setContentsMargins(0, 0, 0, 0);
 
-    QGridLayout *qgl = new QGridLayout;
+    auto *qgl = new QGridLayout;
     qgl->addWidget(video, 0, 0);
     qgl->addWidget(view, 0, 1);
     qgl->setColumnStretch(0, 545);
@@ -109,11 +109,11 @@ void LecturePlayer::tick() {
 }
 
 QSize LecturePlayer::sizeHint() const {
-    return QSize(1010, 335);
+    return {1010, 335};
 }
 
 QSize LecturePlayer::minimumSizeHint() const {
-    return QSize(1010, 335);
+    return {1010, 335};
 }
 
 #else

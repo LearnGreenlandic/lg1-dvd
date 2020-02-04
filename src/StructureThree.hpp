@@ -12,7 +12,7 @@ class StructureThree : public QWidget {
     Q_OBJECT
 
 public:
-    StructureThree(QString which, QString title, TaskChooser& tc);
+    StructureThree(const QString& which, const QString& title, TaskChooser& tc);
 
 public slots:
     void show();
@@ -30,7 +30,7 @@ private:
 
     QMediaPlayer *media;
     QMediaPlayer *cmedia;
-    QLabel *query;
+    QLabel *query{};
     QLabel *result;
     QLineEdit *input;
     QPushButton *cagain;

@@ -1,8 +1,10 @@
 #include "CryptFile.hpp"
 
+namespace {
 std::string skey;
-const char *key = 0;
+const char *key = nullptr;
 qint64 kl = 0;
+}
 
 inline void xor_wrap(char *data, qint64 size, qint64 offset) {
     offset %= kl;
@@ -15,7 +17,7 @@ inline void xor_wrap(char *data, qint64 size, qint64 offset) {
     }
 }
 
-CryptFile::CryptFile(QString fname, QObject *parent) :
+CryptFile::CryptFile(const QString& fname, QObject *parent) :
 QFile(fname, parent)
 {
     QSettings settings;
@@ -34,8 +36,10 @@ qint64 CryptFile::readData(char *data, qint64 maxSize) {
     return r;
 }
 
+namespace {
 const size_t bz = 16384;
 char buf[bz];
+}
 
 qint64 CryptFile::writeData(const char *data, qint64 maxSize) {
     qint64 r = 0;

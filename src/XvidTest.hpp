@@ -12,7 +12,7 @@ class XvidTest : public QDialog {
     Q_OBJECT
 
 public:
-    XvidTest(QString avi);
+    XvidTest(const QString& avi);
 
     void closeEvent(QCloseEvent *event);
 

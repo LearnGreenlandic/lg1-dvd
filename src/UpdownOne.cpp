@@ -1,7 +1,7 @@
 #include "UpdownOne.hpp"
 
 UpdownOne::UpdownOne(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 data(tc.dirs),
 curAt(0)
@@ -10,10 +10,10 @@ curAt(0)
 
     QLabel *ql = new QLabel(tr("Prøv at forstå og at udtale følgende ord:"));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
     qvbl->addWidget(ql);
 
-    QVBoxLayout *curWord = new QVBoxLayout;
+    auto *curWord = new QVBoxLayout;
     down = new QLabel(QString("<center><h2>") + data.updowns.at(curAt).first + "</h2></center>");
     up = new QLabel(QString("<center><i>") + data.updowns.at(curAt).second + "</i></center>");
     help = new QPushButton(tr("Vis hjælp"));

@@ -9,8 +9,8 @@ class UpdownData
 public:
     UpdownData(const dirmap_t& dirs);
 
-    QString glossUpperDetailed(QString upper);
-    QString glossUpperShort(QString upper);
+    QString glossUpperDetailed(const QString& upper);
+    QString glossUpperShort(const QString& upper);
 
     QVector< QPair<QString,QString> > updowns;
     QMap<QString,QString> glosses;

@@ -1,7 +1,7 @@
 #include "UpdownTwo.hpp"
 
 UpdownTwo::UpdownTwo(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 data(tc.dirs),
 curAt(0)
@@ -10,10 +10,10 @@ curAt(0)
 
     QLabel *ql = new QLabel(tr("Skriv følgende ord i færdig form:"));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
     qvbl->addWidget(ql);
 
-    QVBoxLayout *curWord = new QVBoxLayout;
+    auto *curWord = new QVBoxLayout;
     up = new QLabel(QString("<center><h2>") + data.updowns.at(curAt).second + "</h2></center>");
     up->setToolTip(data.glossUpperDetailed(data.updowns.at(curAt).second));
     input = new QLineEdit;
@@ -85,6 +85,6 @@ void UpdownTwo::checkInput() {
 }
 
 void UpdownTwo::yieldWord() {
-    QMessageBox::information(0, "Hrhm...", QString("<h1>") + tr("Det korrekte færdige ord var:") + QString("</h1><br>") + data.updowns.at(curAt).first);
+    QMessageBox::information(nullptr, "Hrhm...", QString("<h1>") + tr("Det korrekte færdige ord var:") + QString("</h1><br>") + data.updowns.at(curAt).first);
     showNext();
 }

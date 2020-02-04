@@ -3,18 +3,18 @@
 #if defined(Q_OS_WIN)
 
 ListenRepeatPlayer::ListenRepeatPlayer(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc)
 {
     QString f_d = find_newest(tc.dirs, "./repeat/per.dat");
     dataDir = QDir(f_d.replace("per.dat", ""));
     if (!dataDir.exists()) {
-        QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/repeat/");
+        QMessageBox::critical(nullptr, "Missing Data Folder!", "Could not change working folder to lessons/repeat/");
         throw(-1);
     }
 
     if (!dataDir.exists("per.dat") || !dataDir.exists("tikaajaat.dat")) {
-        QMessageBox::critical(0, "Missing Data!", "Data files missing from lessons/repeat/");
+        QMessageBox::critical(nullptr, "Missing Data!", "Data files missing from lessons/repeat/");
         throw(-1);
     }
 
@@ -37,11 +37,11 @@ tc(tc)
     current = tmpfile_per;
     connect(video, SIGNAL(PlayStateChange(int)), this, SLOT(playStateChange(int)));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
     qvbl->setContentsMargins(0, 0, 0, 0);
     qvbl->addWidget(video);
 
-    QHBoxLayout *qhbl = new QHBoxLayout;
+    auto *qhbl = new QHBoxLayout;
 
     QPushButton *perAgain = new QPushButton(tr("Se Per igen"));
     connect(perAgain, SIGNAL(clicked()), this, SLOT(playPerAgain()));
@@ -97,11 +97,11 @@ void ListenRepeatPlayer::playTikaAgain() {
 }
 
 QSize ListenRepeatPlayer::sizeHint() const {
-    return QSize(1100, 680);
+    return {1100, 680};
 }
 
 QSize ListenRepeatPlayer::minimumSizeHint() const {
-    return QSize(1100, 680);
+    return {1100, 680};
 }
 
 #else

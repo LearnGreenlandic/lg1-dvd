@@ -6,25 +6,25 @@
 #if defined(Q_OS_WIN)
 
 WelcomeWords::WelcomeWords(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 curAt(-1)
 {
     QString f_dat = find_newest(tc.dirs, "welcome.dat");
     if (f_dat.isEmpty()) {
-        QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate welcome.dat!");
+        QMessageBox::critical(nullptr, "Missing Welcome Data!", "Could not locate welcome.dat!");
         throw(-1);
     }
 
     QString f_txt = find_newest(tc.dirs, "welcome.txt");
     if (f_txt.isEmpty()) {
-        QMessageBox::critical(0, "Missing Welcome Data!", "Could not locate welcome.txt!");
+        QMessageBox::critical(nullptr, "Missing Welcome Data!", "Could not locate welcome.txt!");
         throw(-1);
     }
 
     QFile input_f(f_txt);
     if (!input_f.open(QIODevice::ReadOnly)) {
-        QMessageBox::critical(0, "Read Error!", "Could not open welcome.txt from data folder!");
+        QMessageBox::critical(nullptr, "Read Error!", "Could not open welcome.txt from data folder!");
         throw(-1);
     }
     QTextStream input_t(&input_f);
@@ -46,9 +46,9 @@ curAt(-1)
     video->dynamicCall("setEnabled(bool)", true);
     video->dynamicCall("SetURL(QString)", QUrl::fromLocalFile(tmpfile));
 
-    QHBoxLayout *outerHBox = new QHBoxLayout;
+    auto *outerHBox = new QHBoxLayout;
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
     qvbl->setContentsMargins(0, 0, 0, 0);
     qvbl->addWidget(video);
 
@@ -325,14 +325,14 @@ void WelcomeWords::checkInput() {
 }
 
 void WelcomeWords::yieldWord() {
-    QMessageBox::information(0, tr("Hrhm..."), QString("<h1>") + tr("Det korrekte ord var:") + QString("</h1><br>") + words.at(curAt));
+    QMessageBox::information(nullptr, tr("Hrhm..."), QString("<h1>") + tr("Det korrekte ord var:") + QString("</h1><br>") + words.at(curAt));
     showNext();
 }
 
 QSize WelcomeWords::sizeHint() const {
-    return QSize(1010, 335);
+    return {1010, 335};
 }
 
 QSize WelcomeWords::minimumSizeHint() const {
-    return QSize(1010, 335);
+    return {1010, 335};
 }

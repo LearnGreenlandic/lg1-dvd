@@ -4,33 +4,33 @@
 #include <QtWidgets>
 #include <ctime>
 #include <cstdlib>
-#include <stdint.h>
+#include <cstdint>
 
 #ifdef Q_OS_WIN
     #define WIN32_LEAN_AND_MEAN
     #define VC_EXTRALEAN
-    #include <windows.h>
+    #include <Windows.h>
 #endif
 
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
 
-    app.setOrganizationDomain("learngreenlandic.com");
-    app.setOrganizationName("LearnGreenlandic");
-    app.setApplicationName("Learn Greenlandic");
-    app.setQuitOnLastWindowClosed(true);
+    QApplication::setOrganizationDomain("learngreenlandic.com");
+    QApplication::setOrganizationName("LearnGreenlandic");
+    QApplication::setApplicationName("Learn Greenlandic");
+    QApplication::setQuitOnLastWindowClosed(true);
 
     QSettings::setDefaultFormat(QSettings::IniFormat);
     QSettings settings;
 
     if (!settings.isWritable()) {
-        QMessageBox::critical(0, "Settings Not Writable!", "Unable to store user-specific settings. Cannot continue...");
-        app.exit(-1);
+        QMessageBox::critical(nullptr, "Settings Not Writable!", "Unable to store user-specific settings. Cannot continue...");
+        QApplication::exit(-1);
         return -1;
     }
 
 
-    uint32_t seed = static_cast<uint32_t>(time(0)) ^ app.applicationPid();
+    auto seed = static_cast<uint32_t>(static_cast<uint32_t>(time(nullptr)) ^ QApplication::applicationPid());
     qsrand(seed);
     srand(seed);
 
@@ -48,7 +48,7 @@ int main(int argc, char *argv[]) {
     }
 
     if (dirs.empty() || dirs.begin()->first < lg1_revision || !check_files(dirs)) {
-        QDir tDir(app.applicationDirPath());
+        QDir tDir(QApplication::applicationDirPath());
         do {
             size_t rev = 0;
             if (tDir.exists("./lessons/revision.txt")) {
@@ -73,7 +73,7 @@ int main(int argc, char *argv[]) {
         {
             QProgressDialog progress("Checking all drives for LG1 data...", "", 0, 26);
             progress.setWindowModality(Qt::WindowModal);
-            progress.setCancelButton(0);
+            progress.setCancelButton(nullptr);
             progress.show();
             QFileInfoList drives = QDir::drives();
             drives.append(QDir("/mnt/").entryInfoList(QDir::Dirs|QDir::NoDotAndDotDot));
@@ -106,18 +106,18 @@ int main(int argc, char *argv[]) {
         }
 
         if (dirs.empty() || (find_newest(dirs, "./revision.txt").isEmpty() && find_newest(dirs, "./welcome.txt").isEmpty()) || !check_files(dirs)) {
-            QMessageBox::information(0, "Missing Data / Manglende Data!",
+            QMessageBox::information(nullptr, "Missing Data / Manglende Data!",
                                      "English: Could not find a suitable lessons folder. Maybe you forgot to insert the DVD or mount a network share? You will now be asked to find the revisions.txt file from the lessons folder.\n\n"
                                      "Dansk: Kunne ikke finde en passende lessons mappe. Måske har du glemt at indsætte DVD'en eller forbinde til netværket? Du vil nu blive bedt om at finde revision.txt fra lessons mappen.");
-            QFileInfo revfile = QFileDialog::getOpenFileName(0, "Find lessons/revision.txt", QString(), "revision.txt (*.txt)");
+            QFileInfo revfile = QFileDialog::getOpenFileName(nullptr, "Find lessons/revision.txt", QString(), "revision.txt (*.txt)");
             size_t rev = read_revision(revfile.absoluteFilePath());
             dirs.insert(std::make_pair(rev, revfile.absoluteDir().absolutePath()));
 
             if (dirs.empty() || (find_newest(dirs, "./revision.txt").isEmpty() && find_newest(dirs, "./welcome.txt").isEmpty()) || !check_files(dirs)) {
-                QMessageBox::critical(0, "Missing Data / Manglende Data!",
+                QMessageBox::critical(nullptr, "Missing Data / Manglende Data!",
                                          "English: Could not find a suitable lessons folder. Maybe you forgot to insert the DVD or mount a network share?\n\n"
                                          "Dansk: Kunne ikke finde en passende lessons mappe. Måske har du glemt at indsætte DVD'en eller forbinde til netværket?");
-                app.exit(-1);
+                QApplication::exit(-1);
                 return -1;
             }
         }
@@ -136,7 +136,7 @@ int main(int argc, char *argv[]) {
 
         runoldq.exec();
         if (runoldq.clickedButton() != yes) {
-            app.quit();
+            QApplication::quit();
             return 0;
         }
     }
@@ -145,9 +145,9 @@ int main(int argc, char *argv[]) {
     }
 
     if (!dirs.empty()) {
-        int z = dirs.size(), i = 0;
+        int z = static_cast<int>(dirs.size()), i = 0;
         settings.beginWriteArray("paths", z);
-        for (dirmap_t::const_iterator it = dirs.begin() ; it != dirs.end() ; ++it, ++i) {
+        for (auto it = dirs.begin() ; it != dirs.end() ; ++it, ++i) {
             settings.setArrayIndex(i);
             settings.setValue("revision", uint(it->first));
             settings.setValue("path", it->second);
@@ -157,7 +157,7 @@ int main(int argc, char *argv[]) {
 
     QTranslator xtl;
     xtl.load(find_newest(dirs, "i18n/texts_da.qm"));
-    app.installTranslator(&xtl);
+    QApplication::installTranslator(&xtl);
 
     QString lang = settings.value("language").toString();
     if (lang != "english" && lang != "danish") {
@@ -187,7 +187,7 @@ int main(int argc, char *argv[]) {
     else {
         translator.load(find_newest(dirs, "i18n/texts_da.qm"));
     }
-    app.installTranslator(&translator);
+    QApplication::installTranslator(&translator);
 
     TaskChooser tc(dirs, &translator);
     tc.show();
@@ -196,5 +196,5 @@ int main(int argc, char *argv[]) {
 
     QTimer::singleShot(1000, &tc, SLOT(checkFirstRun()));
 
-    return app.exec();
+    return QApplication::exec();
 }

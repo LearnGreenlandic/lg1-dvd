@@ -1,14 +1,14 @@
 #include "DialogThree.hpp"
 
 DialogThree::DialogThree(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 data(tc.dirs, tr("danish.txt")),
 curAt(-1)
 {
     setWindowTitle(tr("Minidialog 1.3: Stil spørgsmål"));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
 
     QLabel *label = new QLabel(tr("Den sidste øvelse i denne omgang er en simpel husk/oversæt-øvelse. Koncentrer dig om at huske Beatrines sætninger. Formuler dem selv højt, lyt til Beatrine igen og gentag til sidst hendes sætning. Du får Tikas responser serveret som lidt memoteknisk hjælp."));
     label->setWordWrap(true);

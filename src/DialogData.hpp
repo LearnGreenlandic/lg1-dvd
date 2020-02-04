@@ -7,7 +7,7 @@
 class DialogData
 {
 public:
-    DialogData(const dirmap_t& dirs, QString which);
+    DialogData(const dirmap_t& dirs, const QString& which);
 
     QVector<QStringList> phrases;
 };

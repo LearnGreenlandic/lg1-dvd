@@ -1,15 +1,16 @@
 #include "ListenThree.hpp"
 #include <algorithm>
+#include <random>
 
 ListenThree::ListenThree(TaskChooser& tc) :
-QWidget(0, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
+QWidget(nullptr, Qt::Window | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint),
 tc(tc),
 curAt(-1)
 {
     QString f_d = find_newest(tc.dirs, "./listening/3/ateq.wav");
     QDir dataDir(f_d.replace("ateq.wav", ""));
     if (!dataDir.exists()) {
-        QMessageBox::critical(0, "Missing Data Folder!", "Could not change working folder to lessons/listening/3/");
+        QMessageBox::critical(nullptr, "Missing Data Folder!", "Could not change working folder to lessons/listening/3/");
         throw(-1);
     }
 
@@ -19,15 +20,15 @@ curAt(-1)
     }
 
     if (words.empty()) {
-        QMessageBox::critical(0, "Data Error!", "Failed to read data files!");
+        QMessageBox::critical(nullptr, "Data Error!", "Failed to read data files!");
         throw(-1);
     }
 
-    std::random_shuffle(words.begin(), words.end());
+    std::shuffle(words.begin(), words.end(), std::mt19937(std::random_device()()));
 
     setWindowTitle(tr("Lydøvelse  1.3: tt eller ts eller t"));
 
-    QVBoxLayout *qvbl = new QVBoxLayout;
+    auto *qvbl = new QVBoxLayout;
 
     QLabel *ql = new QLabel(tr("Lyt og svar om ordet indeholder 'tt' eller 'ts' eller kun 't'."));
     ql->setWordWrap(true);
